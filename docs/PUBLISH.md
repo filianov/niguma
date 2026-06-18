@@ -27,23 +27,22 @@ grep -R "sk-ant" . --include=*.py --include=*.json 2>/dev/null && echo "⚠️ �
 
 ## Вариант A — через GitHub Desktop (рекомендуется, у вас установлен)
 
+> ✅ Репозиторий уже инициализирован, и первый коммит («Initial commit — Niguma MVP»)
+> на ветке `main` уже сделан. Поэтому шаги 1–2 ниже выполнять не нужно — переходите сразу
+> к **шагу 3 (Publish)**. (Инструкция про создание репозитория оставлена на будущее.)
+
 ### 1. Создать локальный репозиторий
 1. Откройте **GitHub Desktop**.
 2. Меню **File → Add Local Repository…**
 3. Нажмите **Choose…** и выберите папку проекта:
    `/Users/filianov/Clode projects/niguma`
-4. GitHub Desktop скажет, что это не репозиторий, и предложит ссылку
-   **«create a repository»** — нажмите её.
-5. В окне «Create a Repository»:
-   - **Name:** `niguma`
-   - **Description:** `Йога для тех, кто принимает решения — лендинг + Telegram-бот`
-   - **Git Ignore:** оставьте `None` (у нас уже есть свой `.gitignore`)
-   - Нажмите **Create Repository**.
+4. Так как репозиторий уже создан, GitHub Desktop просто добавит его и покажет историю
+   с готовым первым коммитом. (Если бы `.git` не было — он предложил бы ссылку
+   **«create a repository»**.)
 
 ### 2. Сделать первый коммит
-1. Слева вы увидите список всех файлов (≈40 шт.) — это нормально.
-2. Внизу слева в поле **Summary** напишите: `Initial commit — Niguma MVP`
-3. Нажмите синюю кнопку **Commit to main**.
+Уже сделан. В GitHub Desktop во вкладке **History** вы увидите коммит
+`Initial commit — Niguma MVP`.
 
 ### 3. Опубликовать на GitHub
 1. Вверху нажмите **Publish repository**.
