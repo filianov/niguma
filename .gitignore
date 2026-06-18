@@ -1,0 +1,26 @@
+# secrets & env
+.env
+bot/.env
+*.env.local
+
+# python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.mypy_cache/
+.pytest_cache/
+
+# database (local SQLite)
+*.db
+*.sqlite3
+bot/niguma.db
+
+# os / editor
+.DS_Store
+.idea/
+.vscode/
+
+# build / deploy
+.vercel/
+node_modules/

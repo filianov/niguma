@@ -1,0 +1,7 @@
+# Niguma Telegram agent — runtime dependencies
+aiogram>=3.13,<4
+anthropic>=0.40
+APScheduler>=3.10,<4
+aiosqlite>=0.20
+python-dotenv>=1.0
+pytz>=2024.1
