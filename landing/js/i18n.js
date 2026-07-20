@@ -72,6 +72,37 @@
       }).join("");
     });
 
+    // paragraph blocks: data-paras="path" -> array of strings -> <p>
+    document.querySelectorAll("[data-paras]").forEach(function (el) {
+      var arr = t(lang, el.getAttribute("data-paras"));
+      if (!Array.isArray(arr)) return;
+      el.innerHTML = arr.map(function (s) { return "<p>" + escapeHtml(s) + "</p>"; }).join("");
+    });
+
+    // inner-wind cards: data-winds="path" -> [{name, subtitle, before, after}]
+    document.querySelectorAll("[data-winds]").forEach(function (el) {
+      var arr = t(lang, el.getAttribute("data-winds"));
+      if (!Array.isArray(arr)) return;
+      var beforeLbl = t(lang, el.getAttribute("data-before")) || "";
+      var afterLbl = t(lang, el.getAttribute("data-after")) || "";
+      el.innerHTML = arr.map(function (w) {
+        return '<article class="wind reveal">' +
+                 '<div class="wind__head">' +
+                   '<span class="wind__name">' + escapeHtml(w.name) + "</span>" +
+                   '<span class="wind__sub">' + escapeHtml(w.subtitle) + "</span>" +
+                 "</div>" +
+                 '<div class="wind__ba">' +
+                   '<div class="wind__col wind__col--before">' +
+                     '<span class="wind__label">' + escapeHtml(beforeLbl) + "</span>" +
+                     "<p>" + escapeHtml(w.before) + "</p></div>" +
+                   '<div class="wind__col wind__col--after">' +
+                     '<span class="wind__label">' + escapeHtml(afterLbl) + "</span>" +
+                     "<p>" + escapeHtml(w.after) + "</p></div>" +
+                 "</div>" +
+               "</article>";
+      }).join("");
+    });
+
     document.documentElement.lang = lang;
     document.querySelectorAll(".lang__btn").forEach(function (b) {
       b.setAttribute("aria-current", String(b.getAttribute("data-lang") === lang));
