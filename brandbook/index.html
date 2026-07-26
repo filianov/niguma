@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>15minYoga — Брендбук</title>
+  <link rel="icon" href="logo/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&display=swap" />
+  <style>
+    :root {
+      --paper: #FBF8F3; --cream: #F0E3D3; --sand: #DDBEA9;
+      --clay: #C58C6E; --clay-deep: #A96C4C; --sage: #B8B7A3;
+      --olive: #6B705C; --olive-deep: #565B49; --ink: #3B382F;
+      --line: #E7DCCB;
+      --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+      --display: "Fraunces", Georgia, serif;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--font); font-size: 16px; line-height: 1.6; }
+    .wrap { max-width: 1040px; margin: 0 auto; padding: 0 28px 100px; }
+
+    /* cover */
+    .cover { text-align: center; padding: 90px 0 70px; border-bottom: 1px solid var(--line); }
+    .cover img { height: 88px; margin: 0 auto 34px; }
+    .cover h1 { font-family: var(--display); font-size: clamp(34px, 6vw, 54px); font-weight: 600; margin: 0 0 10px; }
+    .cover p { color: var(--olive); margin: 0; }
+
+    h2 { font-family: var(--display); font-size: clamp(24px, 4vw, 34px); font-weight: 600; margin: 72px 0 6px; }
+    h2 .num { color: var(--clay-deep); margin-right: 12px; }
+    .sub { color: var(--olive); margin: 0 0 28px; max-width: 70ch; }
+    h3 { font-size: 17px; margin: 34px 0 12px; letter-spacing: .01em; }
+
+    /* concept */
+    .concept { display: grid; gap: 24px; grid-template-columns: 1fr; align-items: center; }
+    @media (min-width: 760px) { .concept { grid-template-columns: 260px 1fr; gap: 40px; } }
+    .concept__vis { background: #fff; border: 1px solid var(--line); border-radius: 20px; padding: 30px; text-align: center; }
+    .concept__vis img { width: 150px; }
+    .meaning { list-style: none; padding: 0; margin: 0; }
+    .meaning li { padding: 12px 0; border-bottom: 1px solid var(--line); display: flex; gap: 14px; }
+    .meaning li:last-child { border: 0; }
+    .meaning b { min-width: 168px; color: var(--ink); }
+    .meaning span { color: var(--olive); }
+
+    /* logo grid */
+    .grid { display: grid; gap: 18px; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+    .item { border: 1px solid var(--line); border-radius: 18px; overflow: hidden; background: #fff; }
+    .item__vis { padding: 30px 22px; display: flex; align-items: center; justify-content: center; min-height: 130px; }
+    .item__vis.dark { background: var(--olive-deep); }
+    .item__vis.cream { background: var(--cream); }
+    .item__vis img { max-width: 100%; max-height: 76px; }
+    .item__cap { padding: 12px 16px 15px; border-top: 1px solid var(--line); }
+    .item__cap b { display: block; font-size: 14px; }
+    .item__cap code { font-size: 11.5px; color: var(--olive); word-break: break-all; }
+
+    /* palette */
+    .pal { display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(168px, 1fr)); }
+    .sw { border: 1px solid var(--line); border-radius: 16px; overflow: hidden; background: #fff; }
+    .sw__c { height: 96px; }
+    .sw__t { padding: 12px 14px 14px; font-size: 13px; }
+    .sw__t b { display: block; font-size: 14px; margin-bottom: 3px; }
+    .sw__t span { display: block; color: var(--olive); font-size: 12px; letter-spacing: .02em; }
+
+    /* sizes / dont */
+    table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 15px; }
+    th, td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--line); }
+    th { font-size: 12.5px; text-transform: uppercase; letter-spacing: .06em; color: var(--olive); font-weight: 600; }
+    .dont li { margin-bottom: 9px; color: var(--olive); }
+    .dont li b { color: var(--ink); }
+
+    .note { background: var(--cream); border-radius: 16px; padding: 20px 24px; margin: 24px 0; }
+    .note b { color: var(--clay-deep); }
+    .name-rule { border: 2px solid var(--clay); border-radius: 18px; padding: 24px 26px; margin: 24px 0; background: #fff; }
+    .name-rule .ok { color: #4a7c3f; font-weight: 600; }
+    .name-rule .no { color: var(--clay-deep); text-decoration: line-through; }
+    .mini { display: flex; align-items: flex-end; gap: 26px; flex-wrap: wrap; margin-top: 14px; }
+    .mini figure { margin: 0; text-align: center; }
+    .mini figcaption { font-size: 12px; color: var(--olive); margin-top: 8px; }
+    footer { margin-top: 80px; padding-top: 26px; border-top: 1px solid var(--line); color: var(--olive); font-size: 14px; }
+    @media print { body { background: #fff; } .item, .sw { break-inside: avoid; } h2 { break-after: avoid; } }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <header class="cover">
+      <img src="logo/logo-stacked.svg" alt="15minYoga" />
+      <h1>Брендбук</h1>
+      <p>Версия 1.0 · июль 2026 · 15minyoga.com</p>
+    </header>
+
+    <!-- 0. NAME -->
+    <h2><span class="num">01</span>Название</h2>
+    <p class="sub">Название — имя собственное. Оно не переводится и не транслитерируется ни в одной языковой
+      версии сайта, ни в рекламе, ни в документах.</p>
+    <div class="name-rule">
+      <p style="margin:0 0 10px"><span class="ok">Верно:</span> <b style="font-family:var(--display);font-size:22px">15minYoga</b>
+        &nbsp;·&nbsp; в адресах строчными: <code>15minyoga.com</code>, <code>hello@15minyoga.com</code></p>
+      <p style="margin:0"><span class="no">15минЙога</span> &nbsp; <span class="no">15 Min Yoga</span> &nbsp;
+        <span class="no">15MinYoga</span> &nbsp; <span class="no">Fifteen Minute Yoga</span></p>
+    </div>
+
+    <!-- 1. CONCEPT -->
+    <h2><span class="num">02</span>Идея знака — «Четверть»</h2>
+    <p class="sub">Знак — таймер-кольцо, в котором подсвечена ровно одна четверть: 15 минут из 60.
+      Главное обещание бренда заложено в саму геометрию, а не в подпись.</p>
+    <div class="concept">
+      <div class="concept__vis"><img src="logo/mark.svg" alt="Знак 15minYoga" /></div>
+      <ul class="meaning">
+        <li><b>Полное кольцо</b><span>час, день, целостность, цикл практики</span></li>
+        <li><b>Подсвеченная четверть</b><span>ровно 15 минут из 60 — ваша инвестиция в себя</span></li>
+        <li><b>Точка в центре</b><span>точка покоя, внимание, сам практикующий</span></li>
+        <li><b>Разрывы дуг</b><span>воздух и дыхание; глаз достраивает круг сам</span></li>
+      </ul>
+    </div>
+
+    <h3>Построение и охранное поле</h3>
+    <div class="item" style="max-width:460px">
+      <div class="item__vis" style="padding:0"><img src="logo/construction.svg" alt="Схема построения"
+          style="max-height:220px;width:100%" /></div>
+    </div>
+
+    <!-- 2. LOGO SYSTEM -->
+    <h2><span class="num">03</span>Система логотипов</h2>
+    <p class="sub">Основной вариант — горизонтальный локап. Остальные версии решают конкретные задачи:
+      узкое место, один цвет, тёмный фон, иконка.</p>
+
+    <h3>Основные локапы</h3>
+    <div class="grid">
+      <div class="item">
+        <div class="item__vis"><img src="logo/logo-horizontal.svg" alt="" /></div>
+        <div class="item__cap"><b>Горизонтальный — основной</b><code>logo-horizontal.svg</code></div>
+      </div>
+      <div class="item">
+        <div class="item__vis"><img src="logo/logo-stacked.svg" alt="" /></div>
+        <div class="item__cap"><b>Вертикальный (стопкой)</b><code>logo-stacked.svg</code></div>
+      </div>
+      <div class="item">
+        <div class="item__vis"><img src="logo/logo-wordmark.svg" alt="" /></div>
+        <div class="item__cap"><b>Только начертание</b><code>logo-wordmark.svg</code></div>
+      </div>
+      <div class="item">
+        <div class="item__vis"><img src="logo/mark.svg" alt="" style="max-height:64px" /></div>
+        <div class="item__cap"><b>Только знак</b><code>mark.svg</code></div>
+      </div>
+      <div class="item">
+        <div class="item__vis"><img src="logo/logo-with-domain.svg" alt="" /></div>
+        <div class="item__cap"><b>С адресом сайта — для рекламы</b><code>logo-with-domain.svg</code></div>
+      </div>
+    </div>
+
+    <h3>Тёмный фон и монохром</h3>
+    <div class="grid">
+      <div class="item">
+        <div class="item__vis dark"><img src="logo/logo-horizontal-on-dark.svg" alt="" /></div>
+        <div class="item__cap"><b>Цветной на тёмном</b><code>logo-horizontal-on-dark.svg</code></div>
+      </div>
+      <div class="item">
+        <div class="item__vis dark"><img src="logo/logo-horizontal-mono-light.svg" alt="" /></div>
+        <div class="item__cap"><b>Монохром светлый</b><code>logo-horizontal-mono-light.svg</code></div>
+      </div>
+      <div class="item">
+        <div class="item__vis cream"><img src="logo/logo-horizontal-mono-dark.svg" alt="" /></div>
+        <div class="item__cap"><b>Монохром тёмный</b><code>logo-horizontal-mono-dark.svg</code></div>
+      </div>
+      <div class="item">
+        <div class="item__vis dark"><img src="logo/logo-stacked-mono-light.svg" alt="" /></div>
+        <div class="item__cap"><b>Вертикальный монохром</b><code>logo-stacked-mono-light.svg</code></div>
+      </div>
+    </div>
+
+    <h3>Иконки и аватары</h3>
+    <div class="grid">
+      <div class="item">
+        <div class="item__vis cream"><img src="logo/app-icon.svg" alt="" style="max-height:96px;border-radius:22px" /></div>
+        <div class="item__cap"><b>Иконка приложения / аватар</b><code>app-icon.svg · png/app-icon-512.png</code></div>
+      </div>
+      <div class="item">
+        <div class="item__vis"><img src="logo/app-icon-light.svg" alt="" style="max-height:96px;border-radius:22px" /></div>
+        <div class="item__cap"><b>Аватар светлый</b><code>app-icon-light.svg</code></div>
+      </div>
+      <div class="item">
+        <div class="item__vis">
+          <div class="mini">
+            <figure><img src="logo/favicon.svg" alt="" style="width:32px;height:32px" />
+              <figcaption>32 px</figcaption>
+            </figure>
+            <figure><img src="logo/favicon.svg" alt="" style="width:16px;height:16px" />
+              <figcaption>16 px</figcaption>
+            </figure>
+            <figure><img src="logo/favicon-badge.svg" alt="" style="width:32px;height:32px" />
+              <figcaption>плашка</figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="item__cap"><b>Фавикон — отдельная отрисовка</b><code>favicon.svg · favicon-badge.svg</code></div>
+      </div>
+    </div>
+
+    <div class="note">
+      <b>Почему фавикон отличается от знака.</b> У фавикона намеренно толще штрих, крупнее точка и шире
+      разрывы — мастер-знак на 16 px «залипает» в пятно. Это правильный приём оптической компенсации,
+      а не расхождение в системе.
+    </div>
+
+    <h3>Обложка для соцсетей</h3>
+    <div class="item" style="max-width:620px">
+      <div class="item__vis" style="padding:0"><img src="logo/og-cover.svg" alt="" style="max-height:none;width:100%" /></div>
+      <div class="item__cap"><b>Превью ссылки 1200×630</b><code>og-cover.svg · png/og-cover.png</code></div>
+    </div>
+
+    <!-- 3. COLOR -->
+    <h2><span class="num">04</span>Цветовая палитра</h2>
+    <p class="sub">«Earthy Neutrals» — тёплая природная гамма. Основа нейтральная, акцент — терракота,
+      «якорь» — олива.</p>
+    <div class="pal">
+      <div class="sw"><div class="sw__c" style="background:#FBF8F3;border-bottom:1px solid var(--line)"></div>
+        <div class="sw__t"><b>Paper</b><span>#FBF8F3</span><span>251 248 243</span><span>C0 M1 Y3 K2</span></div></div>
+      <div class="sw"><div class="sw__c" style="background:#F0E3D3"></div>
+        <div class="sw__t"><b>Cream</b><span>#F0E3D3</span><span>240 227 211</span><span>C0 M5 Y12 K6</span></div></div>
+      <div class="sw"><div class="sw__c" style="background:#DDBEA9"></div>
+        <div class="sw__t"><b>Sand</b><span>#DDBEA9</span><span>221 190 169</span><span>C0 M14 Y24 K13</span></div></div>
+      <div class="sw"><div class="sw__c" style="background:#C58C6E"></div>
+        <div class="sw__t"><b>Terracotta</b><span>#C58C6E</span><span>197 140 110</span><span>C0 M29 Y44 K23</span></div></div>
+      <div class="sw"><div class="sw__c" style="background:#A96C4C"></div>
+        <div class="sw__t"><b>Terracotta Deep</b><span>#A96C4C</span><span>169 108 76</span><span>C0 M36 Y55 K34</span></div></div>
+      <div class="sw"><div class="sw__c" style="background:#B8B7A3"></div>
+        <div class="sw__t"><b>Sage</b><span>#B8B7A3</span><span>184 183 163</span><span>C0 M1 Y11 K28</span></div></div>
+      <div class="sw"><div class="sw__c" style="background:#6B705C"></div>
+        <div class="sw__t"><b>Olive</b><span>#6B705C</span><span>107 112 92</span><span>C4 M0 Y18 K56</span></div></div>
+      <div class="sw"><div class="sw__c" style="background:#565B49"></div>
+        <div class="sw__t"><b>Olive Deep</b><span>#565B49</span><span>86 91 73</span><span>C5 M0 Y20 K64</span></div></div>
+      <div class="sw"><div class="sw__c" style="background:#3B382F"></div>
+        <div class="sw__t"><b>Ink</b><span>#3B382F</span><span>59 56 47</span><span>C0 M5 Y20 K77</span></div></div>
+    </div>
+
+    <div class="note">
+      <b>Почему две терракоты.</b> <code>#C58C6E</code> — для крупной графики (дуга знака).
+      Для текста она недостаточно контрастна, поэтому цифры «15» и мелкие акценты набираются
+      более глубоким <code>#A96C4C</code> — он проходит порог контраста для крупного текста.
+      <br><br>
+      <b>Пропорции 60-30-10.</b> 60% — Paper/Cream (воздух), 30% — Ink/Olive (текст и структура),
+      10% — Terracotta (акцент). Терракота — специя: ею подчёркивают одно главное действие на экране.
+    </div>
+
+    <!-- 4. TYPE -->
+    <h2><span class="num">05</span>Типографика</h2>
+    <table>
+      <tr><th>Назначение</th><th>Шрифт</th><th>Начертание</th></tr>
+      <tr><td>Логотип</td><td>Fraunces (opsz 72)</td><td>600 — переведён в кривые, шрифт не требуется</td></tr>
+      <tr><td>Заголовки</td><td>Fraunces</td><td>600</td></tr>
+      <tr><td>Основной текст</td><td>системный гротеск (SF Pro / Segoe UI / Inter)</td><td>400–600</td></tr>
+    </table>
+    <p class="sub" style="margin-top:8px">Fraunces — свободная лицензия SIL OFL, можно использовать в рекламе
+      и печати без оплаты: fonts.google.com/specimen/Fraunces</p>
+
+    <!-- 5. SIZES -->
+    <h2><span class="num">06</span>Минимальные размеры и охранное поле</h2>
+    <p class="sub">Охранное поле — не менее 0.3 от высоты знака с каждой стороны. В него не заходят текст,
+      другие логотипы и край макета.</p>
+    <table>
+      <tr><th>Версия</th><th>Экран</th><th>Печать</th></tr>
+      <tr><td>Горизонтальный локап</td><td>120 px по ширине</td><td>30 мм</td></tr>
+      <tr><td>Вертикальный локап</td><td>80 px по ширине</td><td>22 мм</td></tr>
+      <tr><td>Только знак</td><td>24 px</td><td>8 мм</td></tr>
+      <tr><td>Фавикон</td><td>16 px (спец. геометрия)</td><td>—</td></tr>
+    </table>
+
+    <!-- 6. DONT -->
+    <h2><span class="num">07</span>Чего делать нельзя</h2>
+    <ul class="dont">
+      <li><b>Растягивать непропорционально</b> — ломается геометрия четверти.</li>
+      <li><b>Менять цвета на непалитровые</b> — разрушается узнаваемость.</li>
+      <li><b>Добавлять тени, обводки, градиенты, объём</b> — стиль плоский и спокойный.</li>
+      <li><b>Поворачивать знак</b> — четверть всегда начинается с «12 часов».</li>
+      <li><b>Ставить цветной логотип на пёстрое фото</b> — использовать монохром или подложку.</li>
+      <li><b>Менять шрифт начертания</b> — начертание это фиксированный вектор.</li>
+      <li><b>Переводить название</b> — 15minYoga имя собственное.</li>
+      <li><b>Фон с контрастом ниже 3:1</b> — логотип не читается.</li>
+      <li><b>Менять местами цвета кольца и четверти</b> — четверть всегда акцентная.</li>
+    </ul>
+
+    <!-- 7. USAGE -->
+    <h2><span class="num">08</span>Применение</h2>
+    <table>
+      <tr><th>Носитель</th><th>Что использовать</th></tr>
+      <tr><td>Сайт — шапка</td><td><code>logo-horizontal.svg</code>, высота 30 px</td></tr>
+      <tr><td>Сайт — подвал</td><td><code>logo-horizontal-on-dark.svg</code>, высота 34 px</td></tr>
+      <tr><td>Аватар соцсетей</td><td><code>app-icon.svg</code> / <code>png/app-icon-512.png</code></td></tr>
+      <tr><td>Превью ссылки</td><td><code>png/og-cover.png</code> (1200×630)</td></tr>
+      <tr><td>Реклама на светлом</td><td><code>logo-horizontal.svg</code> или <code>logo-with-domain.svg</code></td></tr>
+      <tr><td>Реклама на фото / тёмном</td><td><code>-on-dark</code> или <code>-mono-light</code></td></tr>
+      <tr><td>Печать, мерч, гравировка</td><td>SVG, монохромные версии</td></tr>
+      <tr><td>Документы и письма</td><td>горизонтальный локап, 8–10 мм</td></tr>
+    </table>
+
+    <footer>
+      15minYoga · Брендбук v1.0 · Мастер-файлы: <code>brandbook/logo/</code> ·
+      Копия для сайта: <code>landing/assets/brand/</code><br>
+      Полная текстовая версия документа — <code>BRANDBOOK.md</code>
+    </footer>
+
+  </div>
+</body>
+
+</html>

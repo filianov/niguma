@@ -1,4 +1,4 @@
-# Деплой Niguma
+# Деплой 15minYoga
 
 Два независимых компонента: **статический лендинг** и **Telegram-бот** (долгоживущий процесс).
 
@@ -24,8 +24,8 @@ vercel --prod     # выкатить в прод
 `vercel.json` уже настроен: чистые URL, заголовки безопасности, кэш статики.
 
 ### Домен и e-mail
-1. В панели хостинга добавить домен `niguma.yoga`, прописать DNS.
-2. Завести почту `hello@niguma.yoga` (Google Workspace / Zoho / провайдер домена).
+1. В панели хостинга добавить домен `15minyoga.com`, прописать DNS.
+2. Завести почту `hello@15minyoga.com` (Google Workspace / Zoho / провайдер домена).
 3. Настроить **SPF / DKIM / DMARC** (нужно для доставляемости писем из бота/ESP).
 4. Обновить ссылки в [`landing/js/config.js`](../landing/js/config.js) и
    [`config/project.config.json`](../config/project.config.json) (Instagram, бот, канал, e-mail).
@@ -52,7 +52,7 @@ python main.py
 2. Start command: `python main.py`.
 3. Variables — перенести всё из `.env` (BOT_TOKEN, ANTHROPIC_API_KEY, ADMIN_IDS, реквизиты…).
 4. Добавить **PostgreSQL** add-on, прописать DSN (на проде вместо SQLite — см. ниже).
-5. Deploy. Проверить логи: `Niguma bot polling…` и список cron-джобов.
+5. Deploy. Проверить логи: `15minYoga bot polling…` и список cron-джобов.
 
 ### Fly.io (альтернатива)
 ```bash

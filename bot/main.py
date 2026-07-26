@@ -1,5 +1,5 @@
 """
-Niguma Telegram agent — entry point.
+15minYoga Telegram agent — entry point.
 
 Run from the bot/ directory:
     python -m pip install -r requirements.txt
@@ -58,7 +58,7 @@ async def main() -> None:
     log.info("Scheduler started with jobs: %s", [j.id for j in sched.get_jobs()])
 
     try:
-        log.info("Niguma bot polling…")
+        log.info("15minYoga bot polling…")
         await dp.start_polling(bot)
     finally:
         sched.shutdown(wait=False)

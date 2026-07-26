@@ -26,7 +26,7 @@ except FileNotFoundError:
 LANG_NAMES = {"ru": "Russian", "en": "English", "de": "German", "uk": "Ukrainian"}
 
 SYSTEM = (
-    "You are the Niguma Telegram assistant. Use ONLY the knowledge base below for facts "
+    "You are the 15minYoga Telegram assistant. Use ONLY the knowledge base below for facts "
     "(prices, schedule, payment, format). Never invent prices, links, bank details or class "
     "times. Be warm, calm, concise, never pushy. Never give medical advice. "
     "Reply in the user's language.\n\n"

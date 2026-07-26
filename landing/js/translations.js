@@ -6,7 +6,7 @@
 window.NIGUMA_I18N = {
   "ru": {
     "meta": {
-      "title": "Niguma — Йога для тех, кто принимает решения",
+      "title": "15minYoga — Йога для тех, кто принимает решения",
       "description": "15 минут каждое утро для энергии, ясности и масштабного влияния. Аутентичная йога Леди Нигумы для предпринимателей и лидеров."
     },
     "nav": { "benefits": "Что вы получите", "forWho": "Для кого", "format": "Формат", "pricing": "Стоимость", "join": "Присоединиться" },
@@ -61,7 +61,7 @@ window.NIGUMA_I18N = {
 
   "en": {
     "meta": {
-      "title": "Niguma — Yoga for those who make decisions",
+      "title": "15minYoga — Yoga for those who make decisions",
       "description": "15 minutes every morning for energy, clarity, and meaningful impact. The authentic yoga of Lady Niguma for entrepreneurs and leaders."
     },
     "nav": { "benefits": "What you get", "forWho": "Who it's for", "format": "Format", "pricing": "Pricing", "join": "Join" },
@@ -116,7 +116,7 @@ window.NIGUMA_I18N = {
 
   "de": {
     "meta": {
-      "title": "Niguma — Yoga für Menschen, die Entscheidungen treffen",
+      "title": "15minYoga — Yoga für Menschen, die Entscheidungen treffen",
       "description": "15 Minuten jeden Morgen für Energie, Klarheit und weitreichende Wirkung. Authentisches Yoga von Lady Niguma für Unternehmer und Führungskräfte."
     },
     "nav": { "benefits": "Was Sie erhalten", "forWho": "Für wen", "format": "Format", "pricing": "Preise", "join": "Teilnehmen" },
@@ -171,7 +171,7 @@ window.NIGUMA_I18N = {
 
   "uk": {
     "meta": {
-      "title": "Niguma — Йога для тих, хто ухвалює рішення",
+      "title": "15minYoga — Йога для тих, хто ухвалює рішення",
       "description": "15 хвилин щоранку для енергії, ясності та масштабного впливу. Автентична йога Леді Нігуми для підприємців і лідерів."
     },
     "nav": { "benefits": "Що ви отримаєте", "forWho": "Для кого", "format": "Формат", "pricing": "Вартість", "join": "Приєднатися" },

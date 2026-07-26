@@ -1,0 +1,14 @@
+{
+  "name": "15minYoga",
+  "short_name": "15minYoga",
+  "description": "15 minutes every morning for energy, clarity and impact.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FBF8F3",
+  "theme_color": "#6B705C",
+  "icons": [
+    { "src": "assets/brand/png/app-icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "assets/brand/png/app-icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "assets/brand/app-icon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

@@ -108,13 +108,13 @@ async def send_due_drip(bot: Bot) -> int:
 
 
 COHORT_BROADCAST = {
-    "ru": "🌿 В понедельник стартует новый поток Niguma!\n\nБудни 7:00–7:15 + глубокая практика раз в неделю. "
+    "ru": "🌿 В понедельник стартует новый поток 15minYoga!\n\nБудни 7:00–7:15 + глубокая практика раз в неделю. "
           "Записи остаются у вас. Хотите присоединиться? Напишите «оплата» — подберём удобный способ.",
-    "en": "🌿 A new Niguma group starts Monday!\n\nWeekdays 7:00–7:15 + a deep session weekly. Recordings stay with "
+    "en": "🌿 A new 15minYoga group starts Monday!\n\nWeekdays 7:00–7:15 + a deep session weekly. Recordings stay with "
           "you. Want in? Write “payment” and we'll pick a convenient method.",
-    "de": "🌿 Am Montag startet ein neuer Niguma-Kurs!\n\nWerktags 7:00–7:15 + wöchentliche vertiefende Einheit. "
+    "de": "🌿 Am Montag startet ein neuer 15minYoga-Kurs!\n\nWerktags 7:00–7:15 + wöchentliche vertiefende Einheit. "
           "Aufzeichnungen bleiben bei Ihnen. Dabei sein? Schreiben Sie „Zahlung“.",
-    "uk": "🌿 У понеділок стартує новий потік Niguma!\n\nБудні 7:00–7:15 + глибока практика раз на тиждень. Записи "
+    "uk": "🌿 У понеділок стартує новий потік 15minYoga!\n\nБудні 7:00–7:15 + глибока практика раз на тиждень. Записи "
           "лишаються у вас. Хочете приєднатися? Напишіть «оплата».",
 }
 

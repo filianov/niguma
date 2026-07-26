@@ -67,7 +67,7 @@ def method_text(method: str, plan_id: str, lang: str = "ru") -> str:
                 f"IBAN: `{config.EUR_IBAN}`\n"
                 f"BIC: {config.EUR_BIC}\n"
                 f"Банк / Bank: {config.EUR_BANK}\n"
-                f"Назначение / Reference: Niguma {plan_id}")
+                f"Назначение / Reference: 15minYoga {plan_id}")
 
     if method == "monobank":
         if not (config.MONOBANK_JAR or config.MONOBANK_CARD):

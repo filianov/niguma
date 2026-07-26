@@ -163,6 +163,6 @@ async def cmd_invite(message: Message) -> None:
     if not m:
         return
     lang = m.get("language", "ru")
-    username = config.SOCIAL.get("telegram", {}).get("botUsername", "niguma_bot")
+    username = config.SOCIAL.get("telegram", {}).get("botUsername", "yoga15min_bot")
     link = f"https://t.me/{username}?start=ref_{message.from_user.id}"
     await message.answer(T("g_invite", lang, link=link), disable_web_page_preview=True)

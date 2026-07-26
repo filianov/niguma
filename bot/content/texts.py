@@ -9,22 +9,22 @@ DEFAULT = "ru"
 TEXTS: dict[str, dict[str, str]] = {
     # ---------------- onboarding / funnel ----------------
     "welcome": {
-        "ru": "🌿 Здравствуйте! Это бот проекта *Niguma* — йога для тех, кто принимает решения.\n\n"
+        "ru": "🌿 Здравствуйте! Это бот проекта *15minYoga* — йога для тех, кто принимает решения.\n\n"
               "Каждый будний день в 7:00 мы практикуем 15 минут аутентичной йоги Леди Нигумы, "
               "а раз в неделю — глубокую часовую практику.\n\n"
               "Я помогу: расскажу о проекте, отвечу на вопросы, подскажу как оплатить и буду "
               "напоминать о занятиях.\n\nС чего начнём?",
-        "en": "🌿 Hello! This is the *Niguma* bot — yoga for those who make decisions.\n\n"
+        "en": "🌿 Hello! This is the *15minYoga* bot — yoga for those who make decisions.\n\n"
               "Every weekday at 7:00 we practice 15 minutes of the authentic yoga of Lady Niguma, "
               "and once a week — a deeper one-hour session.\n\n"
               "I can tell you about the project, answer questions, help you pay and remind you of classes.\n\n"
               "Where shall we start?",
-        "de": "🌿 Hallo! Das ist der *Niguma*-Bot — Yoga für Menschen, die Entscheidungen treffen.\n\n"
+        "de": "🌿 Hallo! Das ist der *15minYoga*-Bot — Yoga für Menschen, die Entscheidungen treffen.\n\n"
               "An jedem Werktag um 7:00 üben wir 15 Minuten authentisches Yoga von Lady Niguma, "
               "und einmal pro Woche eine vertiefende einstündige Einheit.\n\n"
               "Ich erzähle Ihnen über das Projekt, beantworte Fragen, helfe bei der Zahlung und erinnere an die Einheiten.\n\n"
               "Womit fangen wir an?",
-        "uk": "🌿 Вітаю! Це бот проєкту *Niguma* — йога для тих, хто ухвалює рішення.\n\n"
+        "uk": "🌿 Вітаю! Це бот проєкту *15minYoga* — йога для тих, хто ухвалює рішення.\n\n"
               "Щодня в будні о 7:00 ми практикуємо 15 хвилин автентичної йоги Леді Нігуми, "
               "а раз на тиждень — глибоку годинну практику.\n\n"
               "Я розповім про проєкт, відповім на запитання, підкажу як оплатити та нагадуватиму про заняття.\n\n"

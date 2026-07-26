@@ -1,16 +1,16 @@
 {
   "$schema": "./project.config.schema.json",
   "brand": {
-    "name": "Niguma",
-    "legalName": "Niguma — yoga for decision makers",
+    "name": "15minYoga",
+    "legalName": "15minYoga — yoga for decision makers",
     "tagline": {
       "ru": "Йога для тех, кто принимает решения",
       "en": "Yoga for those who make decisions",
       "de": "Yoga für alle, die Entscheidungen treffen",
       "uk": "Йога для тих, хто ухвалює рішення"
     },
-    "domainPrimary": "niguma.yoga",
-    "domainFallbacks": ["niguma.com", "niguma.online"],
+    "domainPrimary": "15minyoga.com",
+    "domainFallbacks": ["15minyoga.com"],
     "defaultLocale": "ru",
     "locales": ["ru", "en", "de", "uk"]
   },
@@ -71,24 +71,24 @@
   },
 
   "social": {
-    "instagram": { "handle": "niguma.yoga", "url": "https://instagram.com/niguma.yoga", "isPrimarySupport": true },
-    "facebook": { "url": "https://facebook.com/niguma.yoga" },
+    "instagram": { "handle": "15minyoga", "url": "https://instagram.com/15minyoga", "isPrimarySupport": true },
+    "facebook": { "url": "https://facebook.com/15minyoga" },
     "telegram": {
-      "channelUrl": "https://t.me/niguma_yoga",
-      "botUsername": "niguma_bot",
-      "botUrl": "https://t.me/niguma_bot",
+      "channelUrl": "https://t.me/yoga15min",
+      "botUsername": "yoga15min_bot",
+      "botUrl": "https://t.me/yoga15min_bot",
       "botDeepLinkParam": "src",
       "isPrimaryComms": true
     },
-    "email": { "address": "hello@niguma.yoga", "comment": "Завести после регистрации домена; до этого — пусто/скрыто." },
+    "email": { "address": "hello@15minyoga.com", "comment": "Завести после регистрации домена; до этого — пусто/скрыто." },
     "youtube": { "url": "" }
   },
 
   "support": {
     "primaryChannel": "instagram",
-    "instagramDM": "https://ig.me/m/niguma.yoga",
-    "botFirstClient": "https://t.me/niguma_bot?start=lead_landing",
-    "escalationToAuthor": "https://ig.me/m/niguma.yoga"
+    "instagramDM": "https://ig.me/m/15minyoga",
+    "botFirstClient": "https://t.me/yoga15min_bot?start=lead_landing",
+    "escalationToAuthor": "https://ig.me/m/15minyoga"
   },
 
   "funnel": {

@@ -5,17 +5,18 @@
    =================================================================== */
 window.NIGUMA_CONFIG = {
   // Telegram bot — main entry point / first client + funnel
-  telegram:        "https://t.me/niguma_bot?start=lead_landing",
-  telegramChannel: "https://t.me/niguma_yoga",
+  // NB: Telegram usernames cannot start with a digit → "yoga15min_bot", not "15minyoga_bot".
+  telegram:        "https://t.me/yoga15min_bot?start=lead_landing",
+  telegramChannel: "https://t.me/yoga15min",
 
   // Instagram — primary human support (author writes back directly)
-  instagram:       "https://ig.me/m/niguma.yoga",
+  instagram:       "https://ig.me/m/15minyoga",
 
   // Other socials
-  facebook:        "https://facebook.com/niguma.yoga",
+  facebook:        "https://facebook.com/15minyoga",
 
   // Email — enable after the domain is registered; leave mailto empty to hide
-  email:           "mailto:hello@niguma.yoga",
+  email:           "mailto:hello@15minyoga.com",
 
   // Optional automated checkout links (PayPal / Stripe). Filled when enabled.
   pay: {

@@ -1,4 +1,4 @@
-# 🌿 Niguma — Йога для тех, кто принимает решения
+# 🌿 15minYoga — Йога для тех, кто принимает решения
 
 Полная инфраструктура онлайн-проекта по йоге Леди Нигумы для предпринимателей и лидеров:
 **лендинг + Telegram-агент + воронка продаж + геймификация + платежи**, готовые к запуску,
@@ -17,6 +17,7 @@
 | 🌱 **Геймификация «Сад семян»** | Система по мудрости геше Майкла Роуча: каждое действие сажает «семя» (практика, помощь, щедрость, посвящение). | [`docs/GAMIFICATION.md`](docs/GAMIFICATION.md) |
 | 💳 **Платежи (гибрид)** | PayPal/Stripe на лендинге + евро-счёт (IBAN) и Monobank через бота. Бот фиксирует оплату, автор подтверждает. | [`docs/PAYMENTS.md`](docs/PAYMENTS.md) |
 | 🗃 **Back-office / CRM** | Единая база (SQLite→Postgres): лиды, участники, подписки, платежи, журнал практик, «семена», переписка. | [`bot/db.py`](bot/db.py) |
+| 🎨 **Фирменный стиль** | Логотип «Четверть» (22 SVG + 14 PNG), палитра, правила применения. | [`brandbook/`](brandbook/BRANDBOOK.md) |
 | ⚙️ **Конфиг** | Единый источник правды для лендинга и бота: расписание, цены, соцсети, методы оплаты. | [`config/project.config.json`](config/project.config.json) |
 
 ---
@@ -78,7 +79,7 @@ python3 main.py
 - Ключ [Anthropic Claude](https://console.anthropic.com) → `ANTHROPIC_API_KEY`.
 - Свой Telegram id ([@userinfobot](https://t.me/userinfobot)) → `ADMIN_IDS`.
 - Платёжные реквизиты (IBAN, Monobank-банка, PayPal.me) → `.env` и/или `config`.
-- Домен → потом e-mail `hello@niguma.yoga`.
+- Домен → потом e-mail `hello@15minyoga.com`.
 
 Полный чек-лист запуска и развития — в [`docs/ROADMAP.md`](docs/ROADMAP.md).
 

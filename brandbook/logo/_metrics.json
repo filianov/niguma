@@ -1,0 +1,16 @@
+{
+  "cap": 70.0,
+  "wordmark_units": 487.1,
+  "em": 100.0,
+  "palette": {
+    "ink": "#3B382F",
+    "paper": "#FBF8F3",
+    "cream": "#F0E3D3",
+    "sand": "#DDBEA9",
+    "clay": "#C58C6E",
+    "clay_deep": "#A96C4C",
+    "sage": "#B8B7A3",
+    "olive": "#6B705C",
+    "olive_deep": "#565B49"
+  }
+}

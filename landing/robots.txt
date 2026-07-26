@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /legal/
 
-Sitemap: https://niguma.yoga/sitemap.xml
+Sitemap: https://15minyoga.com/sitemap.xml

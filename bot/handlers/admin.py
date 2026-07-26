@@ -79,7 +79,7 @@ async def cmd_stats(message: Message) -> None:
         return
     s = await db.stats()
     await message.answer(
-        "📊 *Niguma — статистика*\n"
+        "📊 *15minYoga — статистика*\n"
         f"Лиды: {s['leads']} (в воронке {s['nurturing']})\n"
         f"Активные участники: {s['members_active']}\n"
         f"Оплаты: ожидают {s['pending_payments']}, подтверждено {s['confirmed_payments']}\n"

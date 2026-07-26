@@ -1,5 +1,5 @@
 """
-Central config for the Niguma Telegram agent.
+Central config for the 15minYoga Telegram agent.
 
 Loads:
   - environment variables (.env)            -> secrets & deploy-specific values
@@ -82,7 +82,7 @@ LOCALES = PROJECT.get("brand", {}).get("locales", ["ru", "en", "de", "uk"])
 
 # --- Email ---
 RESEND_API_KEY = os.getenv("RESEND_API_KEY", "")
-EMAIL_FROM = os.getenv("EMAIL_FROM", "hello@niguma.yoga")
+EMAIL_FROM = os.getenv("EMAIL_FROM", "hello@15minyoga.com")
 
 # --- Derived shortcuts from project config ---
 PRICING = PROJECT.get("pricing", {})
@@ -92,7 +92,7 @@ SUPPORT = PROJECT.get("support", {})
 FUNNEL = PROJECT.get("funnel", {})
 BRAND = PROJECT.get("brand", {})
 
-INSTAGRAM_DM = SUPPORT.get("instagramDM", "https://ig.me/m/niguma.yoga")
+INSTAGRAM_DM = SUPPORT.get("instagramDM", "https://ig.me/m/15minyoga")
 
 
 def require(*names: str) -> list[str]:

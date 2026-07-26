@@ -1,4 +1,4 @@
-# 🗺 Дорожная карта Niguma
+# 🗺 Дорожная карта 15minYoga
 
 Пошаговый план: что сделать перед запуском и в ближайшие **30 / 90 / 365 дней**, плюс
 **ветви развития** (страницы, боты, инструменты). Чекбоксы можно отмечать прямо в файле.
@@ -11,12 +11,12 @@
 ## 🚦 Неделя 0 — подготовка к запуску (must-have)
 
 **Аккаунты и доступы**
-- [ ] Зарегистрировать домен (напр. `niguma.yoga`), подключить к Vercel/Cloudflare.
-- [ ] Создать бота в [@BotFather](https://t.me/BotFather), получить `BOT_TOKEN`, имя `@niguma_bot`.
+- [ ] Зарегистрировать домен (напр. `15minyoga.com`), подключить к Vercel/Cloudflare.
+- [ ] Создать бота в [@BotFather](https://t.me/BotFather), получить `BOT_TOKEN`, имя `@yoga15min_bot`.
 - [ ] Ключ [Anthropic Claude](https://console.anthropic.com) → `ANTHROPIC_API_KEY`.
 - [ ] Узнать свой Telegram id ([@userinfobot](https://t.me/userinfobot)) → `ADMIN_IDS`.
 - [ ] Создать приватный Telegram-канал участников, добавить бота админом → `MEMBERS_CHANNEL_ID`.
-- [ ] Аккаунты: Instagram `@niguma.yoga`, Facebook-страница, Telegram-канал.
+- [ ] Аккаунты: Instagram `@15minyoga`, Facebook-страница, Telegram-канал.
 
 **Платежи** (см. [PAYMENTS.md](PAYMENTS.md))
 - [ ] PayPal Business + `PayPal.me`/ссылки подписок.

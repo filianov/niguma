@@ -1,4 +1,4 @@
-# Niguma Telegram agent — runtime dependencies
+# 15minYoga Telegram agent — runtime dependencies
 aiogram>=3.13,<4
 anthropic>=0.40
 APScheduler>=3.10,<4

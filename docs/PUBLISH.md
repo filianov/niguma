@@ -1,4 +1,4 @@
-# 🚀 Как выложить Niguma на GitHub и показать
+# 🚀 Как выложить 15minYoga на GitHub и показать
 
 Пошаговая инструкция: загрузить проект на ваш GitHub и сделать так, чтобы лендинг
 открывался по публичной ссылке (чтобы показать). Рассчитано на новичка.
@@ -27,7 +27,7 @@ grep -R "sk-ant" . --include=*.py --include=*.json 2>/dev/null && echo "⚠️ �
 
 ## Вариант A — через GitHub Desktop (рекомендуется, у вас установлен)
 
-> ✅ Репозиторий уже инициализирован, и первый коммит («Initial commit — Niguma MVP»)
+> ✅ Репозиторий уже инициализирован, и первый коммит («Initial commit — 15minYoga MVP»)
 > на ветке `main` уже сделан. Поэтому шаги 1–2 ниже выполнять не нужно — переходите сразу
 > к **шагу 3 (Publish)**. (Инструкция про создание репозитория оставлена на будущее.)
 
@@ -42,7 +42,7 @@ grep -R "sk-ant" . --include=*.py --include=*.json 2>/dev/null && echo "⚠️ �
 
 ### 2. Сделать первый коммит
 Уже сделан. В GitHub Desktop во вкладке **History** вы увидите коммит
-`Initial commit — Niguma MVP`.
+`Initial commit — 15minYoga MVP`.
 
 ### 3. Опубликовать на GitHub
 1. Вверху нажмите **Publish repository**.
@@ -70,7 +70,7 @@ GitHub CLI у вас не установлен, поэтому репозито�
 cd "/Users/filianov/Clode projects/niguma"
 git init
 git add .
-git commit -m "Initial commit — Niguma MVP"
+git commit -m "Initial commit — 15minYoga MVP"
 git branch -M main
 git remote add origin https://github.com/ВАШ_ЛОГИН/niguma.git
 git push -u origin main
@@ -101,7 +101,7 @@ git push -u origin main
 4. После зелёной галочки ссылка появится в **Settings → Pages**, вид:
    `https://ВАШ_ЛОГИН.github.io/niguma/` — её показывайте.
 
-> Если позже подключите свой домен `niguma.yoga` — это делается в настройках Vercel или Pages
+> Если позже подключите свой домен `15minyoga.com` — это делается в настройках Vercel или Pages
 > (раздел Custom domain), плюс DNS у регистратора. См. [DEPLOYMENT.md](DEPLOYMENT.md).
 
 ---
