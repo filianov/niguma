@@ -90,8 +90,19 @@
     });
   }
 
+  /* ---- 6. Deep-dive PDF block: show only when the file actually exists ---- */
+  function deeperPdf() {
+    var box = document.getElementById("deeper");
+    var link = document.getElementById("deeperLink");
+    if (!box || !link) return;
+    fetch(link.getAttribute("href"), { method: "HEAD" })
+      .then(function (r) { if (r.ok) box.hidden = false; })
+      .catch(function () { /* no file yet — stays hidden */ });
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     wireCtas();
+    deeperPdf();
     setYear();
     tagReveal();
     armReveal();

@@ -225,138 +225,343 @@ window.NIGUMA_I18N = {
   }
 };
 
-/* ============================================================
-   Правка 5/6 — блоки «Тренеры» и «Как и почему это сработает».
-   Контент этих двух секций редактируется ЗДЕСЬ (на всех языках).
-   ============================================================ */
+
+/* ==========================================================================
+   КОНТЕНТ ЛЕНДИНГА — редактируется ЗДЕСЬ (сразу на 4 языках).
+   Блоки: заголовок · боли · обещание · что входит · что вы получите ·
+          тренеры · почему это работает · подробнее (PDF) · кому не подойдёт
+   ========================================================================== */
 (function (M) {
   var ADD = {
+    /* ------------------------------- RU ------------------------------- */
     "ru": {
-      nav: { trainers: "Тренеры", how: "Как это работает" },
+      nav: { included: "Что входит", trainers: "Тренеры", benefits: "Что вы получите", how: "Почему это работает" },
+      heroTitle: "15minYoga для предпринимателей, руководителей, собственников бизнеса, лидеров мнений, от чьих решений зависят люди, проекты, деньги и развитие",
       howLink: "Почему это работает",
+      pains: {
+        heading: "Знакомо?",
+        items: [
+          "Живёте в постоянном напряжении?",
+          "Часто теряете фокус из-за большого количества задач?",
+          "Вам бывает сложно переключиться с работы и восстановиться?",
+          "Вам трудно видеть стратегическую картину за ежедневной рутиной?",
+          "Не удаётся удержать концентрацию в течение дня?",
+          "Вам сложно отпустить контроль?"
+        ]
+      },
+      promise: {
+        text: "15 минут практики каждое утро уже в течение первого месяца помогут улучшить не только состояние вашего ума, но и качество ваших ежедневных решений."
+      },
+      included: {
+        heading: "Что входит в курс",
+        cards: [
+          { title: "Ежедневная практика", body: "15 минут каждое утро с понедельника по пятницу." },
+          { title: "Глубокая практика по субботам", body: "Более длительное занятие с объяснением техники и ответами на вопросы." },
+          { title: "Записи всех занятий", body: "Можно заниматься в удобное время и возвращаться к практике." },
+          { title: "Закрытое сообщество в Telegram", body: "Поддержка, общение, обмен опытом, ответы на вопросы." },
+          { title: "Нетворкинг с предпринимателями и руководителями", body: "Возможность познакомиться с людьми, которые также развивают бизнес и осознанное лидерство." }
+        ]
+      },
+      benefits: {
+        heading: "Что вы получите",
+        items: [
+          "Спокойное и ясное состояние ума.",
+          "Освобождение от внутренних энергетических блоков, влияющих на решения.",
+          "Способность быстрее восстанавливаться после стресса.",
+          "Принятие точных и взвешенных решений без эмоциональных качелей.",
+          "Ментальное расширение — способность видеть больше возможностей и стратегических решений.",
+          "Внутреннюю устойчивость, концентрацию и энергию в течение дня практики."
+        ]
+      },
       trainers: {
         heading: "Тренеры",
-        intro: "Все тренеры прежде всего сами являются предпринимателями. Начав практиковать эту систему йоги, они улучшили свои результаты в бизнесе, а сегодня используют этот мощный инструмент как для собственного развития, так и для помощи другим.",
-        soon: "Знакомство с преподавателями — скоро."
+        intro: "Все тренеры прежде всего сами являются предпринимателями/лидерами команд. Начав практиковать эту систему йоги, они улучшили свои результаты в бизнесе, а сегодня используют этот мощный инструмент как для собственного развития, так и для помощи другим.",
+        name: "Ольга",
+        role: "Создатель проекта, преподаватель"
       },
       how: {
-        heading: "Как и почему это сработает",
-        intro: [
-          "Здесь нет магии, только физика. Практика основана на традиции, которой более тысячи лет.",
-          "Принцип этой йоги — приведение в правильное русло энергии, движущейся внутри нашего тела; её также называют внутренним ветром.",
-          "Ветры и ум движутся вместе, как одно целое (lung sem jukpa chikpa).",
-          "Если перевести это на язык жизни и бизнеса, получается:"
-        ],
-        flow: "ветер → эмоции → решения → действия → результаты",
-        beforeLabel: "До настройки",
-        afterLabel: "После настройки",
-        winds: [
-          { name: "Вьяна", subtitle: "всепроникающий ветер", before: "Если искажён — рождаются цепляние, разочарование и страх потерять контроль. Ты избегаешь риска, держишься за старое, боишься менять стратегию и принимаешь оборонительные решения.", after: "Ты начинаешь видеть ситуацию ясно и реагировать адекватно." },
-          { name: "Апана", subtitle: "нисходящий ветер", before: "Ты слишком цепляешься за приятное, не можешь выдержать неприятное, игнорируешь нейтральное и живёшь внутри восьми мыслей (каких — узнаешь на практике). Делаешь только то, что нравится; откладываешь сложные разговоры; боишься критики; гонишься за похвалой; переживаешь из-за статуса. Результат — нестабильность в бизнес-процессах и в жизни.", after: "Ты действуешь не из желания немедленно получить приятные ощущения, а из понимания происходящего — стратегически верно." },
-          { name: "Удана", subtitle: "восходящий ветер", before: "Ты автоматически навешиваешь ярлыки: это хорошо, это плохо, это нравится, это нет. И тогда делаешь поспешные выводы, выбираешь проекты по эмоциям, неверно анализируешь ситуации и действия людей, ошибаешься в приоритетах. Поэтому страдает результат.", after: "Открывается умение видеть, что реально, а что иллюзия; что полезно, а что вредно в абсолютном смысле. Для предпринимателя это означает лучшие решения." },
-          { name: "Самана", subtitle: "уравновешивающий ветер", before: "Связан с завистью, соперничеством и беспокойством. Ты сравниваешь себя с другими — и энергия уходит на конкуренцию, а результаты падают.", after: "Появляется мудрость достижения: энергия направляется не на сравнение, а на создание. Возникает способность действовать в разных ролях, создавать ценность для клиентов и команды и достигать высоких результатов." },
-          { name: "Прана", subtitle: "жизненный ветер", before: "Когда он искажён, ты закрываешься, сопротивляешься, отталкиваешь и боишься — и перестаёшь видеть возможности.", after: "Твоё сознание становится спокойным и открытым — и рождает качественно новые решения." }
+        heading: "Почему это работает",
+        paras: [
+          "В теле существует сеть энергетических каналов. Главный из них — центральный канал, который в традиции йоги связывают с состояниями ясности, спокойствия, высокой концентрации и внутренней устойчивости.",
+          "Когда мы испытываем страх, раздражение, жадность, тревогу или чрезмерную привязанность, энергия смещается в боковые каналы. Это отражается не только на эмоциональном состоянии, но и на качестве мышления: решения становятся реактивными, а не стратегическими.",
+          "Практика йоги Леди Нигумы построена так, что через определённые положения тела, дыхание и внимание мы снимаем напряжение в местах, где эти каналы условно «пережаты». В результате энергия легче возвращается к центральному каналу.",
+          "Вам не нужно специально менять убеждения или заставлять себя мыслить позитивно. Сначала меняется энергетическое состояние тела, а вместе с ним балансируются эмоции, появляется ясность и естественным образом меняется качество принимаемых решений."
+        ]
+      },
+      deeper: {
+        heading: "Хотите понять метод глубже?",
+        body: "Узнайте больше о традиции Леди Нигумы, пяти ветрах и том, как эта система объясняет связь энергии, эмоций и мышления.",
+        cta: "Скачать подробное описание →"
+      },
+      notFor: {
+        heading: "Вам не подойдёт эта практика, если вы…",
+        items: [
+          "ждёте, что кто-то изменит вашу жизнь за вас.",
+          "не готовы инвестировать в себя 15 минут в день.",
+          "не хотите менять свои привычки, но рассчитываете на другие результаты.",
+          "ищете мотивацию вместо системы.",
+          "считаете, что ваше состояние не влияет на качество ваших решений, бизнеса и жизни.",
+          "ищете только физическую нагрузку или фитнес.",
+          "уверены, что эффект практики зависит только от идеальной формы асаны.",
+          "хотите всё контролировать и не готовы проверить практику на собственном опыте.",
+          "ожидаете мгновенных результатов после нескольких занятий.",
+          "не готовы честно наблюдать за собой и своими привычными реакциями.",
+          "считаете, что ваши результаты зависят только от внешних обстоятельств."
         ]
       }
     },
+
+    /* ------------------------------- EN ------------------------------- */
     "en": {
-      nav: { trainers: "Trainers", how: "How it works" },
+      nav: { included: "What's included", trainers: "Trainers", benefits: "What you get", how: "Why it works" },
+      heroTitle: "15minYoga for entrepreneurs, executives, business owners and thought leaders — whose decisions carry people, projects, money and growth",
       howLink: "Why it works",
+      pains: {
+        heading: "Sound familiar?",
+        items: [
+          "Living in constant tension?",
+          "Losing focus because there are simply too many tasks?",
+          "Finding it hard to switch off from work and recover?",
+          "Struggling to see the strategic picture behind daily routine?",
+          "Unable to hold your concentration through the day?",
+          "Finding it hard to let go of control?"
+        ]
+      },
+      promise: {
+        text: "15 minutes of practice every morning — within the very first month it improves not only the state of your mind, but the quality of your everyday decisions."
+      },
+      included: {
+        heading: "What's included",
+        cards: [
+          { title: "Daily practice", body: "15 minutes every morning, Monday to Friday." },
+          { title: "Deep practice on Saturdays", body: "A longer session with technique explained and your questions answered." },
+          { title: "Recordings of every session", body: "Practise whenever it suits you and return to any session later." },
+          { title: "Private Telegram community", body: "Support, conversation, shared experience and answers to your questions." },
+          { title: "Networking with entrepreneurs and executives", body: "Meet people who are also building businesses and practising conscious leadership." }
+        ]
+      },
+      benefits: {
+        heading: "What you get",
+        items: [
+          "A calm and clear state of mind.",
+          "Release from the inner energetic blocks that shape your decisions.",
+          "The ability to recover from stress faster.",
+          "Precise, considered decisions without emotional swings.",
+          "Mental expansion — seeing more opportunities and more strategic options.",
+          "Inner steadiness, concentration and energy throughout the day."
+        ]
+      },
       trainers: {
         heading: "Trainers",
-        intro: "Every trainer is, first and foremost, an entrepreneur. When they began practicing this system of yoga, their results in business improved — and today they use this powerful tool both for their own growth and to help others.",
-        soon: "Meet the teachers — coming soon."
+        intro: "Every trainer is, first and foremost, an entrepreneur or team leader. When they began practising this system of yoga, their results in business improved — and today they use this powerful tool both for their own growth and to help others.",
+        name: "Olga",
+        role: "Founder and teacher"
       },
       how: {
-        heading: "How and why it works",
-        intro: [
-          "There's no magic here, only physics. The practice rests on a tradition more than a thousand years old.",
-          "The principle of this yoga is to guide the energy moving within the body into its proper course — an energy also known as the inner wind.",
-          "The winds and the mind move together as one (lung sem jukpa chikpa).",
-          "Translated into the language of life and business, it looks like this:"
-        ],
-        flow: "wind → emotions → decisions → actions → results",
-        beforeLabel: "Before tuning",
-        afterLabel: "After tuning",
-        winds: [
-          { name: "Vyana", subtitle: "the all-pervading wind", before: "When it's distorted, clinging, disappointment, and the fear of losing control arise. You avoid risk, hold on to the old, are afraid to change your strategy, and make defensive decisions.", after: "You begin to see the situation clearly and respond as it truly calls for." },
-          { name: "Apana", subtitle: "the descending wind", before: "You cling too tightly to the pleasant, can't bear the unpleasant, ignore the neutral, and live inside the eight thoughts (which ones — you'll discover in practice). You do only what you enjoy; you put off difficult conversations; you fear criticism; you chase praise; you worry about status. The result is instability in your business processes and in your life.", after: "You act not out of a craving for immediate pleasant sensations, but out of an understanding of what's happening — with strategic precision." },
-          { name: "Udana", subtitle: "the ascending wind", before: "You label things automatically: this is good, this is bad, I like this, I don't. And so you jump to conclusions, choose projects by emotion, misread situations and people's actions, and get your priorities wrong. That's why the result suffers.", after: "You gain the ability to see what is real and what is illusion, what is beneficial and what is harmful in the absolute sense. For an entrepreneur, that means better decisions." },
-          { name: "Samana", subtitle: "the balancing wind", before: "It's linked to envy, rivalry, and unease. You compare yourself to others — and your energy drains into competition while your results decline.", after: "The wisdom of accomplishment emerges: energy is directed toward creating rather than comparing. You gain the ability to act in different roles, create value for clients and team, and reach high results." },
-          { name: "Prana", subtitle: "the vital wind", before: "When it's distorted, you close off, resist, push away, and fear — and you stop seeing opportunities.", after: "Your mind becomes calm and open — and gives rise to solutions of an entirely new quality." }
+        heading: "Why it works",
+        paras: [
+          "The body holds a network of energy channels. The principal one is the central channel, which the yoga tradition associates with clarity, calm, high concentration and inner steadiness.",
+          "When we experience fear, irritation, greed, anxiety or excessive attachment, energy shifts into the side channels. This shows up not only in how we feel, but in the quality of our thinking: decisions become reactive rather than strategic.",
+          "The yoga of Lady Niguma is built so that through particular positions of the body, the breath and attention, we release tension where these channels are, so to speak, pinched. As a result, energy returns to the central channel more easily.",
+          "You don't need to change your beliefs or force yourself to think positively. First the energetic state of the body changes; with it the emotions come into balance, clarity appears, and the quality of your decisions changes naturally."
+        ]
+      },
+      deeper: {
+        heading: "Want to understand the method more deeply?",
+        body: "Learn more about the tradition of Lady Niguma, the five winds, and how this system explains the link between energy, emotion and thinking.",
+        cta: "Download the full description →"
+      },
+      notFor: {
+        heading: "This practice is not for you if you…",
+        items: [
+          "expect someone else to change your life for you.",
+          "aren't ready to invest 15 minutes a day in yourself.",
+          "don't want to change your habits but expect different results.",
+          "are looking for motivation instead of a system.",
+          "believe your state has no effect on the quality of your decisions, business and life.",
+          "are looking only for a physical workout or fitness.",
+          "are convinced the effect depends solely on a perfect asana shape.",
+          "want to control everything and won't test the practice through your own experience.",
+          "expect instant results after a handful of sessions.",
+          "aren't ready to observe yourself and your habitual reactions honestly.",
+          "believe your results depend only on external circumstances."
         ]
       }
     },
+
+    /* ------------------------------- DE ------------------------------- */
     "de": {
-      nav: { trainers: "Trainer", how: "Wie es funktioniert" },
-      howLink: "Warum es funktioniert",
+      nav: { included: "Inhalte", trainers: "Trainer", benefits: "Was Sie erhalten", how: "Warum es wirkt" },
+      heroTitle: "15minYoga für Unternehmer, Führungskräfte, Inhaber und Meinungsführer — von deren Entscheidungen Menschen, Projekte, Finanzen und Entwicklung abhängen",
+      howLink: "Warum es wirkt",
+      pains: {
+        heading: "Kommt Ihnen das bekannt vor?",
+        items: [
+          "Leben Sie in ständiger Anspannung?",
+          "Verlieren Sie oft den Fokus, weil es einfach zu viele Aufgaben gibt?",
+          "Fällt es Ihnen schwer, von der Arbeit abzuschalten und sich zu erholen?",
+          "Sehen Sie hinter der täglichen Routine das strategische Bild kaum noch?",
+          "Gelingt es Ihnen nicht, die Konzentration über den Tag zu halten?",
+          "Fällt es Ihnen schwer, Kontrolle loszulassen?"
+        ]
+      },
+      promise: {
+        text: "15 Minuten Praxis jeden Morgen — schon im ersten Monat verbessern sie nicht nur den Zustand Ihres Geistes, sondern auch die Qualität Ihrer täglichen Entscheidungen."
+      },
+      included: {
+        heading: "Was der Kurs umfasst",
+        cards: [
+          { title: "Tägliche Praxis", body: "15 Minuten jeden Morgen, Montag bis Freitag." },
+          { title: "Vertiefende Praxis samstags", body: "Eine längere Einheit mit Erklärung der Technik und Antworten auf Ihre Fragen." },
+          { title: "Aufzeichnungen aller Einheiten", body: "Üben Sie, wann es Ihnen passt, und kehren Sie jederzeit zur Praxis zurück." },
+          { title: "Geschlossene Telegram-Community", body: "Unterstützung, Austausch, geteilte Erfahrung und Antworten auf Ihre Fragen." },
+          { title: "Netzwerk aus Unternehmern und Führungskräften", body: "Lernen Sie Menschen kennen, die ebenfalls Unternehmen aufbauen und bewusste Führung praktizieren." }
+        ]
+      },
+      benefits: {
+        heading: "Was Sie erhalten",
+        items: [
+          "Einen ruhigen und klaren Geisteszustand.",
+          "Befreiung von inneren energetischen Blockaden, die Ihre Entscheidungen prägen.",
+          "Die Fähigkeit, sich schneller von Stress zu erholen.",
+          "Präzise, wohlüberlegte Entscheidungen ohne emotionale Schwankungen.",
+          "Mentale Erweiterung — mehr Möglichkeiten und strategische Optionen sehen.",
+          "Innere Stabilität, Konzentration und Energie über den ganzen Tag."
+        ]
+      },
       trainers: {
         heading: "Trainer",
-        intro: "Alle Trainer sind zuallererst selbst Unternehmer. Als sie begannen, dieses Yoga-System zu praktizieren, verbesserten sie ihre Ergebnisse im Business — und heute nutzen sie dieses kraftvolle Werkzeug sowohl für die eigene Entwicklung als auch, um anderen zu helfen.",
-        soon: "Die Vorstellung der Lehrer folgt in Kürze."
+        intro: "Alle Trainer sind zuallererst selbst Unternehmer oder Teamleiter. Als sie begannen, dieses Yoga-System zu praktizieren, verbesserten sie ihre Ergebnisse im Business — und heute nutzen sie dieses kraftvolle Werkzeug sowohl für die eigene Entwicklung als auch, um anderen zu helfen.",
+        name: "Olga",
+        role: "Gründerin und Lehrerin"
       },
       how: {
-        heading: "Wie und warum es funktioniert",
-        intro: [
-          "Hier ist keine Magie im Spiel, nur Physik. Die Praxis beruht auf einer Tradition, die über tausend Jahre alt ist.",
-          "Das Prinzip dieses Yoga besteht darin, die Energie, die sich in unserem Körper bewegt, in die richtige Bahn zu lenken; man nennt sie auch den inneren Wind.",
-          "Die Winde und der Geist bewegen sich gemeinsam, als ein Ganzes (lung sem jukpa chikpa).",
-          "Übersetzt in die Sprache des Lebens und des Business ergibt sich:"
-        ],
-        flow: "Wind → Emotionen → Entscheidungen → Handlungen → Ergebnisse",
-        beforeLabel: "Vor der Ausrichtung",
-        afterLabel: "Nach der Ausrichtung",
-        winds: [
-          { name: "Vyana", subtitle: "der alldurchdringende Wind", before: "Ist er verzerrt, entstehen Anhaftung, Enttäuschung und die Angst, die Kontrolle zu verlieren. Du meidest das Risiko, hältst am Alten fest, scheust dich, die Strategie zu ändern, und triffst defensive Entscheidungen.", after: "Du beginnst, die Situation klar zu sehen und angemessen zu reagieren." },
-          { name: "Apana", subtitle: "der absteigende Wind", before: "Du klammerst dich zu sehr an das Angenehme, kannst das Unangenehme nicht ertragen, ignorierst das Neutrale und lebst gefangen in den acht Gedanken (welchen, erfährst du in der Praxis). Du tust nur, was dir gefällt; schiebst schwierige Gespräche auf; fürchtest Kritik; jagst dem Lob nach; sorgst dich um deinen Status. Das Ergebnis: Instabilität in den Geschäftsprozessen und im Leben.", after: "Du handelst nicht aus dem Wunsch nach sofortigen angenehmen Empfindungen, sondern aus dem Verständnis des Geschehens heraus — strategisch richtig." },
-          { name: "Udana", subtitle: "der aufsteigende Wind", before: "Du klebst automatisch Etiketten auf: das ist gut, das ist schlecht, das gefällt, das nicht. Und dann ziehst du voreilige Schlüsse, wählst Projekte nach Emotionen, analysierst Situationen und das Handeln von Menschen falsch und setzt die falschen Prioritäten. Darunter leidet das Ergebnis.", after: "Es öffnet sich die Fähigkeit zu erkennen, was real ist und was Illusion; was im absoluten Sinne nützt und was schadet. Für einen Unternehmer bedeutet das bessere Entscheidungen." },
-          { name: "Samana", subtitle: "der ausgleichende Wind", before: "Er ist mit Neid, Rivalität und Unruhe verbunden. Du vergleichst dich mit anderen — und deine Energie fließt in den Wettbewerb, während die Ergebnisse sinken.", after: "Es entsteht die Weisheit des Erreichens: Die Energie richtet sich nicht auf den Vergleich, sondern auf das Erschaffen. Es entsteht die Fähigkeit, in verschiedenen Rollen zu handeln, Wert für Kunden und Team zu schaffen und hohe Ergebnisse zu erzielen." },
-          { name: "Prana", subtitle: "der Lebenswind", before: "Ist er verzerrt, verschließt du dich, leistest Widerstand, stößt ab und fürchtest dich — und siehst die Möglichkeiten nicht mehr.", after: "Dein Bewusstsein wird ruhig und offen — und bringt qualitativ neue Lösungen hervor." }
+        heading: "Warum es wirkt",
+        paras: [
+          "Im Körper existiert ein Netz von Energiekanälen. Der wichtigste davon ist der zentrale Kanal, den die Yoga-Tradition mit Klarheit, Ruhe, hoher Konzentration und innerer Stabilität verbindet.",
+          "Wenn wir Angst, Gereiztheit, Gier, Unruhe oder übermäßige Anhaftung erleben, verlagert sich die Energie in die Seitenkanäle. Das zeigt sich nicht nur im emotionalen Zustand, sondern auch in der Qualität des Denkens: Entscheidungen werden reaktiv statt strategisch.",
+          "Das Yoga von Lady Niguma ist so aufgebaut, dass wir durch bestimmte Körperhaltungen, den Atem und die Aufmerksamkeit Spannung dort lösen, wo diese Kanäle sozusagen „abgeklemmt“ sind. Dadurch kehrt die Energie leichter in den zentralen Kanal zurück.",
+          "Sie müssen weder Ihre Überzeugungen ändern noch sich zu positivem Denken zwingen. Zuerst verändert sich der energetische Zustand des Körpers; mit ihm kommen die Emotionen ins Gleichgewicht, Klarheit stellt sich ein und die Qualität Ihrer Entscheidungen verändert sich ganz natürlich."
+        ]
+      },
+      deeper: {
+        heading: "Möchten Sie die Methode tiefer verstehen?",
+        body: "Erfahren Sie mehr über die Tradition von Lady Niguma, die fünf Winde und darüber, wie dieses System den Zusammenhang von Energie, Emotion und Denken erklärt.",
+        cta: "Ausführliche Beschreibung herunterladen →"
+      },
+      notFor: {
+        heading: "Diese Praxis ist nichts für Sie, wenn Sie…",
+        items: [
+          "erwarten, dass jemand anderes Ihr Leben für Sie verändert.",
+          "nicht bereit sind, 15 Minuten am Tag in sich zu investieren.",
+          "Ihre Gewohnheiten nicht ändern wollen, aber andere Ergebnisse erwarten.",
+          "Motivation statt eines Systems suchen.",
+          "glauben, Ihr Zustand habe keinen Einfluss auf die Qualität Ihrer Entscheidungen, Ihres Geschäfts und Lebens.",
+          "nur nach körperlicher Belastung oder Fitness suchen.",
+          "überzeugt sind, die Wirkung hänge allein von der perfekten Form der Asana ab.",
+          "alles kontrollieren wollen und die Praxis nicht an der eigenen Erfahrung prüfen möchten.",
+          "sofortige Ergebnisse nach wenigen Einheiten erwarten.",
+          "nicht bereit sind, sich und Ihre gewohnten Reaktionen ehrlich zu beobachten.",
+          "glauben, Ihre Ergebnisse hingen allein von äußeren Umständen ab."
         ]
       }
     },
+
+    /* ------------------------------- UK ------------------------------- */
     "uk": {
-      nav: { trainers: "Тренери", how: "Як це працює" },
+      nav: { included: "Що входить", trainers: "Тренери", benefits: "Що ви отримаєте", how: "Чому це працює" },
+      heroTitle: "15minYoga для підприємців, керівників, власників бізнесу, лідерів думок, від чиїх рішень залежать люди, проєкти, гроші та розвиток",
       howLink: "Чому це працює",
+      pains: {
+        heading: "Знайомо?",
+        items: [
+          "Живете в постійному напруженні?",
+          "Часто втрачаєте фокус через велику кількість задач?",
+          "Вам буває складно переключитися з роботи й відновитися?",
+          "Вам важко бачити стратегічну картину за щоденною рутиною?",
+          "Не вдається втримати концентрацію протягом дня?",
+          "Вам складно відпустити контроль?"
+        ]
+      },
+      promise: {
+        text: "15 хвилин практики щоранку вже протягом першого місяця допоможуть покращити не лише стан вашого розуму, а й якість ваших щоденних рішень."
+      },
+      included: {
+        heading: "Що входить у курс",
+        cards: [
+          { title: "Щоденна практика", body: "15 хвилин щоранку з понеділка до п'ятниці." },
+          { title: "Глибока практика по суботах", body: "Довше заняття з поясненням техніки та відповідями на запитання." },
+          { title: "Записи всіх занять", body: "Можна займатися в зручний час і повертатися до практики." },
+          { title: "Закрита спільнота в Telegram", body: "Підтримка, спілкування, обмін досвідом, відповіді на запитання." },
+          { title: "Нетворкінг із підприємцями та керівниками", body: "Можливість познайомитися з людьми, які теж розвивають бізнес і усвідомлене лідерство." }
+        ]
+      },
+      benefits: {
+        heading: "Що ви отримаєте",
+        items: [
+          "Спокійний і ясний стан розуму.",
+          "Звільнення від внутрішніх енергетичних блоків, що впливають на рішення.",
+          "Здатність швидше відновлюватися після стресу.",
+          "Ухвалення точних і зважених рішень без емоційних гойдалок.",
+          "Ментальне розширення — здатність бачити більше можливостей і стратегічних рішень.",
+          "Внутрішню стійкість, концентрацію та енергію протягом дня."
+        ]
+      },
       trainers: {
         heading: "Тренери",
-        intro: "Усі тренери насамперед самі є підприємцями. Почавши практикувати цю систему йоги, вони покращили свої результати в бізнесі, а сьогодні використовують цей потужний інструмент як для власного розвитку, так і для допомоги іншим.",
-        soon: "Знайомство з викладачами — незабаром."
+        intro: "Усі тренери насамперед самі є підприємцями/лідерами команд. Почавши практикувати цю систему йоги, вони покращили свої результати в бізнесі, а сьогодні використовують цей потужний інструмент як для власного розвитку, так і для допомоги іншим.",
+        name: "Ольга",
+        role: "Засновниця та викладачка"
       },
       how: {
-        heading: "Як і чому це спрацює",
-        intro: [
-          "Тут немає магії, лише фізика. Практика заснована на традиції, якій понад тисячу років.",
-          "Принцип цієї йоги — спрямування у правильне русло енергії, що рухається всередині нашого тіла; її також називають внутрішнім вітром.",
-          "Вітри й розум рухаються разом, як одне ціле (lung sem jukpa chikpa).",
-          "Якщо перекласти це мовою життя та бізнесу, виходить:"
-        ],
-        flow: "вітер → емоції → рішення → дії → результати",
-        beforeLabel: "До налаштування",
-        afterLabel: "Після налаштування",
-        winds: [
-          { name: "Вʼяна", subtitle: "всепроникний вітер", before: "Якщо спотворений — народжуються чіпляння, розчарування і страх втратити контроль. Ти уникаєш ризику, тримаєшся за старе, боїшся змінювати стратегію і ухвалюєш оборонні рішення.", after: "Ти починаєш бачити ситуацію ясно і реагувати адекватно." },
-          { name: "Апана", subtitle: "низхідний вітер", before: "Ти надто чіпляєшся за приємне, не можеш витримати неприємне, ігноруєш нейтральне і живеш усередині восьми думок (яких — дізнаєшся на практиці). Робиш лише те, що подобається; відкладаєш складні розмови; боїшся критики; женешся за похвалою; переймаєшся через статус. Результат — нестабільність у бізнес-процесах і в житті.", after: "Ти дієш не з бажання негайно отримати приємні відчуття, а з розуміння того, що відбувається — стратегічно правильно." },
-          { name: "Удана", subtitle: "висхідний вітер", before: "Ти автоматично навішуєш ярлики: це добре, це погано, це подобається, це ні. І тоді робиш поспішні висновки, обираєш проєкти за емоціями, невірно аналізуєш ситуації та дії людей, помиляєшся у пріоритетах. Тому страждає результат.", after: "Відкривається вміння бачити, що реальне, а що ілюзія; що корисне, а що шкідливе в абсолютному сенсі. Для підприємця це означає кращі рішення." },
-          { name: "Самана", subtitle: "врівноважувальний вітер", before: "Пов'язаний із заздрістю, суперництвом і тривогою. Ти порівнюєш себе з іншими — і енергія йде на конкуренцію, а результати падають.", after: "З'являється мудрість досягнення: енергія спрямовується не на порівняння, а на творення. Виникає здатність діяти в різних ролях, створювати цінність для клієнтів і команди та досягати високих результатів." },
-          { name: "Прана", subtitle: "життєвий вітер", before: "Коли він спотворений, ти закриваєшся, чиниш опір, відштовхуєш і боїшся — і перестаєш бачити можливості.", after: "Твоя свідомість стає спокійною і відкритою — і народжує якісно нові рішення." }
+        heading: "Чому це працює",
+        paras: [
+          "У тілі існує мережа енергетичних каналів. Головний із них — центральний канал, який у традиції йоги пов'язують зі станами ясності, спокою, високої концентрації та внутрішньої стійкості.",
+          "Коли ми відчуваємо страх, роздратування, жадібність, тривогу чи надмірну прив'язаність, енергія зміщується в бічні канали. Це відображається не лише на емоційному стані, а й на якості мислення: рішення стають реактивними, а не стратегічними.",
+          "Практика йоги Леді Нігуми побудована так, що через певні положення тіла, дихання та увагу ми знімаємо напруження в місцях, де ці канали умовно «перетиснуті». У результаті енергія легше повертається до центрального каналу.",
+          "Вам не потрібно спеціально змінювати переконання або змушувати себе мислити позитивно. Спочатку змінюється енергетичний стан тіла, а разом із ним балансуються емоції, з'являється ясність і природним чином змінюється якість ухвалених рішень."
+        ]
+      },
+      deeper: {
+        heading: "Хочете зрозуміти метод глибше?",
+        body: "Дізнайтеся більше про традицію Леді Нігуми, п'ять вітрів і про те, як ця система пояснює зв'язок енергії, емоцій та мислення.",
+        cta: "Завантажити докладний опис →"
+      },
+      notFor: {
+        heading: "Вам не підійде ця практика, якщо ви…",
+        items: [
+          "чекаєте, що хтось змінить ваше життя за вас.",
+          "не готові інвестувати в себе 15 хвилин на день.",
+          "не хочете міняти свої звички, але розраховуєте на інші результати.",
+          "шукаєте мотивацію замість системи.",
+          "вважаєте, що ваш стан не впливає на якість ваших рішень, бізнесу та життя.",
+          "шукаєте лише фізичне навантаження або фітнес.",
+          "впевнені, що ефект практики залежить тільки від ідеальної форми асани.",
+          "хочете все контролювати й не готові перевірити практику на власному досвіді.",
+          "очікуєте миттєвих результатів після кількох занять.",
+          "не готові чесно спостерігати за собою та своїми звичними реакціями.",
+          "вважаєте, що ваші результати залежать лише від зовнішніх обставин."
         ]
       }
     }
   };
+
   Object.keys(ADD).forEach(function (lng) {
     if (!M[lng]) return;
     var a = ADD[lng];
+    M[lng].nav.included = a.nav.included;
     M[lng].nav.trainers = a.nav.trainers;
+    M[lng].nav.benefits = a.nav.benefits;
     M[lng].nav.how = a.nav.how;
+    M[lng].hero.title = a.heroTitle;
     M[lng].hero.howLink = a.howLink;
+    M[lng].pains = a.pains;
+    M[lng].promise = a.promise;
+    M[lng].included = a.included;
+    M[lng].benefits = a.benefits;      // заменяет прежние карточки на список
     M[lng].trainers = a.trainers;
     M[lng].how = a.how;
+    M[lng].deeper = a.deeper;
+    M[lng].notFor = a.notFor;
   });
-
-  /* синхронизация RU с ручными правками в index.html (тире в p1, список без точек) */
-  if (M.ru) {
-    M.ru.hero.p1 = "Если от ваших решений зависят люди, проекты, деньги и развитие бизнеса — вашему уму и энергии нужна ежедневная настройка.";
-    M.ru.forWho.items = ["Для предпринимателей", "Для руководителей", "Для собственников бизнеса", "Для лидеров мнений", "Для людей, которые несут ответственность не только за себя"];
-  }
 })(window.NIGUMA_I18N);

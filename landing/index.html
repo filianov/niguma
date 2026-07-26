@@ -41,10 +41,10 @@
       </a>
 
       <nav class="nav__links" aria-label="Основная навигация">
-        <a href="#for-who" data-i18n="nav.forWho">Для кого</a>
+        <a href="#included" data-i18n="nav.included">Что входит</a>
         <a href="#trainers" data-i18n="nav.trainers">Тренеры</a>
         <a href="#benefits" data-i18n="nav.benefits">Что вы получите</a>
-        <a href="#how" data-i18n="nav.how">Как это работает</a>
+        <a href="#how" data-i18n="nav.how">Почему это работает</a>
         <a href="#pricing" data-i18n="nav.pricing">Стоимость</a>
       </nav>
 
@@ -62,39 +62,57 @@
   </header>
 
   <main id="top">
-    <!-- ===================== HERO ===================== -->
+    <!-- ===================== HERO (photo backdrop) ===================== -->
     <section class="hero">
+      <div class="hero__media" aria-hidden="true">
+        <picture>
+          <source media="(max-width: 700px)" srcset="assets/photos/hero-bg-sm.jpg" />
+          <img src="assets/photos/hero-bg.jpg" alt="" fetchpriority="high" />
+        </picture>
+      </div>
       <div class="container hero__inner">
         <p class="hero__eyebrow" data-i18n="hero.subtitle">15 минут утром для активации энергии и масштабного влияния
         </p>
-        <h1 class="hero__title" data-i18n="hero.title">Йога для тех, кто принимает решения</h1>
-        <div class="hero__lead">
-          <p data-i18n="hero.p1">Если от ваших решений зависят люди, проекты, деньги и развитие бизнеса — вашему уму и
-            энергии нужна ежедневная настройка.</p>
-          <p data-i18n="hero.p3">С понедельника по пятницу в 7:00 мы практикуем аутентичную йогу Леди Нигумы — систему,
-            которая работает с внутренней энергией, вниманием и состоянием сознания.</p>
-        </div>
+        <h1 class="hero__title" data-i18n="hero.title">15minYoga для предпринимателей, руководителей, собственников
+          бизнеса, лидеров мнений, от чьих решений зависят люди, проекты, деньги и развитие</h1>
         <div class="hero__cta">
           <a class="btn btn--primary" data-cta="telegram" href="#" target="_blank" rel="noopener"
             data-i18n="hero.ctaPrimary">Начать в Telegram</a>
-          <a class="btn btn--ghost" data-cta="instagram" href="#" target="_blank" rel="noopener"
+          <a class="btn btn--ghost btn--onphoto" data-cta="instagram" href="#" target="_blank" rel="noopener"
             data-i18n="hero.ctaSecondary">Написать автору в Instagram</a>
         </div>
         <a class="hero__howlink" href="#how" data-i18n="hero.howLink">Почему это работает</a>
       </div>
     </section>
 
-    <!-- ===================== FOR WHO ===================== -->
-    <section class="section section--tight" id="for-who">
+    <!-- ===================== PAINS ===================== -->
+    <section class="section pains" id="pains">
       <div class="container">
-        <h2 class="section__title" data-i18n="forWho.heading">Для кого</h2>
-        <ul class="forwho" data-list="forWho.items">
-          <li>Для предпринимателей</li>
-          <li>Для руководителей</li>
-          <li>Для собственников бизнеса</li>
-          <li>Для лидеров мнений</li>
-          <li>Для людей, которые несут ответственность не только за себя</li>
+        <h2 class="pains__title" data-i18n="pains.heading">Знакомо?</h2>
+        <ul class="pains__list" data-list="pains.items">
+          <li>Живёте в постоянном напряжении?</li>
         </ul>
+      </div>
+    </section>
+
+    <!-- ===================== PROMISE ===================== -->
+    <section class="promise" id="promise">
+      <div class="promise__media" aria-hidden="true">
+        <img src="assets/photos/band-alps.jpg" alt="" loading="lazy" />
+      </div>
+      <div class="container promise__inner">
+        <p class="promise__text" data-i18n="promise.text">15 минут практики каждое утро уже в течение первого месяца
+          помогут улучшить не только состояние вашего ума, но и качество ваших ежедневных решений.</p>
+      </div>
+    </section>
+
+    <!-- ===================== WHAT'S INCLUDED ===================== -->
+    <section class="section" id="included">
+      <div class="container">
+        <h2 class="section__title" data-i18n="included.heading">Что входит в курс</h2>
+        <div class="cards" data-cards="included.cards">
+          <!-- rendered from translations -->
+        </div>
       </div>
     </section>
 
@@ -105,9 +123,16 @@
         <p class="section__lead" data-i18n="trainers.intro">Все тренеры прежде всего сами являются
           предпринимателями. Начав практиковать эту систему йоги, они улучшили свои результаты в бизнесе, а сегодня
           используют этот мощный инструмент как для собственного развития, так и для помощи другим.</p>
-        <div class="trainers__soon">
-          <div class="trainers__avatars" aria-hidden="true"><span></span><span></span><span></span></div>
-          <p data-i18n="trainers.soon">Знакомство с преподавателями — скоро.</p>
+        <div class="team">
+          <figure class="person">
+            <div class="person__photo">
+              <img src="assets/photos/olga.jpg" alt="Ольга — создатель проекта 15minYoga" loading="lazy" />
+            </div>
+            <figcaption class="person__cap">
+              <span class="person__name" data-i18n="trainers.name">Ольга</span>
+              <span class="person__role" data-i18n="trainers.role">Создатель проекта, преподаватель</span>
+            </figcaption>
+          </figure>
         </div>
       </div>
     </section>
@@ -116,26 +141,23 @@
     <section class="section" id="benefits">
       <div class="container">
         <h2 class="section__title" data-i18n="benefits.heading">Что вы получите</h2>
-        <div class="cards" data-cards="benefits.cards">
-          <!-- rendered from translations -->
+        <div class="benefits">
+          <ul class="benefits__list" data-list="benefits.items">
+            <li>Спокойное и ясное состояние ума.</li>
+          </ul>
+          <div class="benefits__photo">
+            <img src="assets/photos/accent-tree.jpg" alt="" loading="lazy" />
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- ===================== BONUS VIDEOS ===================== -->
-    <section class="section section--alt" id="bonus">
+    <!-- ===================== NOT FOR YOU ===================== -->
+    <section class="section section--alt" id="notfor">
       <div class="container">
-        <h2 class="section__title" data-i18n="bonus.heading">Дополнительные видео для углубления практики</h2>
-        <p class="section__lead" data-i18n="bonus.intro">Вы получите доступ к полезным видео о философии и принципах
-          йоги Нигумы, которые помогут усилить эффект практики и применять полученные знания в жизни и бизнесе.</p>
-        <ul class="taglist" data-list="bonus.items">
-          <li>связь энергии и мышления</li>
-          <li>влияние внутренних состояний на результаты</li>
-          <li>законы причины и следствия</li>
-          <li>этика как основа устойчивого успеха</li>
-          <li>работа с воображением и намерением</li>
-          <li>щедрость как причина процветания</li>
-          <li>практическое применение древней йоги в современной жизни</li>
+        <h2 class="section__title" data-i18n="notFor.heading">Вам не подойдёт эта практика, если вы…</h2>
+        <ul class="nf" data-notfor="notFor.items">
+          <!-- rendered from translations with custom pictograms -->
         </ul>
       </div>
     </section>
@@ -158,14 +180,16 @@
       </div>
     </section>
 
-    <!-- ===================== HOW & WHY ===================== -->
+    <!-- ===================== WHY IT WORKS ===================== -->
     <section class="section section--sage" id="how">
       <div class="container">
-        <h2 class="section__title" data-i18n="how.heading">Как и почему это сработает</h2>
-        <div class="how__intro prose" data-paras="how.intro"><!-- rendered from translations --></div>
-        <p class="how__flow" data-i18n="how.flow">ветер → эмоции → решения → действия → результаты</p>
-        <div class="winds" data-winds="how.winds" data-before="how.beforeLabel" data-after="how.afterLabel">
-          <!-- rendered from translations --></div>
+        <h2 class="section__title" data-i18n="how.heading">Почему это работает</h2>
+        <div class="why">
+          <div class="why__text" data-paras="how.paras"><!-- rendered from translations --></div>
+          <div class="why__photo">
+            <img src="assets/photos/accent-sunset.jpg" alt="" loading="lazy" />
+          </div>
+        </div>
       </div>
     </section>
 
@@ -189,6 +213,16 @@
         <div class="pricing__cta">
           <a class="btn btn--primary" data-cta="telegram" href="#" target="_blank" rel="noopener"
             data-i18n="cta.telegram">Открыть бота в Telegram</a>
+        </div>
+
+        <!-- Deep-dive PDF. Hidden until the file exists: main.js unhides it
+             automatically as soon as assets/docs/15minyoga-method.pdf is added. -->
+        <div class="deeper" id="deeper" hidden>
+          <h3 class="deeper__title" data-i18n="deeper.heading">Хотите понять метод глубже?</h3>
+          <p class="deeper__body" data-i18n="deeper.body">Узнайте больше о традиции Леди Нигумы, пяти ветрах и том, как
+            эта система объясняет связь энергии, эмоций и мышления.</p>
+          <a class="deeper__cta" id="deeperLink" href="assets/docs/15minyoga-method.pdf" download
+            data-i18n="deeper.cta">Скачать подробное описание →</a>
         </div>
       </div>
     </section>
@@ -253,6 +287,7 @@
     </div>
   </footer>
 
+  <script src="js/icons.js"></script>
   <script src="js/translations.js"></script>
   <script src="js/config.js"></script>
   <script src="js/i18n.js"></script>
