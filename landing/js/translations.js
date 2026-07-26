@@ -39,7 +39,7 @@ window.NIGUMA_I18N = {
       "items": ["связь энергии и мышления", "влияние внутренних состояний на результаты", "законы причины и следствия", "этика как основа устойчивого успеха", "работа с воображением и намерением", "щедрость как причина процветания", "практическое применение древней йоги в современной жизни"]
     },
     "format": {
-      "heading": "Формат участия", "days": "Будние дни", "time": "07:00–07:15", "tz": "по центральноевропейскому времени (Вена, CET/CEST)", "online": "Онлайн",
+      "heading": "Формат участия", "days": "Будние дни", "time": "07:00–07:15", "tz": "(GMT+2:00) Вена", "online": "Онлайн",
       "records": "Записи доступны участникам", "langLabel": "Языки сообщества", "langValue": "украинский, английский, немецкий и русский"
     },
     "pricing": {
@@ -94,7 +94,7 @@ window.NIGUMA_I18N = {
       "items": ["the connection between energy and thinking", "how inner states shape results", "the laws of cause and effect", "ethics as the foundation of lasting success", "working with imagination and intention", "generosity as a cause of prosperity", "applying ancient yoga in modern life"]
     },
     "format": {
-      "heading": "How participation works", "days": "Weekdays", "time": "07:00–07:15", "tz": "Central European Time (Vienna, CET/CEST)", "online": "Online",
+      "heading": "How participation works", "days": "Weekdays", "time": "07:00–07:15", "tz": "(GMT+2:00) Vienna", "online": "Online",
       "records": "Recordings available to participants", "langLabel": "Community languages", "langValue": "Ukrainian, English, German, and Russian"
     },
     "pricing": {
@@ -149,7 +149,7 @@ window.NIGUMA_I18N = {
       "items": ["der Zusammenhang von Energie und Denken", "der Einfluss innerer Zustände auf die Ergebnisse", "die Gesetze von Ursache und Wirkung", "Ethik als Grundlage nachhaltigen Erfolgs", "die Arbeit mit Vorstellungskraft und Absicht", "Großzügigkeit als Ursache des Wohlstands", "die praktische Anwendung des alten Yoga im modernen Leben"]
     },
     "format": {
-      "heading": "Format der Teilnahme", "days": "Werktage", "time": "07:00–07:15", "tz": "Mitteleuropäische Zeit (Wien, MEZ/MESZ)", "online": "Online",
+      "heading": "Format der Teilnahme", "days": "Werktage", "time": "07:00–07:15", "tz": "(GMT+2:00) Wien", "online": "Online",
       "records": "Aufzeichnungen für Teilnehmer verfügbar", "langLabel": "Sprachen der Community", "langValue": "Ukrainisch, Englisch, Deutsch und Russisch"
     },
     "pricing": {
@@ -204,7 +204,7 @@ window.NIGUMA_I18N = {
       "items": ["звʼязок енергії та мислення", "вплив внутрішніх станів на результати", "закони причини й наслідку", "етика як основа стійкого успіху", "робота з уявою та наміром", "щедрість як причина процвітання", "практичне застосування давньої йоги в сучасному житті"]
     },
     "format": {
-      "heading": "Формат участі", "days": "Будні дні", "time": "07:00–07:15", "tz": "за центральноєвропейським часом (Відень, CET/CEST)", "online": "Онлайн",
+      "heading": "Формат участі", "days": "Будні дні", "time": "07:00–07:15", "tz": "(GMT+2:00) Відень", "online": "Онлайн",
       "records": "Записи доступні учасникам", "langLabel": "Мови спільноти", "langValue": "українська, англійська, німецька та російська"
     },
     "pricing": {

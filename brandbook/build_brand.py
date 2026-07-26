@@ -226,6 +226,8 @@ def build_all():
     made.append(wordmark_only("logo-wordmark.svg", C["clay_deep"], C["ink"]))
     made.append(wordmark_only("logo-wordmark-mono-dark.svg", C["ink"], C["ink"]))
     made.append(wordmark_only("logo-wordmark-mono-light.svg", C["paper"], C["paper"]))
+    # for use on photography / dark grounds: sand "15" keeps the brand accent, rest reads white
+    made.append(wordmark_only("logo-wordmark-on-dark.svg", C["sand"], "#FFFFFF"))
 
     # ---------- 4. mark / icon ----------
     made.append(write("mark.svg", 64, 64, svg_mark(64)))
