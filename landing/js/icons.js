@@ -4,6 +4,10 @@
    Deliberately NOT emoji: each icon carries the meaning of its own line.
    =================================================================== */
 window.NIGUMA_ICONS = {
+  /* the single mark used across the "not for you" list —
+     a hand-drawn cross with slightly uneven arms, so it reads as brand, not as a system glyph */
+  cross: '<path d="M6.6 6.2 17.6 17.6"/><path d="M17.5 6.4 6.4 17.4"/>',
+
   /* 1 — waiting for someone to change your life: a magic wand */
   wand: '<path d="M4 20 13.5 10.5"/><path d="M17 3.5 17.9 6.1 20.5 7 17.9 7.9 17 10.5 16.1 7.9 13.5 7 16.1 6.1Z"/>',
 

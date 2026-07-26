@@ -71,10 +71,9 @@
         </picture>
       </div>
       <div class="container hero__inner">
-        <p class="hero__eyebrow" data-i18n="hero.subtitle">15 минут утром для активации энергии и масштабного влияния
-        </p>
-        <h1 class="hero__title" data-i18n="hero.title">15minYoga для предпринимателей, руководителей, собственников
-          бизнеса, лидеров мнений, от чьих решений зависят люди, проекты, деньги и развитие</h1>
+        <h1 class="hero__title" data-i18n="hero.title">15minYoga</h1>
+        <p class="hero__sub" data-i18n="hero.subtitle">для предпринимателей, руководителей, собственников бизнеса,
+          лидеров мнений, от чьих решений зависят люди, проекты, деньги и развитие</p>
         <div class="hero__cta">
           <a class="btn btn--primary" data-cta="telegram" href="#" target="_blank" rel="noopener"
             data-i18n="hero.ctaPrimary">Начать в Telegram</a>
@@ -88,10 +87,12 @@
     <!-- ===================== PAINS ===================== -->
     <section class="section pains" id="pains">
       <div class="container">
-        <h2 class="pains__title" data-i18n="pains.heading">Знакомо?</h2>
-        <ul class="pains__list" data-list="pains.items">
-          <li>Живёте в постоянном напряжении?</li>
-        </ul>
+        <div class="pains__panel">
+          <h2 class="pains__title" data-i18n="pains.heading">Знакомо?</h2>
+          <ul class="pains__list" data-list="pains.items">
+            <li>Живёте в постоянном напряжении?</li>
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -123,17 +124,6 @@
         <p class="section__lead" data-i18n="trainers.intro">Все тренеры прежде всего сами являются
           предпринимателями. Начав практиковать эту систему йоги, они улучшили свои результаты в бизнесе, а сегодня
           используют этот мощный инструмент как для собственного развития, так и для помощи другим.</p>
-        <div class="team">
-          <figure class="person">
-            <div class="person__photo">
-              <img src="assets/photos/olga.jpg" alt="Ольга — создатель проекта 15minYoga" loading="lazy" />
-            </div>
-            <figcaption class="person__cap">
-              <span class="person__name" data-i18n="trainers.name">Ольга</span>
-              <span class="person__role" data-i18n="trainers.role">Создатель проекта, преподаватель</span>
-            </figcaption>
-          </figure>
-        </div>
       </div>
     </section>
 
@@ -146,7 +136,7 @@
             <li>Спокойное и ясное состояние ума.</li>
           </ul>
           <div class="benefits__photo">
-            <img src="assets/photos/accent-tree.jpg" alt="" loading="lazy" />
+            <img src="assets/photos/olga.jpg" alt="" loading="lazy" />
           </div>
         </div>
       </div>
@@ -168,7 +158,10 @@
         <h2 class="section__title" data-i18n="format.heading">Формат участия</h2>
         <div class="format">
           <div class="format__row"><span class="format__k" data-i18n="format.days">Будние дни</span></div>
-          <div class="format__row"><span class="format__v format__time" data-i18n="format.time">07:00–07:15</span></div>
+          <div class="format__row">
+            <span class="format__v format__time" data-i18n="format.time">07:00–07:15</span>
+            <span class="format__tz" data-i18n="format.tz">по центральноевропейскому времени (Вена, CET/CEST)</span>
+          </div>
           <div class="format__row"><span class="format__k" data-i18n="format.online">Онлайн</span></div>
           <div class="format__row"><span class="format__k" data-i18n="format.records">Записи доступны участникам</span>
           </div>
@@ -229,6 +222,9 @@
 
     <!-- ===================== CLOSING / JOIN ===================== -->
     <section class="section closing" id="join">
+      <div class="closing__media" aria-hidden="true">
+        <img src="assets/photos/closing-bg.jpg" alt="" loading="lazy" />
+      </div>
       <div class="container closing__inner">
         <h2 class="closing__title" data-i18n="closing.heading">Если вам некогда заниматься йогой по часу в день</h2>
         <p class="closing__body" data-i18n="closing.body">Этот проект создан именно для вас. 15 минут, которые могут

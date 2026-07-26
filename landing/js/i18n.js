@@ -107,10 +107,9 @@
     document.querySelectorAll("[data-notfor]").forEach(function (el) {
       var arr = t(lang, el.getAttribute("data-notfor"));
       if (!Array.isArray(arr)) return;
-      var names = window.NIGUMA_NOTFOR_ICONS || [];
       var lib = window.NIGUMA_ICONS || {};
-      el.innerHTML = arr.map(function (s, i) {
-        var glyph = lib[names[i % names.length]] || "";
+      var glyph = lib.cross || "";
+      el.innerHTML = arr.map(function (s) {
         return '<li class="nf__item reveal">' +
                  '<span class="nf__icon" aria-hidden="true">' +
                    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" ' +

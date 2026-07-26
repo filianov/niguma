@@ -39,7 +39,7 @@ window.NIGUMA_I18N = {
       "items": ["связь энергии и мышления", "влияние внутренних состояний на результаты", "законы причины и следствия", "этика как основа устойчивого успеха", "работа с воображением и намерением", "щедрость как причина процветания", "практическое применение древней йоги в современной жизни"]
     },
     "format": {
-      "heading": "Формат участия", "days": "Будние дни", "time": "07:00–07:15", "online": "Онлайн",
+      "heading": "Формат участия", "days": "Будние дни", "time": "07:00–07:15", "tz": "по центральноевропейскому времени (Вена, CET/CEST)", "online": "Онлайн",
       "records": "Записи доступны участникам", "langLabel": "Языки сообщества", "langValue": "украинский, английский, немецкий и русский"
     },
     "pricing": {
@@ -94,7 +94,7 @@ window.NIGUMA_I18N = {
       "items": ["the connection between energy and thinking", "how inner states shape results", "the laws of cause and effect", "ethics as the foundation of lasting success", "working with imagination and intention", "generosity as a cause of prosperity", "applying ancient yoga in modern life"]
     },
     "format": {
-      "heading": "How participation works", "days": "Weekdays", "time": "07:00–07:15", "online": "Online",
+      "heading": "How participation works", "days": "Weekdays", "time": "07:00–07:15", "tz": "Central European Time (Vienna, CET/CEST)", "online": "Online",
       "records": "Recordings available to participants", "langLabel": "Community languages", "langValue": "Ukrainian, English, German, and Russian"
     },
     "pricing": {
@@ -149,7 +149,7 @@ window.NIGUMA_I18N = {
       "items": ["der Zusammenhang von Energie und Denken", "der Einfluss innerer Zustände auf die Ergebnisse", "die Gesetze von Ursache und Wirkung", "Ethik als Grundlage nachhaltigen Erfolgs", "die Arbeit mit Vorstellungskraft und Absicht", "Großzügigkeit als Ursache des Wohlstands", "die praktische Anwendung des alten Yoga im modernen Leben"]
     },
     "format": {
-      "heading": "Format der Teilnahme", "days": "Werktage", "time": "07:00–07:15", "online": "Online",
+      "heading": "Format der Teilnahme", "days": "Werktage", "time": "07:00–07:15", "tz": "Mitteleuropäische Zeit (Wien, MEZ/MESZ)", "online": "Online",
       "records": "Aufzeichnungen für Teilnehmer verfügbar", "langLabel": "Sprachen der Community", "langValue": "Ukrainisch, Englisch, Deutsch und Russisch"
     },
     "pricing": {
@@ -204,7 +204,7 @@ window.NIGUMA_I18N = {
       "items": ["звʼязок енергії та мислення", "вплив внутрішніх станів на результати", "закони причини й наслідку", "етика як основа стійкого успіху", "робота з уявою та наміром", "щедрість як причина процвітання", "практичне застосування давньої йоги в сучасному житті"]
     },
     "format": {
-      "heading": "Формат участі", "days": "Будні дні", "time": "07:00–07:15", "online": "Онлайн",
+      "heading": "Формат участі", "days": "Будні дні", "time": "07:00–07:15", "tz": "за центральноєвропейським часом (Відень, CET/CEST)", "online": "Онлайн",
       "records": "Записи доступні учасникам", "langLabel": "Мови спільноти", "langValue": "українська, англійська, німецька та російська"
     },
     "pricing": {
@@ -236,7 +236,8 @@ window.NIGUMA_I18N = {
     /* ------------------------------- RU ------------------------------- */
     "ru": {
       nav: { included: "Что входит", trainers: "Тренеры", benefits: "Что вы получите", how: "Почему это работает" },
-      heroTitle: "15minYoga для предпринимателей, руководителей, собственников бизнеса, лидеров мнений, от чьих решений зависят люди, проекты, деньги и развитие",
+      heroTitle: "15minYoga",
+      heroSub: "для предпринимателей, руководителей, собственников бизнеса, лидеров мнений, от чьих решений зависят люди, проекты, деньги и развитие",
       howLink: "Почему это работает",
       pains: {
         heading: "Знакомо?",
@@ -314,7 +315,8 @@ window.NIGUMA_I18N = {
     /* ------------------------------- EN ------------------------------- */
     "en": {
       nav: { included: "What's included", trainers: "Trainers", benefits: "What you get", how: "Why it works" },
-      heroTitle: "15minYoga for entrepreneurs, executives, business owners and thought leaders — whose decisions carry people, projects, money and growth",
+      heroTitle: "15minYoga",
+      heroSub: "for entrepreneurs, executives, business owners and thought leaders — whose decisions carry people, projects, money and growth",
       howLink: "Why it works",
       pains: {
         heading: "Sound familiar?",
@@ -392,7 +394,8 @@ window.NIGUMA_I18N = {
     /* ------------------------------- DE ------------------------------- */
     "de": {
       nav: { included: "Inhalte", trainers: "Trainer", benefits: "Was Sie erhalten", how: "Warum es wirkt" },
-      heroTitle: "15minYoga für Unternehmer, Führungskräfte, Inhaber und Meinungsführer — von deren Entscheidungen Menschen, Projekte, Finanzen und Entwicklung abhängen",
+      heroTitle: "15minYoga",
+      heroSub: "für Unternehmer, Führungskräfte, Inhaber und Meinungsführer — von deren Entscheidungen Menschen, Projekte, Finanzen und Entwicklung abhängen",
       howLink: "Warum es wirkt",
       pains: {
         heading: "Kommt Ihnen das bekannt vor?",
@@ -470,7 +473,8 @@ window.NIGUMA_I18N = {
     /* ------------------------------- UK ------------------------------- */
     "uk": {
       nav: { included: "Що входить", trainers: "Тренери", benefits: "Що ви отримаєте", how: "Чому це працює" },
-      heroTitle: "15minYoga для підприємців, керівників, власників бізнесу, лідерів думок, від чиїх рішень залежать люди, проєкти, гроші та розвиток",
+      heroTitle: "15minYoga",
+      heroSub: "для підприємців, керівників, власників бізнесу, лідерів думок, від чиїх рішень залежать люди, проєкти, гроші та розвиток",
       howLink: "Чому це працює",
       pains: {
         heading: "Знайомо?",
@@ -554,6 +558,7 @@ window.NIGUMA_I18N = {
     M[lng].nav.benefits = a.nav.benefits;
     M[lng].nav.how = a.nav.how;
     M[lng].hero.title = a.heroTitle;
+    M[lng].hero.subtitle = a.heroSub;
     M[lng].hero.howLink = a.howLink;
     M[lng].pains = a.pains;
     M[lng].promise = a.promise;
