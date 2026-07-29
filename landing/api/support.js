@@ -48,12 +48,12 @@ export default async function handler(req, res) {
     : wantsHuman
       ? "🔔 <b>Просят живого оператора</b>"
       : "💬 <b>Вопрос в чате на сайте</b>";
-  const msgId = await sendToOperator(
+  const msgIds = await sendToOperator(
     header + "\n\n" + escapeHtml(text) +
     "\n\n<i>сессия " + escapeHtml(sessionId) + " · " + lang + "</i>" +
     "\n↩️ Ответьте <b>реплаем</b> на это сообщение — посетитель увидит ответ в чате."
   );
-  if (msgId) await linkTelegramMessage(msgId, sessionId);
+  for (const id of msgIds) await linkTelegramMessage(id, sessionId);
 
   // диалог уже у человека — бот не вмешивается
   if (handedOver) {

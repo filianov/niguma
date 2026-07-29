@@ -53,14 +53,25 @@ export default async function handler(req, res) {
 
   let body = req.body;
   if (typeof body === "string") { try { body = JSON.parse(body); } catch (e) { body = {}; } }
-  const msg = body && body.message;
+
+  // Telegram кладёт сообщение в разные поля: личка и группы — message,
+  // канал — channel_post. Поддерживаем оба, чтобы «операторской» могли
+  // служить и личный чат, и рабочая группа, и канал.
+  const msg = body && (body.message || body.channel_post);
   if (!msg || !msg.text) return ok(res, "not_a_text_message");
 
   const text = String(msg.text).trim().slice(0, 2000);
   if (!text) return ok(res, "empty");
 
   const chatId = msg.chat && msg.chat.id;
-  const fromAdmin = isAdmin(msg.from && msg.from.id) || isAdmin(chatId);
+  const chatType = (msg.chat && msg.chat.type) || "private";
+
+  // «Свой» чат — тот, что указан в TELEGRAM_ADMIN_ID: личка, группа или канал.
+  // В канале поля from нет вовсе, поэтому опираемся на id чата.
+  const fromAdmin = isAdmin(chatId) || isAdmin(msg.from && msg.from.id);
+
+  // В группе и канале посторонних быть не может — там только команда.
+  const isTeamChat = chatType !== "private";
 
   /* ---------- 1-2. вы отвечаете реплаем ---------- */
   if (fromAdmin && msg.reply_to_message) {
@@ -87,14 +98,22 @@ export default async function handler(req, res) {
     return ok(res, "unknown_target");
   }
 
-  /* ---------- вы написали боту не реплаем ---------- */
+  /* ---------- свои переписываются, но не реплаем ---------- */
   if (fromAdmin) {
+    // В группе и канале команда обсуждает свои дела — вмешиваться нельзя,
+    // иначе бот засыпет рабочий чат подсказками. Молчим.
+    if (isTeamChat) return ok(res, "team_chat_chatter");
+
     await sendTelegram(chatId,
       "Это бот поддержки сайта.\n\n" +
       "Чтобы ответить человеку, нажмите на его сообщение → <b>Ответить</b> и напишите текст. " +
       "Обычные сообщения сюда никуда не уходят.");
     return ok(res, "admin_hint");
   }
+
+  /* ---------- бота добавили в постороннюю группу ---------- */
+  // Отвечать клиентскими репликами в чужом групповом чате не следует.
+  if (isTeamChat) return ok(res, "foreign_group_ignored");
 
   /* ---------- 3. человек пишет боту напрямую ---------- */
   const lang = langFromTelegram(msg.from && msg.from.language_code);
@@ -104,27 +123,27 @@ export default async function handler(req, res) {
   if (/^\/start\b/.test(text)) {
     await sendTelegram(chatId, escapeHtml(pack.answers.greeting || ""));
     const source = SOURCES[text.split(/\s+/)[1]] || "";
-    const note = await sendToOperator(
+    const notes = await sendToOperator(
       "👋 <b>Новый человек в боте</b>\n\n" +
       escapeHtml(nameOf(msg)) + "\n" +
       (source ? "пришёл " + source + " · " : "") + "<i>язык " + lang + "</i>" +
       "\n↩️ Ответьте <b>реплаем</b> — человек получит сообщение в Telegram."
     );
-    if (note && chatId) await linkTelegramDirect(note, chatId);
+    for (const id of notes) if (chatId) await linkTelegramDirect(id, chatId);
     return ok(res, "greeted");
   }
 
   const found = await answer(text, lang);
   await sendTelegram(chatId, escapeHtml(found.reply));
 
-  const note = await sendToOperator(
+  const notes = await sendToOperator(
     (found.wantsHuman ? "🔔 <b>Просят человека — в Telegram</b>" : "💬 <b>Вопрос в Telegram-боте</b>") +
     "\n\n" + escapeHtml(text) +
     "\n\n" + escapeHtml(nameOf(msg)) + " · <i>язык " + lang + "</i>" +
     "\n↩️ Ответьте <b>реплаем</b> — человек получит сообщение в Telegram." +
     (kvEnabled ? "" : "\n⚠️ Хранилище не подключено: ответ реплаем не дойдёт, напишите человеку сами.")
   );
-  if (note && chatId) await linkTelegramDirect(note, chatId);
+  for (const id of notes) if (chatId) await linkTelegramDirect(id, chatId);
 
   return ok(res, found.wantsHuman ? "handover" : "answered");
 }

@@ -118,10 +118,20 @@ export async function sendTelegram(chatId, text, replyTo) {
   }
 }
 
-/** Отправить оператору. Возвращает message_id — по нему ловим ответ реплаем. */
+/**
+ * Отправить операторам. TELEGRAM_ADMIN_ID может содержать несколько адресов через
+ * запятую — личный чат, рабочую группу, канал поддержки. Уведомление уходит в каждый,
+ * поэтому возвращаем МАССИВ message_id: ответить реплаем можно из любого чата,
+ * и каждое сообщение нужно связать с диалогом посетителя.
+ */
 export async function sendToOperator(text) {
-  if (!telegramEnabled) return null;
-  return await sendTelegram(TG_ADMIN, text);
+  if (!telegramEnabled) return [];
+  const ids = [];
+  for (const chat of adminIds()) {
+    const id = await sendTelegram(chat, text);
+    if (id) ids.push(id);
+  }
+  return ids;
 }
 
 /** Все администраторы (TELEGRAM_ADMIN_ID может содержать несколько id через запятую). */
