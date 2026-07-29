@@ -168,7 +168,9 @@
       "isPrimaryComms": true,
       "supportBotUsername": "yoga15min_chat_bot",
       "supportBotUrl": "https://t.me/yoga15min_chat_bot",
-      "clientEntryPoint": "support"
+      "clientEntryPoint": "support",
+      "communityChatUrl": "https://t.me/+uQ3IIV-1ZBFmZGEy",
+      "communityChatNote": "Бесплатный чат для новичков — точка входа с сайта: кнопки «Присоединиться» и «Начать в Telegram». Ссылка-приглашение: закрыть доступ можно только пересозданием ссылки в настройках чата."
     },
     "email": {
       "address": "15minyoga.com@gmail.com",

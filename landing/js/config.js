@@ -11,6 +11,12 @@ window.NIGUMA_CONFIG = {
   telegram:        "https://t.me/yoga15min_chat_bot?start=lead_landing",
   telegramChannel: "https://t.me/yoga15min",
 
+  // Бесплатный чат для новичков — первый шаг для человека с сайта.
+  // Сюда ведут «Присоединиться» и «Начать в Telegram»: там живое общение,
+  // а не диалог с ботом. Ссылка-приглашение; чтобы закрыть доступ,
+  // её нужно пересоздать в настройках чата — правки здесь недостаточно.
+  community:       "https://t.me/+uQ3IIV-1ZBFmZGEy",
+
   // Instagram — primary human support (author writes back directly)
   instagram:       "https://ig.me/m/15minyoga",
 
