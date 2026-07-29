@@ -78,7 +78,7 @@ export default async function handler(req, res) {
     const repliedTo = msg.reply_to_message.message_id;
 
     // ответ посетителю сайта
-    const sessionId = await sessionByTelegramMessage(repliedTo);
+    const sessionId = await sessionByTelegramMessage(chatId, repliedTo);
     if (sessionId) {
       await setHandover(sessionId, true);      // дальше говорит человек
       await pushMessage(sessionId, "operator", text);
@@ -86,7 +86,7 @@ export default async function handler(req, res) {
     }
 
     // ответ человеку, который написал боту в Telegram
-    const targetChat = await chatByTelegramMessage(repliedTo);
+    const targetChat = await chatByTelegramMessage(chatId, repliedTo);
     if (targetChat) {
       await sendTelegram(targetChat, escapeHtml(text));
       return ok(res, "delivered_to_telegram");
@@ -129,7 +129,7 @@ export default async function handler(req, res) {
       (source ? "пришёл " + source + " · " : "") + "<i>язык " + lang + "</i>" +
       "\n↩️ Ответьте <b>реплаем</b> — человек получит сообщение в Telegram."
     );
-    for (const id of notes) if (chatId) await linkTelegramDirect(id, chatId);
+    for (const n of notes) if (chatId) await linkTelegramDirect(n.chat, n.id, chatId);
     return ok(res, "greeted");
   }
 
@@ -143,7 +143,7 @@ export default async function handler(req, res) {
     "\n↩️ Ответьте <b>реплаем</b> — человек получит сообщение в Telegram." +
     (kvEnabled ? "" : "\n⚠️ Хранилище не подключено: ответ реплаем не дойдёт, напишите человеку сами.")
   );
-  for (const id of notes) if (chatId) await linkTelegramDirect(id, chatId);
+  for (const n of notes) if (chatId) await linkTelegramDirect(n.chat, n.id, chatId);
 
   return ok(res, found.wantsHuman ? "handover" : "answered");
 }

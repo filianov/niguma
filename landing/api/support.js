@@ -53,7 +53,7 @@ export default async function handler(req, res) {
     "\n\n<i>сессия " + escapeHtml(sessionId) + " · " + lang + "</i>" +
     "\n↩️ Ответьте <b>реплаем</b> на это сообщение — посетитель увидит ответ в чате."
   );
-  for (const id of msgIds) await linkTelegramMessage(id, sessionId);
+  for (const m of msgIds) await linkTelegramMessage(m.chat, m.id, sessionId);
 
   // диалог уже у человека — бот не вмешивается
   if (handedOver) {

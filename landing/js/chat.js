@@ -23,6 +23,7 @@
     lang: "ru",
     handover: false,
     seen: 0,          // сколько сообщений уже показано (для поллинга)
+    shown: {},        // отметки показанных ответов оператора — защита от повтора
     polling: null,
     busy: false
   };
@@ -194,10 +195,12 @@
           state.handover = true;
           add("bot", d.reply);
           addSystem(ui("operatorCalled"));
-          startPolling(d.canReceiveOperator !== false);
         } else if (d.reply) {
           add("bot", d.reply);
         }
+        // Слушаем ответы оператора ВСЕГДА, а не только после передачи диалога:
+        // вы можете вмешаться в любой момент, даже если бот справлялся сам.
+        startPolling(d.canReceiveOperator !== false);
         if (d.canReceiveOperator === false && state.handover) {
           // ответ оператора в чат вернуться не сможет — уводим в Telegram
           add("bot", ui("toTelegram"), { telegram: true });
@@ -212,24 +215,32 @@
   }
 
   /* ------------------------- ответы оператора ------------------------- */
+  function poll() {
+    return fetch("/api/support-messages?sessionId=" + encodeURIComponent(state.sessionId) + "&from=" + state.seen)
+      .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
+      .then(function (d) {
+        if (d.disabled) { stopPolling(); return; }
+        state.seen = d.total || state.seen;
+        (d.messages || []).forEach(function (m) {
+          if (m.role !== "operator") return;
+          // Страховка от повтора: при сбое сети или гонке индексов сервер может
+          // отдать то же сообщение дважды — показывать его дважды нельзя.
+          var mark = String(m.ts || "") + "|" + m.text;
+          if (state.shown[mark]) return;
+          state.shown[mark] = true;
+
+          if (!state.operatorSeen) { addSystem(ui("operatorJoined")); state.operatorSeen = true; }
+          add("operator", m.text);
+          notify();
+        });
+      })
+      .catch(function () { /* сеть моргнула — попробуем на следующем тике */ });
+  }
+
   function startPolling(enabled) {
     if (!enabled || state.polling || !state.sessionId) return;
-    state.polling = setInterval(function () {
-      fetch("/api/support-messages?sessionId=" + encodeURIComponent(state.sessionId) + "&from=" + state.seen)
-        .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
-        .then(function (d) {
-          if (d.disabled) { stopPolling(); return; }
-          state.seen = d.total || state.seen;
-          (d.messages || []).forEach(function (m) {
-            if (m.role === "operator") {
-              if (!state.operatorSeen) { addSystem(ui("operatorJoined")); state.operatorSeen = true; }
-              add("operator", m.text);
-              notify();
-            }
-          });
-        })
-        .catch(function () { /* сеть моргнула — попробуем на следующем тике */ });
-    }, 5000);
+    poll();                                   // сразу, а не через 5 секунд:
+    state.polling = setInterval(poll, 5000);  // вернулись во вкладку — ответ виден мгновенно
   }
 
   function stopPolling() {
@@ -251,7 +262,8 @@
     if (!el.log.children.length) {
       if (!restoreHistory()) add("bot", pack().answers.greeting || "");
     }
-    if (state.handover) startPolling(true);
+    // Вернулись во вкладку — снова слушаем: вы могли ответить, пока чат был закрыт.
+    if (state.sessionId) startPolling(true);
   }
 
   function close() {

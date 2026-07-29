@@ -73,14 +73,20 @@ export async function getSessionMeta(sessionId) {
 
 /**
  * Связь «сообщение оператору в Telegram» → «сессия на сайте».
- * Оператор отвечает реплаем, webhook по id исходного сообщения находит сессию.
+ * Оператор отвечает реплаем, webhook по нему находит сессию.
+ *
+ * ВАЖНО: message_id уникален только В ПРЕДЕЛАХ ЧАТА. Уведомление уходит в несколько
+ * чатов (личка, вторая личка, канал), и там номера идут своими счётчиками — без id чата
+ * в ключе ответ Ольги мог бы попасть в диалог, открытый через сообщение Павла.
  */
-export async function linkTelegramMessage(messageId, sessionId) {
-  await kv(["SETEX", "tg:msg:" + messageId, String(TTL), sessionId]);
+const linkKey = (chatId, messageId) => "tg:msg:" + chatId + ":" + messageId;
+
+export async function linkTelegramMessage(chatId, messageId, sessionId) {
+  await kv(["SETEX", linkKey(chatId, messageId), String(TTL), sessionId]);
 }
 
-export async function sessionByTelegramMessage(messageId) {
-  return await kv(["GET", "tg:msg:" + messageId]);
+export async function sessionByTelegramMessage(chatId, messageId) {
+  return await kv(["GET", linkKey(chatId, messageId)]);
 }
 
 /* ----------------------------- Telegram ----------------------------- */
@@ -132,12 +138,12 @@ export async function sendTelegram(chatId, text, replyTo) {
  */
 export async function sendToOperator(text) {
   if (!telegramEnabled) return [];
-  const ids = [];
+  const sent = [];
   for (const chat of adminIds()) {
     const id = await sendTelegram(chat, text);
-    if (id) ids.push(id);
+    if (id) sent.push({ chat: String(chat), id });
   }
-  return ids;
+  return sent;
 }
 
 /** Все администраторы (TELEGRAM_ADMIN_ID может содержать несколько id через запятую). */
@@ -153,12 +159,12 @@ export function isAdmin(chatId) {
  * Связь «уведомление о письме из Telegram» → «чат клиента в Telegram».
  * Нужна, чтобы вы могли ответить реплаем человеку, который пишет боту напрямую.
  */
-export async function linkTelegramDirect(messageId, chatId) {
-  await kv(["SETEX", "tg:dm:" + messageId, String(TTL), String(chatId)]);
+export async function linkTelegramDirect(operatorChatId, messageId, clientChatId) {
+  await kv(["SETEX", "tg:dm:" + operatorChatId + ":" + messageId, String(TTL), String(clientChatId)]);
 }
 
-export async function chatByTelegramMessage(messageId) {
-  return await kv(["GET", "tg:dm:" + messageId]);
+export async function chatByTelegramMessage(operatorChatId, messageId) {
+  return await kv(["GET", "tg:dm:" + operatorChatId + ":" + messageId]);
 }
 
 /** Короткий безопасный идентификатор сессии. */
