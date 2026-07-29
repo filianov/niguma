@@ -25,12 +25,22 @@ async function tg(method, params) {
   }
 }
 
-/** Человеческое объяснение самых частых ошибок Telegram. */
-function explain(description) {
+/**
+ * Человеческое объяснение самых частых ошибок Telegram.
+ * `id` важен: у одной и той же ошибки «chat not found» разные причины для
+ * личного аккаунта (человек не нажимал Start) и для канала (неверный ID или бота нет в чате).
+ */
+function explain(description, id) {
   const d = String(description || "").toLowerCase();
+  const личный = !String(id || "").startsWith("-");
+
   if (d.includes("chat not found")) {
-    return "Чат не найден. Либо ID указан неверно (для канала он начинается с -100), " +
-           "либо бот в этот чат не добавлен.";
+    return личный
+      ? "Это личный аккаунт, и он ни разу не открывал бота. Telegram запрещает боту " +
+        "писать первым — попросите этого человека зайти в бота и нажать Start. " +
+        "(Если вы хотели указать канал: его ID начинается с -100, например -1004320772129.)"
+      : "Чат не найден. Либо ID указан неверно (у канала он начинается с -100), " +
+        "либо бот в этот чат не добавлен.";
   }
   if (d.includes("not enough rights") || d.includes("need administrator")) {
     return "Бот в чате есть, но не хватает прав. Сделайте его администратором " +
@@ -90,7 +100,7 @@ export default async function handler(req, res) {
     if (!chat.ok) {
       entry.статус = "НЕДОСТУПЕН";
       entry.ошибка = chat.description;
-      entry.что_делать = explain(chat.description) || "См. текст ошибки выше.";
+      entry.что_делать = explain(chat.description, id) || "См. текст ошибки выше.";
       out.адреса_уведомлений.push(entry);
       continue;
     }
@@ -110,7 +120,7 @@ export default async function handler(req, res) {
     } else {
       entry.статус = "НЕ ПИШЕТ";
       entry.ошибка = probe.description;
-      entry.что_делать = explain(probe.description) || "См. текст ошибки выше.";
+      entry.что_делать = explain(probe.description, id) || "См. текст ошибки выше.";
     }
     out.адреса_уведомлений.push(entry);
   }
