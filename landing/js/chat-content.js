@@ -16,7 +16,7 @@ window.NIGUMA_CHAT = {
       "health": "Я не даю рекомендаций по здоровью — такие вопросы лучше обсудить лично с преподавателем. Передам ваш вопрос человеку, и вам ответят здесь, в чате.",
       "refund": "Этот вопрос решается лично — передам его человеку, и вам ответят здесь. А чтобы заранее понять, подходит ли вам практика, можно бесплатно прийти на одну утреннюю встречу до оплаты.",
       "start": "Напишите боту в Telegram t.me/yoga15min_chat_bot — он отвечает на вопросы, присылает реквизиты и напоминания. Новые группы стартуют по понедельникам.",
-      "operator": "Уже передаю ваш вопрос человеку — Ольга ответит вам здесь, в этом чате. Если удобнее, можно написать в Telegram t.me/yoga15min_chat_bot или в Instagram @15minyoga.",
+      "operator": "Уже передаю ваш вопрос человеку — Ольга ответит вам здесь, в этом чате. Если удобнее, можно написать в Telegram t.me/yoga15min_chat_bot или в Instagram @olga_filianova.",
       "fallback": "Кажется, вопрос мне не до конца понятен. Сформулируйте, пожалуйста, иначе — или я передам его человеку, и вам ответят здесь."
     },
     "keywords": {
@@ -257,7 +257,7 @@ window.NIGUMA_CHAT = {
       "health": "I'm not able to advise on health questions, and this really is better discussed personally with the teacher. Shall I pass your question to a human? Olha will reply to you here.",
       "refund": "I'd rather not answer this from a script — such things are handled personally. Let me pass you to a person who can give you a clear answer.",
       "start": "Start with our Telegram bot t.me/yoga15min_chat_bot — it answers questions, sends payment details and reminders. New groups begin on Mondays, and you can join one morning session for free first.",
-      "operator": "I've passed your question on to a person. Someone from the team will reply here shortly — you can also reach us in Telegram t.me/yoga15min_chat_bot or on Instagram @15minyoga.",
+      "operator": "I've passed your question on to a person. Someone from the team will reply here shortly — you can also reach us in Telegram t.me/yoga15min_chat_bot or on Instagram @olga_filianova.",
       "fallback": "I'm not sure I understood that correctly, and I'd rather not guess. Let me pass you to a person — they will answer you right here in the chat."
     },
     "keywords": {

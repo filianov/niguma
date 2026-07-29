@@ -154,8 +154,9 @@
   "social": {
     "instagram": {
       "handle": "15minyoga",
-      "url": "https://instagram.com/15minyoga",
-      "isPrimarySupport": true
+      "url": "https://www.instagram.com/olga_filianova",
+      "isPrimarySupport": true,
+      "note": "Временно личный профиль Ольги — отдельный аккаунт проекта ещё не оформлен. После создания заменить здесь и в landing/js/config.js."
     },
     "facebook": {
       "url": "https://facebook.com/15minyoga"
@@ -182,7 +183,7 @@
   },
   "support": {
     "primaryChannel": "instagram",
-    "instagramDM": "https://ig.me/m/15minyoga",
+    "instagramDM": "https://www.instagram.com/olga_filianova",
     "botFirstClient": "https://t.me/yoga15min_chat_bot?start=lead_landing",
     "escalationToAuthor": "https://ig.me/m/15minyoga"
   },

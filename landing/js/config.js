@@ -17,8 +17,10 @@ window.NIGUMA_CONFIG = {
   // её нужно пересоздать в настройках чата — правки здесь недостаточно.
   community:       "https://t.me/+uQ3IIV-1ZBFmZGEy",
 
-  // Instagram — primary human support (author writes back directly)
-  instagram:       "https://ig.me/m/15minyoga",
+  // Instagram — здесь отвечает автор лично.
+  // Временно ведём на личный профиль Ольги: отдельный аккаунт проекта ещё не оформлен.
+  // Метку ?igsh= намеренно не храним — это трекер Instagram, ссылка работает без неё.
+  instagram:       "https://www.instagram.com/olga_filianova",
 
   // Other socials
   facebook:        "https://facebook.com/15minyoga",
