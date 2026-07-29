@@ -31,6 +31,13 @@ import { answer, packFor, langFromTelegram } from "./_answer.js";
 
 const ok = (res, note) => res.status(200).json({ ok: true, note });
 
+/** Откуда человек перешёл — параметр после /start в ссылке. */
+const SOURCES = {
+  lead_landing: "с сайта",
+  lead_form: "из формы подписки",
+  lead_chat: "из чата на сайте",
+};
+
 export default async function handler(req, res) {
   if (req.method !== "POST") {
     res.setHeader("Allow", "POST");
@@ -96,10 +103,11 @@ export default async function handler(req, res) {
   // /start — приветствие из того же словаря, что и на сайте
   if (/^\/start\b/.test(text)) {
     await sendTelegram(chatId, escapeHtml(pack.answers.greeting || ""));
+    const source = SOURCES[text.split(/\s+/)[1]] || "";
     const note = await sendToOperator(
       "👋 <b>Новый человек в боте</b>\n\n" +
       escapeHtml(nameOf(msg)) + "\n" +
-      "<i>язык " + lang + "</i>" +
+      (source ? "пришёл " + source + " · " : "") + "<i>язык " + lang + "</i>" +
       "\n↩️ Ответьте <b>реплаем</b> — человек получит сообщение в Telegram."
     );
     if (note && chatId) await linkTelegramDirect(note, chatId);

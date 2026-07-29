@@ -165,7 +165,10 @@
       "botUsername": "yoga15min_bot",
       "botUrl": "https://t.me/yoga15min_bot",
       "botDeepLinkParam": "src",
-      "isPrimaryComms": true
+      "isPrimaryComms": true,
+      "supportBotUsername": "yoga15min_chat_bot",
+      "supportBotUrl": "https://t.me/yoga15min_chat_bot",
+      "clientEntryPoint": "support"
     },
     "email": {
       "address": "15minyoga.com@gmail.com",
@@ -178,7 +181,7 @@
   "support": {
     "primaryChannel": "instagram",
     "instagramDM": "https://ig.me/m/15minyoga",
-    "botFirstClient": "https://t.me/yoga15min_bot?start=lead_landing",
+    "botFirstClient": "https://t.me/yoga15min_chat_bot?start=lead_landing",
     "escalationToAuthor": "https://ig.me/m/15minyoga"
   },
   "funnel": {

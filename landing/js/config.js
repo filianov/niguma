@@ -6,7 +6,9 @@
 window.NIGUMA_CONFIG = {
   // Telegram bot — main entry point / first client + funnel
   // NB: Telegram usernames cannot start with a digit → "yoga15min_bot", not "15minyoga_bot".
-  telegram:        "https://t.me/yoga15min_bot?start=lead_landing",
+  // Пока главный бот не запущен на Railway, весь трафик идёт на бота поддержки:
+  // он отвечает на вопросы и зовёт человека. Вернуть на главного — заменить здесь на yoga15min_bot.
+  telegram:        "https://t.me/yoga15min_chat_bot?start=lead_landing",
   telegramChannel: "https://t.me/yoga15min",
 
   // Instagram — primary human support (author writes back directly)
