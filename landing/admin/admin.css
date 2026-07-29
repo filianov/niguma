@@ -1,0 +1,111 @@
+/* ===================================================================
+   Кабинет менеджера. Оформление намеренно спокойное: это рабочий стол,
+   а не витрина — важнее плотность информации и читаемость цифр.
+   Палитра и шрифты наследуются от сайта (css/styles.css).
+   =================================================================== */
+
+.adm { background: var(--paper); min-height: 100vh; }
+
+/* ------------------------------- вход ------------------------------- */
+.adm__gate { min-height: 100vh; display: grid; place-items: center; padding: 24px; }
+.adm__login { width: min(100%, 380px); display: flex; flex-direction: column; gap: 12px;
+  background: #fff; border: 1px solid var(--line); border-radius: 18px; padding: 28px 24px; }
+.adm__login h1 { font-family: var(--font-display); font-size: 24px; margin: 0; }
+.adm__hint { color: var(--olive); font-size: 14px; margin: 0 0 4px; }
+.adm__login input { padding: 12px 14px; border: 1px solid var(--line); border-radius: 12px; font-size: 15px; }
+.adm__login input:focus { outline: none; border-color: var(--olive); }
+.adm__error { color: var(--clay-deep); font-size: 14px; margin: 0; }
+
+/* ------------------------------ шапка ------------------------------ */
+.adm__top { display: flex; align-items: center; gap: 18px; flex-wrap: wrap;
+  padding: 14px 22px; background: #fff; border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 10; }
+.adm__brand { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--olive); }
+.adm__brand img { height: 24px; }
+.adm__nav { display: flex; gap: 6px; flex-wrap: wrap; margin-left: auto; }
+.adm__tab { border: 1px solid transparent; background: none; padding: 8px 14px; border-radius: 999px;
+  font: inherit; font-size: 14px; color: var(--ink-soft); cursor: pointer; }
+.adm__tab:hover { background: var(--cream); }
+.adm__tab[aria-current="true"] { background: var(--olive); color: var(--paper); }
+.adm__tab b { font-weight: 600; margin-left: 4px; }
+.adm__logout { border: 1px solid var(--line); background: none; padding: 8px 14px; border-radius: 999px;
+  font: inherit; font-size: 14px; color: var(--olive); cursor: pointer; }
+
+/* ------------------------------ сводка ------------------------------ */
+.adm__stats { display: flex; gap: 10px; flex-wrap: wrap; padding: 16px 22px 0; }
+.adm__stat { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 12px 16px; min-width: 130px; }
+.adm__stat b { display: block; font-family: var(--font-display); font-size: 24px; line-height: 1.1; }
+.adm__stat span { font-size: 12.5px; color: var(--olive); }
+.adm__stat--warn b { color: var(--clay-deep); }
+
+/* ------------------------------ панели ------------------------------ */
+.adm__main { padding: 18px 22px 60px; }
+.adm__pane-head { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-bottom: 12px; }
+.adm__pane-head h2 { font-family: var(--font-display); font-size: 22px; margin: 0; }
+.adm__pane-head input[type="search"] { margin-left: auto; padding: 9px 13px; border: 1px solid var(--line);
+  border-radius: 12px; font: inherit; font-size: 14px; min-width: 240px; }
+.adm__note { color: var(--olive); font-size: 14px; margin: 0 0 14px; max-width: 70ch; }
+
+.adm__list { display: flex; flex-direction: column; gap: 10px; }
+.adm__empty { color: var(--olive); font-size: 15px; padding: 22px; background: #fff;
+  border: 1px dashed var(--line); border-radius: 14px; text-align: center; }
+
+/* --------------------------- карточка строки --------------------------- */
+.adm__row { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px;
+  display: flex; gap: 16px; align-items: flex-start; flex-wrap: wrap; }
+.adm__row--overdue { border-color: var(--clay); background: #fdf6f2; }
+.adm__row-main { flex: 1 1 260px; min-width: 0; }
+.adm__row-name { font-weight: 600; font-size: 16px; }
+.adm__row-sub { color: var(--olive); font-size: 13.5px; margin-top: 3px; word-break: break-word; }
+.adm__row-side { text-align: right; font-size: 13.5px; color: var(--ink-soft); }
+.adm__row-actions { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+
+.adm__badge { display: inline-block; padding: 3px 9px; border-radius: 999px; font-size: 12px;
+  background: var(--cream); color: var(--olive-deep); }
+.adm__badge--level { background: var(--sage); color: #fff; }
+.adm__badge--overdue { background: var(--clay-deep); color: #fff; }
+.adm__badge--soon { background: var(--clay); color: #fff; }
+.adm__badge--bonus { background: #eef3e6; color: var(--olive-deep); }
+
+/* ------------------------------ формы ------------------------------ */
+.adm__form { display: flex; flex-direction: column; gap: 14px; max-width: 520px;
+  background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 20px; }
+.adm__form label { display: flex; flex-direction: column; gap: 5px; font-size: 14px; }
+.adm__form label span { color: var(--olive); font-size: 12.5px; }
+.adm__form input, .adm__form select, .adm__form textarea {
+  padding: 10px 13px; border: 1px solid var(--line); border-radius: 11px; font: inherit; font-size: 15px; }
+.adm__form input:focus, .adm__form select:focus, .adm__form textarea:focus { outline: none; border-color: var(--olive); }
+.adm__form fieldset { border: 1px solid var(--line); border-radius: 11px; padding: 12px 14px; }
+.adm__form legend { font-size: 13.5px; padding: 0 6px; color: var(--ink-soft); }
+.adm__form legend span { color: var(--olive); font-size: 12.5px; }
+.adm__check { flex-direction: row !important; align-items: center; gap: 8px !important; }
+.adm__actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.adm__promo-state { margin-top: 16px; font-size: 15px; }
+
+/* ------------------------------ модалка ------------------------------ */
+.adm__modal { position: fixed; inset: 0; background: rgba(59,56,47,.45); display: grid; place-items: center;
+  padding: 20px; z-index: 50; overflow-y: auto; }
+.adm__modal[hidden] { display: none; }
+.adm__modal-box { background: var(--paper); border-radius: 20px; padding: 26px; width: min(100%, 620px);
+  max-height: 90vh; overflow-y: auto; position: relative; }
+.adm__modal-close { position: absolute; top: 14px; right: 14px; border: 0; background: none;
+  font-size: 18px; color: var(--olive); cursor: pointer; }
+.adm__modal h3 { font-family: var(--font-display); font-size: 22px; margin: 0 0 4px; }
+.adm__modal h4 { font-size: 15px; margin: 22px 0 8px; color: var(--olive-deep); }
+
+.adm__kv { display: grid; grid-template-columns: auto 1fr; gap: 4px 14px; font-size: 14.5px; margin: 10px 0 0; }
+.adm__kv dt { color: var(--olive); }
+.adm__kv dd { margin: 0; }
+
+.adm__hist { display: flex; flex-direction: column; gap: 6px; font-size: 14px; }
+.adm__hist div { display: flex; justify-content: space-between; gap: 12px;
+  padding: 7px 0; border-bottom: 1px solid var(--line); }
+.adm__hist div:last-child { border-bottom: 0; }
+.adm__plus { color: var(--olive-deep); }
+.adm__minus { color: var(--clay-deep); }
+
+@media (max-width: 640px) {
+  .adm__top { padding: 12px 14px; }
+  .adm__stats, .adm__main { padding-left: 14px; padding-right: 14px; }
+  .adm__nav { width: 100%; margin-left: 0; }
+  .adm__row-side { text-align: left; }
+}

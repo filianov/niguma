@@ -13,7 +13,7 @@ const KV_TOKEN = process.env.KV_REST_API_TOKEN || process.env.UPSTASH_REDIS_REST
 export const kvEnabled = Boolean(KV_URL && KV_TOKEN);
 
 /** Выполнить команду Redis через REST. Возвращает null при любой проблеме. */
-async function kv(command) {
+export async function kv(command) {
   if (!kvEnabled) return null;
   try {
     const r = await fetch(KV_URL, {

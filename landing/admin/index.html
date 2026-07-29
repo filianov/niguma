@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Кабинет — 15minYoga</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" href="../assets/brand/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="../css/styles.css?v=20260729" />
+  <link rel="stylesheet" href="admin.css?v=20260729" />
+</head>
+
+<body class="adm">
+  <!-- вход -->
+  <div class="adm__gate" id="gate">
+    <form class="adm__login" id="loginForm">
+      <h1>Кабинет 15minYoga</h1>
+      <p class="adm__hint">Раздел для менеджера. Введите пароль.</p>
+      <input type="password" id="password" autocomplete="current-password" placeholder="Пароль" required />
+      <button class="btn btn--primary" type="submit">Войти</button>
+      <p class="adm__error" id="loginError" hidden></p>
+    </form>
+  </div>
+
+  <!-- кабинет -->
+  <div class="adm__app" id="app" hidden>
+    <header class="adm__top">
+      <div class="adm__brand">
+        <img src="../assets/brand/logo-horizontal.svg" alt="15minYoga" />
+        <span>Кабинет</span>
+      </div>
+      <nav class="adm__nav">
+        <button class="adm__tab" data-tab="requests" type="button">Заявки <b id="cntRequests"></b></button>
+        <button class="adm__tab" data-tab="due" type="button">Продления <b id="cntDue"></b></button>
+        <button class="adm__tab" data-tab="members" type="button">Участники</button>
+        <button class="adm__tab" data-tab="promo" type="button">Акция</button>
+      </nav>
+      <button class="adm__logout" id="logout" type="button">Выйти</button>
+    </header>
+
+    <div class="adm__stats" id="stats"></div>
+
+    <main class="adm__main">
+      <!-- заявки -->
+      <section class="adm__pane" data-pane="requests">
+        <div class="adm__pane-head">
+          <h2>Заявки на оплату</h2>
+          <button class="btn btn--small" id="manualPayment" type="button">+ Оплата вручную</button>
+        </div>
+        <div id="requestsList" class="adm__list"></div>
+      </section>
+
+      <!-- продления -->
+      <section class="adm__pane" data-pane="due" hidden>
+        <div class="adm__pane-head">
+          <h2>Пора продлевать</h2>
+          <button class="btn btn--small" id="notifyDue" type="button">Отправить список в Telegram</button>
+        </div>
+        <p class="adm__note">Кто попадает сюда: срок истекает в ближайшие 14 дней или уже истёк.
+          Такой же список уходит в чат поддержки каждое утро автоматически.</p>
+        <div id="dueList" class="adm__list"></div>
+      </section>
+
+      <!-- участники -->
+      <section class="adm__pane" data-pane="members" hidden>
+        <div class="adm__pane-head">
+          <h2>Участники</h2>
+          <input type="search" id="memberSearch" placeholder="Имя, почта, телефон…" />
+        </div>
+        <div id="membersList" class="adm__list"></div>
+      </section>
+
+      <!-- акция -->
+      <section class="adm__pane" data-pane="promo" hidden>
+        <h2>Временная скидка</h2>
+        <p class="adm__note">Скидка сразу отражается в блоке «Стоимость» на сайте. Когда срок истечёт,
+          цены вернутся сами — заходить сюда повторно не нужно.</p>
+        <form class="adm__form" id="promoForm">
+          <label>Название <span>для вас, на сайте не показывается</span>
+            <input type="text" id="promoName" placeholder="Летний набор" />
+          </label>
+          <label>Скидка, %
+            <input type="number" id="promoPercent" min="1" max="90" placeholder="20" />
+          </label>
+          <label>Действует до <span>пусто — бессрочно</span>
+            <input type="datetime-local" id="promoEnds" />
+          </label>
+          <fieldset>
+            <legend>На какие пакеты <span>ничего не отмечено — на все</span></legend>
+            <label class="adm__check"><input type="checkbox" value="m1" /> 1 месяц</label>
+            <label class="adm__check"><input type="checkbox" value="m6" /> 6 месяцев</label>
+            <label class="adm__check"><input type="checkbox" value="m12" /> 12 месяцев</label>
+          </fieldset>
+          <div class="adm__actions">
+            <button class="btn btn--primary" type="submit">Включить</button>
+            <button class="btn btn--ghost" type="button" id="promoClear">Отключить скидку</button>
+          </div>
+        </form>
+        <div id="promoState" class="adm__promo-state"></div>
+      </section>
+    </main>
+  </div>
+
+  <!-- карточка участника / подтверждение оплаты -->
+  <div class="adm__modal" id="modal" hidden>
+    <div class="adm__modal-box">
+      <button class="adm__modal-close" id="modalClose" type="button" aria-label="Закрыть">✕</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <script src="admin.js?v=20260729"></script>
+</body>
+
+</html>
