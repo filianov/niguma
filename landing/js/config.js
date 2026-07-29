@@ -22,8 +22,9 @@ window.NIGUMA_CONFIG = {
   // Метку ?igsh= намеренно не храним — это трекер Instagram, ссылка работает без неё.
   instagram:       "https://www.instagram.com/olga_filianova",
 
-  // Other socials
-  facebook:        "https://facebook.com/15minyoga",
+  // Facebook — страницы пока нет, поэтому ссылка скрыта: пустой адрес убирает её
+  // из подвала (см. wireCtas в main.js). Впишете адрес — ссылка вернётся сама.
+  facebook:        "",
 
   // Email — enable after the domain is registered; leave mailto empty to hide
   email:           "mailto:15minyoga.com@gmail.com",
