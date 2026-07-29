@@ -7,7 +7,7 @@ window.NIGUMA_I18N = {
   "ru": {
     "meta": {
       "title": "15minYoga — Йога для тех, кто принимает решения",
-      "description": "15 минут каждое утро для энергии, ясности и масштабного влияния. Аутентичная йога Леди Нигумы для предпринимателей и лидеров."
+      "description": "15minYoga: по будням 07:00–07:15 — живой эфир подлинной йоги Нигумы. 15 минут, которые дают предпринимателю ясность и твёрдость решений."
     },
     "nav": { "benefits": "Что вы получите", "forWho": "Для кого", "format": "Формат", "pricing": "Стоимость", "join": "Присоединиться" },
     "hero": {
@@ -56,13 +56,13 @@ window.NIGUMA_I18N = {
       "consent": "Согласен получать письма о новых потоках. Отписаться можно в один клик.",
       "joinTitle": "Присоединиться к потоку", "joinBody": "Старт ближайшего потока — понедельник. Напишите боту — он ответит на вопросы и подскажет, как начать."
     },
-    "footer": { "tagline": "Аутентичная йога Леди Нигумы для тех, кто принимает решения.", "rights": "Все права защищены.", "privacy": "Политика конфиденциальности", "contact": "Связь" }
+    "footer": { "tagline": "Аутентичная йога Леди Нигумы для тех, кто принимает решения.", "rights": "Все права защищены.", "privacy": "Политика конфиденциальности", "impressum": "Impressum", "contact": "Связь" }
   },
 
   "en": {
     "meta": {
       "title": "15minYoga — Yoga for those who make decisions",
-      "description": "15 minutes every morning for energy, clarity, and meaningful impact. The authentic yoga of Lady Niguma for entrepreneurs and leaders."
+      "description": "15minYoga: live weekday mornings, 07:00–07:15 CET. Niguma's authentic yoga in 15 minutes, building the clarity and decisiveness founders need."
     },
     "nav": { "benefits": "What you get", "forWho": "Who it's for", "format": "Format", "pricing": "Pricing", "join": "Join" },
     "hero": {
@@ -111,13 +111,13 @@ window.NIGUMA_I18N = {
       "consent": "I agree to receive emails about new groups. You can unsubscribe in one click.",
       "joinTitle": "Join a group", "joinBody": "The next group starts Monday. Message the bot — it will answer your questions and show you how to begin."
     },
-    "footer": { "tagline": "The authentic yoga of Lady Niguma for those who make decisions.", "rights": "All rights reserved.", "privacy": "Privacy policy", "contact": "Contact" }
+    "footer": { "tagline": "The authentic yoga of Lady Niguma for those who make decisions.", "rights": "All rights reserved.", "privacy": "Privacy policy", "impressum": "Legal notice", "contact": "Contact" }
   },
 
   "de": {
     "meta": {
       "title": "15minYoga — Yoga für Menschen, die Entscheidungen treffen",
-      "description": "15 Minuten jeden Morgen für Energie, Klarheit und weitreichende Wirkung. Authentisches Yoga von Lady Niguma für Unternehmer und Führungskräfte."
+      "description": "15minYoga: werktags 07:00–07:15 live das authentische Yoga der Niguma – 15 Minuten, die Klarheit und Entscheidungsqualität von Unternehmern stärken."
     },
     "nav": { "benefits": "Was Sie erhalten", "forWho": "Für wen", "format": "Format", "pricing": "Preise", "join": "Teilnehmen" },
     "hero": {
@@ -166,13 +166,13 @@ window.NIGUMA_I18N = {
       "consent": "Ich bin einverstanden, E-Mails über neue Kurse zu erhalten. Eine Abmeldung ist mit einem Klick möglich.",
       "joinTitle": "Am Kurs teilnehmen", "joinBody": "Der Start des nächsten Kurses ist am Montag. Schreiben Sie dem Bot — er beantwortet Ihre Fragen und zeigt Ihnen, wie Sie beginnen."
     },
-    "footer": { "tagline": "Authentisches Yoga von Lady Niguma für Menschen, die Entscheidungen treffen.", "rights": "Alle Rechte vorbehalten.", "privacy": "Datenschutzerklärung", "contact": "Kontakt" }
+    "footer": { "tagline": "Authentisches Yoga von Lady Niguma für Menschen, die Entscheidungen treffen.", "rights": "Alle Rechte vorbehalten.", "privacy": "Datenschutzerklärung", "impressum": "Impressum", "contact": "Kontakt" }
   },
 
   "uk": {
     "meta": {
       "title": "15minYoga — Йога для тих, хто ухвалює рішення",
-      "description": "15 хвилин щоранку для енергії, ясності та масштабного впливу. Автентична йога Леді Нігуми для підприємців і лідерів."
+      "description": "15minYoga: у будні 07:00–07:15 наживо автентична йога Нігуми — 15 хвилин, що дають підприємцю ясність і впевненість у рішеннях."
     },
     "nav": { "benefits": "Що ви отримаєте", "forWho": "Для кого", "format": "Формат", "pricing": "Вартість", "join": "Приєднатися" },
     "hero": {
@@ -221,7 +221,7 @@ window.NIGUMA_I18N = {
       "consent": "Погоджуюся отримувати листи про нові потоки. Відписатися можна в один клік.",
       "joinTitle": "Приєднатися до потоку", "joinBody": "Старт найближчого потоку — понеділок. Напишіть боту — він відповість на запитання та підкаже, як почати."
     },
-    "footer": { "tagline": "Автентична йога Леді Нігуми для тих, хто ухвалює рішення.", "rights": "Усі права захищено.", "privacy": "Політика конфіденційності", "contact": "Звʼязок" }
+    "footer": { "tagline": "Автентична йога Леді Нігуми для тих, хто ухвалює рішення.", "rights": "Усі права захищено.", "privacy": "Політика конфіденційності", "impressum": "Impressum", "contact": "Звʼязок" }
   }
 };
 

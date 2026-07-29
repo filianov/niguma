@@ -21,6 +21,14 @@
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="canonical" href="https://15minyoga.com/" />
 
+  <!-- One URL serves all four languages (switcher is client-side), so every hreflang
+       points at the same address; x-default catches everything else. -->
+  <link rel="alternate" hreflang="ru" href="https://15minyoga.com/" />
+  <link rel="alternate" hreflang="en" href="https://15minyoga.com/" />
+  <link rel="alternate" hreflang="de" href="https://15minyoga.com/" />
+  <link rel="alternate" hreflang="uk" href="https://15minyoga.com/" />
+  <link rel="alternate" hreflang="x-default" href="https://15minyoga.com/" />
+
   <link rel="icon" href="assets/brand/favicon.svg" type="image/svg+xml" />
   <link rel="icon" href="assets/brand/png/favicon-32.png" sizes="32x32" type="image/png" />
   <link rel="apple-touch-icon" href="assets/brand/png/apple-touch-icon.png" />
@@ -280,9 +288,10 @@
         <a data-cta="telegramChannel" href="#" target="_blank" rel="noopener">Telegram</a>
         <a data-cta="email" href="#" data-i18n="footer.contact">Связь</a>
         <a href="legal/privacy.html" data-i18n="footer.privacy">Политика конфиденциальности</a>
+        <a href="legal/impressum.html" data-i18n="footer.impressum">Impressum</a>
       </div>
-      <p class="footer__rights">© <span id="year">2026</span> 15minYoga. <span data-i18n="footer.rights">Все права
-          защищены.</span></p>
+      <p class="footer__rights">© <span id="year">2026</span> Olha Filianova · 15minYoga.
+        <span data-i18n="footer.rights">Все права защищены.</span></p>
     </div>
   </footer>
 
