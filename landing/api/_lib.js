@@ -95,25 +95,54 @@ export function escapeHtml(s) {
     .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }
 
-/** Отправить оператору. Возвращает message_id — по нему ловим ответ реплаем. */
-export async function sendToOperator(text) {
-  if (!telegramEnabled) return null;
+/** Отправить сообщение в Telegram. Возвращает message_id или null. */
+export async function sendTelegram(chatId, text, replyTo) {
+  if (!TG_TOKEN || !chatId) return null;
   try {
+    const payload = {
+      chat_id: chatId,
+      text,
+      parse_mode: "HTML",
+      disable_web_page_preview: true,
+    };
+    if (replyTo) payload.reply_to_message_id = replyTo;
     const r = await fetch("https://api.telegram.org/bot" + TG_TOKEN + "/sendMessage", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        chat_id: TG_ADMIN,
-        text,
-        parse_mode: "HTML",
-        disable_web_page_preview: true,
-      }),
+      body: JSON.stringify(payload),
     });
     const data = await r.json();
     return data && data.ok ? data.result.message_id : null;
   } catch (e) {
     return null;
   }
+}
+
+/** Отправить оператору. Возвращает message_id — по нему ловим ответ реплаем. */
+export async function sendToOperator(text) {
+  if (!telegramEnabled) return null;
+  return await sendTelegram(TG_ADMIN, text);
+}
+
+/** Все администраторы (TELEGRAM_ADMIN_ID может содержать несколько id через запятую). */
+export function adminIds() {
+  return String(TG_ADMIN).split(",").map((s) => s.trim()).filter(Boolean);
+}
+
+export function isAdmin(chatId) {
+  return adminIds().includes(String(chatId));
+}
+
+/**
+ * Связь «уведомление о письме из Telegram» → «чат клиента в Telegram».
+ * Нужна, чтобы вы могли ответить реплаем человеку, который пишет боту напрямую.
+ */
+export async function linkTelegramDirect(messageId, chatId) {
+  await kv(["SETEX", "tg:dm:" + messageId, String(TTL), String(chatId)]);
+}
+
+export async function chatByTelegramMessage(messageId) {
+  return await kv(["GET", "tg:dm:" + messageId]);
 }
 
 /** Короткий безопасный идентификатор сессии. */
