@@ -244,6 +244,7 @@
   function open() {
     state.open = true;
     el.panel.hidden = false;
+    el.panel.style.display = "";           // страховка, если [hidden] перебьют стилями
     el.root.classList.add("chat--open");
     el.root.classList.remove("chat--unread");
     setTimeout(function () { el.input.focus(); }, 60);
@@ -256,6 +257,7 @@
   function close() {
     state.open = false;
     el.panel.hidden = true;
+    el.panel.style.display = "none";       // страховка: закрытая панель не должна ловить клики
     el.root.classList.remove("chat--open");
   }
 
@@ -281,6 +283,7 @@
       close: root.querySelector(".chat__close")
     };
     applyTexts();
+    close();                                // стартуем гарантированно закрытыми
 
     el.bubble.addEventListener("click", function () { state.open ? close() : open(); });
     el.close.addEventListener("click", close);

@@ -608,6 +608,9 @@ img { max-width: 100%; display: block; }
   border-radius: 20px; box-shadow: 0 30px 70px -28px rgba(59,56,47,.5);
   animation: chatIn .22s var(--ease);
 }
+/* Важно: без этой строки display:flex выше перебивает браузерное [hidden]{display:none},
+   панель остаётся на экране, перехватывает клики и «не закрывается». */
+.chat__panel[hidden] { display: none; }
 @keyframes chatIn { from { opacity: 0; transform: translateY(12px) scale(.98); } }
 
 .chat__head {

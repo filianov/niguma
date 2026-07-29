@@ -51,7 +51,7 @@ MEMBERS_CHANNEL_ID = os.getenv("MEMBERS_CHANNEL_ID", "")
 # --- Claude ---
 ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY", "")
 CLAUDE_MODEL_FAST = os.getenv("CLAUDE_MODEL_FAST", "claude-haiku-4-5")
-CLAUDE_MODEL_SMART = os.getenv("CLAUDE_MODEL_SMART", "claude-sonnet-4-6")
+CLAUDE_MODEL_SMART = os.getenv("CLAUDE_MODEL_SMART", "claude-sonnet-5")
 AI_ESCALATE_THRESHOLD = float(os.getenv("AI_ESCALATE_THRESHOLD", "0.55"))
 
 # --- Class links ---

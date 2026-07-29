@@ -280,7 +280,7 @@ MEMBERS_CHANNEL_ID=<-100... из шага 5>
 
 ANTHROPIC_API_KEY=<ключ из шага 6>
 CLAUDE_MODEL_FAST=claude-haiku-4-5
-CLAUDE_MODEL_SMART=claude-sonnet-4-6
+CLAUDE_MODEL_SMART=claude-sonnet-5
 
 STREAM_LINK=<ссылка Zoom, будни>
 STREAM_LINK_WEEKLY=<ссылка Zoom, суббота>
