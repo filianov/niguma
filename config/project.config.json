@@ -22,7 +22,7 @@
     ]
   },
   "schedule": {
-    "timezone": "Europe/Berlin",
+    "timezone": "Europe/Vienna",
     "daily": {
       "days": [
         "mon",

@@ -170,6 +170,8 @@
 
 ## 5. ШАГ 4 — Telegram *(20 минут)*
 
+> 👉 Подробная пошаговая версия этого шага: [BOT-SETUP.md](BOT-SETUP.md)
+
 1. **Бот:** написать [@BotFather](https://t.me/BotFather) → `/newbot` → имя **`yoga15min_bot`**
    → получить `BOT_TOKEN` (длинная строка — это пароль, никому не показывать).
 2. Там же: `/setuserpic` — загрузить `brandbook/logo/png/app-icon-512.png`;
