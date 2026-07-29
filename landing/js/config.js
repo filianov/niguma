@@ -16,7 +16,7 @@ window.NIGUMA_CONFIG = {
   facebook:        "https://facebook.com/15minyoga",
 
   // Email — enable after the domain is registered; leave mailto empty to hide
-  email:           "mailto:hello@15minyoga.com",
+  email:           "mailto:15minyoga.com@gmail.com",
 
   // Optional automated checkout links (PayPal / Stripe). Filled when enabled.
   pay: {
@@ -24,7 +24,8 @@ window.NIGUMA_CONFIG = {
     stripe: { m1: "", m6: "", m12: "" }
   },
 
-  // Lead capture endpoint (e.g. a serverless function or Telegram bot webhook).
+  // Lead capture endpoint — serverless function in landing/api/lead.js.
+  // Sends the subscriber to Telegram and duplicates it by e-mail.
   // Leave empty -> form gently redirects the user into the Telegram bot instead.
-  leadEndpoint: ""
+  leadEndpoint: "/api/lead"
 };

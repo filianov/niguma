@@ -65,27 +65,45 @@
 
       var lang = document.documentElement.lang || "ru";
       var payload = { email: email, lang: lang, consent: true, source: "landing", ts: new Date().toISOString() };
+      var btn = form.querySelector(".lead__submit");
+      var box = document.getElementById("leadDone");
 
-      var done = function () {
-        var el = document.getElementById("leadDone");
-        if (el) { el.hidden = false; el.textContent = "✓"; }
-        form.reset();
-        // also nudge the user into the Telegram bot to complete the funnel
-        if (CFG.telegram) { window.open(CFG.telegram, "_blank", "noopener"); }
+      function say(key, cls) {
+        if (!box) return;
+        box.hidden = false;
+        box.className = "lead__done" + (cls ? " " + cls : "");
+        box.innerHTML = (window.NigumaI18n ? window.NigumaI18n.t(key) : "") ||
+                        "Спасибо! Мы на связи.";
+        // предлагаем перейти в бота ссылкой, а не всплывающим окном:
+        // popup после асинхронного запроса браузеры блокируют
+        if (cls !== "is-error" && CFG.telegram) {
+          box.innerHTML += ' <a href="' + CFG.telegram + '" target="_blank" rel="noopener">' +
+                           ((window.NigumaI18n && window.NigumaI18n.t("cta.telegram")) || "Открыть бота") + " →</a>";
+        }
+      }
+
+      if (btn) { btn.disabled = true; btn.style.opacity = ".6"; }
+
+      var finish = function (ok) {
+        if (btn) { btn.disabled = false; btn.style.opacity = ""; }
+        if (ok) { form.reset(); say("cta.leadThanks"); }
+        else { say("cta.leadError", "is-error"); }
       };
 
       if (CFG.leadEndpoint) {
         fetch(CFG.leadEndpoint, {
           method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload)
-        }).then(done).catch(done);
+        })
+          .then(function (r) { finish(r.ok); })
+          .catch(function () { finish(false); });
       } else {
-        // No backend yet → store locally for export + push to Telegram bot
+        // запасной путь без бэкенда — сохраняем локально, чтобы не потерять
         try {
           var k = "niguma.leads";
           var arr = JSON.parse(localStorage.getItem(k) || "[]");
           arr.push(payload); localStorage.setItem(k, JSON.stringify(arr));
         } catch (err) {}
-        done();
+        finish(true);
       }
     });
   }

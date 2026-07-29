@@ -20,7 +20,7 @@ window.NIGUMA_IMPRESSUM = {
       {
         "heading": "Kontakt",
         "lines": [
-          "E-Mail: hello@15minyoga.com",
+          "E-Mail: 15minyoga.com@gmail.com",
           "Telegram (schneller elektronischer Kontakt): https://t.me/yoga15min_bot",
           "Über den angegebenen Telegram-Kanal ist eine unmittelbare Kommunikation in elektronischer Form möglich."
         ]
@@ -88,7 +88,7 @@ window.NIGUMA_IMPRESSUM = {
       {
         "heading": "Контакты",
         "lines": [
-          "Эл. почта: hello@15minyoga.com",
+          "Эл. почта: 15minyoga.com@gmail.com",
           "Telegram (быстрый электронный контакт): https://t.me/yoga15min_bot",
           "Через указанный канал Telegram возможна непосредственная связь в электронной форме."
         ]
@@ -156,7 +156,7 @@ window.NIGUMA_IMPRESSUM = {
       {
         "heading": "Contact",
         "lines": [
-          "Email: hello@15minyoga.com",
+          "Email: 15minyoga.com@gmail.com",
           "Telegram (rapid electronic contact): https://t.me/yoga15min_bot",
           "The Telegram channel listed above allows direct communication in electronic form."
         ]
@@ -224,7 +224,7 @@ window.NIGUMA_IMPRESSUM = {
       {
         "heading": "Контакти",
         "lines": [
-          "Електронна пошта: hello@15minyoga.com",
+          "Електронна пошта: 15minyoga.com@gmail.com",
           "Telegram (швидкий електронний зв'язок): https://t.me/yoga15min_bot",
           "Через зазначений канал Telegram можлива безпосередня комунікація в електронній формі."
         ]

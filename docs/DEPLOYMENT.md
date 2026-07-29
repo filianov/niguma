@@ -28,7 +28,7 @@ vercel --prod     # выкатить в прод
 
 ### Домен и e-mail
 1. В панели хостинга добавить домен `15minyoga.com`, прописать DNS.
-2. Завести почту `hello@15minyoga.com` (Google Workspace / Zoho / провайдер домена).
+2. Завести почту `15minyoga.com@gmail.com` (Google Workspace / Zoho / провайдер домена).
 3. Настроить **SPF / DKIM / DMARC** (нужно для доставляемости писем из бота/ESP).
 4. Обновить ссылки в [`landing/js/config.js`](../landing/js/config.js) и
    [`config/project.config.json`](../config/project.config.json) (Instagram, бот, канал, e-mail).

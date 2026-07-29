@@ -80,7 +80,7 @@ python3 main.py
 - Ключ [Anthropic Claude](https://console.anthropic.com) → `ANTHROPIC_API_KEY`.
 - Свой Telegram id ([@userinfobot](https://t.me/userinfobot)) → `ADMIN_IDS`.
 - Платёжные реквизиты (IBAN, Monobank-банка, PayPal.me) → `.env` и/или `config`.
-- Домен → потом e-mail `hello@15minyoga.com`.
+- Домен → потом e-mail `15minyoga.com@gmail.com`.
 
 Полный чек-лист запуска и развития — в [`docs/ROADMAP.md`](docs/ROADMAP.md).
 

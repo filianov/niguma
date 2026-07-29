@@ -82,7 +82,7 @@ LOCALES = PROJECT.get("brand", {}).get("locales", ["ru", "en", "de", "uk"])
 
 # --- Email ---
 RESEND_API_KEY = os.getenv("RESEND_API_KEY", "")
-EMAIL_FROM = os.getenv("EMAIL_FROM", "hello@15minyoga.com")
+EMAIL_FROM = os.getenv("EMAIL_FROM", "15minyoga.com@gmail.com")
 
 # --- Derived shortcuts from project config ---
 PRICING = PROJECT.get("pricing", {})

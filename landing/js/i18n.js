@@ -152,8 +152,12 @@
     if (window.NigumaReveal) window.NigumaReveal();
   }
 
-  // expose
-  window.NigumaI18n = { setLang: setLang, current: detect };
+  // expose — t() lets other scripts read a string in the language shown right now
+  window.NigumaI18n = {
+    setLang: setLang,
+    current: detect,
+    t: function (path) { return t(document.documentElement.lang || detect(), path); }
+  };
 
   // boot
   document.addEventListener("DOMContentLoaded", function () {

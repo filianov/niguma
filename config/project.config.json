@@ -168,7 +168,7 @@
       "isPrimaryComms": true
     },
     "email": {
-      "address": "hello@15minyoga.com",
+      "address": "15minyoga.com@gmail.com",
       "comment": "Завести после регистрации домена; до этого — пусто/скрыто."
     },
     "youtube": {
@@ -223,7 +223,7 @@
       "vatId": null,
       "vatNote": "USt-IdNr отсутствует — строка в Impressum не указывается.",
       "taxIdNote": "Steuer-Identifikationsnummer НЕ публикуется: это персональные данные.",
-      "email": "hello@15minyoga.com",
+      "email": "15minyoga.com@gmail.com",
       "law": [
         "§ 5 DDG",
         "§ 18 Abs. 2 MStV",

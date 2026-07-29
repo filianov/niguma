@@ -54,7 +54,8 @@ window.NIGUMA_I18N = {
       "telegram": "Открыть бота в Telegram", "instagram": "Написать в Instagram",
       "email": "Получать анонсы потоков", "emailPlaceholder": "Ваш e-mail",
       "consent": "Согласен получать письма о новых потоках. Отписаться можно в один клик.",
-      "joinTitle": "Присоединиться к потоку", "joinBody": "Старт ближайшего потока — понедельник. Напишите боту — он ответит на вопросы и подскажет, как начать."
+      "joinTitle": "Присоединиться к потоку", "joinBody": "Старт ближайшего потока — понедельник. Напишите боту — он ответит на вопросы и подскажет, как начать.",
+      "leadThanks": "Спасибо! Вы в списке — напишем, когда откроется набор в поток.", "leadError": "Не получилось отправить. Напишите нам в Telegram — ответим сразу."
     },
     "footer": { "tagline": "Аутентичная йога Леди Нигумы для тех, кто принимает решения.", "rights": "Все права защищены.", "privacy": "Политика конфиденциальности", "impressum": "Impressum", "contact": "Связь" }
   },
@@ -109,7 +110,8 @@ window.NIGUMA_I18N = {
       "telegram": "Open the bot in Telegram", "instagram": "Message on Instagram",
       "email": "Get notified about new groups", "emailPlaceholder": "Your e-mail",
       "consent": "I agree to receive emails about new groups. You can unsubscribe in one click.",
-      "joinTitle": "Join a group", "joinBody": "The next group starts Monday. Message the bot — it will answer your questions and show you how to begin."
+      "joinTitle": "Join a group", "joinBody": "The next group starts Monday. Message the bot — it will answer your questions and show you how to begin.",
+      "leadThanks": "Thank you! You're on the list — we'll write when the next group opens.", "leadError": "Couldn't send it. Message us on Telegram — we'll reply right away."
     },
     "footer": { "tagline": "The authentic yoga of Lady Niguma for those who make decisions.", "rights": "All rights reserved.", "privacy": "Privacy policy", "impressum": "Legal notice", "contact": "Contact" }
   },
@@ -164,7 +166,8 @@ window.NIGUMA_I18N = {
       "telegram": "Den Bot in Telegram öffnen", "instagram": "Auf Instagram schreiben",
       "email": "Ankündigungen zu neuen Kursen erhalten", "emailPlaceholder": "Ihre E-Mail",
       "consent": "Ich bin einverstanden, E-Mails über neue Kurse zu erhalten. Eine Abmeldung ist mit einem Klick möglich.",
-      "joinTitle": "Am Kurs teilnehmen", "joinBody": "Der Start des nächsten Kurses ist am Montag. Schreiben Sie dem Bot — er beantwortet Ihre Fragen und zeigt Ihnen, wie Sie beginnen."
+      "joinTitle": "Am Kurs teilnehmen", "joinBody": "Der Start des nächsten Kurses ist am Montag. Schreiben Sie dem Bot — er beantwortet Ihre Fragen und zeigt Ihnen, wie Sie beginnen.",
+      "leadThanks": "Danke! Sie stehen auf der Liste — wir melden uns, sobald der nächste Kurs startet.", "leadError": "Konnte nicht gesendet werden. Schreiben Sie uns auf Telegram — wir antworten sofort."
     },
     "footer": { "tagline": "Authentisches Yoga von Lady Niguma für Menschen, die Entscheidungen treffen.", "rights": "Alle Rechte vorbehalten.", "privacy": "Datenschutzerklärung", "impressum": "Impressum", "contact": "Kontakt" }
   },
@@ -219,7 +222,8 @@ window.NIGUMA_I18N = {
       "telegram": "Відкрити бота в Telegram", "instagram": "Написати в Instagram",
       "email": "Отримувати анонси потоків", "emailPlaceholder": "Ваш e-mail",
       "consent": "Погоджуюся отримувати листи про нові потоки. Відписатися можна в один клік.",
-      "joinTitle": "Приєднатися до потоку", "joinBody": "Старт найближчого потоку — понеділок. Напишіть боту — він відповість на запитання та підкаже, як почати."
+      "joinTitle": "Приєднатися до потоку", "joinBody": "Старт найближчого потоку — понеділок. Напишіть боту — він відповість на запитання та підкаже, як почати.",
+      "leadThanks": "Дякуємо! Ви у списку — напишемо, коли відкриється набір у потік.", "leadError": "Не вдалося надіслати. Напишіть нам у Telegram — відповімо одразу."
     },
     "footer": { "tagline": "Автентична йога Леді Нігуми для тих, хто ухвалює рішення.", "rights": "Усі права захищено.", "privacy": "Політика конфіденційності", "impressum": "Impressum", "contact": "Звʼязок" }
   }

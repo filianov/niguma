@@ -29,7 +29,7 @@
 | 3 | `REPLACE_ME` — 5 шт. в `config/project.config.json` (PayPal, IBAN, BIC, банк, Monobank) | 🔴 блокер оплаты | вы дадите реквизиты |
 | 4 | `REPLACE_ME` — 5 шт. в `bot/.env.example` (Claude-ключ, 2× Zoom, Monobank, PayPal) | 🔴 блокер бота | вы дадите ключи |
 | 5 | ~~`meta.description` устарел~~ · обновлён на 4 языках | ✅ закрыто | — |
-| 6 | `leadEndpoint: ""` — e-mail с формы никуда не уходит, копится в браузере | 🟠 теряются лиды | я подключу |
+| 6 | ~~Форма никуда не отправляет~~ · `/api/lead` → Telegram + почта | ✅ код готов | вы добавите ключи в Vercel |
 | 7 | Платёжные ссылки пустые: `pay.paypal`, `pay.stripe` | 🟠 | вы дадите ссылки |
 | 8 | ~~Нет `hreflang`~~ · добавлены 5 тегов | ✅ закрыто | — |
 | 9 | Нет аналитики (Plausible/GA) | 🟡 | по вашему решению |
@@ -82,7 +82,7 @@
 | Telegram-канал | **@yoga15min** | то же ограничение |
 | Instagram | **@15minyoga** | — |
 | Facebook | **facebook.com/15minyoga** | — |
-| Почта | **hello@15minyoga.com** | — |
+| Почта | **15minyoga.com@gmail.com** | — |
 
 > Если какое-то имя окажется занято — скажите, я поменяю его во всех файлах разом
 > (оно встречается в 3 местах: `landing/js/config.js`, `config/project.config.json`, `bot/`).
@@ -154,16 +154,16 @@
 
 ## 4. ШАГ 3 — Почта на домене *(30 минут)*
 
-Нужна для `hello@15minyoga.com` — она уже прописана на сайте и в боте.
+Нужна для `15minyoga.com@gmail.com` — она уже прописана на сайте и в боте.
 
 1. Выбрать провайдера: **Zoho Mail** (есть бесплатный тариф на 1 домен) или
    **Google Workspace** (~6 €/мес) или почта регистратора.
-2. Создать ящик `hello@15minyoga.com`.
+2. Создать ящик `15minyoga.com@gmail.com`.
 3. Прописать в DNS выданные провайдером **MX**-записи.
 4. **Обязательно** настроить три записи — без них письма от бота уйдут в спам:
    - **SPF** (TXT): разрешает вашему провайдеру слать письма от домена
    - **DKIM** (TXT): подпись писем
-   - **DMARC** (TXT): политика, начать с `v=DMARC1; p=none; rua=mailto:hello@15minyoga.com`
+   - **DMARC** (TXT): политика, начать с `v=DMARC1; p=none; rua=mailto:15minyoga.com@gmail.com`
 5. Проверить настройку на [mail-tester.com](https://www.mail-tester.com) — цель 9–10/10.
 
 ---
@@ -249,6 +249,30 @@
 
 ---
 
+## 11-bis. Форма подписки — переменные в Vercel
+
+Форма на сайте отправляет заявку в `/api/lead`. Функция уже развёрнута; чтобы она
+начала доставлять, добавьте переменные в **Vercel → Settings → Environment Variables**
+(область **Production**), затем **Deployments → Redeploy**.
+
+| Переменная | Значение | Обязательна |
+|---|---|---|
+| `TELEGRAM_BOT_TOKEN` | токен от @BotFather | для уведомлений в Telegram |
+| `TELEGRAM_ADMIN_ID` | ваш ID от @userinfobot | для уведомлений в Telegram |
+| `RESEND_API_KEY` | ключ с resend.com (бесплатно 3000 писем/мес) | для дубля на почту |
+| `LEAD_EMAIL_TO` | `15minyoga.com@gmail.com` | по умолчанию уже этот адрес |
+| `LEAD_EMAIL_FROM` | `15minYoga <onboarding@resend.dev>` | до верификации домена в Resend |
+
+Каналы независимы: если задан только Telegram — заявки идут в Telegram, если только
+Resend — на почту. Пока не задано ничего, заявка пишется в лог Vercel и посетитель
+всё равно видит благодарность (терять заявку из-за наших настроек нельзя).
+
+Проверка после настройки: отправьте форму на сайте со своим адресом — уведомление
+должно прийти в Telegram и на `15minyoga.com@gmail.com`. Ответ на письмо уходит
+напрямую человеку: в письме проставлен `reply_to`.
+
+---
+
 ## 12. Полная таблица параметров — «что, откуда, куда»
 
 Держите её под рукой: заполнив всё, вы гарантированно не оставите хвостов.
@@ -265,7 +289,7 @@
 | 8 | `MONOBANK_JAR` | Monobank «Банка» | Railway + `project.config.json` |
 | 9 | `PAYPAL_ME` | paypal.me | Railway + `project.config.json` + `landing/js/config.js` |
 | 10 | `PAY_LINK_M1/M6/M12` | PayPal-подписки / Stripe / Paddle | Railway + `landing/js/config.js` |
-| 11 | `EMAIL_FROM` | `hello@15minyoga.com` | Railway Variables |
+| 11 | `EMAIL_FROM` | `15minyoga.com@gmail.com` | Railway Variables |
 | 12 | `RESEND_API_KEY` | resend.com (для писем) | Railway Variables |
 | 13 | DNS: A / CNAME | Vercel | панель регистратора |
 | 14 | DNS: MX / SPF / DKIM / DMARC | почтовый провайдер | панель регистратора |
@@ -300,7 +324,7 @@
 - [ ] `/stats` показывает данные
 
 **Почта**
-- [ ] Письмо на `hello@15minyoga.com` доходит
+- [ ] Письмо на `15minyoga.com@gmail.com` доходит
 - [ ] Тест на mail-tester.com ≥ 9/10
 
 **Юридическое**

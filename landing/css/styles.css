@@ -289,7 +289,9 @@ img { max-width: 100%; display: block; }
 .lead__input:focus { border-color: var(--olive); outline: none; }
 .lead__consent { display: flex; gap: 10px; align-items: flex-start; margin-top: 14px; font-size: 13px; color: var(--olive-deep); }
 .lead__consent input { margin-top: 3px; accent-color: var(--olive); }
-.lead__done { color: var(--olive); font-weight: 700; margin: 12px 0 0; }
+.lead__done { color: var(--olive); font-weight: 600; margin: 14px 0 0; font-size: 14.5px; line-height: 1.5; }
+.lead__done a { color: var(--clay-deep); text-decoration: underline; white-space: nowrap; }
+.lead__done.is-error { color: var(--clay-deep); }
 
 /* ---------------- Footer ---------------- */
 .footer { background: var(--olive-deep); border-top: 0; padding: 52px 0; font-size: 14px; color: #d9d7c6; }
