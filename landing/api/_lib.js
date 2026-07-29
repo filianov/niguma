@@ -112,8 +112,14 @@ export async function sendTelegram(chatId, text, replyTo) {
       body: JSON.stringify(payload),
     });
     const data = await r.json();
-    return data && data.ok ? data.result.message_id : null;
+    if (data && data.ok) return data.result.message_id;
+    // Молчаливый отказ — худший вариант: «в личку приходит, а в канал нет» без объяснений.
+    // Пишем причину в журнал Vercel (Logs), диагностика — /api/telegram-check.
+    console.error("[telegram] не доставлено в " + chatId + ": " +
+      (data && data.description ? data.description : "неизвестная ошибка"));
+    return null;
   } catch (e) {
+    console.error("[telegram] сеть при отправке в " + chatId + ": " + (e && e.message));
     return null;
   }
 }
