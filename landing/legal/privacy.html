@@ -1,59 +1,122 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="de">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>15minYoga — Политика конфиденциальности</title>
-  <meta name="robots" content="noindex" />
+  <title>Datenschutzerklärung — 15minYoga</title>
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://15minyoga.com/legal/privacy" />
+  <link rel="icon" href="../assets/brand/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&display=swap" />
   <link rel="stylesheet" href="../css/styles.css?v=20260729" />
   <style>
-    .legal { max-width: 760px; margin: 0 auto; padding: 48px 22px 80px; }
-    .legal h1 { font-size: 32px; font-weight: 600; }
-    .legal h2 { font-size: 20px; margin-top: 32px; }
-    .legal p, .legal li { color: var(--ink-soft); }
-    .legal a { color: var(--focus); }
+    .legal { max-width: 760px; margin: 0 auto; padding: 40px 22px 90px; }
+    .legal__top { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 34px; }
+    .legal__back { display: inline-flex; align-items: center; gap: 8px; color: var(--olive); font-size: 15px; }
+    .legal__back:hover { color: var(--clay-deep); }
+    .legal__back img { height: 26px; width: auto; }
+    .legal h1 { font-family: var(--font-display); font-size: clamp(30px, 5vw, 42px); font-weight: 600; margin: 0 0 6px; }
+    .legal__intro { color: var(--olive); margin: 0 0 4px; font-size: 15px; }
+    .legal__updated { color: var(--olive); margin: 0 0 34px; font-size: 14px; opacity: .8; }
+    .legal section { margin-bottom: 30px; padding-bottom: 26px; border-bottom: 1px solid var(--line); }
+    .legal section:last-of-type { border-bottom: 0; }
+    .legal h2 { font-family: var(--font-display); font-size: 20px; font-weight: 600; margin: 0 0 12px; }
+    .legal p { margin: 0 0 9px; color: var(--ink-soft); font-size: 15.5px; line-height: 1.6; }
+    .legal p:last-child { margin-bottom: 0; }
+    .legal .addr p { color: var(--ink); margin-bottom: 2px; }
+    .legal a { color: var(--clay-deep); }
+    .legal__foot { margin-top: 40px; font-size: 14px; color: var(--olive); display: flex; gap: 18px; flex-wrap: wrap; }
   </style>
 </head>
+
 <body>
   <main class="legal">
-    <p><a href="../index.html">← 15minYoga</a></p>
-    <h1>Политика конфиденциальности</h1>
-    <p><em>Последнее обновление: 18 июня 2026. Это рабочая версия — перед публичным запуском её должен проверить юрист (GDPR/DSGVO).</em></p>
+    <div class="legal__top">
+      <a class="legal__back" href="../index.html">
+        <img src="../assets/brand/logo-horizontal.svg" alt="15minYoga" />
+      </a>
+      <div class="lang" role="group" aria-label="Sprache / Language">
+        <button class="lang__btn" data-lang="de" type="button">DE</button>
+        <button class="lang__btn" data-lang="ru" type="button">RU</button>
+        <button class="lang__btn" data-lang="en" type="button">EN</button>
+        <button class="lang__btn" data-lang="uk" type="button">UK</button>
+      </div>
+    </div>
 
-    <h2>1. Кто мы</h2>
-    <p>Проект 15minYoga — онлайн-практики йоги Леди Нигумы. Контакт: <a href="mailto:15minyoga.com@gmail.com">15minyoga.com@gmail.com</a> (адрес будет активен после регистрации домена).</p>
+    <h1 id="pvTitle">Datenschutzerklärung</h1>
+    <p class="legal__intro" id="pvIntro">Informationen gemäß Art. 13 und 14 DSGVO</p>
+    <p class="legal__updated" id="pvUpdated"></p>
+    <div id="pvBody"><!-- rendered from js/privacy.js --></div>
 
-    <h2>2. Какие данные мы собираем</h2>
-    <p>Мы придерживаемся принципа минимизации данных. Мы собираем только то, что необходимо для участия в потоке и связи:</p>
-    <ul>
-      <li>идентификатор Telegram и язык интерфейса (при общении с ботом);</li>
-      <li>e-mail и имя — только если вы их добровольно указали;</li>
-      <li>информацию об оплате (метод, статус) — без хранения полных платёжных реквизитов;</li>
-      <li>отметки о посещении занятий для напоминаний и геймификации.</li>
-    </ul>
-    <p>Мы не собираем медицинские данные, адреса и другую чувствительную информацию.</p>
-
-    <h2>3. Зачем мы их используем</h2>
-    <ul>
-      <li>проведение и напоминание о занятиях;</li>
-      <li>ответы службы поддержки (в т.ч. через AI-ассистента в Telegram);</li>
-      <li>информирование о новых потоках (только с вашего согласия, отписка в один клик);</li>
-      <li>учёт оплат и доступа к записям.</li>
-    </ul>
-
-    <h2>4. Согласие и рассылки</h2>
-    <p>Рассылки отправляются только после явного согласия (double opt-in). Отозвать согласие можно в любой момент — командой в боте или ссылкой «отписаться» в письме.</p>
-
-    <h2>5. AI-ассистент</h2>
-    <p>Сообщения, отправленные боту, могут обрабатываться моделью ИИ (Anthropic Claude) для ответа на ваши вопросы. Мы не используем эти данные для обучения моделей.</p>
-
-    <h2>6. Хранение и ваши права</h2>
-    <p>Вы вправе запросить доступ, исправление или удаление ваших данных, написав на <a href="mailto:15minyoga.com@gmail.com">15minyoga.com@gmail.com</a> или командой <code>/delete</code> в боте. Логи переписки хранятся ограниченный срок и затем удаляются.</p>
-
-    <h2>7. Кому мы передаём данные</h2>
-    <p>Только сервисам, обеспечивающим работу проекта: Telegram, хостинг, ESP (рассылки), платёжные провайдеры, Anthropic (ИИ). С каждым действует соглашение об обработке данных.</p>
-
-    <p style="margin-top:40px"><a href="../index.html">← Вернуться на главную</a></p>
+    <p class="legal__foot">
+      <a href="../index.html" id="pvBack">← 15minyoga.com</a>
+      <a href="impressum.html" id="pvImprint">Impressum</a>
+    </p>
   </main>
+
+  <script src="../js/privacy.js?v=20260729"></script>
+  <script>
+    (function () {
+      var DATA = window.NIGUMA_PRIVACY || {};
+      var SUPPORTED = ["de", "ru", "en", "uk"];
+      var KEY = "niguma.lang";           // тот же ключ, что у Impressum и главной
+
+      function esc(s) {
+        return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+      }
+      // голые ссылки и адреса почты делаем кликабельными
+      function linkify(s) {
+        // хвостовые знаки препинания в адрес не включаем:
+        // без этого «...@gmail.com.» в конце предложения даёт ссылку с точкой
+        return esc(s)
+          .replace(/(https?:\/\/[^\s<]*[^\s<.,;:!?)])/g, '<a href="$1" target="_blank" rel="noopener">$1</a>')
+          .replace(/([\w.+-]+@[\w-]+\.[\w.]*\w)/g, '<a href="mailto:$1">$1</a>');
+      }
+
+      function render(lang) {
+        var d = DATA[lang] || DATA.de;
+        if (!d) return;
+        document.documentElement.lang = lang;
+        document.title = d.title + " — 15minYoga";
+        document.getElementById("pvTitle").textContent = d.title;
+        document.getElementById("pvIntro").textContent = d.intro;
+        document.getElementById("pvUpdated").textContent = d.updated || "";
+        document.getElementById("pvBack").textContent = "← " + (d.back || "15minyoga.com");
+        document.getElementById("pvImprint").textContent = d.imprint || "Impressum";
+        document.getElementById("pvBody").innerHTML = d.sections.map(function (sec) {
+          // блоки-реквизиты (короткие строки) верстаем плотнее
+          var isAddr = sec.lines.every(function (l) { return l.length < 60; });
+          return '<section' + (isAddr ? ' class="addr"' : '') + '>' +
+            "<h2>" + esc(sec.heading) + "</h2>" +
+            sec.lines.map(function (l) { return "<p>" + linkify(l) + "</p>"; }).join("") +
+            "</section>";
+        }).join("");
+        document.querySelectorAll(".lang__btn").forEach(function (b) {
+          b.setAttribute("aria-current", String(b.getAttribute("data-lang") === lang));
+        });
+        try { localStorage.setItem(KEY, lang); } catch (e) { }
+      }
+
+      function detect() {
+        var saved = null;
+        try { saved = localStorage.getItem(KEY); } catch (e) { }
+        if (saved && SUPPORTED.indexOf(saved) >= 0) return saved;
+        var nav = (navigator.language || "de").slice(0, 2).toLowerCase();
+        return SUPPORTED.indexOf(nav) >= 0 ? nav : "de";
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        render(detect());
+        document.querySelectorAll(".lang__btn").forEach(function (b) {
+          b.addEventListener("click", function () { render(b.getAttribute("data-lang")); });
+        });
+      });
+    })();
+  </script>
 </body>
+
 </html>

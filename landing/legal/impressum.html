@@ -65,9 +65,11 @@
       }
       // turn bare URLs and e-mails into links
       function linkify(s) {
+        // хвостовые знаки препинания в адрес не включаем:
+        // без этого «...@gmail.com.» в конце предложения даёт ссылку с точкой
         return esc(s)
-          .replace(/(https?:\/\/[^\s<]+)/g, '<a href="$1" target="_blank" rel="noopener">$1</a>')
-          .replace(/([\w.+-]+@[\w-]+\.[\w.]+)/g, '<a href="mailto:$1">$1</a>');
+          .replace(/(https?:\/\/[^\s<]*[^\s<.,;:!?)])/g, '<a href="$1" target="_blank" rel="noopener">$1</a>')
+          .replace(/([\w.+-]+@[\w-]+\.[\w.]*\w)/g, '<a href="mailto:$1">$1</a>');
       }
 
       function render(lang) {
