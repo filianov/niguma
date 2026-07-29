@@ -8,7 +8,7 @@
  * Секретов не раскрывает: токен не выводится, только его наличие.
  * Без TELEGRAM_WEBHOOK_SECRET эндпоинт отключён.
  */
-import { adminIds, kvEnabled } from "./_lib.js";
+import { adminIds, kvEnabled, recentHooks } from "./_lib.js";
 
 const TOKEN = process.env.TELEGRAM_BOT_TOKEN || "";
 
@@ -124,6 +124,16 @@ export default async function handler(req, res) {
     }
     out.адреса_уведомлений.push(entry);
   }
+
+  // Журнал вебхука — главный ответ на вопрос «почему ответ не дошёл».
+  // Пусто при установленном вебхуке = Telegram до нас вообще не достучался.
+  const hooks = await recentHooks();
+  out.последние_события_вебхука = hooks.length ? hooks : (
+    kvEnabled
+      ? "ПУСТО. Вебхук не получил ни одного события. Проверьте, что setWebhook выполнен " +
+        "на адрес https://15minyoga.com/api/telegram-webhook и что вы писали боту после этого."
+      : "недоступно — не подключено хранилище Upstash"
+  );
 
   return res.status(200).json(out);
 }

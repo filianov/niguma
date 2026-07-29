@@ -25,11 +25,15 @@
 import {
   pushMessage, setHandover, sessionByTelegramMessage,
   linkTelegramDirect, chatByTelegramMessage,
-  sendTelegram, sendToOperator, escapeHtml, isAdmin, kvEnabled,
+  sendTelegram, sendToOperator, escapeHtml, isAdmin, kvEnabled, logHook,
 } from "./_lib.js";
 import { answer, packFor, langFromTelegram } from "./_answer.js";
 
-const ok = (res, note) => res.status(200).json({ ok: true, note });
+async function ok(res, note, extra) {
+  // Пишем исход в журнал: именно он отвечает на вопрос «почему ответ не дошёл».
+  await logHook(Object.assign({ исход: note }, extra || {}));
+  return res.status(200).json({ ok: true, note });
+}
 
 /** Откуда человек перешёл — параметр после /start в ссылке. */
 const SOURCES = {
@@ -47,8 +51,13 @@ export default async function handler(req, res) {
   const expected = process.env.TELEGRAM_WEBHOOK_SECRET || "";
   const got = req.headers["x-telegram-bot-api-secret-token"] || "";
   if (expected && got !== expected) {
-    // отвечаем 200, чтобы Telegram не повторял доставку, но ничего не делаем
-    return ok(res, "bad_secret");
+    // Отвечаем 200, чтобы Telegram не копил очередь, но апдейт не обрабатываем.
+    // Снаружи это выглядит как «всё хорошо, но ответы не доходят» — поэтому пишем в журнал.
+    return await ok(res, "ОТКЛОНЁН: секрет не совпадает", {
+      подсказка: "Значение TELEGRAM_WEBHOOK_SECRET в Vercel не совпадает с secret_token, " +
+                 "указанным при setWebhook. Выполните setWebhook заново с актуальным секретом.",
+      секрет_пришёл: got ? "да, но другой" : "нет — setWebhook сделан без secret_token",
+    });
   }
 
   let body = req.body;
@@ -58,10 +67,10 @@ export default async function handler(req, res) {
   // канал — channel_post. Поддерживаем оба, чтобы «операторской» могли
   // служить и личный чат, и рабочая группа, и канал.
   const msg = body && (body.message || body.channel_post);
-  if (!msg || !msg.text) return ok(res, "not_a_text_message");
+  if (!msg || !msg.text) return await ok(res, "not_a_text_message");
 
   const text = String(msg.text).trim().slice(0, 2000);
-  if (!text) return ok(res, "empty");
+  if (!text) return await ok(res, "empty");
 
   const chatId = msg.chat && msg.chat.id;
   const chatType = (msg.chat && msg.chat.type) || "private";
@@ -82,38 +91,45 @@ export default async function handler(req, res) {
     if (sessionId) {
       await setHandover(sessionId, true);      // дальше говорит человек
       await pushMessage(sessionId, "operator", text);
-      return ok(res, "delivered_to_site");
+      return await ok(res, "доставлено в чат на сайте", { сессия: sessionId });
     }
 
     // ответ человеку, который написал боту в Telegram
     const targetChat = await chatByTelegramMessage(chatId, repliedTo);
     if (targetChat) {
       await sendTelegram(targetChat, escapeHtml(text));
-      return ok(res, "delivered_to_telegram");
+      return await ok(res, "доставлено человеку в Telegram", { чат: String(targetChat) });
     }
 
     await sendTelegram(chatId,
       "Не нашёл, кому адресован ответ — возможно, диалогу больше недели.\n" +
       "Ответьте реплаем на более свежее уведомление.");
-    return ok(res, "unknown_target");
+    return await ok(res, "НЕ НАЙДЕН АДРЕСАТ", {
+      чат_откуда_ответили: String(chatId),
+      номер_сообщения: repliedTo,
+      подсказка: kvEnabled
+        ? "Связь не найдена. Обычно это ответ на уведомление, которое пришло ДО обновления кода — " +
+          "ответьте на свежее. Если и со свежим так же, значит уведомление и ответ в разных чатах."
+        : "Хранилище Upstash не подключено — связь сохранять негде.",
+    });
   }
 
   /* ---------- свои переписываются, но не реплаем ---------- */
   if (fromAdmin) {
     // В группе и канале команда обсуждает свои дела — вмешиваться нельзя,
     // иначе бот засыпет рабочий чат подсказками. Молчим.
-    if (isTeamChat) return ok(res, "team_chat_chatter");
+    if (isTeamChat) return await ok(res, "team_chat_chatter");
 
     await sendTelegram(chatId,
       "Это бот поддержки сайта.\n\n" +
       "Чтобы ответить человеку, нажмите на его сообщение → <b>Ответить</b> и напишите текст. " +
       "Обычные сообщения сюда никуда не уходят.");
-    return ok(res, "admin_hint");
+    return await ok(res, "admin_hint");
   }
 
   /* ---------- бота добавили в постороннюю группу ---------- */
   // Отвечать клиентскими репликами в чужом групповом чате не следует.
-  if (isTeamChat) return ok(res, "foreign_group_ignored");
+  if (isTeamChat) return await ok(res, "foreign_group_ignored");
 
   /* ---------- 3. человек пишет боту напрямую ---------- */
   const lang = langFromTelegram(msg.from && msg.from.language_code);
@@ -130,7 +146,7 @@ export default async function handler(req, res) {
       "\n↩️ Ответьте <b>реплаем</b> — человек получит сообщение в Telegram."
     );
     for (const n of notes) if (chatId) await linkTelegramDirect(n.chat, n.id, chatId);
-    return ok(res, "greeted");
+    return await ok(res, "greeted");
   }
 
   const found = await answer(text, lang);
@@ -145,7 +161,7 @@ export default async function handler(req, res) {
   );
   for (const n of notes) if (chatId) await linkTelegramDirect(n.chat, n.id, chatId);
 
-  return ok(res, found.wantsHuman ? "handover" : "answered");
+  return await ok(res, found.wantsHuman ? "handover" : "answered");
 }
 
 /** Человекочитаемая подпись отправителя для уведомления. */

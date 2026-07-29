@@ -89,6 +89,26 @@ export async function sessionByTelegramMessage(chatId, messageId) {
   return await kv(["GET", linkKey(chatId, messageId)]);
 }
 
+/**
+ * Журнал последних событий вебхука — чтобы «ответы не доходят» можно было
+ * разобрать по фактам, а не по догадкам. Пишется ДО проверки секрета:
+ * отклонённые апдейты — самая частая причина тишины, и они тоже должны быть видны.
+ * Храним 15 последних записей сутки; смотреть — /api/telegram-check.
+ */
+export async function logHook(entry) {
+  const item = JSON.stringify(Object.assign({ ts: new Date().toISOString() }, entry));
+  await kv(["RPUSH", "diag:hooks", item]);
+  await kv(["LTRIM", "diag:hooks", "-15", "-1"]);
+  await kv(["EXPIRE", "diag:hooks", "86400"]);
+}
+
+export async function recentHooks() {
+  const list = await kv(["LRANGE", "diag:hooks", "0", "-1"]);
+  if (!Array.isArray(list)) return [];
+  return list.map((s) => { try { return JSON.parse(s); } catch (e) { return null; } })
+             .filter(Boolean).reverse();
+}
+
 /* ----------------------------- Telegram ----------------------------- */
 
 const TG_TOKEN = process.env.TELEGRAM_BOT_TOKEN || "";
