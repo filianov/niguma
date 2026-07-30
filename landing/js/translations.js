@@ -44,10 +44,10 @@ window.NIGUMA_I18N = {
     },
     "pricing": {
       "heading": "Стоимость",
-      "tiers": [ { "period": "1 месяц", "price": "100 €" }, { "period": "6 месяцев", "price": "500 €" }, { "period": "12 месяцев", "price": "900 €" } ],
+      "tiers": [ { "period": "1 месяц", "price": "100 €", "desc": "Живые занятия по будням 07:00–07:15 (Вена), расширенное занятие по субботам, записи и закрытое сообщество." }, { "period": "6 месяцев", "price": "500 €", "desc": "Живые занятия по будням 07:00–07:15 (Вена), расширенное занятие по субботам, записи и закрытое сообщество." }, { "period": "12 месяцев", "price": "900 €", "desc": "Живые занятия по будням 07:00–07:15 (Вена), расширенное занятие по субботам, записи и закрытое сообщество." } ],
       "payLabel": "Оплата",
-      "payMethods": ["PayPal", "Перевод на евро-счёт", "Monobank (грн)"],
-      "note": "Картой любой страны — через PayPal/Stripe. Евро-счёт (IBAN) и Monobank — реквизиты пришлёт бот."
+      "payMethods": ["Счёт на банковский перевод (IBAN)", "PayPal", "Картой онлайн через LiqPay", "USDT (TRC-20)"],
+      "note": "Оплата в евро. Картой — на защищённой странице LiqPay: Visa, Mastercard, Apple Pay, Google Pay. Счёт, PayPal и USDT — реквизиты пришлём после выбора пакета."
     },
     "closing": { "heading": "Если вам некогда заниматься йогой по часу в день", "body": "Этот проект создан именно для вас. 15 минут, которые могут изменить качество всего дня." },
     "cta": {
@@ -57,7 +57,7 @@ window.NIGUMA_I18N = {
       "joinTitle": "Присоединиться к потоку", "joinBody": "Старт ближайшего потока — понедельник. Напишите боту — он ответит на вопросы и подскажет, как начать.",
       "leadThanks": "Спасибо! Вы в списке — напишем, когда откроется набор в поток.", "leadError": "Не получилось отправить. Напишите нам в Telegram — ответим сразу."
     },
-    "footer": { "tagline": "Аутентичная йога Леди Нигумы для тех, кто принимает решения.", "rights": "Все права защищены.", "privacy": "Политика конфиденциальности", "impressum": "Impressum", "contact": "Связь" }
+    "footer": { "tagline": "Аутентичная йога Леди Нигумы для тех, кто принимает решения.", "rights": "Все права защищены.", "terms": "Публичная оферта", "refund": "Возврат средств", "privacy": "Политика конфиденциальности", "impressum": "Impressum", "contact": "Связь" }
   },
 
   "en": {
@@ -100,10 +100,10 @@ window.NIGUMA_I18N = {
     },
     "pricing": {
       "heading": "Pricing",
-      "tiers": [ { "period": "1 month", "price": "100 €" }, { "period": "6 months", "price": "500 €" }, { "period": "12 months", "price": "900 €" } ],
+      "tiers": [ { "period": "1 month", "price": "100 €", "desc": "Live classes on weekdays 07:00–07:15 (Vienna), an extended session on Saturdays, recordings and the members' community." }, { "period": "6 months", "price": "500 €", "desc": "Live classes on weekdays 07:00–07:15 (Vienna), an extended session on Saturdays, recordings and the members' community." }, { "period": "12 months", "price": "900 €", "desc": "Live classes on weekdays 07:00–07:15 (Vienna), an extended session on Saturdays, recordings and the members' community." } ],
       "payLabel": "Payment",
-      "payMethods": ["PayPal", "Bank transfer (IBAN)", "Monobank (UAH)"],
-      "note": "Card from any country via PayPal/Stripe. For euro account (IBAN) and Monobank, the bot will send the details."
+      "payMethods": ["Bank transfer invoice (IBAN)", "PayPal", "Card online via LiqPay", "USDT (TRC-20)"],
+      "note": "Prices are in euro. Card payments go through the secure LiqPay page: Visa, Mastercard, Apple Pay, Google Pay. For the invoice, PayPal and USDT we send the details once you pick a plan."
     },
     "closing": { "heading": "If you don't have time for an hour of yoga a day", "body": "This project was made for you. 15 minutes that can change the quality of your entire day." },
     "cta": {
@@ -113,7 +113,7 @@ window.NIGUMA_I18N = {
       "joinTitle": "Join a group", "joinBody": "The next group starts Monday. Message the bot — it will answer your questions and show you how to begin.",
       "leadThanks": "Thank you! You're on the list — we'll write when the next group opens.", "leadError": "Couldn't send it. Message us on Telegram — we'll reply right away."
     },
-    "footer": { "tagline": "The authentic yoga of Lady Niguma for those who make decisions.", "rights": "All rights reserved.", "privacy": "Privacy policy", "impressum": "Legal notice", "contact": "Contact" }
+    "footer": { "tagline": "The authentic yoga of Lady Niguma for those who make decisions.", "rights": "All rights reserved.", "terms": "Terms of service", "refund": "Refunds", "privacy": "Privacy policy", "impressum": "Legal notice", "contact": "Contact" }
   },
 
   "de": {
@@ -156,10 +156,10 @@ window.NIGUMA_I18N = {
     },
     "pricing": {
       "heading": "Preise",
-      "tiers": [ { "period": "1 Monat", "price": "100 €" }, { "period": "6 Monate", "price": "500 €" }, { "period": "12 Monate", "price": "900 €" } ],
+      "tiers": [ { "period": "1 Monat", "price": "100 €", "desc": "Live-Einheiten werktags 07:00–07:15 Uhr (Wien), samstags eine längere Einheit, Aufzeichnungen und die Mitglieder-Community." }, { "period": "6 Monate", "price": "500 €", "desc": "Live-Einheiten werktags 07:00–07:15 Uhr (Wien), samstags eine längere Einheit, Aufzeichnungen und die Mitglieder-Community." }, { "period": "12 Monate", "price": "900 €", "desc": "Live-Einheiten werktags 07:00–07:15 Uhr (Wien), samstags eine längere Einheit, Aufzeichnungen und die Mitglieder-Community." } ],
       "payLabel": "Zahlung",
-      "payMethods": ["PayPal", "Überweisung auf das Euro-Konto (IBAN)", "Monobank (UAH)"],
-      "note": "Mit einer Karte aus jedem Land — über PayPal/Stripe. Euro-Konto (IBAN) und Monobank — die Zahlungsdaten sendet der Bot."
+      "payMethods": ["Rechnung für die Banküberweisung (IBAN)", "PayPal", "Karte online über LiqPay", "USDT (TRC-20)"],
+      "note": "Preise in Euro. Kartenzahlungen laufen über die gesicherte LiqPay-Seite: Visa, Mastercard, Apple Pay, Google Pay. Rechnung, PayPal und USDT — die Daten senden wir nach der Wahl des Pakets."
     },
     "closing": { "heading": "Wenn Ihnen die Zeit fehlt, eine Stunde am Tag Yoga zu üben", "body": "Dieses Projekt wurde genau für Sie geschaffen. 15 Minuten, die die Qualität des gesamten Tages verändern können." },
     "cta": {
@@ -169,7 +169,7 @@ window.NIGUMA_I18N = {
       "joinTitle": "Am Kurs teilnehmen", "joinBody": "Der Start des nächsten Kurses ist am Montag. Schreiben Sie dem Bot — er beantwortet Ihre Fragen und zeigt Ihnen, wie Sie beginnen.",
       "leadThanks": "Danke! Sie stehen auf der Liste — wir melden uns, sobald der nächste Kurs startet.", "leadError": "Konnte nicht gesendet werden. Schreiben Sie uns auf Telegram — wir antworten sofort."
     },
-    "footer": { "tagline": "Authentisches Yoga von Lady Niguma für Menschen, die Entscheidungen treffen.", "rights": "Alle Rechte vorbehalten.", "privacy": "Datenschutzerklärung", "impressum": "Impressum", "contact": "Kontakt" }
+    "footer": { "tagline": "Authentisches Yoga von Lady Niguma für Menschen, die Entscheidungen treffen.", "rights": "Alle Rechte vorbehalten.", "terms": "AGB / Angebot", "refund": "Rückerstattung", "privacy": "Datenschutzerklärung", "impressum": "Impressum", "contact": "Kontakt" }
   },
 
   "uk": {
@@ -212,10 +212,10 @@ window.NIGUMA_I18N = {
     },
     "pricing": {
       "heading": "Вартість",
-      "tiers": [ { "period": "1 місяць", "price": "100 €" }, { "period": "6 місяців", "price": "500 €" }, { "period": "12 місяців", "price": "900 €" } ],
+      "tiers": [ { "period": "1 місяць", "price": "100 €", "desc": "Живі заняття в будні 07:00–07:15 (Відень), розширене заняття щосуботи, записи та закрита спільнота." }, { "period": "6 місяців", "price": "500 €", "desc": "Живі заняття в будні 07:00–07:15 (Відень), розширене заняття щосуботи, записи та закрита спільнота." }, { "period": "12 місяців", "price": "900 €", "desc": "Живі заняття в будні 07:00–07:15 (Відень), розширене заняття щосуботи, записи та закрита спільнота." } ],
       "payLabel": "Оплата",
-      "payMethods": ["PayPal", "Переказ на євро-рахунок (IBAN)", "Monobank (UAH)"],
-      "note": "Карткою будь-якої країни — через PayPal/Stripe. Євро-рахунок (IBAN) і Monobank — реквізити надішле бот."
+      "payMethods": ["Рахунок на банківський переказ (IBAN)", "PayPal", "Карткою онлайн через LiqPay", "USDT (TRC-20)"],
+      "note": "Оплата в євро. Карткою — на захищеній сторінці LiqPay: Visa, Mastercard, Apple Pay, Google Pay. Рахунок, PayPal і USDT — реквізити надішлемо після вибору пакета."
     },
     "closing": { "heading": "Якщо вам ніколи займатися йогою по годині на день", "body": "Цей проєкт створено саме для вас. 15 хвилин, які можуть змінити якість усього дня." },
     "cta": {
@@ -225,7 +225,7 @@ window.NIGUMA_I18N = {
       "joinTitle": "Приєднатися до потоку", "joinBody": "Старт найближчого потоку — понеділок. Напишіть боту — він відповість на запитання та підкаже, як почати.",
       "leadThanks": "Дякуємо! Ви у списку — напишемо, коли відкриється набір у потік.", "leadError": "Не вдалося надіслати. Напишіть нам у Telegram — відповімо одразу."
     },
-    "footer": { "tagline": "Автентична йога Леді Нігуми для тих, хто ухвалює рішення.", "rights": "Усі права захищено.", "privacy": "Політика конфіденційності", "impressum": "Impressum", "contact": "Звʼязок" }
+    "footer": { "tagline": "Автентична йога Леді Нігуми для тих, хто ухвалює рішення.", "rights": "Усі права захищено.", "terms": "Публічна оферта", "refund": "Повернення коштів", "privacy": "Політика конфіденційності", "impressum": "Impressum", "contact": "Звʼязок" }
   }
 };
 

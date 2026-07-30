@@ -7,12 +7,12 @@
   <title>Impressum — 15minYoga</title>
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://15minyoga.com/legal/impressum" />
-  <link rel="icon" href="../assets/brand/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&display=swap" />
-  <link rel="stylesheet" href="../css/styles.css?v=20260729" />
+  <link rel="stylesheet" href="/css/styles.css?v=20260730" />
   <style>
     .legal { max-width: 760px; margin: 0 auto; padding: 40px 22px 90px; }
     .legal__top { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 34px; }
@@ -35,8 +35,8 @@
 <body>
   <main class="legal">
     <div class="legal__top">
-      <a class="legal__back" href="../index.html">
-        <img src="../assets/brand/logo-horizontal.svg" alt="15minYoga" />
+      <a class="legal__back" href="/">
+        <img src="/assets/brand/logo-horizontal.svg" alt="15minYoga" />
       </a>
       <div class="lang" role="group" aria-label="Sprache / Language">
         <button class="lang__btn" data-lang="de" type="button">DE</button>
@@ -50,15 +50,20 @@
     <p class="legal__intro" id="imIntro">Angaben gemäß § 5 DDG</p>
     <div id="imBody"><!-- rendered from js/impressum.js --></div>
 
-    <p class="legal__foot"><a href="../index.html">← 15minyoga.com</a></p>
+    <p class="legal__foot">
+      <a href="/">← 15minyoga.com</a>
+      <a href="/legal/terms">Оферта</a>
+      <a href="/legal/refund">Повернення</a>
+      <a href="/legal/privacy">Конфіденційність</a>
+      <a href="/legal/impressum">Impressum</a>
+    </p>
   </main>
 
-  <script src="../js/impressum.js?v=20260729"></script>
+  <script src="/js/impressum.js?v=20260730"></script>
+  <script src="/js/legal-lang.js?v=20260730"></script>
   <script>
     (function () {
       var DATA = window.NIGUMA_IMPRESSUM || {};
-      var SUPPORTED = ["de", "ru", "en", "uk"];
-      var KEY = "niguma.lang";
 
       function esc(s) {
         return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
@@ -90,22 +95,11 @@
         document.querySelectorAll(".lang__btn").forEach(function (b) {
           b.setAttribute("aria-current", String(b.getAttribute("data-lang") === lang));
         });
-        try { localStorage.setItem(KEY, lang); } catch (e) { }
       }
 
-      function detect() {
-        var saved = null;
-        try { saved = localStorage.getItem(KEY); } catch (e) { }
-        if (saved && SUPPORTED.indexOf(saved) >= 0) return saved;
-        var nav = (navigator.language || "de").slice(0, 2).toLowerCase();
-        return SUPPORTED.indexOf(nav) >= 0 ? nav : "de";
-      }
 
       document.addEventListener("DOMContentLoaded", function () {
-        render(detect());
-        document.querySelectorAll(".lang__btn").forEach(function (b) {
-          b.addEventListener("click", function () { render(b.getAttribute("data-lang")); });
-        });
+        window.NigumaLegalLang(render, "de");
       });
     })();
   </script>

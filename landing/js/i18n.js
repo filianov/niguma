@@ -68,6 +68,7 @@
                  '<p class="tier__period">' + escapeHtml(tier.period) + "</p>" +
                  '<div class="tier__price">' + escapeHtml(tier.price) + "</div>" +
                  (per ? '<div class="tier__per">' + per + "</div>" : "") +
+                 (tier.desc ? '<p class="tier__desc">' + escapeHtml(tier.desc) + "</p>" : "") +
                "</div>";
       }).join("");
     });
@@ -136,20 +137,55 @@
       .replace(/"/g, "&quot;");
   }
 
-  function detect() {
+  function chosen() {
     var saved = null;
     try { saved = localStorage.getItem(STORAGE_KEY); } catch (e) {}
-    if (saved && SUPPORTED.indexOf(saved) >= 0) return saved;
+    return saved && SUPPORTED.indexOf(saved) >= 0 ? saved : null;
+  }
+
+  function detect() {
+    var saved = chosen();
+    if (saved) return saved;
     var nav = (navigator.language || navigator.userLanguage || "ru").slice(0, 2).toLowerCase();
     return SUPPORTED.indexOf(nav) >= 0 ? nav : FALLBACK;
   }
 
-  function setLang(lang) {
+  /**
+   * Запоминаем язык, только когда его выбрал человек.
+   *
+   * Раньше запоминался и автоопределённый: первый заход из Украины с русским
+   * браузером сохранял «ru» как будто это осознанный выбор, и украинская версия
+   * больше не открывалась никогда. Теперь автоопределение ничего не записывает,
+   * а нажатие на флажок — записывает.
+   */
+  function setLang(lang, remember) {
     if (SUPPORTED.indexOf(lang) < 0) lang = FALLBACK;
     applyText(lang);
-    try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) {}
+    if (remember) { try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) {} }
     // re-arm scroll reveal for freshly rendered nodes
     if (window.NigumaReveal) window.NigumaReveal();
+  }
+
+  /**
+   * Посетителю из Украины сайт обязан открываться на украинском — часть 6
+   * статьи 27 Закона «Про забезпечення функціонування української мови як
+   * державної». Браузер страну не знает, поэтому спрашиваем /api/geo.
+   *
+   * Спрашиваем только если человек ещё не выбрал язык сам: свой выбор
+   * посетителя важнее страны, из которой он зашёл. Ошибка сети или
+   * недоступный ответ ничего не ломают — остаётся язык браузера.
+   */
+  function applyCountry() {
+    if (chosen()) return;
+    if (document.documentElement.lang === "uk") return;
+    fetch("/api/geo", { credentials: "omit" })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (d) {
+        if (!d || d.country !== "UA") return;
+        if (chosen()) return;            // человек успел выбрать сам, пока шёл запрос
+        setLang("uk", false);
+      })
+      .catch(function () {});
   }
 
   // expose — t() lets other scripts read a string in the language shown right now
@@ -161,9 +197,10 @@
 
   // boot
   document.addEventListener("DOMContentLoaded", function () {
-    setLang(detect());
+    setLang(detect(), false);
+    applyCountry();
     document.querySelectorAll(".lang__btn").forEach(function (btn) {
-      btn.addEventListener("click", function () { setLang(btn.getAttribute("data-lang")); });
+      btn.addEventListener("click", function () { setLang(btn.getAttribute("data-lang"), true); });
     });
   });
 })();

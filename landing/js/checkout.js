@@ -133,6 +133,19 @@
       "</svg>Pay</span>",
   };
 
+  /**
+   * Логотип LiqPay — официальный файл, а не рисунок.
+   *
+   * Бренд-бук LiqPay запрещает перерисовывать логотип, перекрашивать его,
+   * поворачивать и растягивать, поэтому он подключается картинкой из
+   * assets/liqpay и никогда не собирается кодом, как значки выше.
+   * Размещение логотипа — требование ЛиqPay к сайту мерчанта.
+   */
+  MARKS.liqpay =
+    '<span class="paymark paymark--liqpay">' +
+    '<img src="/assets/liqpay/liqpay-logo.svg" alt="LiqPay" width="500" height="104" loading="lazy" />' +
+    "</span>";
+
   function marksHtml(list) {
     if (!list || !list.length) return "";
     return '<span class="paymarks">' + list.map(function (k) { return MARKS[k] || ""; }).join("") + "</span>";

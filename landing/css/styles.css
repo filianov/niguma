@@ -794,6 +794,19 @@ img { max-width: 100%; display: block; }
 .checkout__method .paymarks { margin-top: 3px; }
 .checkout__method .paymark { height: 20px; font-size: 10.5px; }
 
+/**
+ * Логотип LiqPay.
+ *
+ * Бренд-бук требует свободного поля вокруг логотипа не меньше высоты буквы «L»
+ * и минимальной высоты 12 px на экране; пропорции менять нельзя. Поэтому здесь
+ * задаётся только высота, ширина считается сама, а рамка и фон убраны —
+ * логотип не должен выглядеть как ещё один значок платёжной системы.
+ */
+.paymark--liqpay { height: auto; padding: 0 10px 0 2px; border: 0; background: none; }
+.paymark--liqpay img { height: 18px; width: auto; display: block; }
+.checkout__method .paymark--liqpay { height: auto; }
+.checkout__method .paymark--liqpay img { height: 15px; }
+
 /* реквизиты продавца в подвале — требование платёжного сервиса */
 .footer__merchant { margin: 14px 0 0; font-size: 12.5px; line-height: 1.6; color: var(--ink-soft); opacity: .9; }
 .footer__merchant a { color: inherit; text-decoration: underline; }

@@ -142,7 +142,9 @@ export const METHODS = [
     icon: "card",
     // значки платёжных систем рядом со способом: человек ищет глазами
     // знакомый знак, а не читает перечисление
-    marks: ["visa", "mastercard", "applepay", "googlepay"],
+    // логотип LiqPay идёт первым: это требование банка к сайту мерчанта,
+    // и человеку сразу видно, чей платёжный экран откроется
+    marks: ["liqpay", "visa", "mastercard", "applepay", "googlepay"],
     ru: { name: "Картой онлайн", hint: "Оплата сразу на сайте: карта, Apple Pay, Google Pay",
           badge: "Visa · Mastercard · Apple Pay · Google Pay" },
     en: { name: "Card online", hint: "Pay right on the site: card, Apple Pay, Google Pay",

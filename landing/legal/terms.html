@@ -8,7 +8,7 @@
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://15minyoga.com/legal/terms" />
   <link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="/css/styles.css?v=20260729" />
+  <link rel="stylesheet" href="/css/styles.css?v=20260730" />
   <style>
     .legal { max-width: 760px; margin: 0 auto; padding: 40px 22px 90px; }
     .legal__top { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 34px; }
@@ -52,13 +52,12 @@
     </p>
   </main>
 
-  <script src="/js/legal-docs.js?v=20260729"></script>
+  <script src="/js/legal-docs.js?v=20260730"></script>
+  <script src="/js/legal-lang.js?v=20260730"></script>
   <script>
     (function () {
       var DOCS = window.NIGUMA_LEGAL || {};
       var DOC = "terms";
-      var SUPPORTED = ["uk", "ru", "en", "de"];
-      var KEY = "niguma.lang";
 
       function esc(s) {
         return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
@@ -91,22 +90,11 @@
         document.querySelectorAll(".lang__btn").forEach(function (b) {
           b.setAttribute("aria-current", String(b.getAttribute("data-lang") === lang));
         });
-        try { localStorage.setItem(KEY, lang); } catch (e) {}
       }
 
-      function detect() {
-        var saved = null;
-        try { saved = localStorage.getItem(KEY); } catch (e) {}
-        if (saved && SUPPORTED.indexOf(saved) >= 0) return saved;
-        var nav = (navigator.language || "uk").slice(0, 2).toLowerCase();
-        return SUPPORTED.indexOf(nav) >= 0 ? nav : "uk";
-      }
 
       document.addEventListener("DOMContentLoaded", function () {
-        render(detect());
-        document.querySelectorAll(".lang__btn").forEach(function (b) {
-          b.addEventListener("click", function () { render(b.getAttribute("data-lang")); });
-        });
+        window.NigumaLegalLang(render, "uk");
       });
     })();
   </script>
