@@ -243,18 +243,35 @@ export async function paymentInstructions(methodId, cents, lang) {
   }
 
   if (methodId === "paypal") {
+    // Принимаем оба варианта: короткую ссылку PayPal.Me и просто адрес почты.
+    // PayPal.Me работает только с никнеймом (paypal.me/имя) — адрес почты в
+    // такой ссылке даёт 404, поэтому по виду значения выбираем, что показать.
+    const raw = env("PAYPAL_ME");
+    const isLink = /^https?:\/\//i.test(raw) && !raw.includes("@");
     return {
       title: "PayPal",
-      lines: [
-        { label: "Ссылка", value: env("PAYPAL_ME") },
-        { label: "Сумма", value: eur + " EUR" },
-      ],
-      note: {
-        ru: "Выберите «отправить другу», иначе PayPal удержит комиссию с получателя.",
-        en: "Please choose “sending to a friend”, otherwise PayPal charges the recipient a fee.",
-        de: "Bitte wählen Sie „an Freunde senden“, sonst berechnet PayPal dem Empfänger eine Gebühr.",
-        uk: "Оберіть «надіслати другу», інакше PayPal стягне комісію з отримувача.",
-      }[L],
+      lines: isLink
+        ? [
+            { label: "Ссылка для оплаты", value: raw },
+            { label: "Сумма", value: eur + " EUR" },
+          ]
+        : [
+            { label: "Получатель в PayPal", value: raw.replace(/^https?:\/\/(www\.)?paypal\.me\//i, "") },
+            { label: "Сумма", value: eur + " EUR" },
+          ],
+      note: (isLink
+        ? {
+            ru: "Выберите «отправить другу», иначе PayPal удержит комиссию с получателя.",
+            en: "Please choose “sending to a friend”, otherwise PayPal charges the recipient a fee.",
+            de: "Bitte wählen Sie „an Freunde senden“, sonst berechnet PayPal dem Empfänger eine Gebühr.",
+            uk: "Оберіть «надіслати другу», інакше PayPal стягне комісію з отримувача.",
+          }
+        : {
+            ru: "В приложении PayPal выберите «Отправить», укажите этот адрес и сумму, тип перевода — «другу». Иначе PayPal удержит комиссию с получателя.",
+            en: "In PayPal choose “Send”, enter this address and the amount, and select “sending to a friend”. Otherwise PayPal charges the recipient a fee.",
+            de: "Wählen Sie in PayPal „Senden“, geben Sie diese Adresse und den Betrag ein und wählen Sie „an Freunde senden“. Sonst berechnet PayPal dem Empfänger eine Gebühr.",
+            uk: "У застосунку PayPal оберіть «Надіслати», вкажіть цю адресу й суму, тип переказу — «другу». Інакше PayPal стягне комісію з отримувача.",
+          })[L],
     };
   }
 
