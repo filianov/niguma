@@ -130,6 +130,7 @@
         "</div>" +
         '<div class="adm__row-side">' +
           '<span class="adm__badge">' + esc(plan) + "</span><br>" +
+          (r.method ? '<span class="adm__badge">' + esc(methodName(r.method)) + "</span><br>" : "") +
           "заявка от " + date(r.createdAt) +
         "</div>" +
         '<div class="adm__row-actions">' +
@@ -137,6 +138,11 @@
           '<button class="btn btn--ghost btn--small" data-reject="' + esc(r.id) + '">Отклонить</button>' +
         "</div></div>";
     }).join("");
+  }
+
+  /** Название способа оплаты для карточки заявки. */
+  function methodName(id) {
+    return ({ invoice: "счёт на банк", paypal: "PayPal", card: "карта", crypto: "USDT" })[id] || id;
   }
 
   function planLabel(id) {

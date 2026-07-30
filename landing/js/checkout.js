@@ -13,7 +13,7 @@
   "use strict";
 
   var PLAN_IDS = ["m1", "m6", "m12"];
-  var state = { plans: null, promo: null, selected: null, sending: false };
+  var state = { plans: null, promo: null, selected: null, sending: false, methods: null, method: null };
 
   function $(s, root) { return (root || document).querySelector(s); }
   function esc(s) {
@@ -27,6 +27,12 @@
   /* --------------------------- тексты формы --------------------------- */
   var T = {
     ru: { choose: "Выбрать", chosen: "Выбрано", perMonth: "€/мес", off: "выгода",
+          payTitle: "Как удобно заплатить", payPick: "Способ оплаты",
+          payNote: "Реквизиты приходят лично — на сайте их нет.",
+          payInstantNote: "Оплата пройдёт сразу на защищённой странице банка.",
+          copy: "Скопировать", copied: "Скопировано", payNow: "Перейти к оплате",
+          detailsTitle: "Реквизиты для оплаты", detailsAfter: "После оплаты мы подтвердим доступ — обычно в течение дня.",
+          openBot: "Получить реквизиты в Telegram",
           title: "Заявка на участие", sub: "Пришлём реквизиты и ответим на вопросы. Оплата — переводом, картой или криптовалютой.",
           name: "Имя", email: "Почта", phone: "Телефон (необязательно)", tg: "Telegram (необязательно)",
           comment: "Вопрос или пожелание (необязательно)", submit: "Отправить заявку", sending: "Отправляем…",
@@ -34,6 +40,12 @@
           errEmail: "Проверьте адрес почты.", err: "Не отправилось. Попробуйте ещё раз или напишите нам в Telegram.",
           close: "Закрыть", promoLeft: "до конца акции" },
     en: { choose: "Choose", chosen: "Selected", perMonth: "€/mo", off: "you save",
+          payTitle: "How would you like to pay", payPick: "Payment method",
+          payNote: "Payment details are sent to you personally — they are not published here.",
+          payInstantNote: "You will pay right away on the bank's secure page.",
+          copy: "Copy", copied: "Copied", payNow: "Go to payment",
+          detailsTitle: "Payment details", detailsAfter: "Once paid, we confirm your access — usually within a day.",
+          openBot: "Get the details in Telegram",
           title: "Membership request", sub: "We'll send the payment details and answer your questions. Bank transfer, card or crypto.",
           name: "Name", email: "E-mail", phone: "Phone (optional)", tg: "Telegram (optional)",
           comment: "Question or note (optional)", submit: "Send request", sending: "Sending…",
@@ -41,6 +53,12 @@
           errEmail: "Please check the e-mail address.", err: "Could not send. Please try again or write to us on Telegram.",
           close: "Close", promoLeft: "until the offer ends" },
     de: { choose: "Wählen", chosen: "Gewählt", perMonth: "€/Mon.", off: "Ersparnis",
+          payTitle: "Wie möchten Sie bezahlen", payPick: "Zahlungsart",
+          payNote: "Die Zahlungsdaten erhalten Sie persönlich — auf der Seite stehen sie nicht.",
+          payInstantNote: "Die Zahlung erfolgt sofort auf der gesicherten Seite der Bank.",
+          copy: "Kopieren", copied: "Kopiert", payNow: "Zur Zahlung",
+          detailsTitle: "Zahlungsdaten", detailsAfter: "Nach der Zahlung bestätigen wir den Zugang — meist innerhalb eines Tages.",
+          openBot: "Daten per Telegram erhalten",
           title: "Anfrage zur Teilnahme", sub: "Wir senden die Zahlungsdaten und beantworten Ihre Fragen. Überweisung, Karte oder Krypto.",
           name: "Name", email: "E-Mail", phone: "Telefon (optional)", tg: "Telegram (optional)",
           comment: "Frage oder Hinweis (optional)", submit: "Anfrage senden", sending: "Wird gesendet…",
@@ -48,6 +66,12 @@
           errEmail: "Bitte prüfen Sie die E-Mail-Adresse.", err: "Senden fehlgeschlagen. Bitte erneut versuchen oder uns auf Telegram schreiben.",
           close: "Schließen", promoLeft: "bis zum Ende der Aktion" },
     uk: { choose: "Обрати", chosen: "Обрано", perMonth: "€/міс", off: "вигода",
+          payTitle: "Як зручно заплатити", payPick: "Спосіб оплати",
+          payNote: "Реквізити надходять особисто — на сайті їх немає.",
+          payInstantNote: "Оплата пройде одразу на захищеній сторінці банку.",
+          copy: "Копіювати", copied: "Скопійовано", payNow: "Перейти до оплати",
+          detailsTitle: "Реквізити для оплати", detailsAfter: "Після оплати ми підтвердимо доступ — зазвичай протягом дня.",
+          openBot: "Отримати реквізити в Telegram",
           title: "Заявка на участь", sub: "Надішлемо реквізити та відповімо на запитання. Оплата — переказом, карткою або криптовалютою.",
           name: "Ім'я", email: "Пошта", phone: "Телефон (необов'язково)", tg: "Telegram (необов'язково)",
           comment: "Запитання чи побажання (необов'язково)", submit: "Надіслати заявку", sending: "Надсилаємо…",
@@ -56,6 +80,22 @@
           close: "Закрити", promoLeft: "до кінця акції" },
   };
   function t(key) { return (T[lang()] || T.ru)[key]; }
+
+
+  /* ------------------------------ иконки ------------------------------ */
+  /* Рисуем сами: логотипы платёжных систем нельзя размещать без разрешения,
+     а внешние картинки — лишний запрос и утечка адреса посетителя. */
+  var ICONS = {
+    bank: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">' +
+      '<path d="M3 9.5 12 4l9 5.5M5 10v9m14-9v9M3 20h18M9 20v-5.5h6V20"/></svg>',
+    paypal: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">' +
+      '<path d="M7 19 9.2 5.5h4.6c2.4 0 3.8 1.3 3.4 3.6-.4 2.4-2.3 3.7-4.9 3.7h-2L9.5 19H7Z"/>' +
+      '<path d="M12.2 12.8h1.6c2.6 0 4.5 1.2 4.1 3.5" opacity=".55"/></svg>',
+    card: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">' +
+      '<rect x="2.5" y="5.5" width="19" height="13" rx="2.5"/><path d="M2.5 10h19M6 14.5h3"/></svg>',
+    crypto: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">' +
+      '<circle cx="12" cy="12" r="8.5"/><path d="M8.5 9.5h7M12 9.5V16"/></svg>',
+  };
 
   /* ---------------------------- загрузка цен ---------------------------- */
   function loadPlans() {
@@ -130,6 +170,66 @@
     host.parentNode.insertBefore(ribbon, host);
   }
 
+
+  /* ------------------------- способы оплаты ------------------------- */
+  /**
+   * Показываем только настроенные способы: кнопка, за которой ничего нет,
+   * хуже, чем её отсутствие. Пока ответа нет, в блоке остаётся текст из разметки.
+   */
+  function loadMethods() {
+    return fetch("/api/payment-methods?lang=" + encodeURIComponent(lang()))
+      .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
+      .then(function (d) {
+        if (!d.ok || !d.methods || !d.methods.length) return;
+        state.methods = d.methods;
+        renderMethods();
+      })
+      .catch(function () { /* остаётся текст из разметки */ });
+  }
+
+  function renderMethods() {
+    var host = document.getElementById("payMethods");
+    if (!host || !state.methods) return;
+    host.innerHTML =
+      '<div class="paymethods__grid">' +
+      state.methods.map(function (m) {
+        return '<div class="paymethod">' +
+          '<span class="paymethod__icon">' + (ICONS[m.icon] || "") + "</span>" +
+          '<span class="paymethod__name">' + esc(m.name) + "</span>" +
+          '<span class="paymethod__hint">' + esc(m.hint) + "</span>" +
+          '<span class="paymethod__badge">' + esc(m.badge) + "</span>" +
+          (m.mode === "instant" ? '<span class="paymethod__instant">' + esc(t("payInstantNote")) + "</span>" : "") +
+        "</div>";
+      }).join("") +
+      "</div>" +
+      '<p class="paymethods__note">' + esc(t("payNote")) + "</p>";
+  }
+
+
+  /** Выбор способа оплаты в форме. Первый способ отмечен по умолчанию. */
+  function methodPicker() {
+    var list = state.methods || [];
+    if (!list.length) return "";
+    return '<fieldset class="checkout__methods">' +
+      "<legend>" + esc(t("payPick")) + "</legend>" +
+      list.map(function (m, i) {
+        return '<label class="checkout__method">' +
+          '<input type="radio" name="method" value="' + esc(m.id) + '"' + (i === 0 ? " checked" : "") + " />" +
+          '<span class="checkout__method-icon">' + (ICONS[m.icon] || "") + "</span>" +
+          '<span class="checkout__method-text"><b>' + esc(m.name) + "</b>" +
+            (m.amountNote ? ' <span class="checkout__method-amount">' + esc(m.amountNote) + "</span>" : "") +
+            "<span>" + esc(m.badge) + "</span></span>" +
+        "</label>";
+      }).join("") +
+      "</fieldset>";
+  }
+
+  /** Кнопка «скопировать» рядом с реквизитом — руками их не переписывают. */
+  function copyable(value) {
+    return '<button type="button" class="paydetails__copy" data-copy="' + esc(value) + '">' +
+      esc(t("copy")) + "</button>";
+  }
+
   /* ------------------------------ форма ------------------------------ */
   function openForm(planId) {
     var plan = (state.plans || []).find(function (p) { return p.id === planId; });
@@ -146,6 +246,7 @@
           (plan.off ? '<s>' + money(plan.base) + "</s> " : "") + money(plan.final) + "</p>" +
         '<p class="checkout__sub">' + esc(t("sub")) + "</p>" +
         '<form class="checkout__form">' +
+          methodPicker() +
           '<label>' + esc(t("name")) + '<input type="text" name="name" autocomplete="name" /></label>' +
           '<label>' + esc(t("email")) + '<input type="email" name="email" autocomplete="email" required /></label>' +
           '<label>' + esc(t("phone")) + '<input type="tel" name="phone" autocomplete="tel" /></label>' +
@@ -188,27 +289,88 @@
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           planId: plan.id, email: email, lang: lang(),
+          method: data.get("method") || (state.methods && state.methods[0] && state.methods[0].id),
           name: data.get("name"), phone: data.get("phone"),
           telegram: data.get("telegram"), comment: data.get("comment"),
         }),
       })
         .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
-        .then(function () {
-          $(".checkout__box", box).innerHTML =
-            '<button class="checkout__close" type="button" aria-label="' + esc(t("close")) + '">✕</button>' +
-            '<div class="checkout__done">' +
-              '<div class="checkout__tick">✓</div>' +
-              "<h3>" + esc(t("okTitle")) + "</h3>" +
-              "<p>" + esc(t("okBody")) + "</p>" +
-            "</div>";
-          $(".checkout__close", box).addEventListener("click", close);
-          setTimeout(close, 6000);
+        .then(function (d) {
+          // карта: сразу уводим на страницу оплаты банка
+          if (d.mode === "instant" && d.checkout) return goToPayment(d.checkout);
+          // остальные способы: показываем реквизиты — платить можно не дожидаясь ответа
+          showDetails(box, d, close);
         })
         .catch(function () {
           err.textContent = t("err"); err.hidden = false;
           submit.disabled = false; submit.textContent = t("submit");
         })
         .then(function () { state.sending = false; });
+    });
+  }
+
+
+  /**
+   * Переход на страницу оплаты. Отправляем скрытую форму, потому что LiqPay
+   * принимает данные только методом POST — ссылкой это не открыть.
+   */
+  function goToPayment(checkout) {
+    var f = document.createElement("form");
+    f.method = "POST";
+    f.action = checkout.action;
+    f.acceptCharset = "utf-8";
+    f.innerHTML =
+      '<input type="hidden" name="data" value="' + esc(checkout.data) + '" />' +
+      '<input type="hidden" name="signature" value="' + esc(checkout.signature) + '" />';
+    document.body.appendChild(f);
+    f.submit();
+  }
+
+  /** Реквизиты после заявки: с кнопками копирования и ссылкой на бота. */
+  function showDetails(box, d, close) {
+    var ins = d.instructions;
+    var tg = (window.NIGUMA_CONFIG || {}).telegram;
+    var inner =
+      '<button class="checkout__close" type="button" aria-label="' + esc(t("close")) + '">✕</button>' +
+      '<div class="checkout__done">' +
+        '<div class="checkout__tick">✓</div>' +
+        "<h3>" + esc(t("okTitle")) + "</h3>" +
+      "</div>";
+
+    if (ins) {
+      inner += '<div class="paydetails">' +
+        "<h4>" + esc(ins.title) + "</h4>" +
+        '<dl class="paydetails__list">' +
+          ins.lines.map(function (l) {
+            return "<dt>" + esc(l.label) + "</dt><dd><span>" + esc(l.value) + "</span>" + copyable(l.value) + "</dd>";
+          }).join("") +
+        "</dl>" +
+        (ins.note ? '<p class="paydetails__note">' + esc(ins.note) + "</p>" : "") +
+        '<p class="paydetails__after">' + esc(t("detailsAfter")) + "</p>" +
+        (tg ? '<a class="btn btn--ghost btn--small" href="' + esc(tg) + '" target="_blank" rel="noopener">' +
+          esc(t("openBot")) + "</a>" : "") +
+      "</div>";
+    } else {
+      inner += '<p class="checkout__sub">' + esc(t("okBody")) + "</p>";
+    }
+
+    $(".checkout__box", box).innerHTML = inner;
+    $(".checkout__close", box).addEventListener("click", close);
+
+    // копирование реквизитов
+    box.addEventListener("click", function (e) {
+      var b = e.target.closest("[data-copy]");
+      if (!b) return;
+      var text = b.getAttribute("data-copy");
+      var done = function () { b.textContent = t("copied"); setTimeout(function () { b.textContent = t("copy"); }, 1600); };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, done);
+      } else {
+        var ta = document.createElement("textarea");
+        ta.value = text; document.body.appendChild(ta); ta.select();
+        try { document.execCommand("copy"); } catch (err) {}
+        ta.remove(); done();
+      }
     });
   }
 
@@ -231,6 +393,7 @@
 
   function init() {
     loadPlans();
+    loadMethods();
     watchPricing();
 
     // карточки перерисовываются при смене языка — слушаем на документе
@@ -244,7 +407,9 @@
     });
 
     document.querySelectorAll(".lang__btn").forEach(function (b) {
-      b.addEventListener("click", function () { setTimeout(decorate, 60); });
+      b.addEventListener("click", function () {
+        setTimeout(function () { decorate(); loadMethods(); }, 60);
+      });
     });
   }
 

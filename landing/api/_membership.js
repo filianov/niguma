@@ -310,14 +310,14 @@ export async function adjustBonus(memberId, deltaCents, reason) {
 
 /* ------------------------- заявки на оплату ------------------------- */
 
-export async function createRequest({ planId, name, email, phone, telegram, lang, comment, promo }) {
+export async function createRequest({ planId, name, email, phone, telegram, lang, comment, promo, method }) {
   const id = newId("req");
   const now = new Date().toISOString();
   await kv(["HSET", "req:" + id,
     "planId", planId || "", "name", name || "", "email", normalizeEmail(email),
     "phone", phone || "", "telegram", telegram || "", "lang", lang || "ru",
     "comment", comment || "", "promo", promo ? JSON.stringify(promo) : "",
-    "status", "new", "createdAt", now]);
+    "method", method || "", "status", "new", "createdAt", now]);
   await kv(["ZADD", "req:index", String(Date.now()), id]);
   return { id, createdAt: now };
 }

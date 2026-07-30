@@ -204,15 +204,16 @@
         <div class="pricing" data-tiers="pricing.tiers">
           <!-- rendered from translations -->
         </div>
+        <!-- Способы оплаты. Карточки рисует js/checkout.js по ответу
+             /api/payment-methods: показываются только настроенные способы,
+             у карты и криптовалюты — сумма в нужной валюте по курсу НБУ.
+             Пока функция недоступна, остаётся текст ниже: блок не пустует. -->
         <div class="pricing__pay">
-          <span class="pricing__pay-label" data-i18n="pricing.payLabel">Оплата</span>
-          <ul class="pricing__methods" data-list="pricing.payMethods">
-            <li>PayPal</li>
-            <li>Перевод на евро-счёт</li>
-            <li>Monobank (грн)</li>
-          </ul>
-          <p class="pricing__note" data-i18n="pricing.note">Картой любой страны — через PayPal/Stripe. Евро-счёт (IBAN)
-            и Monobank — реквизиты пришлёт бот.</p>
+          <span class="pricing__pay-label" data-i18n="pricing.payLabel">Способы оплаты</span>
+          <div class="paymethods" id="payMethods">
+            <p class="pricing__note" data-i18n="pricing.note">Банковский перевод по счёту, PayPal, карта
+              (Visa, Mastercard, Apple&nbsp;Pay, Google&nbsp;Pay) и криптовалюта.</p>
+          </div>
         </div>
         <div class="pricing__cta">
           <a class="btn btn--primary" data-cta="telegram" href="#" target="_blank" rel="noopener"

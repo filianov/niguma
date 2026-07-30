@@ -1,17 +1,24 @@
 /**
  * POST /api/checkout — заявка на оплату пакета с лендинга.
  *
- * Денег здесь не касаемся: заявка попадает в админку, менеджер подтверждает
- * оплату вручную после того, как деньги действительно пришли. Так исключены
- * «оплаты», которых не было.
+ * Два исхода, в зависимости от выбранного способа:
  *
- * Ответ посетителю всегда 200, если данные валидны: даже при сбое Telegram
- * заявка уже сохранена, и терять человека из-за чужой недоступности нельзя.
+ *   Карта (LiqPay) — возвращаем данные формы, браузер сразу открывает страницу
+ *   оплаты. Подтверждение приходит от LiqPay на /api/liqpay-callback.
+ *
+ *   Счёт, PayPal, криптовалюта — возвращаем реквизиты, чтобы человек мог
+ *   заплатить не дожидаясь ответа. Заявка при этом уходит менеджеру: оплату
+ *   он подтверждает вручную, когда деньги придут.
+ *
+ * Реквизиты живут только в переменных окружения и отдаются в ответ на конкретную
+ * заявку — на страницах сайта их нет и поисковиками они не индексируются.
  */
 import {
   PLANS, planById, createRequest, getPromo, priceWithPromo,
   validEmail, normalizeEmail, money, findByEmail,
 } from "./_membership.js";
+import { methodById, isConfigured, paymentInstructions, methodsForClient } from "./_payments.js";
+import { checkoutForm, liqpayEnabled } from "./_liqpay.js";
 import { sendToOperator, escapeHtml } from "./_lib.js";
 
 export default async function handler(req, res) {
@@ -30,6 +37,11 @@ export default async function handler(req, res) {
   const email = normalizeEmail(body.email);
   if (!validEmail(email)) return res.status(400).json({ ok: false, error: "bad_email" });
 
+  const method = methodById(body.method);
+  if (!method || !isConfigured(method)) {
+    return res.status(400).json({ ok: false, error: "bad_method" });
+  }
+
   const name = String(body.name || "").trim().slice(0, 120);
   const phone = String(body.phone || "").trim().slice(0, 40);
   const telegram = String(body.telegram || "").trim().slice(0, 80);
@@ -41,16 +53,18 @@ export default async function handler(req, res) {
 
   const request = await createRequest({
     planId: plan.id, name, email, phone, telegram, lang, comment,
+    method: method.id,
     promo: price.off ? { percent: promo.percent, off: price.off } : null,
   });
 
-  // если человек уже занимался — покажем это менеджеру сразу
   const existing = await findByEmail(email);
 
   await sendToOperator(
     "💶 <b>Заявка на оплату</b>\n\n" +
     "<b>" + escapeHtml(plan.label) + "</b> — " + money(price.final) +
-    (price.off ? " <s>" + money(price.base) + "</s> (скидка " + promo.percent + "%)" : "") + "\n\n" +
+    (price.off ? " <s>" + money(price.base) + "</s> (скидка " + promo.percent + "%)" : "") + "\n" +
+    "Способ: <b>" + escapeHtml(method.ru.name) + "</b>" +
+    (method.mode === "instant" ? " — оплата на сайте, подтверждать вручную не нужно" : "") + "\n\n" +
     "👤 " + escapeHtml(name || "без имени") + "\n" +
     "✉️ " + escapeHtml(email) + "\n" +
     (phone ? "📞 " + escapeHtml(phone) + "\n" : "") +
@@ -61,16 +75,40 @@ export default async function handler(req, res) {
         existing.level.ru + "», бонусов " + money(existing.bonusCents) +
         (existing.nextDueAt ? ", срок до " + existing.nextDueAt.slice(0, 10) : "")
       : "\n🆕 Новый участник") +
-    "\n\n<i>заявка " + escapeHtml(request.id) + " · " + lang + "</i>" +
-    "\nПодтвердить оплату — в админке: /admin"
+    "\n\n<i>заявка " + escapeHtml(request.id) + " · " + lang + "</i>"
   );
 
-  return res.status(200).json({
+  const out = {
     ok: true,
     requestId: request.id,
+    mode: method.mode,
+    method: { id: method.id, name: method[lang].name },
     plan: { id: plan.id, label: plan.label, months: plan.months },
     price: { base: price.base, final: price.final, off: price.off },
-  });
+  };
+
+  // карта — отдаём данные формы, браузер уводит на страницу оплаты
+  if (method.mode === "instant") {
+    const form = await checkoutForm({
+      requestId: request.id, cents: price.final,
+      planLabel: plan.label, lang, email,
+    });
+    if (!form) {
+      // ключи есть, но курс не получен — не отправляем человека на страницу
+      // оплаты с неизвестной суммой, честно предлагаем другой способ
+      out.mode = "manual";
+      out.fallbackReason = "rate_unavailable";
+    } else {
+      out.checkout = form;
+    }
+  }
+
+  // остальные способы — реквизиты сразу, чтобы не ждать ответа
+  if (out.mode === "manual") {
+    out.instructions = await paymentInstructions(method.id, price.final, lang);
+  }
+
+  return res.status(200).json(out);
 }
 
 /** Пакеты и действующая скидка — для отрисовки блока цен на лендинге. */
@@ -82,5 +120,8 @@ export async function plansWithPromo() {
       const price = priceWithPromo(p, promo);
       return { id: p.id, months: p.months, label: p.label, base: price.base, final: price.final, off: price.off };
     }),
+    cardPaymentReady: liqpayEnabled,
   };
 }
+
+export { methodsForClient };
