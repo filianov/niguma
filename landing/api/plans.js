@@ -12,7 +12,8 @@ export default async function handler(req, res) {
     res.setHeader("Allow", "GET");
     return res.status(405).json({ ok: false });
   }
-  const data = await plansWithPromo();
+  const lang = String((req.query && req.query.lang) || "ru");
+  const data = await plansWithPromo(lang);
   res.setHeader("Cache-Control", "no-store");
   return res.status(200).json({ ok: true, ...data });
 }

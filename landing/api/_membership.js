@@ -19,10 +19,37 @@ import { kv } from "./_lib.js";
 
 /* ----------------------------- пакеты ----------------------------- */
 
+/**
+ * Названия и описания нужны не только людям: платёжный сервис требует, чтобы на
+ * сайте были указаны наименование услуги, её описание и цена. Держим их здесь,
+ * рядом с ценой, чтобы описание не разошлось с тем, что человек оплачивает.
+ */
+const OFFER = {
+  ru: "Ежедневные живые занятия по будням 07:00–07:15 (Вена), расширенное занятие по субботам, записи всех занятий и доступ в закрытое сообщество.",
+  uk: "Щоденні живі заняття в будні 07:00–07:15 (Відень), розширене заняття щосуботи, записи всіх занять і доступ до закритої спільноти.",
+  en: "Live classes every weekday 07:00–07:15 (Vienna), an extended session on Saturdays, recordings of all classes and access to the members' community.",
+  de: "Live-Einheiten werktags 07:00–07:15 Uhr (Wien), samstags eine längere Einheit, Aufzeichnungen aller Einheiten und Zugang zur Mitglieder-Community.",
+};
+
 export const PLANS = {
-  m1:  { id: "m1",  months: 1,  cents: 10000, label: "1 месяц" },
-  m6:  { id: "m6",  months: 6,  cents: 50000, label: "6 месяцев" },
-  m12: { id: "m12", months: 12, cents: 90000, label: "12 месяцев" },
+  m1: {
+    id: "m1", months: 1, cents: 10000, label: "1 месяц",
+    title: { ru: "Абонемент на 1 месяц", uk: "Абонемент на 1 місяць",
+             en: "1-month membership", de: "Mitgliedschaft für 1 Monat" },
+    desc: OFFER,
+  },
+  m6: {
+    id: "m6", months: 6, cents: 50000, label: "6 месяцев",
+    title: { ru: "Абонемент на 6 месяцев", uk: "Абонемент на 6 місяців",
+             en: "6-month membership", de: "Mitgliedschaft für 6 Monate" },
+    desc: OFFER,
+  },
+  m12: {
+    id: "m12", months: 12, cents: 90000, label: "12 месяцев",
+    title: { ru: "Абонемент на 12 месяцев", uk: "Абонемент на 12 місяців",
+             en: "12-month membership", de: "Mitgliedschaft für 12 Monate" },
+    desc: OFFER,
+  },
 };
 
 export function planById(id) {

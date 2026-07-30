@@ -797,3 +797,8 @@ img { max-width: 100%; display: block; }
 /* реквизиты продавца в подвале — требование платёжного сервиса */
 .footer__merchant { margin: 14px 0 0; font-size: 12.5px; line-height: 1.6; color: var(--ink-soft); opacity: .9; }
 .footer__merchant a { color: inherit; text-decoration: underline; }
+
+/* цена в гривне и описание услуги — требование правил приёма карт */
+.tier__uah { font-size: 15px; color: var(--olive); margin-top: 2px; font-variant-numeric: tabular-nums; }
+.tier__desc { font-size: 13px; line-height: 1.5; color: var(--ink-soft); margin: 10px 0 0; text-align: left; }
+.pricing__rate { max-width: 780px; margin: 14px auto 0; font-size: 13px; color: var(--ink-soft); text-align: center; }

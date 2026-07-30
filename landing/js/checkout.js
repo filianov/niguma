@@ -27,6 +27,7 @@
   /* --------------------------- тексты формы --------------------------- */
   var T = {
     ru: { choose: "Выбрать", chosen: "Выбрано", perMonth: "€/мес", off: "выгода",
+          rateNote: "Цены в гривне указаны справочно: пересчитаны по курсу {source} {rate} ₴ за 1 € на {date}. Списание проходит в евро.",
           payTitle: "Как удобно заплатить", payPick: "Способ оплаты",
           payNote: "Реквизиты приходят лично — на сайте их нет.",
           payInstantNote: "Оплата пройдёт сразу на защищённой странице банка.",
@@ -40,6 +41,7 @@
           errEmail: "Проверьте адрес почты.", err: "Не отправилось. Попробуйте ещё раз или напишите нам в Telegram.",
           close: "Закрыть", promoLeft: "до конца акции" },
     en: { choose: "Choose", chosen: "Selected", perMonth: "€/mo", off: "you save",
+          rateNote: "Prices in hryvnia are indicative: converted at the {source} rate of ₴{rate} per €1 on {date}. The charge is made in euro.",
           payTitle: "How would you like to pay", payPick: "Payment method",
           payNote: "Payment details are sent to you personally — they are not published here.",
           payInstantNote: "You will pay right away on the bank's secure page.",
@@ -53,6 +55,7 @@
           errEmail: "Please check the e-mail address.", err: "Could not send. Please try again or write to us on Telegram.",
           close: "Close", promoLeft: "until the offer ends" },
     de: { choose: "Wählen", chosen: "Gewählt", perMonth: "€/Mon.", off: "Ersparnis",
+          rateNote: "Preise in Hrywnja dienen der Orientierung: umgerechnet zum Kurs von {source}, {rate} ₴ je 1 € am {date}. Die Abbuchung erfolgt in Euro.",
           payTitle: "Wie möchten Sie bezahlen", payPick: "Zahlungsart",
           payNote: "Die Zahlungsdaten erhalten Sie persönlich — auf der Seite stehen sie nicht.",
           payInstantNote: "Die Zahlung erfolgt sofort auf der gesicherten Seite der Bank.",
@@ -66,6 +69,7 @@
           errEmail: "Bitte prüfen Sie die E-Mail-Adresse.", err: "Senden fehlgeschlagen. Bitte erneut versuchen oder uns auf Telegram schreiben.",
           close: "Schließen", promoLeft: "bis zum Ende der Aktion" },
     uk: { choose: "Обрати", chosen: "Обрано", perMonth: "€/міс", off: "вигода",
+          rateNote: "Ціни в гривні наведено довідково: перераховано за курсом {source} {rate} ₴ за 1 € на {date}. Списання відбувається в євро.",
           payTitle: "Як зручно заплатити", payPick: "Спосіб оплати",
           payNote: "Реквізити надходять особисто — на сайті їх немає.",
           payInstantNote: "Оплата пройде одразу на захищеній сторінці банку.",
@@ -136,12 +140,13 @@
 
   /* ---------------------------- загрузка цен ---------------------------- */
   function loadPlans() {
-    return fetch("/api/plans")
+    return fetch("/api/plans?lang=" + encodeURIComponent(lang()))
       .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
       .then(function (d) {
         if (!d.ok) return;
         state.plans = d.plans;
         state.promo = d.promo;
+        state.rate = d.rate || null;
         decorate();
       })
       .catch(function () { /* цены из переводов уже отрисованы — этого достаточно */ });
@@ -171,6 +176,22 @@
       if (perEl && plan.months > 1) {
         perEl.textContent = Math.round(plan.final / plan.months / 100) + " " + t("perMonth");
       }
+      // Название и описание услуги: их наличие рядом с ценой — требование
+      // правил приёма карт, а человеку понятнее, за что именно он платит.
+      if (plan.desc && !$(".tier__desc", card)) {
+        var desc = document.createElement("p");
+        desc.className = "tier__desc";
+        desc.textContent = plan.desc;
+        card.appendChild(desc);
+      }
+      // Цена в гривне — обязательна для украинского приёма платежей.
+      if (plan.uah) {
+        var uahEl = $(".tier__uah", card) || document.createElement("div");
+        uahEl.className = "tier__uah";
+        uahEl.textContent = plan.uah.toLocaleString("uk-UA") + " ₴";
+        if (!uahEl.parentNode && perEl) perEl.parentNode.insertBefore(uahEl, perEl.nextSibling);
+        else if (!uahEl.parentNode) card.appendChild(uahEl);
+      }
       if (plan.off && !$(".tier__save", card)) {
         var save = document.createElement("div");
         save.className = "tier__save";
@@ -187,6 +208,33 @@
     });
 
     renderPromoRibbon();
+    renderRateNote();
+  }
+
+  /**
+   * Пояснение к цене в гривне: по какому курсу и на какую дату посчитано.
+   * Без этого сумма выглядит взятой произвольно, а правила требуют, чтобы
+   * цена была понятной и проверяемой.
+   */
+  /** 2026-07-29 → 29.07.2026: дата для человека, а не для машины. */
+  function humanDate(iso) {
+    if (!iso) return "";
+    var p = String(iso).split("-");
+    return p.length === 3 ? p[2] + "." + p[1] + "." + p[0] : iso;
+  }
+
+  function renderRateNote() {
+    var host = document.querySelector(".pricing");
+    if (!host || !state.rate) return;
+    var old = document.querySelector(".pricing__rate");
+    if (old) old.remove();
+    var p = document.createElement("p");
+    p.className = "pricing__rate";
+    p.textContent = t("rateNote")
+      .replace("{rate}", state.rate.eurUah.toFixed(2))
+      .replace("{source}", state.rate.source || "ПриватБанк")
+      .replace("{date}", humanDate(state.rate.at));
+    host.parentNode.insertBefore(p, host.nextSibling);
   }
 
   /** Полоса с условиями акции — только когда скидка реально действует. */

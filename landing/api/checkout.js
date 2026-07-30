@@ -17,7 +17,7 @@ import {
   PLANS, planById, createRequest, getPromo, priceWithPromo,
   validEmail, normalizeEmail, money, findByEmail,
 } from "./_membership.js";
-import { methodById, isConfigured, paymentInstructions, methodsForClient } from "./_payments.js";
+import { methodById, isConfigured, paymentInstructions, methodsForClient, getRates, eurToUah } from "./_payments.js";
 import { checkoutForm, liqpayEnabled } from "./_liqpay.js";
 import { sendToOperator, escapeHtml } from "./_lib.js";
 
@@ -111,15 +111,35 @@ export default async function handler(req, res) {
   return res.status(200).json(out);
 }
 
-/** Пакеты и действующая скидка — для отрисовки блока цен на лендинге. */
-export async function plansWithPromo() {
+/**
+ * Пакеты и действующая скидка — для отрисовки блока цен на лендинге.
+ *
+ * Вместе с ценой в евро отдаём её эквивалент в гривне: этого требуют правила
+ * приёма карт в Украине. Курс — коммерческий курс покупки ПриватБанка, тот же,
+ * по которому идут расчёты; дату показываем рядом, чтобы цена не выглядела
+ * взятой с потолка.
+ */
+export async function plansWithPromo(lang) {
   const promo = await getPromo();
+  const rates = await getRates();
+  const L = ["ru", "en", "de", "uk"].includes(lang) ? lang : "ru";
+
   return {
     promo: promo ? { percent: promo.percent, endsAt: promo.endsAt || null, plans: promo.plans || [] } : null,
     plans: Object.values(PLANS).map((p) => {
       const price = priceWithPromo(p, promo);
-      return { id: p.id, months: p.months, label: p.label, base: price.base, final: price.final, off: price.off };
+      const uah = eurToUah(price.final, rates);
+      return {
+        id: p.id, months: p.months, label: p.label,
+        title: (p.title && p.title[L]) || p.label,
+        desc: (p.desc && p.desc[L]) || "",
+        base: price.base, final: price.final, off: price.off,
+        uah: uah || null,
+      };
     }),
+    rate: rates.eurUah
+      ? { eurUah: rates.eurUah, source: rates.source, at: new Date(rates.at || Date.now()).toISOString().slice(0, 10) }
+      : null,
     cardPaymentReady: liqpayEnabled,
   };
 }
