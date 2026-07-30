@@ -125,7 +125,10 @@ export async function plansWithPromo(lang) {
   const L = ["ru", "en", "de", "uk"].includes(lang) ? lang : "ru";
 
   return {
-    promo: promo ? { percent: promo.percent, endsAt: promo.endsAt || null, plans: promo.plans || [] } : null,
+    promo: promo
+      ? { percent: promo.percent, endsAt: promo.endsAt || null, plans: promo.plans || [],
+          name: promo.name || "", sticker: promo.sticker || "" }
+      : null,
     plans: Object.values(PLANS).map((p) => {
       const price = priceWithPromo(p, promo);
       const uah = eurToUah(price.final, rates);

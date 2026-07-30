@@ -77,9 +77,13 @@
         <p class="adm__note">Скидка сразу отражается в блоке «Стоимость» на сайте. Когда срок истечёт,
           цены вернутся сами — заходить сюда повторно не нужно.</p>
         <form class="adm__form" id="promoForm">
-          <label>Название <span>для вас, на сайте не показывается</span>
-            <input type="text" id="promoName" placeholder="Летний набор" />
+          <label>Название акции <span>показывается на наклейке — коротко, до 3 слов</span>
+            <input type="text" id="promoName" placeholder="Olha Birthday Gift" maxlength="40" />
           </label>
+          <fieldset>
+            <legend>Наклейка <span>появится на карточках со скидкой</span></legend>
+            <div class="adm__stickers" id="promoStickers"></div>
+          </fieldset>
           <label>Скидка, %
             <input type="number" id="promoPercent" min="1" max="90" placeholder="20" />
           </label>
@@ -110,6 +114,7 @@
     </div>
   </div>
 
+  <script src="/js/promo-stickers.js?v=20260729"></script>
   <script src="/admin/admin.js?v=20260729"></script>
 </body>
 

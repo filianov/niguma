@@ -120,3 +120,15 @@
   .adm__nav { width: 100%; margin-left: 0; }
   .adm__row-side { text-align: left; }
 }
+
+/* выбор наклейки для акции */
+.adm__stickers { display: flex; gap: 8px; flex-wrap: wrap; }
+.adm__sticker { flex-direction: column !important; align-items: center; gap: 4px !important;
+  width: 86px; padding: 10px 6px 8px; border: 1.5px solid var(--line); border-radius: 14px;
+  background: #fff; cursor: pointer; text-align: center; transition: border-color .15s, background .15s; }
+.adm__sticker:hover { border-color: var(--sage); }
+.adm__sticker:has(input:checked) { border-color: var(--clay); background: var(--paper); }
+.adm__sticker input { position: absolute; opacity: 0; pointer-events: none; }
+.adm__sticker-art svg { width: 30px; height: 30px; display: block; }
+.adm__sticker-name { font-size: 11px; color: var(--olive); line-height: 1.2; }
+.adm__sticker-none { font-size: 11.5px; color: var(--olive); padding: 12px 0; }

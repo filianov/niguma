@@ -407,6 +407,28 @@
   function kv(k, v) { return "<dt>" + esc(k) + "</dt><dd>" + esc(v) + "</dd>"; }
 
   /* -------------------------------- акция -------------------------------- */
+  /**
+   * Выбор наклейки. Показываем сами рисунки, а не список названий: менеджер
+   * должен видеть ровно то, что увидит посетитель на карточке.
+   */
+  function renderStickerPicker(selected) {
+    var box = $("#promoStickers");
+    if (!box) return;
+    var set = window.NIGUMA_STICKERS || {};
+    var keys = window.NIGUMA_STICKER_KEYS || Object.keys(set);
+    box.innerHTML =
+      '<label class="adm__sticker"><input type="radio" name="sticker" value=""' +
+        (!selected ? " checked" : "") + ' /><span class="adm__sticker-none">без наклейки</span></label>' +
+      keys.map(function (k) {
+        var st = set[k];
+        if (!st) return "";
+        return '<label class="adm__sticker"><input type="radio" name="sticker" value="' + esc(k) + '"' +
+          (selected === k ? " checked" : "") + " />" +
+          '<span class="adm__sticker-art">' + st.svg + "</span>" +
+          '<span class="adm__sticker-name">' + esc(st.ru) + "</span></label>";
+      }).join("");
+  }
+
   function renderPromoForm() {
     var p = state.data && state.data.promo;
     var box = $("#promoState");
@@ -417,11 +439,13 @@
         (p.plans && p.plans.length ? ", только: " + p.plans.map(planLabel).join(", ") : ", на все пакеты");
       $("#promoPercent").value = p.percent;
       $("#promoName").value = p.name || "";
+      renderStickerPicker(p.sticker || "");
       document.querySelectorAll("#promoForm input[type=checkbox]").forEach(function (c) {
         c.checked = Boolean(p.plans && p.plans.indexOf(c.value) >= 0);
       });
     } else {
       box.textContent = "Скидка сейчас не действует — на сайте базовые цены.";
+      renderStickerPicker("");
     }
   }
 
@@ -429,11 +453,13 @@
     e.preventDefault();
     var plans = [];
     document.querySelectorAll("#promoForm input[type=checkbox]:checked").forEach(function (c) { plans.push(c.value); });
+    var sticker = document.querySelector("#promoStickers input:checked");
     api("promo.set", {
       percent: Number($("#promoPercent").value),
       endsAt: $("#promoEnds").value || null,
       plans: plans,
       name: $("#promoName").value,
+      sticker: sticker ? sticker.value : "",
     }).then(function (r) {
       if (!r.data.ok) return alert("Проверьте процент: допустимо от 1 до 90.");
       loadOverview();

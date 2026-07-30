@@ -198,6 +198,13 @@
         save.textContent = t("off") + " " + money(plan.off);
         card.appendChild(save);
       }
+      // Наклейка вешается только на карточки со скидкой: она объясняет повод,
+      // а на карточке без скидки была бы обещанием, которого нет.
+      var oldSticker = $(".promo-sticker", card);
+      if (oldSticker) oldSticker.remove();
+      if (plan.off && state.promo && state.promo.sticker) {
+        card.insertAdjacentHTML("beforeend", stickerHtml(state.promo));
+      }
       if (!$(".tier__pick", card)) {
         var btn = document.createElement("button");
         btn.type = "button";
@@ -237,6 +244,21 @@
     host.parentNode.insertBefore(p, host.nextSibling);
   }
 
+  /**
+   * Наклейка акции: рисунок из общего набора плюс название, которое задал
+   * менеджер. Название показывается как есть — оно и есть повод для скидки.
+   */
+  function stickerHtml(promo) {
+    var set = window.NIGUMA_STICKERS || {};
+    var s = set[promo.sticker];
+    if (!s) return "";
+    var caption = promo.name || s[lang()] || s.ru || "";
+    return '<div class="promo-sticker" role="img" aria-label="' + esc(caption) + '">' +
+      '<span class="promo-sticker__art">' + s.svg + "</span>" +
+      (caption ? '<span class="promo-sticker__text">' + esc(caption) + "</span>" : "") +
+      "</div>";
+  }
+
   /** Полоса с условиями акции — только когда скидка реально действует. */
   function renderPromoRibbon() {
     var host = document.querySelector(".pricing");
@@ -251,7 +273,8 @@
       var days = Math.ceil((new Date(state.promo.endsAt) - Date.now()) / 86400000);
       if (days > 0) left = " · " + days + " дн. " + t("promoLeft");
     }
-    ribbon.innerHTML = "<b>−" + state.promo.percent + "%</b>" + esc(left);
+    ribbon.innerHTML = "<b>−" + state.promo.percent + "%</b>" +
+      (state.promo.name ? " · " + esc(state.promo.name) : "") + esc(left);
     host.parentNode.insertBefore(ribbon, host);
   }
 

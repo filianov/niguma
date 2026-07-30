@@ -190,6 +190,9 @@ export default async function handler(req, res) {
       endsAt: body.endsAt ? new Date(body.endsAt).toISOString() : null,
       plans: Array.isArray(body.plans) ? body.plans.filter((p) => PLANS[p]) : [],
       name: String(body.name || "").slice(0, 80),
+      // ключ наклейки, а не картинка: рисунок живёт в js/promo-stickers.js,
+      // поэтому его можно перерисовать, не трогая сохранённые акции
+      sticker: String(body.sticker || "").slice(0, 20),
     };
     await setPromo(promo);
     return res.status(200).json({ ok: true, promo });
