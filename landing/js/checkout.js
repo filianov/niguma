@@ -97,6 +97,43 @@
       '<circle cx="12" cy="12" r="8.5"/><path d="M8.5 9.5h7M12 9.5V16"/></svg>',
   };
 
+
+  /**
+   * Значки платёжных систем.
+   *
+   * Нарисованы сами, а не взяты официальные логотипы: их размещение требует
+   * согласия правообладателя и соблюдения гайдлайнов по отступам и цветам.
+   * Здесь — узнаваемые обозначения, которых достаточно, чтобы человек понял,
+   * чем можно заплатить. Если понадобится точное соответствие бренду, официальные
+   * файлы берутся у Visa, Mastercard, Apple и Google и подставляются вместо этих.
+   */
+  var MARKS = {
+    visa: '<span class="paymark paymark--visa">VISA</span>',
+    mastercard: '<span class="paymark paymark--mc" aria-label="Mastercard">' +
+      '<svg viewBox="0 0 32 20" aria-hidden="true">' +
+      '<circle cx="12" cy="10" r="7" fill="#EB001B"/>' +
+      '<circle cx="20" cy="10" r="7" fill="#F79E1B"/>' +
+      '<path d="M16 4.6a7 7 0 0 0 0 10.8 7 7 0 0 0 0-10.8Z" fill="#FF5F00"/>' +
+      "</svg></span>",
+    applepay: '<span class="paymark paymark--apple">' +
+      '<svg viewBox="0 0 16 16" aria-hidden="true" fill="currentColor">' +
+      '<path d="M11 1.6c-.5.6-1.3 1-2 .9-.1-.8.3-1.6.7-2.1.5-.6 1.4-1 2.1-1 .1.8-.2 1.6-.8 2.2Z"/>' +
+      '<path d="M11.7 3.1c-1.2-.1-2.2.7-2.7.7-.6 0-1.4-.6-2.4-.6-1.2 0-2.4.7-3 1.8-1.3 2.2-.3 5.5.9 7.3.6.9 1.4 1.9 2.3 1.8.9 0 1.3-.6 2.4-.6s1.4.6 2.4.6c1 0 1.6-.9 2.2-1.8.7-1 1-2 1-2.1 0 0-1.9-.7-1.9-2.9 0-1.8 1.5-2.7 1.6-2.7-.9-1.3-2.2-1.4-2.8-1.5Z"/>' +
+      "</svg>Pay</span>",
+    googlepay: '<span class="paymark paymark--google">' +
+      '<svg viewBox="0 0 16 16" aria-hidden="true">' +
+      '<path d="M15.7 8.2c0-.6 0-1.1-.2-1.6H8v3h4.3a3.7 3.7 0 0 1-1.6 2.4v2h2.6c1.5-1.4 2.4-3.5 2.4-5.8Z" fill="#4285F4"/>' +
+      '<path d="M8 16c2.2 0 4-.7 5.3-2l-2.6-2c-.7.5-1.6.8-2.7.8-2.1 0-3.9-1.4-4.5-3.3H.8v2.1A8 8 0 0 0 8 16Z" fill="#34A853"/>' +
+      '<path d="M3.5 9.5a4.8 4.8 0 0 1 0-3.1V4.3H.8a8 8 0 0 0 0 7.2l2.7-2Z" fill="#FBBC04"/>' +
+      '<path d="M8 3.2c1.2 0 2.3.4 3.1 1.2l2.3-2.3A8 8 0 0 0 .8 4.3l2.7 2.1C4.1 4.6 5.9 3.2 8 3.2Z" fill="#EA4335"/>' +
+      "</svg>Pay</span>",
+  };
+
+  function marksHtml(list) {
+    if (!list || !list.length) return "";
+    return '<span class="paymarks">' + list.map(function (k) { return MARKS[k] || ""; }).join("") + "</span>";
+  }
+
   /* ---------------------------- загрузка цен ---------------------------- */
   function loadPlans() {
     return fetch("/api/plans")
@@ -197,7 +234,9 @@
           '<span class="paymethod__icon">' + (ICONS[m.icon] || "") + "</span>" +
           '<span class="paymethod__name">' + esc(m.name) + "</span>" +
           '<span class="paymethod__hint">' + esc(m.hint) + "</span>" +
-          '<span class="paymethod__badge">' + esc(m.badge) + "</span>" +
+          (m.marks && m.marks.length
+            ? marksHtml(m.marks)
+            : '<span class="paymethod__badge">' + esc(m.badge) + "</span>") +
           (m.mode === "instant" ? '<span class="paymethod__instant">' + esc(t("payInstantNote")) + "</span>" : "") +
         "</div>";
       }).join("") +
@@ -218,7 +257,8 @@
           '<span class="checkout__method-icon">' + (ICONS[m.icon] || "") + "</span>" +
           '<span class="checkout__method-text"><b>' + esc(m.name) + "</b>" +
             (m.amountNote ? ' <span class="checkout__method-amount">' + esc(m.amountNote) + "</span>" : "") +
-            "<span>" + esc(m.badge) + "</span></span>" +
+            (m.marks && m.marks.length ? marksHtml(m.marks) : "<span>" + esc(m.badge) + "</span>") +
+          "</span>" +
         "</label>";
       }).join("") +
       "</fieldset>";

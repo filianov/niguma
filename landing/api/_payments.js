@@ -19,42 +19,76 @@
 /* ------------------------- курсы валют ------------------------- */
 
 /**
- * Цены у нас в евро, а LiqPay считает в гривне, а криптоплатёж — в USDT.
- * Курс берём у Национального банка Украины: официальный источник, без ключей
- * и лимитов. Держим в памяти функции 6 часов — внутри дня курс НБУ не меняется,
- * а лишний запрос на каждой загрузке страницы не нужен.
+ * Курс валют — коммерческий курс ПриватБанка (тот же банк, что обслуживает
+ * приём карт), поле «покупка». Официальный курс НБУ отличается на 0.2–0.5%
+ * и не отражает того, по чему реально идут расчёты.
+ *
+ * Обновляем раз в сутки: внутри дня банк курс почти не двигает, а лишний
+ * запрос на каждой загрузке страницы не нужен. Если ПриватБанк недоступен,
+ * пробуем НБУ — лучше слегка отличающийся курс, чем неработающая оплата.
  */
-let ratesCache = { at: 0, eurUah: 0, usdUah: 0 };
-const RATES_TTL = 6 * 60 * 60 * 1000;
+let ratesCache = { at: 0, eurUah: 0, usdUah: 0, source: "" };
+const RATES_TTL = 24 * 60 * 60 * 1000;
+
+const PB_COMMERCIAL = "https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=11";
+const NBU_FALLBACK = "https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json";
 
 export async function getRates() {
   if (Date.now() - ratesCache.at < RATES_TTL && ratesCache.eurUah) return ratesCache;
+
+  // основной источник — коммерческий курс ПриватБанка, курс покупки
   try {
-    const r = await fetch("https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json");
+    const r = await fetch(PB_COMMERCIAL, { headers: { accept: "application/json" } });
+    if (!r.ok) throw new Error("privat " + r.status);
+    const list = await r.json();
+    const eur = list.find((x) => x.ccy === "EUR" && x.base_ccy === "UAH");
+    const usd = list.find((x) => x.ccy === "USD" && x.base_ccy === "UAH");
+    if (eur && Number(eur.buy) > 0) {
+      ratesCache = {
+        at: Date.now(),
+        eurUah: Number(eur.buy),
+        usdUah: usd && Number(usd.buy) > 0 ? Number(usd.buy) : 0,
+        source: "ПриватБанк",
+      };
+      return ratesCache;
+    }
+    throw new Error("no eur");
+  } catch (e) {
+    console.error("[rates] ПриватБанк недоступен: " + (e && e.message) + " — пробуем НБУ");
+  }
+
+  // запасной источник
+  try {
+    const r = await fetch(NBU_FALLBACK);
     if (!r.ok) throw new Error("nbu " + r.status);
     const list = await r.json();
     const eur = list.find((x) => x.cc === "EUR");
     const usd = list.find((x) => x.cc === "USD");
-    if (!eur || !usd) throw new Error("no rates");
-    ratesCache = { at: Date.now(), eurUah: Number(eur.rate), usdUah: Number(usd.rate) };
+    if (!eur) throw new Error("no rates");
+    ratesCache = {
+      at: Date.now(),
+      eurUah: Number(eur.rate),
+      usdUah: usd ? Number(usd.rate) : 0,
+      source: "НБУ",
+    };
   } catch (e) {
     // Курс не получен — не выдумываем его. Способы, требующие пересчёта,
-    // покажут «уточним сумму при оплате», а не случайное число.
-    console.error("[rates] не удалось получить курс НБУ: " + (e && e.message));
+    // покажут «сумму уточним», а не случайное число.
+    console.error("[rates] курс не получен ни в одном источнике: " + (e && e.message));
   }
   return ratesCache;
 }
 
-/** Евро → гривны, с округлением вверх до целой гривны. */
+/** Евро → гривны по курсу покупки, с округлением вверх до целой гривны. */
 export function eurToUah(cents, rates) {
   if (!rates || !rates.eurUah) return null;
   return Math.ceil((cents / 100) * rates.eurUah);
 }
 
 /**
- * Евро → USDT. Считаем через кросс-курс НБУ (EUR/UAH ÷ USD/UAH), потому что
- * USDT держится около доллара. Небольшую разницу курса покрываем надбавкой:
- * иначе при отправке фиксированной суммы на кошелёк может не хватить.
+ * Евро → USDT. Считаем кросс-курсом по котировкам покупки (EUR/UAH ÷ USD/UAH),
+ * потому что USDT держится около доллара. Надбавка покрывает движение курса
+ * между выставлением суммы и приходом платежа: иначе на кошелёк придёт меньше.
  */
 export function eurToUsdt(cents, rates, marginPercent = 2) {
   if (!rates || !rates.eurUah || !rates.usdUah) return null;
@@ -106,6 +140,9 @@ export const METHODS = [
     mode: "instant",
     env: ["LIQPAY_PUBLIC_KEY", "LIQPAY_PRIVATE_KEY"],
     icon: "card",
+    // значки платёжных систем рядом со способом: человек ищет глазами
+    // знакомый знак, а не читает перечисление
+    marks: ["visa", "mastercard", "applepay", "googlepay"],
     ru: { name: "Картой онлайн", hint: "Оплата сразу на сайте: карта, Apple Pay, Google Pay",
           badge: "Visa · Mastercard · Apple Pay · Google Pay" },
     en: { name: "Card online", hint: "Pay right on the site: card, Apple Pay, Google Pay",
@@ -149,11 +186,13 @@ export async function methodsForClient(lang, cents) {
 
   return METHODS.filter(isConfigured).map((m) => {
     const out = {
-      id: m.id, mode: m.mode, icon: m.icon,
+      id: m.id, mode: m.mode, icon: m.icon, marks: m.marks || [],
       name: m[L].name, hint: m[L].hint, badge: m[L].badge,
     };
     if (cents) {
-      if (m.id === "card") {
+      // Сумму в гривне показываем, только если приём идёт в гривне: при оплате
+      // в евро человек видит на странице банка ровно ту цену, что и на сайте.
+      if (m.id === "card" && String(process.env.LIQPAY_CURRENCY || "EUR").toUpperCase() === "UAH") {
         const uah = eurToUah(cents, rates);
         if (uah) out.amountNote = uah.toLocaleString("uk-UA") + " ₴";
       }

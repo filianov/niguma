@@ -11,16 +11,17 @@
  *   3. server_url должен быть публичным адресом. Локальный адрес в проде
  *      означает, что подтверждение оплаты не придёт и заявка зависнет.
  *
- * Валюта: цены у нас в евро, а счёт украинского предпринимателя — в гривне,
- * поэтому сумма пересчитывается по курсу НБУ. Если ваш договор с LiqPay
- * допускает приём в евро, поставьте LIQPAY_CURRENCY=EUR — пересчёт отключится.
+ * Валюта: по умолчанию EUR — договор это допускает, и человек видит ту же
+ * сумму, что и на сайте (500 €, а не 25 500 ₴). Если приём в евро когда-нибудь
+ * закроют, поставьте LIQPAY_CURRENCY=UAH: сумма пересчитается по коммерческому
+ * курсу покупки ПриватБанка.
  */
 import { createHash } from "node:crypto";
 import { getRates, eurToUah } from "./_payments.js";
 
 const PUB = String(process.env.LIQPAY_PUBLIC_KEY || "").trim();
 const PRIV = String(process.env.LIQPAY_PRIVATE_KEY || "").trim();
-const CURRENCY = String(process.env.LIQPAY_CURRENCY || "UAH").trim().toUpperCase();
+const CURRENCY = String(process.env.LIQPAY_CURRENCY || "EUR").trim().toUpperCase();
 const SITE = String(process.env.SITE_URL || "https://15minyoga.com").trim().replace(/\/$/, "");
 
 export const liqpayEnabled = Boolean(PUB && PRIV);

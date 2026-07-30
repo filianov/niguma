@@ -779,3 +779,17 @@ img { max-width: 100%; display: block; }
 .paydetails__copy:hover { border-color: var(--olive); }
 .paydetails__note { font-size: 13.5px; color: var(--clay-deep); margin: 0 0 10px; line-height: 1.5; }
 .paydetails__after { font-size: 13.5px; color: var(--ink-soft); margin: 0 0 14px; }
+
+/* значки платёжных систем */
+.paymarks { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin-top: 5px; }
+.paymark { display: inline-flex; align-items: center; gap: 2px; height: 22px; padding: 0 7px;
+  border: 1px solid var(--line); border-radius: 5px; background: #fff;
+  font-size: 11px; font-weight: 700; letter-spacing: .02em; color: var(--ink); }
+.paymark svg { height: 13px; width: auto; }
+.paymark--visa { color: #1a1f71; font-style: italic; letter-spacing: .06em; }
+.paymark--mc { padding: 0 5px; }
+.paymark--mc svg { height: 15px; }
+.paymark--apple { background: #000; color: #fff; border-color: #000; }
+.paymark--google { color: #3c4043; }
+.checkout__method .paymarks { margin-top: 3px; }
+.checkout__method .paymark { height: 20px; font-size: 10.5px; }
