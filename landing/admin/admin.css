@@ -6,6 +6,17 @@
 
 .adm { background: var(--paper); min-height: 100vh; }
 
+/**
+ * Скрытое остаётся скрытым.
+ *
+ * Любое правило вида `display: grid|flex` перебивает браузерное
+ * `[hidden] { display: none }` — специфичность класса выше. Блок с атрибутом
+ * hidden продолжает занимать место и накрывает то, что под ним: форма входа
+ * так закрывала уже отрисованный кабинет, и вход выглядел как «ничего не
+ * произошло». Правило ниже закрывает это для всего раздела разом.
+ */
+.adm [hidden], .adm__gate[hidden], .adm__app[hidden] { display: none !important; }
+
 /* ------------------------------- вход ------------------------------- */
 .adm__gate { min-height: 100vh; display: grid; place-items: center; padding: 24px; }
 .adm__login { width: min(100%, 380px); display: flex; flex-direction: column; gap: 12px;

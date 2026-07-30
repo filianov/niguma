@@ -34,8 +34,19 @@
   }
 
   /* -------------------------------- вход -------------------------------- */
-  function showApp() { $("#gate").hidden = true; $("#app").hidden = false; loadOverview(); }
-  function showGate() { $("#gate").hidden = false; $("#app").hidden = true; }
+  /**
+   * Показ и скрытие дублируем через style: если правило [hidden] в стилях
+   * когда-нибудь снова перебьют, вход не должен «молча не срабатывать».
+   */
+  function showApp() {
+    $("#gate").hidden = true;  $("#gate").style.display = "none";
+    $("#app").hidden = false;  $("#app").style.display = "";
+    loadOverview();
+  }
+  function showGate() {
+    $("#gate").hidden = false; $("#gate").style.display = "";
+    $("#app").hidden = true;   $("#app").style.display = "none";
+  }
 
   $("#loginForm").addEventListener("submit", function (e) {
     e.preventDefault();
