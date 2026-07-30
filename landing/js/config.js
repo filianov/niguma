@@ -26,6 +26,11 @@ window.NIGUMA_CONFIG = {
   // из подвала (см. wireCtas в main.js). Впишете адрес — ссылка вернётся сама.
   facebook:        "",
 
+  // YouTube — ведём по псевдониму: адрес читаемый и содержит имя проекта.
+  // Постоянная ссылка на канал (UC7gBY1YoHEsD9Rr4e4yL0lg) лежит в
+  // config/project.config.json на случай, если псевдоним когда-нибудь сменится.
+  youtube:         "https://www.youtube.com/@15minYoga-LN",
+
   // Email — enable after the domain is registered; leave mailto empty to hide
   email:           "mailto:15minyoga.com@gmail.com",
 

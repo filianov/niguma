@@ -5,4 +5,26 @@
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+  <!-- Правовые страницы. Их находимость обязательна: выходные данные по § 5 DDG,
+       а договор и условия возврата проверяет платёжный сервис. -->
+  <url>
+    <loc>https://15minyoga.com/legal/terms</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://15minyoga.com/legal/refund</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://15minyoga.com/legal/privacy</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://15minyoga.com/legal/impressum</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
 </urlset>

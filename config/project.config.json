@@ -179,7 +179,9 @@
       "comment": "Завести после регистрации домена; до этого — пусто/скрыто."
     },
     "youtube": {
-      "url": ""
+      "handleUrl": "https://www.youtube.com/@15minYoga-LN",
+      "channelUrl": "https://www.youtube.com/channel/UC7gBY1YoHEsD9Rr4e4yL0lg",
+      "note": "На сайте используется адрес с псевдонимом. Постоянная ссылка на канал — запасная: псевдоним владелец может сменить, идентификатор канала неизменен."
     }
   },
   "support": {

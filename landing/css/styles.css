@@ -793,3 +793,7 @@ img { max-width: 100%; display: block; }
 .paymark--google { color: #3c4043; }
 .checkout__method .paymarks { margin-top: 3px; }
 .checkout__method .paymark { height: 20px; font-size: 10.5px; }
+
+/* реквизиты продавца в подвале — требование платёжного сервиса */
+.footer__merchant { margin: 14px 0 0; font-size: 12.5px; line-height: 1.6; color: var(--ink-soft); opacity: .9; }
+.footer__merchant a { color: inherit; text-decoration: underline; }
