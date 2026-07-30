@@ -248,11 +248,17 @@ export async function paymentInstructions(methodId, cents, lang) {
     // такой ссылке даёт 404, поэтому по виду значения выбираем, что показать.
     const raw = env("PAYPAL_ME");
     const isLink = /^https?:\/\//i.test(raw) && !raw.includes("@");
+    // PayPal.Me принимает сумму и валюту прямо в адресе: paypal.me/Имя/500EUR.
+    // Человек попадает на страницу с уже подставленной суммой — ошибиться в ней
+    // или ввести не ту валюту невозможно.
+    const payLink = isLink
+      ? raw.replace(/\/+$/, "") + "/" + eur + "EUR"
+      : raw;
     return {
       title: "PayPal",
       lines: isLink
         ? [
-            { label: "Ссылка для оплаты", value: raw },
+            { label: "Ссылка для оплаты", value: payLink },
             { label: "Сумма", value: eur + " EUR" },
           ]
         : [
