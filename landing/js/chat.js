@@ -312,13 +312,31 @@
     });
 
     // язык переключили на сайте — переводим и чат
-    var langBtns = document.querySelectorAll(".lang__btn");
-    langBtns.forEach(function (b) {
-      b.addEventListener("click", function () {
-        state.lang = b.getAttribute("data-lang") || state.lang;
-        applyTexts();
+    watchLang();
+  }
+
+  /**
+   * Язык страницы меняется тремя путями: кнопкой, языком браузера и
+   * автопереключением на украинский для посетителей из Украины. Следим за
+   * самим атрибутом lang — так учитываются все три, включая тот, который
+   * происходит уже после запуска виджета.
+   */
+  function watchLang() {
+    function sync() {
+      var l = document.documentElement.lang || "ru";
+      if (l === state.lang) return;
+      state.lang = l;
+      applyTexts();
+    }
+    sync();
+    if (window.MutationObserver) {
+      new MutationObserver(sync).observe(document.documentElement,
+        { attributes: true, attributeFilter: ["lang"] });
+    } else {
+      document.querySelectorAll(".lang__btn").forEach(function (b) {
+        b.addEventListener("click", function () { setTimeout(sync, 60); });
       });
-    });
+    }
   }
 
   if (document.readyState === "loading") {

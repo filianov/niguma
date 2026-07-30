@@ -83,7 +83,13 @@ export default async function handler(req, res) {
     requestId: request.id,
     mode: method.mode,
     method: { id: method.id, name: method[lang].name },
-    plan: { id: plan.id, label: plan.label, months: plan.months },
+    // label — внутренняя русская метка для оператора и админки;
+    // наружу отдаём title на языке плательщика: он попадёт и в назначение
+    // платежа, и в заголовок формы, которые читает человек
+    plan: {
+      id: plan.id, label: plan.label, months: plan.months,
+      title: (plan.title && plan.title[lang]) || plan.label,
+    },
     price: { base: price.base, final: price.final, off: price.off },
   };
 
@@ -91,7 +97,7 @@ export default async function handler(req, res) {
   if (method.mode === "instant") {
     const form = await checkoutForm({
       requestId: request.id, cents: price.final,
-      planLabel: plan.label, lang, email,
+      planLabel: (plan.title && plan.title[lang]) || plan.label, lang, email,
     });
     if (!form) {
       // ключи есть, но курс не получен — не отправляем человека на страницу

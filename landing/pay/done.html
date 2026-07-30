@@ -40,12 +40,31 @@
         de: { t: "Danke für Ihre Zahlung", b: "Der Zugang wird automatisch freigeschaltet. Falls etwas nicht klappt, melden wir uns — und Sie können uns jederzeit auf Telegram fragen.", home: "Zur Startseite" },
         uk: { t: "Дякуємо за оплату", b: "Доступ відкриється автоматично. Якщо щось піде не так, ми напишемо вам — а ви завжди можете запитати нас у Telegram.", home: "На головну" }
       };
+      /**
+       * Страница возврата с оплаты. Язык выбирается по тем же правилам, что и
+       * на сайте: выбор человека, затем страна, затем язык браузера. Плательщик
+       * из Украины видит украинский, как того требует закон о государственном
+       * языке, — и атрибут lang меняется вместе с текстом, иначе страница
+       * объявляла бы себя русской при украинском тексте.
+       */
+      function show(lang) {
+        var l = T[lang] || T.ru;
+        document.documentElement.lang = T[lang] ? lang : "ru";
+        document.getElementById("title").textContent = l.t;
+        document.getElementById("body").textContent = l.b;
+        document.querySelector(".btn").textContent = l.home;
+      }
+
       var saved = null;
       try { saved = localStorage.getItem("niguma.lang"); } catch (e) {}
-      var l = T[saved] || T[(navigator.language || "ru").slice(0, 2)] || T.ru;
-      document.getElementById("title").textContent = l.t;
-      document.getElementById("body").textContent = l.b;
-      document.querySelector(".btn").textContent = l.home;
+      show(saved || (navigator.language || "ru").slice(0, 2));
+
+      if (!saved && document.documentElement.lang !== "uk") {
+        fetch("/api/geo", { credentials: "omit" })
+          .then(function (r) { return r.ok ? r.json() : null; })
+          .then(function (d) { if (d && d.country === "UA") show("uk"); })
+          .catch(function () {});
+      }
     })();
   </script>
 </body>

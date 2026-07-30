@@ -52,14 +52,16 @@ export async function checkoutForm({ requestId, cents, planLabel, lang, email })
     action: "pay",
     amount,
     currency,
-    description: "15minYoga — " + planLabel,
+    // Назначение платежа должно называть саму услугу: по нему банк судит,
+    // соответствует ли вид деятельности заявленному коду (MCC).
+    description: "15minYoga — " + planLabel + " (онлайн-заняття йогою)",
     order_id: requestId,
     language: ["uk", "en"].includes(lang) ? lang : "en",
     // apay/gpay включают Apple Pay и Google Pay на странице LiqPay
     paytypes: "card,apay,gpay,privat24,qr",
     result_url: SITE + "/pay/done?r=" + encodeURIComponent(requestId),
     server_url: SITE + "/api/liqpay-callback",
-    product_name: ("15minYoga — " + planLabel).slice(0, 100),
+    product_name: ("15minYoga — " + planLabel + " (онлайн-заняття йогою)").slice(0, 100),
     product_url: SITE.slice(0, 510),
     product_category: "Online yoga membership",
     ...(email ? { sender_email: String(email).slice(0, 120) } : {}),

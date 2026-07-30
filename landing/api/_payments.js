@@ -224,16 +224,36 @@ export async function paymentInstructions(methodId, cents, lang) {
   const rates = await getRates();
   const env = (k) => String(process.env[k] || "").trim();
 
+  /**
+   * Подписи полей реквизитов.
+   *
+   * Раньше они были жёстко русскими и печатались всем: украинец в блоке
+   * «Реквізити для оплати» читал «Получатель», «Назначение платежа». Слова
+   * IBAN и BIC намеренно не переводятся — это международные обозначения,
+   * и в банковских формах они везде пишутся одинаково.
+   */
+  const t = (k) => ({
+    beneficiary: { ru: "Получатель", uk: "Отримувач", en: "Beneficiary", de: "Empfänger" },
+    bank:        { ru: "Банк", uk: "Банк", en: "Bank", de: "Bank" },
+    amount:      { ru: "Сумма", uk: "Сума", en: "Amount", de: "Betrag" },
+    reference:   { ru: "Назначение платежа", uk: "Призначення платежу", en: "Payment reference", de: "Verwendungszweck" },
+    payLink:     { ru: "Ссылка для оплаты", uk: "Посилання для оплати", en: "Payment link", de: "Zahlungslink" },
+    paypalTo:    { ru: "Получатель в PayPal", uk: "Отримувач у PayPal", en: "PayPal recipient", de: "PayPal-Empfänger" },
+    network:     { ru: "Сеть", uk: "Мережа", en: "Network", de: "Netzwerk" },
+    wallet:      { ru: "Адрес кошелька", uk: "Адреса гаманця", en: "Wallet address", de: "Wallet-Adresse" },
+    tbd:         { ru: "сумму уточним", uk: "суму уточнимо", en: "amount to be confirmed", de: "Betrag folgt" },
+  }[k][L]);
+
   if (methodId === "invoice") {
     return {
       title: { ru: "Счёт на оплату", en: "Invoice", de: "Rechnung", uk: "Рахунок на оплату" }[L],
       lines: [
-        { label: "Получатель", value: env("EUR_BENEFICIARY") },
+        { label: t("beneficiary"), value: env("EUR_BENEFICIARY") },
         { label: "IBAN", value: env("EUR_IBAN") },
         env("EUR_BIC") ? { label: "BIC", value: env("EUR_BIC") } : null,
-        env("EUR_BANK") ? { label: "Банк", value: env("EUR_BANK") } : null,
-        { label: "Сумма", value: eur + " EUR" },
-        { label: "Назначение платежа", value: env("EUR_REFERENCE") || "15minYoga" },
+        env("EUR_BANK") ? { label: t("bank"), value: env("EUR_BANK") } : null,
+        { label: t("amount"), value: eur + " EUR" },
+        { label: t("reference"), value: env("EUR_REFERENCE") || "15minYoga" },
       ].filter(Boolean),
       note: {
         ru: "Назначение платежа укажите точно как в счёте — по нему мы находим оплату.",
@@ -260,12 +280,12 @@ export async function paymentInstructions(methodId, cents, lang) {
       title: "PayPal",
       lines: isLink
         ? [
-            { label: "Ссылка для оплаты", value: payLink },
-            { label: "Сумма", value: eur + " EUR" },
+            { label: t("payLink"), value: payLink },
+            { label: t("amount"), value: eur + " EUR" },
           ]
         : [
-            { label: "Получатель в PayPal", value: raw.replace(/^https?:\/\/(www\.)?paypal\.me\//i, "") },
-            { label: "Сумма", value: eur + " EUR" },
+            { label: t("paypalTo"), value: raw.replace(/^https?:\/\/(www\.)?paypal\.me\//i, "") },
+            { label: t("amount"), value: eur + " EUR" },
           ],
       note: (isLink
         ? {
@@ -288,9 +308,9 @@ export async function paymentInstructions(methodId, cents, lang) {
     return {
       title: { ru: "Оплата в USDT", en: "Payment in USDT", de: "Zahlung in USDT", uk: "Оплата в USDT" }[L],
       lines: [
-        { label: "Сеть", value: env("CRYPTO_NETWORK") || "USDT-TRC20" },
-        { label: "Адрес кошелька", value: env("CRYPTO_WALLET") },
-        { label: "Сумма", value: usdt ? usdt + " USDT" : eur + " EUR (сумму уточним)" },
+        { label: t("network"), value: env("CRYPTO_NETWORK") || "USDT-TRC20" },
+        { label: t("wallet"), value: env("CRYPTO_WALLET") },
+        { label: t("amount"), value: usdt ? usdt + " USDT" : eur + " EUR (" + t("tbd") + ")" },
       ],
       note: {
         ru: "Сумма пересчитана по курсу на сегодня и действует 24 часа. Проверьте сеть перед отправкой: перевод в другой сети теряется безвозвратно.",

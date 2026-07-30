@@ -808,7 +808,15 @@ img { max-width: 100%; display: block; }
 .checkout__method .paymark--liqpay img { height: 15px; }
 
 /* реквизиты продавца в подвале — требование платёжного сервиса */
-.footer__merchant { margin: 14px 0 0; font-size: 12.5px; line-height: 1.6; color: var(--ink-soft); opacity: .9; }
+/**
+ * Реквизиты продавца в тёмном подвале.
+ *
+ * Цвет задан явно, а не токеном --ink-soft: тот рассчитан на светлый фон и
+ * на оливковом подвале давал контраст 1.7:1, а прозрачность опускала ещё
+ * ниже. Данные ФОП обязаны быть читаемыми: их смотрит и покупатель, и
+ * проверяющий платёжного сервиса.
+ */
+.footer__merchant { margin: 14px 0 0; font-size: 13px; line-height: 1.6; color: #d9d7c6; }
 .footer__merchant a { color: inherit; text-decoration: underline; }
 
 /* цена в гривне и описание услуги — требование правил приёма карт */

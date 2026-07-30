@@ -82,6 +82,7 @@ window.NIGUMA_LEGAL = {
             "Вартість пакетів указана на сайті в євро: 1 місяць — 100 €, 6 місяців — 500 €, 12 місяців — 900 €. Актуальна ціна показується в розділі «Вартість» і може змінюватися; для вже оплаченого періоду ціна не переглядається.",
             "Оплата можлива банківським переказом, через PayPal, карткою онлайн (Visa, Mastercard, Apple Pay, Google Pay) або криптовалютою.",
             "Оплата карткою обробляється платіжним сервісом LiqPay (АТ КБ «ПриватБанк»). Виконавець не отримує й не зберігає дані картки.",
+            "Криптовалюта приймається виключно як оплата власної послуги Виконавця. Виконавець не надає послуг обміну, купівлі, продажу, зберігання чи переказу віртуальних активів і не є оператором такого обміну.",
             "Доступ відкривається після надходження коштів. За оплати карткою — автоматично, за інших способів — після підтвердження платежу, зазвичай протягом одного робочого дня.",
           ],
         },
@@ -175,6 +176,7 @@ window.NIGUMA_LEGAL = {
             "Стоимость пакетов указана на сайте в евро: 1 месяц — 100 €, 6 месяцев — 500 €, 12 месяцев — 900 €. Актуальная цена показывается в разделе «Стоимость» и может меняться; для уже оплаченного периода цена не пересматривается.",
             "Оплата возможна банковским переводом, через PayPal, картой онлайн (Visa, Mastercard, Apple Pay, Google Pay) или криптовалютой.",
             "Оплата картой обрабатывается платёжным сервисом LiqPay (АО КБ «ПриватБанк»). Исполнитель не получает и не хранит данные карты.",
+            "Криптовалюта принимается исключительно как оплата собственной услуги Исполнителя. Исполнитель не оказывает услуг обмена, покупки, продажи, хранения или перевода виртуальных активов и не является оператором такого обмена.",
             "Доступ открывается после поступления средств. При оплате картой — автоматически, при других способах — после подтверждения платежа, обычно в течение одного рабочего дня.",
           ],
         },
@@ -268,6 +270,7 @@ window.NIGUMA_LEGAL = {
             "Prices are shown on the site in euro: 1 month — €100, 6 months — €500, 12 months — €900. The current price is shown in the “Pricing” section and may change; the price of an already paid period is not revised.",
             "Payment is possible by bank transfer, PayPal, card online (Visa, Mastercard, Apple Pay, Google Pay) or cryptocurrency.",
             "Card payments are processed by LiqPay (JSC CB PrivatBank). The Provider neither receives nor stores card details.",
+            "Cryptocurrency is accepted solely as payment for the Provider\u2019s own service. The Provider does not offer exchange, purchase, sale, custody or transfer of virtual assets and is not a virtual-asset exchange operator.",
             "Access opens once funds are received: automatically for card payments, and after confirmation for other methods — usually within one business day.",
           ],
         },
@@ -361,6 +364,7 @@ window.NIGUMA_LEGAL = {
             "Die Preise stehen auf der Seite in Euro: 1 Monat — 100 €, 6 Monate — 500 €, 12 Monate — 900 €. Der aktuelle Preis steht im Abschnitt „Preise“ und kann sich ändern; für bereits bezahlte Zeiträume bleibt er unverändert.",
             "Zahlung ist möglich per Banküberweisung, PayPal, Karte online (Visa, Mastercard, Apple Pay, Google Pay) oder Kryptowährung.",
             "Kartenzahlungen werden über LiqPay (JSC CB PrivatBank) abgewickelt. Der Anbieter erhält und speichert keine Kartendaten.",
+            "Kryptowährung wird ausschließlich als Zahlung für die eigene Leistung des Anbieters angenommen. Der Anbieter bietet keinen Umtausch, An- und Verkauf, keine Verwahrung und keine Übertragung virtueller Vermögenswerte an und ist kein Betreiber einer solchen Börse.",
             "Der Zugang öffnet sich nach Zahlungseingang: bei Kartenzahlung automatisch, bei anderen Wegen nach Bestätigung — in der Regel innerhalb eines Werktags.",
           ],
         },
@@ -472,7 +476,7 @@ window.NIGUMA_LEGAL = {
         {
           heading: "Строки та спосіб повернення",
           lines: [
-            "Кошти повертаються тим самим способом, яким були сплачені: на картку, на банківський рахунок, на PayPal або на криптогаманець.",
+            "Кошти повертаються тим самим способом, яким були сплачені: на ту саму картку, на банківський рахунок або на PayPal. Повернення в іншій формі, ніж надійшла оплата, не здійснюється.",
             "Строк повернення — до 14 календарних днів з дня погодження суми. Для карткових платежів зарахування може зайняти додатково до 5 банківських днів залежно від банку-емітента.",
             "Комісії платіжних систем за переказ не повертаються.",
           ],
@@ -530,7 +534,7 @@ window.NIGUMA_LEGAL = {
         {
           heading: "Сроки и способ возврата",
           lines: [
-            "Средства возвращаются тем же способом, которым были уплачены: на карту, на банковский счёт, на PayPal или на криптокошелёк.",
+            "Средства возвращаются тем же способом, которым были уплачены: на ту же карту, на банковский счёт или на PayPal. Возврат в иной форме, чем поступила оплата, не производится.",
             "Срок возврата — до 14 календарных дней со дня согласования суммы. Для карточных платежей зачисление может занять дополнительно до 5 банковских дней в зависимости от банка-эмитента.",
             "Комиссии платёжных систем за перевод не возвращаются.",
           ],
@@ -588,7 +592,7 @@ window.NIGUMA_LEGAL = {
         {
           heading: "Timing and method",
           lines: [
-            "Refunds are made by the same method as the payment: card, bank account, PayPal or crypto wallet.",
+            "Refunds are made by the same method as the payment: to the same card, to a bank account or to PayPal. Refunds in any other form than the original payment are not made.",
             "The refund is issued within 14 calendar days of agreeing the amount. For card payments, crediting may take up to a further 5 banking days depending on the issuing bank.",
             "Payment system fees are not refundable.",
           ],
@@ -646,7 +650,7 @@ window.NIGUMA_LEGAL = {
         {
           heading: "Fristen und Weg der Erstattung",
           lines: [
-            "Die Erstattung erfolgt auf demselben Weg wie die Zahlung: Karte, Bankkonto, PayPal oder Krypto-Wallet.",
+            "Die Erstattung erfolgt auf demselben Weg wie die Zahlung: auf dieselbe Karte, auf ein Bankkonto oder auf PayPal. Eine Erstattung in anderer Form als der Zahlung erfolgt nicht.",
             "Die Auszahlung erfolgt innerhalb von 14 Kalendertagen nach Abstimmung des Betrags. Bei Kartenzahlungen kann die Gutschrift je nach Bank bis zu 5 weitere Banktage dauern.",
             "Gebühren der Zahlungsdienste werden nicht erstattet.",
           ],

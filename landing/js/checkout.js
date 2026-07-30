@@ -152,17 +152,35 @@
   }
 
   /* ---------------------------- загрузка цен ---------------------------- */
+  /**
+   * Наименование и описание услуги приходят с сервера уже на нужном языке,
+   * поэтому запоминаем, на каком языке был ответ: иначе украинец, открывший
+   * сайт, читал бы описание пакета по-русски — а именно описание позиции
+   * проверяет платёжный сервис.
+   */
   function loadPlans() {
-    return fetch("/api/plans?lang=" + encodeURIComponent(lang()))
+    var reqLang = lang();                       // фиксируем: язык может смениться, пока идёт запрос
+    return fetch("/api/plans?lang=" + encodeURIComponent(reqLang))
       .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
       .then(function (d) {
         if (!d.ok) return;
         state.plans = d.plans;
+        state.plansLang = reqLang;
         state.promo = d.promo;
         state.rate = d.rate || null;
         decorate();
       })
       .catch(function () { /* цены из переводов уже отрисованы — этого достаточно */ });
+  }
+
+  /**
+   * Язык страницы меняется тремя путями: выбором человека, языком браузера и
+   * автопереключением на украинский для посетителей из Украины. Ловим факт
+   * расхождения, а не сами события — так ни один путь не окажется забытым.
+   */
+  function syncLang() {
+    if (state.plansLang !== lang()) loadPlans();
+    if (state.methodsLang !== lang()) loadMethods();
   }
 
   /**
@@ -191,11 +209,11 @@
       }
       // Название и описание услуги: их наличие рядом с ценой — требование
       // правил приёма карт, а человеку понятнее, за что именно он платит.
-      if (plan.desc && !$(".tier__desc", card)) {
-        var desc = document.createElement("p");
+      if (plan.desc) {
+        var desc = $(".tier__desc", card) || document.createElement("p");
         desc.className = "tier__desc";
         desc.textContent = plan.desc;
-        card.appendChild(desc);
+        if (!desc.parentNode) card.appendChild(desc);
       }
       // Цена в гривне — обязательна для украинского приёма платежей.
       if (plan.uah) {
@@ -298,11 +316,13 @@
    * хуже, чем её отсутствие. Пока ответа нет, в блоке остаётся текст из разметки.
    */
   function loadMethods() {
-    return fetch("/api/payment-methods?lang=" + encodeURIComponent(lang()))
+    var reqLang = lang();
+    return fetch("/api/payment-methods?lang=" + encodeURIComponent(reqLang))
       .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
       .then(function (d) {
         if (!d.ok || !d.methods || !d.methods.length) return;
         state.methods = d.methods;
+        state.methodsLang = reqLang;
         renderMethods();
       })
       .catch(function () { /* остаётся текст из разметки */ });
@@ -366,7 +386,7 @@
       '<div class="checkout__box" role="dialog" aria-modal="true">' +
         '<button class="checkout__close" type="button" aria-label="' + esc(t("close")) + '">✕</button>' +
         '<h3 class="checkout__title">' + esc(t("title")) + "</h3>" +
-        '<p class="checkout__plan"><b>' + esc(plan.label) + "</b> — " +
+        '<p class="checkout__plan"><b>' + esc(plan.title || plan.label) + "</b> — " +
           (plan.off ? '<s>' + money(plan.base) + "</s> " : "") + money(plan.final) + "</p>" +
         '<p class="checkout__sub">' + esc(t("sub")) + "</p>" +
         '<form class="checkout__form">' +
@@ -511,7 +531,7 @@
     new MutationObserver(function () {
       if (busy) return;                 // decorate меняет тот же блок — не зацикливаемся
       busy = true;
-      setTimeout(function () { decorate(); busy = false; }, 0);
+      setTimeout(function () { decorate(); syncLang(); busy = false; }, 0);
     }).observe(host, { childList: true });
   }
 
@@ -532,7 +552,7 @@
 
     document.querySelectorAll(".lang__btn").forEach(function (b) {
       b.addEventListener("click", function () {
-        setTimeout(function () { decorate(); loadMethods(); }, 60);
+        setTimeout(function () { decorate(); syncLang(); }, 60);
       });
     });
   }
