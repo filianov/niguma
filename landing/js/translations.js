@@ -282,7 +282,15 @@ window.NIGUMA_I18N = {
         heading: "Тренеры",
         intro: "Все тренеры прежде всего сами являются предпринимателями/лидерами команд. Начав практиковать эту систему йоги, они улучшили свои результаты в бизнесе, а сегодня используют этот мощный инструмент как для собственного развития, так и для помощи другим.",
         name: "Ольга",
-        role: "Создатель проекта, преподаватель"
+        role: "Создатель проекта, преподаватель",
+        people: [
+          {
+            name: "Ольга",
+            role: "Создатель проекта, преподаватель",
+            photo: "assets/photos/olga.jpg",
+            lines: []
+          }
+        ]
       },
       how: {
         heading: "Почему это работает",
@@ -361,7 +369,15 @@ window.NIGUMA_I18N = {
         heading: "Trainers",
         intro: "Every trainer is, first and foremost, an entrepreneur or team leader. When they began practising this system of yoga, their results in business improved — and today they use this powerful tool both for their own growth and to help others.",
         name: "Olga",
-        role: "Founder and teacher"
+        role: "Founder and teacher",
+        people: [
+          {
+            name: "Olha",
+            role: "Founder and teacher",
+            photo: "assets/photos/olga.jpg",
+            lines: []
+          }
+        ]
       },
       how: {
         heading: "Why it works",
@@ -440,7 +456,15 @@ window.NIGUMA_I18N = {
         heading: "Trainer",
         intro: "Alle Trainer sind zuallererst selbst Unternehmer oder Teamleiter. Als sie begannen, dieses Yoga-System zu praktizieren, verbesserten sie ihre Ergebnisse im Business — und heute nutzen sie dieses kraftvolle Werkzeug sowohl für die eigene Entwicklung als auch, um anderen zu helfen.",
         name: "Olga",
-        role: "Gründerin und Lehrerin"
+        role: "Gründerin und Lehrerin",
+        people: [
+          {
+            name: "Olha",
+            role: "Gründerin und Lehrerin",
+            photo: "assets/photos/olga.jpg",
+            lines: []
+          }
+        ]
       },
       how: {
         heading: "Warum es wirkt",
@@ -519,7 +543,15 @@ window.NIGUMA_I18N = {
         heading: "Тренери",
         intro: "Усі тренери насамперед самі є підприємцями/лідерами команд. Почавши практикувати цю систему йоги, вони покращили свої результати в бізнесі, а сьогодні використовують цей потужний інструмент як для власного розвитку, так і для допомоги іншим.",
         name: "Ольга",
-        role: "Засновниця та викладачка"
+        role: "Засновниця та викладачка",
+        people: [
+          {
+            name: "Ольга",
+            role: "Створила проєкт, викладає",
+            photo: "assets/photos/olga.jpg",
+            lines: []
+          }
+        ]
       },
       how: {
         heading: "Чому це працює",
