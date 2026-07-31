@@ -77,12 +77,18 @@
       var arr = t(lang, el.getAttribute("data-teachers"));
       if (!Array.isArray(arr) || !arr.length) return;
       el.innerHTML = arr.map(function (p) {
-        // Портрет прячется сам, если файла ещё нет: значок битой картинки
-        // рядом с именем человека выглядит хуже, чем карточка без фотографии.
+        /**
+         * Портрет. Если файла ещё нет, на его место встаёт плашка с инициалом:
+         * карточка — строка, и убрать колонку целиком значило бы сломать ритм
+         * раздела. Подмена происходит по ошибке загрузки, поэтому достаточно
+         * положить файл в assets/photos — код трогать не нужно.
+         */
+        var initial = escapeHtml(String(p.name || "?").trim().charAt(0));
         var photo = p.photo
           ? '<div class="teacher__photo"><img src="' + escapeHtml(p.photo) + '" alt="" loading="lazy" ' +
-            'onerror="this.parentNode.remove()" /></div>'
-          : "";
+            'onerror="this.parentNode.className=\'teacher__photo teacher__photo--empty\';' +
+            'this.parentNode.innerHTML=\'<span aria-hidden=&quot;true&quot;>' + initial + '</span>\'" /></div>'
+          : '<div class="teacher__photo teacher__photo--empty"><span aria-hidden="true">' + initial + "</span></div>";
         return '<article class="teacher reveal">' + photo +
                  '<div class="teacher__text">' +
                    '<h3 class="teacher__name">' + escapeHtml(p.name) + "</h3>" +

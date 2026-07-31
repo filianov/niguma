@@ -534,17 +534,35 @@ img { max-width: 100%; display: block; }
 }
 
 /* ---------------- Teachers ---------------- */
-.teachers { display: grid; gap: 22px; margin-top: 34px; }
+/**
+ * Карточка — строка во всю ширину: портрет слева, рассказ справа.
+ *
+ * Сетка из трёх колонок заставляла обрезать тексты до общей длины самого
+ * короткого; в строку помещается всё, что человек о себе рассказал, и цифры
+ * не приходится выбрасывать ради выравнивания.
+ */
+.teachers { display: grid; grid-template-columns: 1fr; gap: 20px; margin-top: 34px; }
 .teacher {
   display: grid; gap: 20px; align-items: start;
-  background: #fff; border: 1px solid var(--line); border-radius: 22px; padding: 22px;
+  background: #fff; border: 1px solid var(--line); border-radius: 22px; padding: 20px;
   transition: transform .18s ease, box-shadow .18s ease;
 }
 .teacher:hover { transform: translateY(-2px); box-shadow: 0 18px 40px -28px rgba(59, 56, 47, .35); }
+
 .teacher__photo { border-radius: 18px; overflow: hidden; background: var(--cream); }
-/* Портрет обрезается по верхней части: лицо не должно уезжать под край. */
-.teacher__photo img { width: 100%; height: 100%; max-height: 340px; object-fit: cover;
-  object-position: 50% 22%; display: block; }
+/* Портрет обрезается по верхней части: при обрезке по центру лицо уезжает
+   под нижний край. Соотношение задано жёстко — снимки у всех разные, а
+   колонка должна держать один ритм. */
+.teacher__photo img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover;
+  object-position: 50% 20%; display: block; }
+
+/* Пока файла портрета нет — спокойная плашка с инициалом вместо пустоты.
+   Значок битой картинки рядом с именем человека выглядит хуже. */
+.teacher__photo--empty { display: grid; place-items: center; aspect-ratio: 3 / 4;
+  border: 1px dashed var(--line); }
+.teacher__photo--empty span { font-family: var(--font-display); font-size: 44px;
+  color: var(--clay); opacity: .5; }
+
 .teacher__name { font-family: var(--font-display); font-size: 26px; margin: 0 0 4px; color: var(--ink); }
 .teacher__role { margin: 0 0 14px; color: var(--olive); font-size: 15px; font-style: italic; }
 .teacher__text p { margin: 0 0 12px; color: var(--ink-soft); font-size: 16px; line-height: 1.65; }
@@ -556,27 +574,20 @@ img { max-width: 100%; display: block; }
  * точка: строк много, и ряд точек превратил бы карточку в перечень покупок.
  */
 .teacher__facts { list-style: none; margin: 16px 0 0; padding: 0;
-  display: flex; flex-direction: column; gap: 7px; }
+  display: grid; grid-template-columns: 1fr; gap: 7px; }
 .teacher__facts li { position: relative; padding-left: 18px;
   font-size: 15px; line-height: 1.5; color: var(--ink-soft); }
 .teacher__facts li::before { content: ""; position: absolute; left: 0; top: .68em;
   width: 9px; height: 1.5px; background: var(--clay); border-radius: 1px; }
 
-@media (min-width: 760px) {
-  /* Несколько преподавателей — сетка карточек с портретом сверху. Карточки
-     разной высоты: у кого-то восемь строк фактов, у кого-то пять. Выравнивание
-     по верху честнее растягивания — пустота внизу заметна меньше, чем
-     разъехавшийся текст. */
-  .teachers { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 22px; align-items: start; }
-  /* Один — карточка во всю ширину, портрет слева: так она не выглядит
-     осиротевшей колонкой рядом с пустотой. Условие через :only-child, а не
-     через :has() — поддержка старше и намерение читается прямо. */
-  .teacher:only-child { grid-template-columns: 280px 1fr; gap: 30px; align-items: center; }
-  .teacher:only-child .teacher__photo img { max-height: 360px; }
+@media (min-width: 720px) {
+  .teacher { grid-template-columns: 240px 1fr; gap: 28px; padding: 24px; }
 }
-
-@media (min-width: 1080px) {
-  .teachers { grid-template-columns: repeat(3, 1fr); }
+@media (min-width: 1000px) {
+  .teacher { grid-template-columns: 280px 1fr; gap: 34px; }
+  /* Восемь фактов в одну колонку растянули бы карточку вдвое выше портрета —
+     на широком экране они идут в два столбца. */
+  .teacher__facts { grid-template-columns: 1fr 1fr; gap: 8px 26px; }
 }
 
 /* ---------------- Why it works: prose + accent photo ---------------- */

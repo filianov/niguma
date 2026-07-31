@@ -322,17 +322,16 @@ window.NIGUMA_I18N = {
             "role": "Юрист международных юридических фирм, LL.M. · преподаватель йоги · Швейцария",
             "photo": "assets/photos/katya.jpg",
             "lines": [
-              "Йога Леди Нигумы для меня — ежедневная практика управления энергией, вниманием и эмоциональным состоянием. Она помогает сохранять ясный и спокойный ум, не действовать под влиянием стресса и принимать более взвешенные решения — и в бизнесе, и в личной жизни.",
-              "Именно эта практика помогла мне создать жизнь, в которой есть любимое дело, финансовый рост, свобода и глубокие отношения. Сегодня я делюсь ею с теми, кто хочет достигать большего, сохраняя внутреннюю устойчивость и не теряя себя."
+              "Йога Леди Нигумы для меня — ежедневная практика управления энергией и вниманием. Она помогает не действовать под влиянием стресса и принимать более взвешенные решения — и в бизнесе, и в личной жизни.",
+              "Эта практика помогла мне создать жизнь, в которой есть любимое дело, финансовый рост и свобода. Сегодня я делюсь ею с теми, кто хочет достигать большего, не теряя себя."
             ],
             "facts": [
               "10 лет в международных юридических фирмах, степень LL.M.",
-              "Четырёхлетняя программа подготовки преподавателей йоги в Швейцарии — 760 часов",
-              "Практикует йогу Леди Нигумы и продолжает обучение как преподаватель традиции",
-              "Преподаёт три года, живёт в Швейцарии",
+              "Программа подготовки преподавателей йоги в Швейцарии — четыре года, 760 часов",
+              "Практикует йогу Леди Нигумы, преподаёт три года",
               "Доход вырос втрое",
               "Превратила любимое дело в профессию и источник дохода",
-              "Живёт свободнее: регулярно путешествует и сама распоряжается своим временем"
+              "Живёт в Швейцарии, сама распоряжается своим временем"
             ]
           },
           {
@@ -355,15 +354,15 @@ window.NIGUMA_I18N = {
             "role": "Юрист · наставник ACI и АКМ · преподаватель йоги · Вена",
             "photo": "assets/photos/olga-klyus.jpg",
             "lines": [
-              "Медитация и йога для меня — лучший инструмент подготовки тела и ума к точным, взвешенным решениям."
+              "Медитация и йога для меня — лучший инструмент подготовки тела и ума к точным, взвешенным решениям.",
+              "13 лет я работала там, где цена решения измеряется деньгами и ответственностью, — и знаю, чего стоит ясная голова в такой работе."
             ],
             "facts": [
-              "13 лет там, где цена решения измеряется деньгами и ответственностью",
               "Пять лет государственной службы — вернула в бюджет более 1,5 млн грн",
-              "Восемь лет юристом в страховой компании: её решения сохраняли компании около 500 тыс. грн в год",
-              "С 2019 года наставник и куратор на курсах ACI — группы до 1000 участников, малые группы от 20",
+              "Восемь лет юристом в страховой компании: её решения сохраняли около 500 тыс. грн в год",
+              "С 2019 года наставник на курсах ACI — группы до 1000 участников",
               "С 2020 года ведёт разборы домашних заданий в Академии классической мудрости",
-              "Шесть лет личной практики, год преподавания онлайн и офлайн — по-русски, по-украински и по-немецки",
+              "Шесть лет практики, год преподавания — по-русски, по-украински и по-немецки",
               "Личный доход вырос втрое"
             ]
           },
@@ -372,15 +371,15 @@ window.NIGUMA_I18N = {
             "role": "Предприниматель · преподаватель йоги · исследователь древних систем управления · Италия",
             "photo": "assets/photos/elena.jpg",
             "lines": [
-              "Я соединяю бьюти-эстетику, законы кармического менеджмента и практику йоги: помогаю находить баланс, здоровье и строить успешное дело через осознанность.",
-              "Йога для меня — не просто движение на коврике. Это восхождение к вершинам сознания, где ум, тело и профессия сливаются в один пик, подобный Гималаям."
+              "Я соединяю бьюти-эстетику, законы кармического менеджмента и практику йоги: помогаю находить баланс и строить успешное дело через осознанность.",
+              "Йога для меня — не просто движение на коврике. Это восхождение к вершинам сознания, где ум, тело и профессия сливаются в один пик."
             ],
             "facts": [
               "Более 25 лет в бизнесе и предпринимательстве",
               "16 лет живёт и работает в Италии",
-              "12 лет — владелица и руководитель собственной бьюти-студии",
-              "Участвовала в развитии семейного бизнеса в Украине, ставшего одним из лидеров рынка",
-              "Семь лет изучает древние системы работы с мышлением, решениями и построением устойчивого бизнеса",
+              "12 лет — владелица собственной бьюти-студии",
+              "Развивала семейный бизнес в Украине — одного из лидеров рынка",
+              "Семь лет изучает древние системы работы с мышлением и решениями",
               "Волонтёр-переводчик главного офиса ACI (Asian Classics Institute)",
               "Выпускница семи курсов Diamond Cutter Institute (DCI)",
               "Студентка и преподаватель Yoga Studies Institute (YSI)"
@@ -505,17 +504,16 @@ window.NIGUMA_I18N = {
             "role": "Lawyer at international law firms, LL.M. · yoga teacher · Switzerland",
             "photo": "assets/photos/katya.jpg",
             "lines": [
-              "For me, Lady Niguma yoga is a daily practice of managing energy, attention, and emotional state. It helps me keep a clear and calm mind, avoid acting under stress, and make more considered decisions — in business and in personal life alike.",
-              "This is the practice that helped me build a life with work I love, financial growth, freedom, and deep relationships. Today I share it with those who want to achieve more while keeping their inner steadiness and without losing themselves."
+              "For me, Lady Niguma yoga is a daily practice of managing energy and attention. It helps me avoid acting under stress and make more considered decisions — in business and in personal life alike.",
+              "This is the practice that helped me build a life with work I love, financial growth, and freedom. Today I share it with those who want to achieve more without losing themselves."
             ],
             "facts": [
               "10 years in international law firms, LL.M. degree",
               "4-year yoga teacher training in Switzerland — 760 hours",
-              "Practises Lady Niguma yoga; still training as a teacher of the tradition",
-              "3 years of teaching, based in Switzerland",
+              "Practises Lady Niguma yoga, teaching for 3 years",
               "Income grew 3×",
               "Turned work she loves into a profession and a source of income",
-              "More freedom: travels regularly and decides how her own time is spent"
+              "Lives in Switzerland and decides how her own time is spent"
             ]
           },
           {
@@ -538,15 +536,15 @@ window.NIGUMA_I18N = {
             "role": "Lawyer · mentor at ACI and the Academy of Classical Wisdom · yoga teacher · Vienna",
             "photo": "assets/photos/olga-klyus.jpg",
             "lines": [
-              "For me, meditation and yoga are the best way to prepare body and mind for precise, considered decisions."
+              "For me, meditation and yoga are the best way to prepare body and mind for precise, considered decisions.",
+              "For 13 years I worked where the price of a decision is measured in money and responsibility — and I know what a clear head is worth in that kind of work."
             ],
             "facts": [
-              "13 years where the price of a decision is measured in money and responsibility",
               "5 years in public service — recovered over 1.5 million UAH for the budget",
               "8 years as a lawyer at an insurance company: her decisions saved it around 500,000 UAH a year",
-              "Mentor and course curator at ACI since 2019 — groups of up to 1,000, small groups from 20",
+              "Mentor at ACI courses since 2019 — groups of up to 1,000",
               "Leading homework reviews at the Academy of Classical Wisdom since 2020",
-              "6 years of personal practice, 1 year of teaching online and in person — in Russian, Ukrainian, and German",
+              "6 years of personal practice, 1 year of teaching — in Russian, Ukrainian, and German",
               "Personal income grew 3×"
             ]
           },
@@ -555,15 +553,15 @@ window.NIGUMA_I18N = {
             "role": "Entrepreneur · yoga teacher · researcher of ancient management systems · Italy",
             "photo": "assets/photos/elena.jpg",
             "lines": [
-              "I bring together beauty aesthetics, the laws of karmic management, and yoga practice: I help people find balance and health, and build a successful business through awareness.",
-              "For me, yoga is not simply movement on a mat. It is a climb towards the summits of consciousness, where mind, body, and profession merge into a single peak, like the Himalayas."
+              "I bring together beauty aesthetics, the laws of karmic management, and yoga practice: I help people find balance and build a successful business through awareness.",
+              "For me, yoga is not simply movement on a mat. It is a climb towards the summits of consciousness, where mind, body, and profession merge into a single peak."
             ],
             "facts": [
               "Over 25 years in business and entrepreneurship",
               "16 years living and working in Italy",
               "12 years owning and running her own beauty studio",
               "Helped grow a family business in Ukraine into one of the market leaders",
-              "7 years studying ancient systems of thinking, decisions, and sustainable business",
+              "7 years studying ancient systems of thinking and decisions",
               "Volunteer translator for the head office of ACI (Asian Classics Institute)",
               "Graduate of 7 Diamond Cutter Institute (DCI) courses",
               "Student and teacher at the Yoga Studies Institute (YSI)"
@@ -688,17 +686,16 @@ window.NIGUMA_I18N = {
             "role": "Juristin in internationalen Kanzleien, LL.M. · Yogalehrerin · Schweiz",
             "photo": "assets/photos/katya.jpg",
             "lines": [
-              "Das Yoga der Lady Niguma ist für mich eine tägliche Praxis, um Energie, Aufmerksamkeit und das emotionale Befinden zu steuern. Es hilft, den Geist klar und ruhig zu halten, nicht unter dem Einfluss von Stress zu handeln und abgewogenere Entscheidungen zu treffen — im Geschäft wie im Privatleben.",
-              "Genau diese Praxis hat mir geholfen, ein Leben aufzubauen, in dem es eine Arbeit gibt, die ich liebe, dazu finanzielles Wachstum, Freiheit und tiefe Beziehungen. Heute gebe ich sie an Menschen weiter, die mehr erreichen wollen, ohne ihre innere Stabilität und sich selbst zu verlieren."
+              "Das Yoga der Lady Niguma ist für mich eine tägliche Praxis, um Energie und Aufmerksamkeit zu steuern. Es hilft, nicht unter dem Einfluss von Stress zu handeln und abgewogenere Entscheidungen zu treffen — im Geschäft wie im Privatleben.",
+              "Diese Praxis hat mir geholfen, ein Leben aufzubauen, in dem es eine Arbeit gibt, die ich liebe, dazu finanzielles Wachstum und Freiheit. Heute gebe ich sie an Menschen weiter, die mehr erreichen wollen, ohne sich selbst zu verlieren."
             ],
             "facts": [
               "10 Jahre in internationalen Kanzleien, Abschluss LL.M.",
               "Vierjährige Yogalehrer-Ausbildung in der Schweiz — 760 Stunden",
-              "Praktiziert das Yoga der Lady Niguma, bildet sich weiter als Lehrerin der Tradition",
-              "Unterrichtet seit drei Jahren, lebt in der Schweiz",
+              "Praktiziert das Yoga der Lady Niguma, unterrichtet seit drei Jahren",
               "Einkommen verdreifacht",
               "Aus der Leidenschaft wurde Beruf und Einkommen",
-              "Mehr Freiheit: reist regelmäßig, teilt sich die Zeit selbst ein"
+              "Lebt in der Schweiz, teilt sich die Zeit selbst ein"
             ]
           },
           {
@@ -721,15 +718,15 @@ window.NIGUMA_I18N = {
             "role": "Juristin · Mentorin bei ACI und der Akademie für klassische Weisheit · Yogalehrerin · Wien",
             "photo": "assets/photos/olga-klyus.jpg",
             "lines": [
-              "Meditation und Yoga sind für mich das beste Werkzeug, um Körper und Geist auf präzise, abgewogene Entscheidungen vorzubereiten."
+              "Meditation und Yoga sind für mich das beste Werkzeug, um Körper und Geist auf präzise, abgewogene Entscheidungen vorzubereiten.",
+              "13 Jahre lang habe ich dort gearbeitet, wo der Preis einer Entscheidung in Geld und Verantwortung gemessen wird — und ich weiß, was ein klarer Kopf in dieser Arbeit wert ist."
             ],
             "facts": [
-              "13 Jahre dort, wo der Preis einer Entscheidung in Geld und Verantwortung gemessen wird",
               "Fünf Jahre im öffentlichen Dienst — über 1,5 Mio. UAH in den Haushalt zurückgeholt",
               "Acht Jahre Juristin in einer Versicherung — rund 500.000 UAH Ersparnis pro Jahr",
-              "Seit 2019 Mentorin und Kursbetreuerin beim ACI — Gruppen bis 1000 Teilnehmer, Kleingruppen ab 20",
+              "Seit 2019 Mentorin in ACI-Kursen — Gruppen bis 1000 Teilnehmer",
               "Seit 2020 Besprechung der Hausaufgaben an der Akademie für klassische Weisheit",
-              "Sechs Jahre eigene Praxis, ein Jahr Unterricht online und offline — auf Russisch, Ukrainisch und Deutsch",
+              "Sechs Jahre eigene Praxis, ein Jahr Unterricht — auf Russisch, Ukrainisch und Deutsch",
               "Eigenes Einkommen verdreifacht"
             ]
           },
@@ -738,15 +735,15 @@ window.NIGUMA_I18N = {
             "role": "Unternehmerin · Yogalehrerin · Forscherin alter Führungssysteme · Italien",
             "photo": "assets/photos/elena.jpg",
             "lines": [
-              "Ich verbinde Beauty-Ästhetik, die Gesetze des karmischen Managements und die Yogapraxis: Ich helfe, Balance und Gesundheit zu finden und aus Achtsamkeit heraus ein erfolgreiches Unternehmen aufzubauen.",
-              "Yoga ist für mich nicht einfach Bewegung auf der Matte. Es ist ein Aufstieg zu den Gipfeln des Bewusstseins, wo Geist, Körper und Beruf zu einem einzigen Gipfel verschmelzen, einem Himalaya gleich."
+              "Ich verbinde Beauty-Ästhetik, die Gesetze des karmischen Managements und die Yogapraxis: Ich helfe, Balance zu finden und aus Achtsamkeit heraus ein erfolgreiches Unternehmen aufzubauen.",
+              "Yoga ist für mich nicht einfach Bewegung auf der Matte. Es ist ein Aufstieg zu den Gipfeln des Bewusstseins, wo Geist, Körper und Beruf zu einem einzigen Gipfel verschmelzen."
             ],
             "facts": [
               "Über 25 Jahre in Wirtschaft und Unternehmertum",
               "Lebt und arbeitet seit 16 Jahren in Italien",
-              "12 Jahre Inhaberin und Leiterin eines eigenen Beauty-Studios",
-              "Am Aufbau des Familienunternehmens in der Ukraine beteiligt — heute einer der Marktführer",
-              "Sieben Jahre Studium alter Systeme für Denken, Entscheidungen und stabilen Unternehmensaufbau",
+              "12 Jahre Inhaberin eines eigenen Beauty-Studios",
+              "Entwickelte das Familienunternehmen in der Ukraine — einer der Marktführer",
+              "Sieben Jahre Studium alter Systeme für Denken und Entscheidungen",
               "Ehrenamtliche Übersetzerin im Hauptbüro des ACI (Asian Classics Institute)",
               "Absolventin von sieben Kursen des Diamond Cutter Institute (DCI)",
               "Studentin und Lehrerin am Yoga Studies Institute (YSI)"
@@ -871,17 +868,16 @@ window.NIGUMA_I18N = {
             "role": "Юристка міжнародних юридичних фірм, LL.M. · викладачка йоги · Швейцарія",
             "photo": "assets/photos/katya.jpg",
             "lines": [
-              "Йога Леді Нігуми для мене — щоденна практика керування енергією, увагою та емоційним станом. Вона допомагає зберігати ясний і спокійний розум, не діяти під впливом стресу та ухвалювати зваженіші рішення — і в бізнесі, і в особистому житті.",
-              "Саме ця практика допомогла мені створити життя, у якому є улюблена справа, фінансове зростання, свобода та глибокі стосунки. Сьогодні я ділюся нею з тими, хто хоче досягати більшого, зберігаючи внутрішню стійкість і не втрачаючи себе."
+              "Йога Леді Нігуми для мене — щоденна практика керування енергією та увагою. Вона допомагає не діяти під впливом стресу та ухвалювати зваженіші рішення — і в бізнесі, і в особистому житті.",
+              "Ця практика допомогла мені створити життя, у якому є улюблена справа, фінансове зростання і свобода. Сьогодні я ділюся нею з тими, хто хоче досягати більшого, не втрачаючи себе."
             ],
             "facts": [
               "10 років у міжнародних юридичних фірмах, ступінь LL.M.",
-              "Чотирирічна програма підготовки викладачів йоги у Швейцарії — 760 годин",
-              "Практикує йогу Леді Нігуми і продовжує навчання як викладачка традиції",
-              "Викладає три роки, живе у Швейцарії",
+              "Програма підготовки викладачів йоги у Швейцарії — чотири роки, 760 годин",
+              "Практикує йогу Леді Нігуми, викладає три роки",
               "Дохід зріс утричі",
               "Перетворила улюблену справу на професію та джерело доходу",
-              "Живе вільніше: регулярно подорожує й сама розпоряджається своїм часом"
+              "Живе у Швейцарії, сама розпоряджається своїм часом"
             ]
           },
           {
@@ -904,15 +900,15 @@ window.NIGUMA_I18N = {
             "role": "Юристка · наставниця ACI та АКМ · викладачка йоги · Відень",
             "photo": "assets/photos/olga-klyus.jpg",
             "lines": [
-              "Медитація і йога для мене — найкращий інструмент підготовки тіла й розуму до точних, зважених рішень."
+              "Медитація і йога для мене — найкращий інструмент підготовки тіла й розуму до точних, зважених рішень.",
+              "13 років я працювала там, де ціна рішення вимірюється грошима та відповідальністю, — і знаю, чого варта ясна голова в такій роботі."
             ],
             "facts": [
-              "13 років там, де ціна рішення вимірюється грошима та відповідальністю",
               "П'ять років державної служби — повернула до бюджету понад 1,5 млн грн",
-              "Вісім років юристкою в страховій компанії: її рішення заощаджували компанії близько 500 тис. грн на рік",
-              "З 2019 року наставниця та кураторка на курсах ACI — групи до 1000 учасників, малі групи від 20",
+              "Вісім років юристкою в страховій компанії: її рішення заощаджували близько 500 тис. грн на рік",
+              "З 2019 року наставниця на курсах ACI — групи до 1000 учасників",
               "З 2020 року веде розбори домашніх завдань в Академії класичної мудрості",
-              "Шість років особистої практики, рік викладання онлайн і офлайн — українською, російською та німецькою",
+              "Шість років практики, рік викладання — українською, російською та німецькою",
               "Особистий дохід зріс утричі"
             ]
           },
@@ -921,15 +917,15 @@ window.NIGUMA_I18N = {
             "role": "Підприємиця · викладачка йоги · дослідниця давніх систем управління · Італія",
             "photo": "assets/photos/elena.jpg",
             "lines": [
-              "Я поєдную б'юті-естетику, закони кармічного менеджменту та практику йоги: допомагаю знаходити баланс, здоров'я і будувати успішну справу через усвідомленість.",
-              "Йога для мене — не просто рух на килимку. Це сходження до вершин свідомості, де розум, тіло та професія зливаються в один пік, подібний до Гімалаїв."
+              "Я поєдную б'юті-естетику, закони кармічного менеджменту та практику йоги: допомагаю знаходити баланс і будувати успішну справу через усвідомленість.",
+              "Йога для мене — не просто рух на килимку. Це сходження до вершин свідомості, де розум, тіло та професія зливаються в один пік."
             ],
             "facts": [
               "Понад 25 років у бізнесі та підприємництві",
               "16 років живе і працює в Італії",
-              "12 років — власниця та керівниця своєї б'юті-студії",
-              "Брала участь у розвитку сімейного бізнесу в Україні, що став одним із лідерів ринку",
-              "Сім років вивчає давні системи роботи з мисленням, рішеннями та побудовою стійкого бізнесу",
+              "12 років — власниця своєї б'юті-студії",
+              "Розвивала сімейний бізнес в Україні — одного з лідерів ринку",
+              "Сім років вивчає давні системи роботи з мисленням і рішеннями",
               "Волонтерка-перекладачка головного офісу ACI (Asian Classics Institute)",
               "Випускниця семи курсів Diamond Cutter Institute (DCI)",
               "Студентка і викладачка Yoga Studies Institute (YSI)"
