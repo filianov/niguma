@@ -191,12 +191,19 @@
           state.sessionId = d.sessionId;
           try { sessionStorage.setItem(SKEY, d.sessionId); } catch (e) {}
         }
-        if (d.handover) {
+        if (d.reply) add("bot", d.reply);
+
+        /**
+         * Оператор мог подключиться со стороны Telegram, и виджет об этом не
+         * знал: посетитель писал в пустоту. Сообщаем один раз — и только если
+         * ответить самим было нечем, иначе строка о человеке появлялась бы
+         * после каждой реплики.
+         */
+        if (d.handover && !state.handover) {
           state.handover = true;
-          add("bot", d.reply);
+          addSystem(ui(d.called ? "operatorCalled" : "operatorJoined"));
+        } else if (d.silent && !d.reply && !state.handover) {
           addSystem(ui("operatorCalled"));
-        } else if (d.reply) {
-          add("bot", d.reply);
         }
         // Слушаем ответы оператора ВСЕГДА, а не только после передачи диалога:
         // вы можете вмешаться в любой момент, даже если бот справлялся сам.

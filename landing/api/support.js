@@ -51,19 +51,37 @@ export default async function handler(req, res) {
   const msgIds = await sendToOperator(
     header + "\n\n" + escapeHtml(text) +
     "\n\n<i>сессия " + escapeHtml(sessionId) + " · " + lang + "</i>" +
-    "\n↩️ Ответьте <b>реплаем</b> на это сообщение — посетитель увидит ответ в чате."
+    "\n↩️ Ответьте <b>реплаем</b> на это сообщение — посетитель увидит ответ в чате." +
+    "\n<i>Реплай «/бот» вернёт разговор боту.</i>"
   );
   for (const m of msgIds) await linkTelegramMessage(m.chat, m.id, sessionId);
 
-  // диалог уже у человека — бот не вмешивается
+  /**
+   * Диалог у человека — но молчать на всё подряд нельзя.
+   *
+   * Раньше после первого же ответа оператора бот замолкал навсегда: человек
+   * нажимал «Сколько стоит» и не получал ничего, потому что оператор мог быть
+   * занят или спать. Теперь бот отвечает на то, что знает точно, и молчит
+   * только там, где нужен живой человек: когда вопрос не распознан или когда
+   * речь о здоровье и просьбе позвать оператора.
+   */
   if (handedOver) {
-    return res.status(200).json({ ok: true, sessionId, silent: true });
+    const canTell = found.topic !== "fallback" && !wantsHuman;
+    if (canTell) await pushMessage(sessionId, "bot", found.reply);
+    return res.status(200).json({
+      ok: true, sessionId, handover: true,
+      reply: canTell ? found.reply : undefined,
+      silent: !canTell,
+      canReceiveOperator: kvEnabled,
+    });
   }
 
   if (wantsHuman) {
     await setHandover(sessionId, true);
     await pushMessage(sessionId, "bot", found.reply);
-    return res.status(200).json({ ok: true, sessionId, reply: found.reply, handover: true });
+    // called — человека только позвали, он ещё не подключился: виджету нужно
+    // сказать «передали вопрос», а не «к разговору подключился человек»
+    return res.status(200).json({ ok: true, sessionId, reply: found.reply, handover: true, called: true });
   }
 
   await pushMessage(sessionId, "bot", found.reply);

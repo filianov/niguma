@@ -365,6 +365,9 @@ export default {
         "can i watch it after"
       ],
       "beginner": [
+        "new to yoga",
+        "never done yoga",
+        "complete beginner",
         "beginner",
         "newbie",
         "never done yoga",

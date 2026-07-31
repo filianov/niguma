@@ -89,6 +89,22 @@ export default async function handler(req, res) {
     // ответ посетителю сайта
     const sessionId = await sessionByTelegramMessage(chatId, repliedTo);
     if (sessionId) {
+      /**
+       * «/бот» возвращает разговор боту.
+       *
+       * Без этого передача оператору была билетом в один конец: ответили один
+       * раз — и бот молчал в этой сессии до конца её жизни, даже когда
+       * посетитель спрашивал про цену. Команда короткая и на двух языках,
+       * потому что набирать её приходится с телефона.
+       *
+       * Граница слова здесь задана явно, а не через \b: в JavaScript \b
+       * считает словом только латиницу, поэтому после «бот» она не срабатывает
+       * и команда молча не ловилась бы.
+       */
+      if (/^\/(бот|bot)(\s|$)/i.test(text)) {
+        await setHandover(sessionId, false);
+        return await ok(res, "разговор возвращён боту", { сессия: sessionId });
+      }
       await setHandover(sessionId, true);      // дальше говорит человек
       await pushMessage(sessionId, "operator", text);
       return await ok(res, "доставлено в чат на сайте", { сессия: sessionId });
