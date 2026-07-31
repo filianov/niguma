@@ -7,6 +7,7 @@ olga.jpg к разделу отношения не имеет: он стоит �
   alla.jpg        — Алла Горячева
   oksana.jpg      — Оксана Горина
   katya.jpg       — Катя Туркану
+  ivan.jpg        — Иван Спаский
   olga-klyus.jpg  — Ольга Клюс
   elena.jpg       — Елена Ганусевич
 

@@ -336,6 +336,21 @@ window.NIGUMA_I18N = {
             ]
           },
           {
+            "name": "Иван Спаский",
+            "role": "Предприниматель · преподаватель йоги",
+            "photo": "assets/photos/ivan.jpg",
+            "lines": [
+              "Йога для меня — инструмент лёгкого управления самыми дорогими активами: телом и умом."
+            ],
+            "facts": [
+              "Шесть лет в предпринимательстве",
+              "Практикует йогу три года, преподаёт год",
+              "Доход вырос вдвое",
+              "Открывает новое направление дела",
+              "Благодаря практике сохраняет спокойствие в сложных решениях"
+            ]
+          },
+          {
             "name": "Ольга Клюс",
             "role": "Юрист · наставник ACI и АКМ · преподаватель йоги · Вена",
             "photo": "assets/photos/olga-klyus.jpg",
@@ -501,6 +516,21 @@ window.NIGUMA_I18N = {
               "Income grew 3×",
               "Turned work she loves into a profession and a source of income",
               "More freedom: travels regularly and decides how her own time is spent"
+            ]
+          },
+          {
+            "name": "Ivan Spaskiy",
+            "role": "Entrepreneur · yoga teacher",
+            "photo": "assets/photos/ivan.jpg",
+            "lines": [
+              "For me yoga is a tool for running the most valuable assets there are — the body and the mind — without strain."
+            ],
+            "facts": [
+              "Six years in business",
+              "Three years of yoga practice, one year teaching",
+              "Doubled his income",
+              "Opening a new line of business",
+              "Keeps his composure in hard decisions thanks to the practice"
             ]
           },
           {
@@ -672,6 +702,21 @@ window.NIGUMA_I18N = {
             ]
           },
           {
+            "name": "Ivan Spaskiy",
+            "role": "Unternehmer · Yogalehrer",
+            "photo": "assets/photos/ivan.jpg",
+            "lines": [
+              "Yoga ist für mich ein Werkzeug, um die wertvollsten Güter überhaupt mühelos zu führen: Körper und Geist."
+            ],
+            "facts": [
+              "Sechs Jahre Unternehmer",
+              "Drei Jahre Yogapraxis, ein Jahr Unterricht",
+              "Einkommen verdoppelt",
+              "Baut einen neuen Geschäftszweig auf",
+              "Bewahrt dank der Praxis die Ruhe bei schwierigen Entscheidungen"
+            ]
+          },
+          {
             "name": "Olha Klius",
             "role": "Juristin · Mentorin bei ACI und der Akademie für klassische Weisheit · Yogalehrerin · Wien",
             "photo": "assets/photos/olga-klyus.jpg",
@@ -837,6 +882,21 @@ window.NIGUMA_I18N = {
               "Дохід зріс утричі",
               "Перетворила улюблену справу на професію та джерело доходу",
               "Живе вільніше: регулярно подорожує й сама розпоряджається своїм часом"
+            ]
+          },
+          {
+            "name": "Іван Спаський",
+            "role": "Підприємець · викладач йоги",
+            "photo": "assets/photos/ivan.jpg",
+            "lines": [
+              "Йога для мене — інструмент легкого керування найдорожчими активами: тілом і розумом."
+            ],
+            "facts": [
+              "Шість років у підприємництві",
+              "Практикує йогу три роки, викладає рік",
+              "Дохід зріс удвічі",
+              "Відкриває новий напрям справи",
+              "Завдяки практиці зберігає спокій у складних рішеннях"
             ]
           },
           {
