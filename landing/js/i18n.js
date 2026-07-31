@@ -72,20 +72,28 @@
       }).join("");
     });
 
-    // teachers: data-teachers="path" -> [{name, role, photo, lines: [..]}]
+    // teachers: data-teachers="path" -> [{name, role, photo, lines: [..], facts: [..]}]
     document.querySelectorAll("[data-teachers]").forEach(function (el) {
       var arr = t(lang, el.getAttribute("data-teachers"));
       if (!Array.isArray(arr) || !arr.length) return;
       el.innerHTML = arr.map(function (p) {
-        return '<article class="teacher reveal">' +
-                 (p.photo
-                   ? '<div class="teacher__photo"><img src="' + escapeHtml(p.photo) + '" alt="" loading="lazy" /></div>'
-                   : "") +
+        // Портрет прячется сам, если файла ещё нет: значок битой картинки
+        // рядом с именем человека выглядит хуже, чем карточка без фотографии.
+        var photo = p.photo
+          ? '<div class="teacher__photo"><img src="' + escapeHtml(p.photo) + '" alt="" loading="lazy" ' +
+            'onerror="this.parentNode.remove()" /></div>'
+          : "";
+        return '<article class="teacher reveal">' + photo +
                  '<div class="teacher__text">' +
                    '<h3 class="teacher__name">' + escapeHtml(p.name) + "</h3>" +
                    (p.role ? '<p class="teacher__role">' + escapeHtml(p.role) + "</p>" : "") +
                    (Array.isArray(p.lines)
                      ? p.lines.map(function (l) { return "<p>" + escapeHtml(l) + "</p>"; }).join("")
+                     : "") +
+                   (Array.isArray(p.facts) && p.facts.length
+                     ? '<ul class="teacher__facts">' +
+                       p.facts.map(function (f) { return "<li>" + escapeHtml(f) + "</li>"; }).join("") +
+                       "</ul>"
                      : "") +
                  "</div>" +
                "</article>";

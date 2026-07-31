@@ -550,14 +550,33 @@ img { max-width: 100%; display: block; }
 .teacher__text p { margin: 0 0 12px; color: var(--ink-soft); font-size: 16px; line-height: 1.65; }
 .teacher__text p:last-child { margin-bottom: 0; }
 
+/**
+ * Факты о человеке. Список, а не абзац: цифры должны читаться взглядом —
+ * ради них раздел и существует. Маркер — тонкая черта в цвет глины, а не
+ * точка: строк много, и ряд точек превратил бы карточку в перечень покупок.
+ */
+.teacher__facts { list-style: none; margin: 16px 0 0; padding: 0;
+  display: flex; flex-direction: column; gap: 7px; }
+.teacher__facts li { position: relative; padding-left: 18px;
+  font-size: 15px; line-height: 1.5; color: var(--ink-soft); }
+.teacher__facts li::before { content: ""; position: absolute; left: 0; top: .68em;
+  width: 9px; height: 1.5px; background: var(--clay); border-radius: 1px; }
+
 @media (min-width: 760px) {
-  /* Несколько преподавателей — сетка карточек с портретом сверху. */
-  .teachers { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 22px; }
+  /* Несколько преподавателей — сетка карточек с портретом сверху. Карточки
+     разной высоты: у кого-то восемь строк фактов, у кого-то пять. Выравнивание
+     по верху честнее растягивания — пустота внизу заметна меньше, чем
+     разъехавшийся текст. */
+  .teachers { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 22px; align-items: start; }
   /* Один — карточка во всю ширину, портрет слева: так она не выглядит
      осиротевшей колонкой рядом с пустотой. Условие через :only-child, а не
      через :has() — поддержка старше и намерение читается прямо. */
   .teacher:only-child { grid-template-columns: 280px 1fr; gap: 30px; align-items: center; }
   .teacher:only-child .teacher__photo img { max-height: 360px; }
+}
+
+@media (min-width: 1080px) {
+  .teachers { grid-template-columns: repeat(3, 1fr); }
 }
 
 /* ---------------- Why it works: prose + accent photo ---------------- */

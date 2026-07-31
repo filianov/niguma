@@ -285,10 +285,100 @@ window.NIGUMA_I18N = {
         role: "Создатель проекта, преподаватель",
         people: [
           {
-            name: "Ольга",
-            role: "Создатель проекта, преподаватель",
-            photo: "assets/photos/olga.jpg",
-            lines: []
+            "name": "Ольга Фильянова",
+            "role": "Создала проект, ведёт занятия",
+            "photo": "assets/photos/olga.jpg",
+            "lines": [],
+            "facts": []
+          },
+          {
+            "name": "Алла Горячева",
+            "role": "Предприниматель · основатель Dallas Dance Center · преподаватель йоги, коуч",
+            "photo": "assets/photos/alla.jpg",
+            "lines": [
+              "Йога для меня — не практика для тела. Это то, что помогает держать ясный ум под нагрузкой, находить решение там, где его не видно, и совмещать бизнес, семью и собственное развитие.",
+              "На занятиях я делюсь не упражнениями, а тем, что действительно помогает жить и работать в сегодняшнем ритме."
+            ],
+            "facts": [
+              "14 лет в предпринимательстве",
+              "Основала школу танцев Dallas Dance Center — выросла с 90 до 500 м²",
+              "Более 800 учеников; подготовила 27 тренеров, шестеро открыли свои школы",
+              "Команда — 10 человек",
+              "Шесть лет в йоге, три ретрита с учителями в Турции",
+              "Выпускница Yoga Studies Institute (YSI)",
+              "С 2018 года изучает медитацию и тибетскую философию",
+              "Жена и мама троих детей"
+            ]
+          },
+          {
+            "name": "Оксана Горина",
+            "role": "Предприниматель · преподаватель йоги Леди Нигумы",
+            "photo": "assets/photos/oksana.jpg",
+            "lines": [
+              "Йога и медитация для меня — ежедневный инструмент управления энергией, вниманием и качеством решений.",
+              "Помогаю предпринимателям с помощью йоги, медитации и системы ментальных семян решать задачи в бизнесе, достигать поставленных результатов и развивать ясность ума, от которой зависит качество каждого решения."
+            ],
+            "facts": [
+              "Ведёт своё дело с 2022 года",
+              "Практикует йогу Леди Нигумы четыре года, преподаёт два",
+              "Доход за последний год вырос в пять раз",
+              "Учеников стало втрое больше",
+              "Прошла сложный период, не останавливая дело"
+            ]
+          },
+          {
+            "name": "Катя Туркану",
+            "role": "Юрист международных юридических фирм, LL.M. · преподаватель йоги · Швейцария",
+            "photo": "assets/photos/katya.jpg",
+            "lines": [
+              "Йога Леди Нигумы для меня — ежедневная практика управления энергией, вниманием и эмоциональным состоянием. Она помогает сохранять ясный и спокойный ум, не действовать под влиянием стресса и принимать более взвешенные решения — и в бизнесе, и в личной жизни.",
+              "Именно эта практика помогла мне создать жизнь, в которой есть любимое дело, финансовый рост, свобода и глубокие отношения. Сегодня я делюсь ею с теми, кто хочет достигать большего, сохраняя внутреннюю устойчивость и не теряя себя."
+            ],
+            "facts": [
+              "10 лет в международных юридических фирмах, степень LL.M.",
+              "Четырёхлетняя программа подготовки преподавателей йоги в Швейцарии — 760 часов",
+              "Практикует йогу Леди Нигумы и продолжает обучение как преподаватель традиции",
+              "Преподаёт три года, живёт в Швейцарии",
+              "Доход вырос втрое",
+              "Превратила любимое дело в профессию и источник дохода",
+              "Живёт свободнее: регулярно путешествует и сама распоряжается своим временем"
+            ]
+          },
+          {
+            "name": "Ольга Клюс",
+            "role": "Юрист · наставник ACI и АКМ · преподаватель йоги · Вена",
+            "photo": "assets/photos/olga-klyus.jpg",
+            "lines": [
+              "Медитация и йога для меня — лучший инструмент подготовки тела и ума к точным, взвешенным решениям."
+            ],
+            "facts": [
+              "13 лет там, где цена решения измеряется деньгами и ответственностью",
+              "Пять лет государственной службы — вернула в бюджет более 1,5 млн грн",
+              "Восемь лет юристом в страховой компании: её решения сохраняли компании около 500 тыс. грн в год",
+              "С 2019 года наставник и куратор на курсах ACI — группы до 1000 участников, малые группы от 20",
+              "С 2020 года ведёт разборы домашних заданий в Академии классической мудрости",
+              "Шесть лет личной практики, год преподавания онлайн и офлайн — по-русски, по-украински и по-немецки",
+              "Личный доход вырос втрое"
+            ]
+          },
+          {
+            "name": "Елена Ганусевич",
+            "role": "Предприниматель · преподаватель йоги · исследователь древних систем управления · Италия",
+            "photo": "assets/photos/elena.jpg",
+            "lines": [
+              "Я соединяю бьюти-эстетику, законы кармического менеджмента и практику йоги: помогаю находить баланс, здоровье и строить успешное дело через осознанность.",
+              "Йога для меня — не просто движение на коврике. Это восхождение к вершинам сознания, где ум, тело и профессия сливаются в один пик, подобный Гималаям."
+            ],
+            "facts": [
+              "Более 25 лет в бизнесе и предпринимательстве",
+              "16 лет живёт и работает в Италии",
+              "12 лет — владелица и руководитель собственной бьюти-студии",
+              "Участвовала в развитии семейного бизнеса в Украине, ставшего одним из лидеров рынка",
+              "Семь лет изучает древние системы работы с мышлением, решениями и построением устойчивого бизнеса",
+              "Волонтёр-переводчик главного офиса ACI (Asian Classics Institute)",
+              "Выпускница семи курсов Diamond Cutter Institute (DCI)",
+              "Студентка и преподаватель Yoga Studies Institute (YSI)"
+            ]
           }
         ]
       },
@@ -372,10 +462,100 @@ window.NIGUMA_I18N = {
         role: "Founder and teacher",
         people: [
           {
-            name: "Olha",
-            role: "Founder and teacher",
-            photo: "assets/photos/olga.jpg",
-            lines: []
+            "name": "Olha Filianova",
+            "role": "Founder of the project · leads the classes",
+            "photo": "assets/photos/olga.jpg",
+            "lines": [],
+            "facts": []
+          },
+          {
+            "name": "Alla Goriacheva",
+            "role": "Entrepreneur · founder of Dallas Dance Center · yoga teacher, coach",
+            "photo": "assets/photos/alla.jpg",
+            "lines": [
+              "For me, yoga is not a practice for the body. It is what helps me keep a clear mind under pressure, find a solution where none is visible, and hold business, family, and my own development together.",
+              "In class I share not exercises, but the things that genuinely help you live and work at the pace of today."
+            ],
+            "facts": [
+              "14 years in business",
+              "Founded the Dallas Dance Center dance school — grew from 90 to 500 m²",
+              "Over 800 students; trained 27 instructors, six of whom opened their own schools",
+              "A team of 10",
+              "6 years in yoga, 3 retreats with teachers in Türkiye",
+              "Graduate of the Yoga Studies Institute (YSI)",
+              "Studying meditation and Tibetan philosophy since 2018",
+              "Wife and mother of three"
+            ]
+          },
+          {
+            "name": "Oksana Gorina",
+            "role": "Entrepreneur · teacher of Lady Niguma yoga",
+            "photo": "assets/photos/oksana.jpg",
+            "lines": [
+              "For me, yoga and meditation are a daily instrument for managing energy, attention, and the quality of my decisions.",
+              "Through yoga, meditation, and the system of mental seeds, I help entrepreneurs solve problems in their business, reach the results they set out for, and develop the clarity of mind that every decision depends on."
+            ],
+            "facts": [
+              "Running her own business since 2022",
+              "4 years practising Lady Niguma yoga, 2 years teaching it",
+              "Income grew 5× over the past year",
+              "3× more students",
+              "Came through a difficult period without pausing the business"
+            ]
+          },
+          {
+            "name": "Katya Turkanu",
+            "role": "Lawyer at international law firms, LL.M. · yoga teacher · Switzerland",
+            "photo": "assets/photos/katya.jpg",
+            "lines": [
+              "For me, Lady Niguma yoga is a daily practice of managing energy, attention, and emotional state. It helps me keep a clear and calm mind, avoid acting under stress, and make more considered decisions — in business and in personal life alike.",
+              "This is the practice that helped me build a life with work I love, financial growth, freedom, and deep relationships. Today I share it with those who want to achieve more while keeping their inner steadiness and without losing themselves."
+            ],
+            "facts": [
+              "10 years in international law firms, LL.M. degree",
+              "4-year yoga teacher training in Switzerland — 760 hours",
+              "Practises Lady Niguma yoga; still training as a teacher of the tradition",
+              "3 years of teaching, based in Switzerland",
+              "Income grew 3×",
+              "Turned work she loves into a profession and a source of income",
+              "More freedom: travels regularly and decides how her own time is spent"
+            ]
+          },
+          {
+            "name": "Olha Klius",
+            "role": "Lawyer · mentor at ACI and the Academy of Classical Wisdom · yoga teacher · Vienna",
+            "photo": "assets/photos/olga-klyus.jpg",
+            "lines": [
+              "For me, meditation and yoga are the best way to prepare body and mind for precise, considered decisions."
+            ],
+            "facts": [
+              "13 years where the price of a decision is measured in money and responsibility",
+              "5 years in public service — recovered over 1.5 million UAH for the budget",
+              "8 years as a lawyer at an insurance company: her decisions saved it around 500,000 UAH a year",
+              "Mentor and course curator at ACI since 2019 — groups of up to 1,000, small groups from 20",
+              "Leading homework reviews at the Academy of Classical Wisdom since 2020",
+              "6 years of personal practice, 1 year of teaching online and in person — in Russian, Ukrainian, and German",
+              "Personal income grew 3×"
+            ]
+          },
+          {
+            "name": "Olena Hanusevych",
+            "role": "Entrepreneur · yoga teacher · researcher of ancient management systems · Italy",
+            "photo": "assets/photos/elena.jpg",
+            "lines": [
+              "I bring together beauty aesthetics, the laws of karmic management, and yoga practice: I help people find balance and health, and build a successful business through awareness.",
+              "For me, yoga is not simply movement on a mat. It is a climb towards the summits of consciousness, where mind, body, and profession merge into a single peak, like the Himalayas."
+            ],
+            "facts": [
+              "Over 25 years in business and entrepreneurship",
+              "16 years living and working in Italy",
+              "12 years owning and running her own beauty studio",
+              "Helped grow a family business in Ukraine into one of the market leaders",
+              "7 years studying ancient systems of thinking, decisions, and sustainable business",
+              "Volunteer translator for the head office of ACI (Asian Classics Institute)",
+              "Graduate of 7 Diamond Cutter Institute (DCI) courses",
+              "Student and teacher at the Yoga Studies Institute (YSI)"
+            ]
           }
         ]
       },
@@ -459,10 +639,100 @@ window.NIGUMA_I18N = {
         role: "Gründerin und Lehrerin",
         people: [
           {
-            name: "Olha",
-            role: "Gründerin und Lehrerin",
-            photo: "assets/photos/olga.jpg",
-            lines: []
+            "name": "Olha Filianova",
+            "role": "Gründerin des Projekts, leitet die Einheiten",
+            "photo": "assets/photos/olga.jpg",
+            "lines": [],
+            "facts": []
+          },
+          {
+            "name": "Alla Goriacheva",
+            "role": "Unternehmerin · Gründerin des Dallas Dance Center · Yogalehrerin und Coach",
+            "photo": "assets/photos/alla.jpg",
+            "lines": [
+              "Yoga ist für mich keine Übung für den Körper. Es hält den Kopf unter Last klar, zeigt eine Lösung, wo keine zu sehen ist, und lässt Beruf, Familie und die eigene Entwicklung zusammengehen.",
+              "Im Unterricht gebe ich nicht Übungen weiter, sondern das, was im heutigen Tempo wirklich hilft zu leben und zu arbeiten."
+            ],
+            "facts": [
+              "14 Jahre Unternehmerin",
+              "Gründerin der Tanzschule Dallas Dance Center — von 90 auf 500 m² gewachsen",
+              "Über 800 Schüler; 27 Trainer ausgebildet, sechs mit eigener Schule",
+              "Team aus 10 Personen",
+              "Sechs Jahre Yogapraxis, drei Retreats mit Lehrern in der Türkei",
+              "Absolventin des Yoga Studies Institute (YSI)",
+              "Seit 2018 Studium von Meditation und tibetischer Philosophie",
+              "Ehefrau und Mutter von drei Kindern"
+            ]
+          },
+          {
+            "name": "Oksana Gorina",
+            "role": "Unternehmerin · Lehrerin für das Yoga der Lady Niguma",
+            "photo": "assets/photos/oksana.jpg",
+            "lines": [
+              "Yoga und Meditation sind für mich das tägliche Werkzeug, um Energie, Aufmerksamkeit und die Qualität meiner Entscheidungen zu steuern.",
+              "Ich helfe Unternehmern, mit Yoga, Meditation und dem System der mentalen Samen Aufgaben im Geschäft zu lösen, gesetzte Ziele zu erreichen und die Klarheit des Geistes zu entwickeln, von der jede Entscheidung abhängt."
+            ],
+            "facts": [
+              "Führt seit 2022 ihr eigenes Unternehmen",
+              "Vier Jahre Yoga der Lady Niguma, zwei Jahre Unterricht",
+              "Einkommen im vergangenen Jahr verfünffacht",
+              "Dreimal so viele Schüler",
+              "Durch eine schwere Zeit gegangen, ohne das Geschäft anzuhalten"
+            ]
+          },
+          {
+            "name": "Katya Turkanu",
+            "role": "Juristin in internationalen Kanzleien, LL.M. · Yogalehrerin · Schweiz",
+            "photo": "assets/photos/katya.jpg",
+            "lines": [
+              "Das Yoga der Lady Niguma ist für mich eine tägliche Praxis, um Energie, Aufmerksamkeit und das emotionale Befinden zu steuern. Es hilft, den Geist klar und ruhig zu halten, nicht unter dem Einfluss von Stress zu handeln und abgewogenere Entscheidungen zu treffen — im Geschäft wie im Privatleben.",
+              "Genau diese Praxis hat mir geholfen, ein Leben aufzubauen, in dem es eine Arbeit gibt, die ich liebe, dazu finanzielles Wachstum, Freiheit und tiefe Beziehungen. Heute gebe ich sie an Menschen weiter, die mehr erreichen wollen, ohne ihre innere Stabilität und sich selbst zu verlieren."
+            ],
+            "facts": [
+              "10 Jahre in internationalen Kanzleien, Abschluss LL.M.",
+              "Vierjährige Yogalehrer-Ausbildung in der Schweiz — 760 Stunden",
+              "Praktiziert das Yoga der Lady Niguma, bildet sich weiter als Lehrerin der Tradition",
+              "Unterrichtet seit drei Jahren, lebt in der Schweiz",
+              "Einkommen verdreifacht",
+              "Aus der Leidenschaft wurde Beruf und Einkommen",
+              "Mehr Freiheit: reist regelmäßig, teilt sich die Zeit selbst ein"
+            ]
+          },
+          {
+            "name": "Olha Klius",
+            "role": "Juristin · Mentorin bei ACI und der Akademie für klassische Weisheit · Yogalehrerin · Wien",
+            "photo": "assets/photos/olga-klyus.jpg",
+            "lines": [
+              "Meditation und Yoga sind für mich das beste Werkzeug, um Körper und Geist auf präzise, abgewogene Entscheidungen vorzubereiten."
+            ],
+            "facts": [
+              "13 Jahre dort, wo der Preis einer Entscheidung in Geld und Verantwortung gemessen wird",
+              "Fünf Jahre im öffentlichen Dienst — über 1,5 Mio. UAH in den Haushalt zurückgeholt",
+              "Acht Jahre Juristin in einer Versicherung — rund 500.000 UAH Ersparnis pro Jahr",
+              "Seit 2019 Mentorin und Kursbetreuerin beim ACI — Gruppen bis 1000 Teilnehmer, Kleingruppen ab 20",
+              "Seit 2020 Besprechung der Hausaufgaben an der Akademie für klassische Weisheit",
+              "Sechs Jahre eigene Praxis, ein Jahr Unterricht online und offline — auf Russisch, Ukrainisch und Deutsch",
+              "Eigenes Einkommen verdreifacht"
+            ]
+          },
+          {
+            "name": "Olena Hanusevych",
+            "role": "Unternehmerin · Yogalehrerin · Forscherin alter Führungssysteme · Italien",
+            "photo": "assets/photos/elena.jpg",
+            "lines": [
+              "Ich verbinde Beauty-Ästhetik, die Gesetze des karmischen Managements und die Yogapraxis: Ich helfe, Balance und Gesundheit zu finden und aus Achtsamkeit heraus ein erfolgreiches Unternehmen aufzubauen.",
+              "Yoga ist für mich nicht einfach Bewegung auf der Matte. Es ist ein Aufstieg zu den Gipfeln des Bewusstseins, wo Geist, Körper und Beruf zu einem einzigen Gipfel verschmelzen, einem Himalaya gleich."
+            ],
+            "facts": [
+              "Über 25 Jahre in Wirtschaft und Unternehmertum",
+              "Lebt und arbeitet seit 16 Jahren in Italien",
+              "12 Jahre Inhaberin und Leiterin eines eigenen Beauty-Studios",
+              "Am Aufbau des Familienunternehmens in der Ukraine beteiligt — heute einer der Marktführer",
+              "Sieben Jahre Studium alter Systeme für Denken, Entscheidungen und stabilen Unternehmensaufbau",
+              "Ehrenamtliche Übersetzerin im Hauptbüro des ACI (Asian Classics Institute)",
+              "Absolventin von sieben Kursen des Diamond Cutter Institute (DCI)",
+              "Studentin und Lehrerin am Yoga Studies Institute (YSI)"
+            ]
           }
         ]
       },
@@ -546,10 +816,100 @@ window.NIGUMA_I18N = {
         role: "Засновниця та викладачка",
         people: [
           {
-            name: "Ольга",
-            role: "Створила проєкт, викладає",
-            photo: "assets/photos/olga.jpg",
-            lines: []
+            "name": "Ольга Фільянова",
+            "role": "Створила проєкт, веде заняття",
+            "photo": "assets/photos/olga.jpg",
+            "lines": [],
+            "facts": []
+          },
+          {
+            "name": "Алла Горячева",
+            "role": "Підприємиця · засновниця Dallas Dance Center · викладачка йоги, коуч",
+            "photo": "assets/photos/alla.jpg",
+            "lines": [
+              "Йога для мене — не практика для тіла. Це те, що допомагає тримати ясний розум під навантаженням, знаходити рішення там, де його не видно, і поєднувати бізнес, родину та власний розвиток.",
+              "На заняттях я ділюся не вправами, а тим, що справді допомагає жити й працювати в сьогоднішньому ритмі."
+            ],
+            "facts": [
+              "14 років у підприємництві",
+              "Заснувала школу танців Dallas Dance Center — виросла з 90 до 500 м²",
+              "Понад 800 учнів; підготувала 27 тренерів, шестеро відкрили власні школи",
+              "Команда — 10 осіб",
+              "Шість років у йозі, три ретрити з учителями в Туреччині",
+              "Випускниця Yoga Studies Institute (YSI)",
+              "З 2018 року вивчає медитацію та тибетську філософію",
+              "Дружина і мама трьох дітей"
+            ]
+          },
+          {
+            "name": "Оксана Горина",
+            "role": "Підприємиця · викладачка йоги Леді Нігуми",
+            "photo": "assets/photos/oksana.jpg",
+            "lines": [
+              "Йога і медитація для мене — щоденний інструмент керування енергією, увагою та якістю рішень.",
+              "Допомагаю підприємцям за допомогою йоги, медитації та системи ментальних зерен розв'язувати задачі в бізнесі, досягати поставлених результатів і розвивати ясність розуму, від якої залежить якість кожного рішення."
+            ],
+            "facts": [
+              "Веде власну справу з 2022 року",
+              "Практикує йогу Леді Нігуми чотири роки, викладає два",
+              "Дохід за останній рік зріс у п'ять разів",
+              "Учнів стало втричі більше",
+              "Пройшла складний період, не зупиняючи справу"
+            ]
+          },
+          {
+            "name": "Катя Туркану",
+            "role": "Юристка міжнародних юридичних фірм, LL.M. · викладачка йоги · Швейцарія",
+            "photo": "assets/photos/katya.jpg",
+            "lines": [
+              "Йога Леді Нігуми для мене — щоденна практика керування енергією, увагою та емоційним станом. Вона допомагає зберігати ясний і спокійний розум, не діяти під впливом стресу та ухвалювати зваженіші рішення — і в бізнесі, і в особистому житті.",
+              "Саме ця практика допомогла мені створити життя, у якому є улюблена справа, фінансове зростання, свобода та глибокі стосунки. Сьогодні я ділюся нею з тими, хто хоче досягати більшого, зберігаючи внутрішню стійкість і не втрачаючи себе."
+            ],
+            "facts": [
+              "10 років у міжнародних юридичних фірмах, ступінь LL.M.",
+              "Чотирирічна програма підготовки викладачів йоги у Швейцарії — 760 годин",
+              "Практикує йогу Леді Нігуми і продовжує навчання як викладачка традиції",
+              "Викладає три роки, живе у Швейцарії",
+              "Дохід зріс утричі",
+              "Перетворила улюблену справу на професію та джерело доходу",
+              "Живе вільніше: регулярно подорожує й сама розпоряджається своїм часом"
+            ]
+          },
+          {
+            "name": "Ольга Клюс",
+            "role": "Юристка · наставниця ACI та АКМ · викладачка йоги · Відень",
+            "photo": "assets/photos/olga-klyus.jpg",
+            "lines": [
+              "Медитація і йога для мене — найкращий інструмент підготовки тіла й розуму до точних, зважених рішень."
+            ],
+            "facts": [
+              "13 років там, де ціна рішення вимірюється грошима та відповідальністю",
+              "П'ять років державної служби — повернула до бюджету понад 1,5 млн грн",
+              "Вісім років юристкою в страховій компанії: її рішення заощаджували компанії близько 500 тис. грн на рік",
+              "З 2019 року наставниця та кураторка на курсах ACI — групи до 1000 учасників, малі групи від 20",
+              "З 2020 року веде розбори домашніх завдань в Академії класичної мудрості",
+              "Шість років особистої практики, рік викладання онлайн і офлайн — українською, російською та німецькою",
+              "Особистий дохід зріс утричі"
+            ]
+          },
+          {
+            "name": "Олена Ганусевич",
+            "role": "Підприємиця · викладачка йоги · дослідниця давніх систем управління · Італія",
+            "photo": "assets/photos/elena.jpg",
+            "lines": [
+              "Я поєдную б'юті-естетику, закони кармічного менеджменту та практику йоги: допомагаю знаходити баланс, здоров'я і будувати успішну справу через усвідомленість.",
+              "Йога для мене — не просто рух на килимку. Це сходження до вершин свідомості, де розум, тіло та професія зливаються в один пік, подібний до Гімалаїв."
+            ],
+            "facts": [
+              "Понад 25 років у бізнесі та підприємництві",
+              "16 років живе і працює в Італії",
+              "12 років — власниця та керівниця своєї б'юті-студії",
+              "Брала участь у розвитку сімейного бізнесу в Україні, що став одним із лідерів ринку",
+              "Сім років вивчає давні системи роботи з мисленням, рішеннями та побудовою стійкого бізнесу",
+              "Волонтерка-перекладачка головного офісу ACI (Asian Classics Institute)",
+              "Випускниця семи курсів Diamond Cutter Institute (DCI)",
+              "Студентка і викладачка Yoga Studies Institute (YSI)"
+            ]
           }
         ]
       },
