@@ -1,14 +1,9 @@
 /**
  * POST /api/checkout — заявка на оплату пакета с лендинга.
  *
- * Два исхода, в зависимости от выбранного способа:
- *
- *   Карта (LiqPay) — возвращаем данные формы, браузер сразу открывает страницу
- *   оплаты. Подтверждение приходит от LiqPay на /api/liqpay-callback.
- *
- *   Счёт, PayPal, криптовалюта — возвращаем реквизиты, чтобы человек мог
- *   заплатить не дожидаясь ответа. Заявка при этом уходит менеджеру: оплату
- *   он подтверждает вручную, когда деньги придут.
+ * В ответ сразу приходят реквизиты выбранного способа, чтобы человек мог
+ * заплатить не дожидаясь письма. Заявка при этом уходит менеджеру: оплату он
+ * подтверждает вручную, когда деньги придут.
  *
  * Реквизиты живут только в переменных окружения и отдаются в ответ на конкретную
  * заявку — на страницах сайта их нет и поисковиками они не индексируются.
@@ -18,7 +13,6 @@ import {
   validEmail, normalizeEmail, money, findByEmail,
 } from "./_membership.js";
 import { methodById, isConfigured, paymentInstructions, methodsForClient, getRates, eurToUah } from "./_payments.js";
-import { checkoutForm, liqpayEnabled } from "./_liqpay.js";
 import { sendToOperator, escapeHtml } from "./_lib.js";
 
 export default async function handler(req, res) {
@@ -93,26 +87,9 @@ export default async function handler(req, res) {
     price: { base: price.base, final: price.final, off: price.off },
   };
 
-  // карта — отдаём данные формы, браузер уводит на страницу оплаты
-  if (method.mode === "instant") {
-    const form = await checkoutForm({
-      requestId: request.id, cents: price.final,
-      planLabel: (plan.title && plan.title[lang]) || plan.label, lang, email,
-    });
-    if (!form) {
-      // ключи есть, но курс не получен — не отправляем человека на страницу
-      // оплаты с неизвестной суммой, честно предлагаем другой способ
-      out.mode = "manual";
-      out.fallbackReason = "rate_unavailable";
-    } else {
-      out.checkout = form;
-    }
-  }
-
-  // остальные способы — реквизиты сразу, чтобы не ждать ответа
-  if (out.mode === "manual") {
-    out.instructions = await paymentInstructions(method.id, price.final, lang);
-  }
+  // Реквизиты отдаём сразу вместе с ответом: человек уже выбрал способ и ждёт
+  // не подтверждения заявки, а того, куда платить.
+  out.instructions = await paymentInstructions(method.id, price.final, lang);
 
   return res.status(200).json(out);
 }
@@ -149,7 +126,6 @@ export async function plansWithPromo(lang) {
     rate: rates.eurUah
       ? { eurUah: rates.eurUah, source: rates.source, at: new Date(rates.at || Date.now()).toISOString().slice(0, 10) }
       : null,
-    cardPaymentReady: liqpayEnabled,
   };
 }
 

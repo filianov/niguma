@@ -184,7 +184,7 @@
           '<input type="number" id="cAmount" step="0.01" min="0" placeholder="' + (plans[0] ? (plans[0].final / 100) : "") + '" /></label>' +
         "<label>Дата оплаты<input type=\"date\" id=\"cDate\" value=\"" + today + "\" /></label>" +
         "<label>Способ<select id=\"cMethod\">" +
-          ["Перевод на евро-счёт", "PayPal", "LiqPay", "Криптовалюта", "Наличные", "Другое"]
+          ["Перевод на евро-счёт", "PayPal", "Карта Monobank", "Криптовалюта", "Наличные", "Другое"]
             .map(function (x) { return "<option>" + x + "</option>"; }).join("") +
         "</select></label>" +
         "<label>Списать бонусы, € <span>оставьте пустым, если не списываем</span>" +

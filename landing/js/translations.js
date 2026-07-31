@@ -43,11 +43,11 @@ window.NIGUMA_I18N = {
       "records": "Записи доступны участникам", "langLabel": "Языки сообщества", "langValue": "украинский, английский, немецкий и русский"
     },
     "pricing": {
-      "heading": "Стоимость",
-      "tiers": [ { "period": "1 месяц", "price": "100 €", "desc": "Живые занятия по будням 07:00–07:15 (Вена), расширенное занятие по субботам, записи и закрытое сообщество." }, { "period": "6 месяцев", "price": "500 €", "desc": "Живые занятия по будням 07:00–07:15 (Вена), расширенное занятие по субботам, записи и закрытое сообщество." }, { "period": "12 месяцев", "price": "900 €", "desc": "Живые занятия по будням 07:00–07:15 (Вена), расширенное занятие по субботам, записи и закрытое сообщество." } ],
+      "heading": "Стоимость", "includes": "Живые занятия по будням 07:00–07:15 (Вена), расширенное занятие по субботам, записи и закрытое сообщество.",
+      "tiers": [ { "period": "1 месяц", "price": "100 €" }, { "period": "6 месяцев", "price": "500 €" }, { "period": "12 месяцев", "price": "900 €" } ],
       "payLabel": "Оплата",
-      "payMethods": ["Счёт на банковский перевод (IBAN)", "PayPal", "Картой онлайн через LiqPay", "USDT (TRC-20)"],
-      "note": "Оплата в евро. Картой — на защищённой странице LiqPay: Visa, Mastercard, Apple Pay, Google Pay. Счёт, PayPal и USDT — реквизиты пришлём после выбора пакета."
+      "payMethods": ["PayPal", "Счёт на банковский перевод (IBAN)", "Карта Monobank", "USDT (TRC-20)"],
+      "note": "Цены в евро. Выберите пакет — пришлём реквизиты, а после оплаты откроем доступ, обычно в тот же день."
     },
     "closing": { "heading": "Если вам некогда заниматься йогой по часу в день", "body": "Этот проект создан именно для вас. 15 минут, которые могут изменить качество всего дня." },
     "cta": {
@@ -99,11 +99,11 @@ window.NIGUMA_I18N = {
       "records": "Recordings available to participants", "langLabel": "Community languages", "langValue": "Ukrainian, English, German, and Russian"
     },
     "pricing": {
-      "heading": "Pricing",
-      "tiers": [ { "period": "1 month", "price": "100 €", "desc": "Live classes on weekdays 07:00–07:15 (Vienna), an extended session on Saturdays, recordings and the members' community." }, { "period": "6 months", "price": "500 €", "desc": "Live classes on weekdays 07:00–07:15 (Vienna), an extended session on Saturdays, recordings and the members' community." }, { "period": "12 months", "price": "900 €", "desc": "Live classes on weekdays 07:00–07:15 (Vienna), an extended session on Saturdays, recordings and the members' community." } ],
+      "heading": "Pricing", "includes": "Live classes on weekdays 07:00–07:15 (Vienna), an extended session on Saturdays, recordings and the members' community.",
+      "tiers": [ { "period": "1 month", "price": "100 €" }, { "period": "6 months", "price": "500 €" }, { "period": "12 months", "price": "900 €" } ],
       "payLabel": "Payment",
-      "payMethods": ["Bank transfer invoice (IBAN)", "PayPal", "Card online via LiqPay", "USDT (TRC-20)"],
-      "note": "Prices are in euro. Card payments go through the secure LiqPay page: Visa, Mastercard, Apple Pay, Google Pay. For the invoice, PayPal and USDT we send the details once you pick a plan."
+      "payMethods": ["PayPal", "Bank transfer invoice (IBAN)", "Monobank card", "USDT (TRC-20)"],
+      "note": "Prices are in euro. Pick a plan — we'll send you the payment details and open your access once paid, usually the same day."
     },
     "closing": { "heading": "If you don't have time for an hour of yoga a day", "body": "This project was made for you. 15 minutes that can change the quality of your entire day." },
     "cta": {
@@ -155,11 +155,11 @@ window.NIGUMA_I18N = {
       "records": "Aufzeichnungen für Teilnehmer verfügbar", "langLabel": "Sprachen der Community", "langValue": "Ukrainisch, Englisch, Deutsch und Russisch"
     },
     "pricing": {
-      "heading": "Preise",
-      "tiers": [ { "period": "1 Monat", "price": "100 €", "desc": "Live-Einheiten werktags 07:00–07:15 Uhr (Wien), samstags eine längere Einheit, Aufzeichnungen und die Mitglieder-Community." }, { "period": "6 Monate", "price": "500 €", "desc": "Live-Einheiten werktags 07:00–07:15 Uhr (Wien), samstags eine längere Einheit, Aufzeichnungen und die Mitglieder-Community." }, { "period": "12 Monate", "price": "900 €", "desc": "Live-Einheiten werktags 07:00–07:15 Uhr (Wien), samstags eine längere Einheit, Aufzeichnungen und die Mitglieder-Community." } ],
+      "heading": "Preise", "includes": "Live-Einheiten werktags 07:00–07:15 Uhr (Wien), samstags eine längere Einheit, Aufzeichnungen und die Mitglieder-Community.",
+      "tiers": [ { "period": "1 Monat", "price": "100 €" }, { "period": "6 Monate", "price": "500 €" }, { "period": "12 Monate", "price": "900 €" } ],
       "payLabel": "Zahlung",
-      "payMethods": ["Rechnung für die Banküberweisung (IBAN)", "PayPal", "Karte online über LiqPay", "USDT (TRC-20)"],
-      "note": "Preise in Euro. Kartenzahlungen laufen über die gesicherte LiqPay-Seite: Visa, Mastercard, Apple Pay, Google Pay. Rechnung, PayPal und USDT — die Daten senden wir nach der Wahl des Pakets."
+      "payMethods": ["PayPal", "Rechnung per Banküberweisung (IBAN)", "Monobank-Karte", "USDT (TRC-20)"],
+      "note": "Preise in Euro. Wählen Sie ein Paket — wir senden Ihnen die Zahlungsdaten und schalten den Zugang nach Zahlungseingang frei, meist noch am selben Tag."
     },
     "closing": { "heading": "Wenn Ihnen die Zeit fehlt, eine Stunde am Tag Yoga zu üben", "body": "Dieses Projekt wurde genau für Sie geschaffen. 15 Minuten, die die Qualität des gesamten Tages verändern können." },
     "cta": {
@@ -211,11 +211,11 @@ window.NIGUMA_I18N = {
       "records": "Записи доступні учасникам", "langLabel": "Мови спільноти", "langValue": "українська, англійська, німецька та російська"
     },
     "pricing": {
-      "heading": "Вартість",
-      "tiers": [ { "period": "1 місяць", "price": "100 €", "desc": "Живі заняття в будні 07:00–07:15 (Відень), розширене заняття щосуботи, записи та закрита спільнота." }, { "period": "6 місяців", "price": "500 €", "desc": "Живі заняття в будні 07:00–07:15 (Відень), розширене заняття щосуботи, записи та закрита спільнота." }, { "period": "12 місяців", "price": "900 €", "desc": "Живі заняття в будні 07:00–07:15 (Відень), розширене заняття щосуботи, записи та закрита спільнота." } ],
+      "heading": "Вартість", "includes": "Живі заняття в будні 07:00–07:15 (Відень), розширене заняття щосуботи, записи та закрита спільнота.",
+      "tiers": [ { "period": "1 місяць", "price": "100 €" }, { "period": "6 місяців", "price": "500 €" }, { "period": "12 місяців", "price": "900 €" } ],
       "payLabel": "Оплата",
-      "payMethods": ["Рахунок на банківський переказ (IBAN)", "PayPal", "Карткою онлайн через LiqPay", "USDT (TRC-20)"],
-      "note": "Оплата в євро. Карткою — на захищеній сторінці LiqPay: Visa, Mastercard, Apple Pay, Google Pay. Рахунок, PayPal і USDT — реквізити надішлемо після вибору пакета."
+      "payMethods": ["PayPal", "Рахунок на банківський переказ (IBAN)", "Картка Monobank", "USDT (TRC-20)"],
+      "note": "Ціни в євро. Оберіть пакет — надішлемо реквізити, а після оплати відкриємо доступ, зазвичай того ж дня."
     },
     "closing": { "heading": "Якщо вам ніколи займатися йогою по годині на день", "body": "Цей проєкт створено саме для вас. 15 хвилин, які можуть змінити якість усього дня." },
     "cta": {

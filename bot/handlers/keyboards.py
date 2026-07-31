@@ -30,9 +30,9 @@ def plans_kb(lang: str) -> InlineKeyboardMarkup:
 def methods_kb(plan_id: str, lang: str) -> InlineKeyboardMarkup:
     b = InlineKeyboardBuilder()
     b.button(text="PayPal", callback_data=f"pm:{plan_id}:paypal")
-    b.button(text="Stripe", callback_data=f"pm:{plan_id}:stripe")
     b.button(text="IBAN (€)", callback_data=f"pm:{plan_id}:iban")
-    b.button(text="Monobank (₴)", callback_data=f"pm:{plan_id}:monobank")
+    b.button(text="Карта / Card", callback_data=f"pm:{plan_id}:monobank")
+    b.button(text="USDT", callback_data=f"pm:{plan_id}:crypto")
     b.adjust(2, 2)
     return b.as_markup()
 

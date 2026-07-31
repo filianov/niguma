@@ -412,7 +412,8 @@ EUR_BENEFICIARY=<получатель>
 EUR_BIC=<BIC>
 EUR_BANK=<название банка>
 
-LIQPAY_LINK=<ссылка LiqPay>
+MONOBANK_CARD=<номер карты>
+MONOBANK_HOLDER=<имя получателя>
 CRYPTO_NETWORK=USDT-TRC20
 CRYPTO_WALLET=<адрес кошелька>
 PAYPAL_ME=<ссылка PayPal.me>

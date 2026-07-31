@@ -1,19 +1,15 @@
 /**
  * 15minYoga — способы оплаты.
  *
- * Четыре способа, два разных сценария:
+ * Четыре способа, один сценарий: посетитель выбирает пакет и способ → заявка
+ * уходит менеджеру → реквизиты приходят сразу в ответе и повторно от бота в
+ * Telegram → человек платит → менеджер подтверждает оплату в кабинете.
  *
- *   Реквизиты присылает человек (счёт, PayPal, криптовалюта)
- *     Посетитель выбирает способ → заявка уходит менеджеру → человек получает
- *     реквизиты в Telegram → платит → менеджер подтверждает в кабинете.
+ * Приём карт прямо на сайте был отключён после того, как платёжный сервис
+ * заблокировал проект; вместо него — обычный перевод на карту.
  *
- *   Оплата сразу на сайте (карта через LiqPay)
- *     Посетитель выбирает карту → сразу открывается страница оплаты →
- *     LiqPay сам сообщает результат на /api/liqpay-callback → оплата
- *     подтверждается без участия менеджера.
- *
- * Способ доступен, только если для него заданы настройки. Не заданы — способ
- * не показывается: пустая кнопка «оплатить» хуже отсутствующей.
+ * Сами реквизиты живут только в переменных окружения: в репозитории их нет и
+ * на страницах сайта они не появляются, поэтому поисковикам не достаются.
  */
 
 /* ------------------------- курсы валют ------------------------- */
@@ -100,72 +96,81 @@ export function eurToUsdt(cents, rates, marginPercent = 2) {
 
 /**
  * `env` — какие переменные нужны, чтобы способ заработал.
- * `mode` — "manual" (реквизиты присылает человек) или "instant" (оплата на сайте).
+ * `mode` оставлен для совместимости: способы теперь только ручные —
+ * человек оставляет заявку и получает реквизиты лично.
  */
 export const METHODS = [
-  {
-    id: "invoice",
-    mode: "manual",
-    env: ["EUR_IBAN", "EUR_BENEFICIARY"],
-    icon: "bank",
-    ru: { name: "Счёт на банковский перевод",
-          hint: "Пришлём счёт с реквизитами — оплата из любого банка Европы",
-          badge: "SEPA · для юрлиц и физлиц" },
-    en: { name: "Bank transfer invoice",
-          hint: "We'll send an invoice with the details — pay from any European bank",
-          badge: "SEPA · companies and individuals" },
-    de: { name: "Rechnung per Banküberweisung",
-          hint: "Wir senden eine Rechnung mit den Daten — Zahlung von jeder europäischen Bank",
-          badge: "SEPA · Firmen und Privatpersonen" },
-    uk: { name: "Рахунок на банківський переказ",
-          hint: "Надішлемо рахунок із реквізитами — оплата з будь-якого банку Європи",
-          badge: "SEPA · для юросіб і фізосіб" },
-  },
   {
     id: "paypal",
     mode: "manual",
     env: ["PAYPAL_ME"],
     icon: "paypal",
-    ru: { name: "PayPal", hint: "Пришлём ссылку на оплату — картой или из баланса PayPal",
-          badge: "быстро, без реквизитов" },
-    en: { name: "PayPal", hint: "We'll send a payment link — card or PayPal balance",
-          badge: "fast, no bank details" },
-    de: { name: "PayPal", hint: "Wir senden einen Zahlungslink — Karte oder PayPal-Guthaben",
-          badge: "schnell, ohne Bankdaten" },
-    uk: { name: "PayPal", hint: "Надішлемо посилання на оплату — карткою або з балансу PayPal",
-          badge: "швидко, без реквізитів" },
+    marks: ["visa", "mastercard"],
+    ru: { name: "PayPal",
+          hint: "Пришлём ссылку с готовой суммой — оплата в пару касаний.",
+          badge: "картой или с баланса PayPal" },
+    en: { name: "PayPal",
+          hint: "We'll send a link with the amount already filled in — pay in two taps.",
+          badge: "card or PayPal balance" },
+    de: { name: "PayPal",
+          hint: "Wir senden einen Link mit fertigem Betrag — Zahlung in zwei Klicks.",
+          badge: "Karte oder PayPal-Guthaben" },
+    uk: { name: "PayPal",
+          hint: "Надішлемо посилання з готовою сумою — оплата у два дотики.",
+          badge: "карткою або з балансу PayPal" },
   },
   {
-    id: "card",
-    mode: "instant",
-    env: ["LIQPAY_PUBLIC_KEY", "LIQPAY_PRIVATE_KEY"],
+    id: "invoice",
+    mode: "manual",
+    env: ["EUR_BENEFICIARY", "EUR_IBAN"],
+    icon: "bank",
+    ru: { name: "Счёт на банковский перевод",
+          hint: "Пришлём счёт с IBAN — оплата обычным переводом из вашего банка.",
+          badge: "SEPA · счёт для бухгалтерии" },
+    en: { name: "Bank transfer invoice",
+          hint: "We'll send an invoice with the IBAN — pay by ordinary transfer from your bank.",
+          badge: "SEPA · invoice for your books" },
+    de: { name: "Rechnung per Banküberweisung",
+          hint: "Wir senden eine Rechnung mit IBAN — Zahlung per normaler Überweisung.",
+          badge: "SEPA · Rechnung für die Buchhaltung" },
+    uk: { name: "Рахунок на банківський переказ",
+          hint: "Надішлемо рахунок з IBAN — оплата звичайним переказом із вашого банку.",
+          badge: "SEPA · рахунок для бухгалтерії" },
+  },
+  {
+    id: "monocard",
+    mode: "manual",
+    env: ["MONOBANK_CARD"],
     icon: "card",
-    // значки платёжных систем рядом со способом: человек ищет глазами
-    // знакомый знак, а не читает перечисление
-    // логотип LiqPay идёт первым: это требование банка к сайту мерчанта,
-    // и человеку сразу видно, чей платёжный экран откроется
-    marks: ["liqpay", "visa", "mastercard", "applepay", "googlepay"],
-    ru: { name: "Картой онлайн", hint: "Оплата сразу на сайте: карта, Apple Pay, Google Pay",
-          badge: "Visa · Mastercard · Apple Pay · Google Pay" },
-    en: { name: "Card online", hint: "Pay right on the site: card, Apple Pay, Google Pay",
-          badge: "Visa · Mastercard · Apple Pay · Google Pay" },
-    de: { name: "Karte online", hint: "Direkt auf der Seite bezahlen: Karte, Apple Pay, Google Pay",
-          badge: "Visa · Mastercard · Apple Pay · Google Pay" },
-    uk: { name: "Карткою онлайн", hint: "Оплата просто на сайті: картка, Apple Pay, Google Pay",
-          badge: "Visa · Mastercard · Apple Pay · Google Pay" },
+    ru: { name: "Перевод на карту Monobank",
+          hint: "Пришлём номер карты и сумму в гривне — обычный перевод с карты на карту.",
+          badge: "в гривне · за минуту" },
+    en: { name: "Monobank card transfer",
+          hint: "We'll send the card number and the amount in hryvnia — a card-to-card transfer.",
+          badge: "in hryvnia · takes a minute" },
+    de: { name: "Überweisung auf Monobank-Karte",
+          hint: "Wir senden Kartennummer und Betrag in Hrywnja — Karte-zu-Karte-Überweisung.",
+          badge: "in Hrywnja · in einer Minute" },
+    uk: { name: "Переказ на картку Monobank",
+          hint: "Надішлемо номер картки та суму в гривні — звичайний переказ з картки на картку.",
+          badge: "у гривні · за хвилину" },
   },
   {
     id: "crypto",
     mode: "manual",
     env: ["CRYPTO_WALLET"],
     icon: "crypto",
-    ru: { name: "Криптовалютой", hint: "USDT в сети TRC-20 — пришлём адрес и точную сумму",
+    ru: { name: "Криптовалютой (USDT)",
+          hint: "Пришлём адрес кошелька и точную сумму — перевод в сети TRC-20.",
           badge: "USDT · TRC-20" },
-    en: { name: "Cryptocurrency", hint: "USDT on TRC-20 — we'll send the address and exact amount",
+    en: { name: "Cryptocurrency (USDT)",
+          hint: "We'll send the wallet address and the exact amount — transfer on TRC-20.",
           badge: "USDT · TRC-20" },
-    de: { name: "Kryptowährung", hint: "USDT über TRC-20 — wir senden Adresse und genauen Betrag",
+    de: { name: "Kryptowährung (USDT)",
+          hint: "Wir senden Wallet-Adresse und genauen Betrag — Transfer im TRC-20-Netz.",
           badge: "USDT · TRC-20" },
-    uk: { name: "Криптовалютою", hint: "USDT у мережі TRC-20 — надішлемо адресу й точну суму",
+    uk: { name: "Криптовалютою (USDT)",
+          hint: "Надішлемо адресу гаманця й точну суму — переказ у мережі TRC-20.",
           badge: "USDT · TRC-20" },
   },
 ];
@@ -192,11 +197,11 @@ export async function methodsForClient(lang, cents) {
       name: m[L].name, hint: m[L].hint, badge: m[L].badge,
     };
     if (cents) {
-      // Сумму в гривне показываем, только если приём идёт в гривне: при оплате
-      // в евро человек видит на странице банка ровно ту цену, что и на сайте.
-      if (m.id === "card" && String(process.env.LIQPAY_CURRENCY || "EUR").toUpperCase() === "UAH") {
+      // Перевод на карту приходит в гривне, поэтому сумму в гривне показываем
+      // именно здесь — там, где она нужна для платежа, а не под ценой пакета.
+      if (m.id === "monocard") {
         const uah = eurToUah(cents, rates);
-        if (uah) out.amountNote = uah.toLocaleString("uk-UA") + " ₴";
+        if (uah) out.amountNote = "≈ " + uah.toLocaleString("uk-UA") + " ₴";
       }
       if (m.id === "crypto") {
         const usdt = eurToUsdt(cents, rates);
@@ -233,6 +238,10 @@ export async function paymentInstructions(methodId, cents, lang) {
    * и в банковских формах они везде пишутся одинаково.
    */
   const t = (k) => ({
+    cardNumber:  { ru: "Номер карты", uk: "Номер картки", en: "Card number", de: "Kartennummer" },
+    cardHolder:  { ru: "Получатель", uk: "Отримувач", en: "Cardholder", de: "Karteninhaber" },
+    transferNote:{ ru: "Комментарий к переводу", uk: "Коментар до переказу",
+                   en: "Transfer note", de: "Verwendungszweck" },
     beneficiary: { ru: "Получатель", uk: "Отримувач", en: "Beneficiary", de: "Empfänger" },
     bank:        { ru: "Банк", uk: "Банк", en: "Bank", de: "Bank" },
     amount:      { ru: "Сумма", uk: "Сума", en: "Amount", de: "Betrag" },
@@ -300,6 +309,26 @@ export async function paymentInstructions(methodId, cents, lang) {
             de: "Wählen Sie in PayPal „Senden“, geben Sie diese Adresse und den Betrag ein und wählen Sie „an Freunde senden“. Sonst berechnet PayPal dem Empfänger eine Gebühr.",
             uk: "У застосунку PayPal оберіть «Надіслати», вкажіть цю адресу й суму, тип переказу — «другу». Інакше PayPal стягне комісію з отримувача.",
           })[L],
+    };
+  }
+
+  if (methodId === "monocard") {
+    const uah = eurToUah(cents, rates);
+    return {
+      title: { ru: "Перевод на карту", uk: "Переказ на картку",
+               en: "Card transfer", de: "Kartenüberweisung" }[L],
+      lines: [
+        { label: t("cardNumber"), value: env("MONOBANK_CARD") },
+        env("MONOBANK_HOLDER") ? { label: t("cardHolder"), value: env("MONOBANK_HOLDER") } : null,
+        { label: t("amount"), value: uah ? uah.toLocaleString("uk-UA") + " ₴" : eur + " EUR (" + t("tbd") + ")" },
+        { label: t("transferNote"), value: "15minYoga" },
+      ].filter(Boolean),
+      note: {
+        ru: "Сумма пересчитана по курсу на сегодня. Перевод идёт с карты на карту — как обычный платёж другу.",
+        uk: "Суму перераховано за курсом на сьогодні. Переказ іде з картки на картку — як звичайний платіж другу.",
+        en: "The amount uses today's rate. It is an ordinary card-to-card transfer, like sending money to a friend.",
+        de: "Der Betrag basiert auf dem heutigen Kurs. Es ist eine gewöhnliche Karte-zu-Karte-Überweisung.",
+      }[L],
     };
   }
 

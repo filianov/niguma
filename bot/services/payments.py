@@ -30,7 +30,10 @@ HEADERS = {
     "stripe":   {"ru": "💳 Картой (Stripe)", "en": "💳 Card (Stripe)", "de": "💳 Karte (Stripe)", "uk": "💳 Карткою (Stripe)"},
     "iban":     {"ru": "🏦 Перевод на евро-счёт (IBAN)", "en": "🏦 Bank transfer (IBAN)",
                  "de": "🏦 Überweisung (IBAN)", "uk": "🏦 Переказ на євро-рахунок (IBAN)"},
-    "monobank": {"ru": "🇺🇦 Monobank (грн)", "en": "🇺🇦 Monobank (UAH)", "de": "🇺🇦 Monobank (UAH)", "uk": "🇺🇦 Monobank (грн)"},
+    "monobank": {"ru": "💳 Перевод на карту", "en": "💳 Card transfer",
+                 "de": "💳 Kartenüberweisung", "uk": "💳 Переказ на картку"},
+    "crypto":   {"ru": "🪙 Криптовалютой (USDT)", "en": "🪙 Cryptocurrency (USDT)",
+                 "de": "🪙 Kryptowährung (USDT)", "uk": "🪙 Криптовалютою (USDT)"},
 }
 
 NOT_CONFIGURED = {
@@ -68,6 +71,13 @@ def method_text(method: str, plan_id: str, lang: str = "ru") -> str:
                 f"BIC: {config.EUR_BIC}\n"
                 f"Банк / Bank: {config.EUR_BANK}\n"
                 f"Назначение / Reference: 15minYoga {plan_id}")
+
+    if method == "crypto":
+        if not config.CRYPTO_WALLET:
+            return NOT_CONFIGURED[lang]
+        return (f"*{head}*\n{money}\n\n"
+                f"Сеть / Network: {config.CRYPTO_NETWORK or 'USDT-TRC20'}\n"
+                f"Адрес / Address: `{config.CRYPTO_WALLET}`")
 
     if method == "monobank":
         if not (config.MONOBANK_JAR or config.MONOBANK_CARD):

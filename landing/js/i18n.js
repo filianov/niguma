@@ -68,7 +68,6 @@
                  '<p class="tier__period">' + escapeHtml(tier.period) + "</p>" +
                  '<div class="tier__price">' + escapeHtml(tier.price) + "</div>" +
                  (per ? '<div class="tier__per">' + per + "</div>" : "") +
-                 (tier.desc ? '<p class="tier__desc">' + escapeHtml(tier.desc) + "</p>" : "") +
                "</div>";
       }).join("");
     });
@@ -166,28 +165,6 @@
     if (window.NigumaReveal) window.NigumaReveal();
   }
 
-  /**
-   * Посетителю из Украины сайт обязан открываться на украинском — часть 6
-   * статьи 27 Закона «Про забезпечення функціонування української мови як
-   * державної». Браузер страну не знает, поэтому спрашиваем /api/geo.
-   *
-   * Спрашиваем только если человек ещё не выбрал язык сам: свой выбор
-   * посетителя важнее страны, из которой он зашёл. Ошибка сети или
-   * недоступный ответ ничего не ломают — остаётся язык браузера.
-   */
-  function applyCountry() {
-    if (chosen()) return;
-    if (document.documentElement.lang === "uk") return;
-    fetch("/api/geo", { credentials: "omit" })
-      .then(function (r) { return r.ok ? r.json() : null; })
-      .then(function (d) {
-        if (!d || d.country !== "UA") return;
-        if (chosen()) return;            // человек успел выбрать сам, пока шёл запрос
-        setLang("uk", false);
-      })
-      .catch(function () {});
-  }
-
   // expose — t() lets other scripts read a string in the language shown right now
   window.NigumaI18n = {
     setLang: setLang,
@@ -198,7 +175,6 @@
   // boot
   document.addEventListener("DOMContentLoaded", function () {
     setLang(detect(), false);
-    applyCountry();
     document.querySelectorAll(".lang__btn").forEach(function (btn) {
       btn.addEventListener("click", function () { setLang(btn.getAttribute("data-lang"), true); });
     });

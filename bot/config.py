@@ -65,7 +65,10 @@ EUR_BIC = os.getenv("EUR_BIC", "")
 EUR_BANK = os.getenv("EUR_BANK", "")
 MONOBANK_JAR = os.getenv("MONOBANK_JAR", "")
 MONOBANK_CARD = os.getenv("MONOBANK_CARD", "")
+MONOBANK_HOLDER = os.getenv("MONOBANK_HOLDER", "")
 PAYPAL_ME = os.getenv("PAYPAL_ME", "")
+CRYPTO_NETWORK = os.getenv("CRYPTO_NETWORK", "USDT-TRC20")
+CRYPTO_WALLET = os.getenv("CRYPTO_WALLET", "")
 
 # --- Payments (automated) ---
 PAY_LINKS = {

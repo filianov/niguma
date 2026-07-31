@@ -748,7 +748,7 @@ img { max-width: 100%; display: block; }
 .paymethod__name { font-weight: 600; font-size: 16px; margin-top: 2px; }
 .paymethod__hint { font-size: 14px; color: var(--ink-soft); line-height: 1.45; }
 .paymethod__badge { font-size: 12.5px; color: var(--olive); letter-spacing: .01em; margin-top: 2px; }
-.paymethod__instant { font-size: 12.5px; color: var(--clay-deep); font-weight: 600; margin-top: 4px; }
+.paymethod__amount { display: block; margin-top: 4px; font-size: 12.5px; color: var(--olive); }
 .paymethods__note { margin: 16px auto 0; max-width: 52ch; font-size: 13.5px; color: var(--ink-soft); }
 
 /* выбор способа в форме заявки */
@@ -794,35 +794,10 @@ img { max-width: 100%; display: block; }
 .checkout__method .paymarks { margin-top: 3px; }
 .checkout__method .paymark { height: 20px; font-size: 10.5px; }
 
-/**
- * Логотип LiqPay.
- *
- * Бренд-бук требует свободного поля вокруг логотипа не меньше высоты буквы «L»
- * и минимальной высоты 12 px на экране; пропорции менять нельзя. Поэтому здесь
- * задаётся только высота, ширина считается сама, а рамка и фон убраны —
- * логотип не должен выглядеть как ещё один значок платёжной системы.
- */
-.paymark--liqpay { height: auto; padding: 0 10px 0 2px; border: 0; background: none; }
-.paymark--liqpay img { height: 18px; width: auto; display: block; }
-.checkout__method .paymark--liqpay { height: auto; }
-.checkout__method .paymark--liqpay img { height: 15px; }
-
+.checkout__method .checkout__method 
 /* реквизиты продавца в подвале — требование платёжного сервиса */
-/**
- * Реквизиты продавца в тёмном подвале.
- *
- * Цвет задан явно, а не токеном --ink-soft: тот рассчитан на светлый фон и
- * на оливковом подвале давал контраст 1.7:1, а прозрачность опускала ещё
- * ниже. Данные ФОП обязаны быть читаемыми: их смотрит и покупатель, и
- * проверяющий платёжного сервиса.
- */
-.footer__merchant { margin: 14px 0 0; font-size: 13px; line-height: 1.6; color: #d9d7c6; }
-.footer__merchant a { color: inherit; text-decoration: underline; }
 
 /* цена в гривне и описание услуги — требование правил приёма карт */
-.tier__uah { font-size: 15px; color: var(--olive); margin-top: 2px; font-variant-numeric: tabular-nums; }
-.tier__desc { font-size: 13px; line-height: 1.5; color: var(--ink-soft); margin: 10px 0 0; text-align: left; }
-.pricing__rate { max-width: 780px; margin: 14px auto 0; font-size: 13px; color: var(--ink-soft); text-align: center; }
 
 /* ============ Наклейка акции на карточке пакета ============ */
 .tier { position: relative; }

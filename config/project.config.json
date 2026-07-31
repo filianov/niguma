@@ -118,22 +118,9 @@
           "de": "PayPal",
           "uk": "PayPal"
         },
-        "comment": "PayPal Фильянова — уточнить, на какое лицо оформлен аккаунт.",
+        "comment": "PayPal.Me проекта: paypal.me/15minYoga.",
         "meLinkEnv": "PAYPAL_ME",
         "meLink": "REPLACE_ME"
-      },
-      "liqpay": {
-        "enabled": true,
-        "currency": "UAH",
-        "label": {
-          "ru": "LiqPay (грн)",
-          "en": "LiqPay (UAH)",
-          "de": "LiqPay (UAH)",
-          "uk": "LiqPay (грн)"
-        },
-        "comment": "ФОП Фільянов П.О. Ссылка/кнопка LiqPay — из кабинета LiqPay.",
-        "linkEnv": "LIQPAY_LINK",
-        "link": "REPLACE_ME"
       },
       "crypto": {
         "enabled": true,
@@ -147,9 +134,21 @@
         "network": "REPLACE_ME",
         "addressEnv": "CRYPTO_WALLET",
         "address": "REPLACE_ME"
+      },
+      "monocard": {
+        "enabled": true,
+        "label": {
+          "ru": "Перевод на карту",
+          "en": "Card transfer",
+          "de": "Kartenüberweisung",
+          "uk": "Переказ на картку"
+        },
+        "comment": "Карта Monobank. Номер присылает бот в личке и отдаёт /api/checkout; в файлах репозитория его нет — только переменная окружения.",
+        "numberEnv": "MONOBANK_CARD",
+        "holderEnv": "MONOBANK_HOLDER"
       }
     },
-    "removed": "Monobank-банка заменена на LiqPay по решению владельца."
+    "removed": "LiqPay отключён: платёжный сервис заблокировал проект. Приём карт вернулся к переводу на карту Monobank."
   },
   "social": {
     "instagram": {
@@ -240,25 +239,6 @@
       ],
       "odrNote": "Ссылку на EU-платформу ODR не указывать — платформа закрыта 20.07.2025."
     },
-    "paymentEntityEU": {
-      "role": "Приём евро-платежей (по решению владельца).",
-      "country": "AT",
-      "name": "Pavlo Filianov",
-      "form": "Einzelunternehmer",
-      "address": "Kuchelauer Hafenstraße 104/2/2, 1190 Wien, Österreich",
-      "phone": "+43 660 6061110",
-      "gisa": "38757808",
-      "authority": "Magistrat der Stadt Wien · Mitglied WKO Wien",
-      "vat": "Kleinunternehmer gem. § 6 Abs. 1 Z 27 UStG — ohne UID-Nummer"
-    },
-    "paymentEntityUA": {
-      "role": "Приём гривневых платежей через LiqPay.",
-      "country": "UA",
-      "name": "ФОП Фільянов Павло Олексійович",
-      "taxNumber": "2982107454",
-      "address": "м. Київ, Вознесенський узвіз, 23-В, офіс 29",
-      "phone": "+380 63 621 52 43"
-    },
-    "note": "Услугу оказывает немецкое ЧП, часть платежей поступает на счета других лиц — схему подтвердить у Steuerberater перед первыми продажами."
+    "note": "Единственное лицо проекта — оператор из блока operator: она же сторона публичного договора, получатель платежей и адресат возвратов. Схему приёма средств подтвердить у Steuerberater перед первыми продажами."
   }
 }

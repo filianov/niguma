@@ -1,51 +1,49 @@
 /* ===================================================================
    15minYoga — публичный договор (оферта) и условия возврата.
 
-   Документы нужны для приёма карт: ПриватБанк требует, чтобы на сайте были
-   регистрационные данные получателя платежа, его адрес, условия возврата и
-   договор с клиентом. Реквизиты здесь ДОЛЖНЫ совпадать с кабинетом мерчанта —
-   расхождение блокирует перечисление средств.
+   Сторона договора одна: Olha Filianova, Einzelunternehmerin (свободная
+   профессия), Фрайбург, Германия. Она же проводит занятия, она же получает
+   оплату. Её выходные данные — в /legal/impressum (§ 5 DDG), обработка
+   персональных данных — в /legal/privacy. Блок merchant ниже должен совпадать
+   с этими документами.
 
-   Разделение сторон намеренное и отражает действительность:
-     • ФОП Фільянов П.О. (Украина) — исполнитель по этому договору, принимает
-       оплату картой через LiqPay и организует доступ к занятиям;
-     • Olha Filianova (Германия) — преподаватель, проводит занятия; её выходные
-       данные в /legal/impressum, как требует § 5 DDG.
+   Налоговых номеров здесь нет и быть не должно: у немецкого фрилансера нет
+   ни торгового реестра, ни HRB, а Steuer-Identifikationsnummer публиковать
+   нельзя. § 5 DDG требует только имя, адрес и контакты.
 
-   Изменение реквизитов — только вместе с кабинетом мерчанта LiqPay.
+   Оплата принимается вручную, четырьмя способами: счёт на банковский перевод
+   (IBAN, евро), PayPal, перевод на банковскую карту, USDT (TRC-20). Реквизиты
+   каждого способа человек получает лично в Telegram — на сайте их нет.
+   Автоматической оплаты картой на сайте больше нет.
    =================================================================== */
 window.NIGUMA_LEGAL = {
   /* ------------------------------ реквизиты ------------------------------ */
   merchant: {
     uk: {
-      name: "ФОП Фільянов Павло Олексійович",
-      code: "РНОКПП 2982107454",
-      address: "Україна, 04053, м. Київ, Вознесенський узвіз, 23-В, офіс 29",
-      bank: "АТ КБ «ПриватБанк»",
+      name: "Ольга Фільянова (Olha Filianova)",
+      status: "Фізична особа-підприємець (вільна професія), Німеччина",
+      address: "Sulzburger Straße 19, 79114 Freiburg im Breisgau, Німеччина",
       email: "15minyoga.com@gmail.com",
       site: "15minyoga.com",
     },
     ru: {
-      name: "ФЛП Фильянов Павел Алексеевич",
-      code: "РНУКПН 2982107454",
-      address: "Украина, 04053, г. Киев, Вознесенский спуск, 23-В, офис 29",
-      bank: "АО КБ «ПриватБанк»",
+      name: "Ольга Фильянова (Olha Filianova)",
+      status: "Индивидуальный предприниматель (свободная профессия), Германия",
+      address: "Sulzburger Straße 19, 79114 Freiburg im Breisgau, Германия",
       email: "15minyoga.com@gmail.com",
       site: "15minyoga.com",
     },
     en: {
-      name: "Pavlo Filianov, sole proprietor",
-      code: "Tax ID 2982107454",
-      address: "23-V Voznesenskyi uzviz, office 29, Kyiv 04053, Ukraine",
-      bank: "JSC CB PrivatBank",
+      name: "Olha Filianova",
+      status: "Sole trader (freelance activity), Germany",
+      address: "Sulzburger Straße 19, 79114 Freiburg im Breisgau, Germany",
       email: "15minyoga.com@gmail.com",
       site: "15minyoga.com",
     },
     de: {
-      name: "Pavlo Filianov, Einzelunternehmer",
-      code: "Steuernummer 2982107454",
-      address: "Voznesenskyi uzviz 23-V, Büro 29, 04053 Kyjiw, Ukraine",
-      bank: "JSC CB PrivatBank",
+      name: "Olha Filianova",
+      status: "Einzelunternehmerin (freiberufliche Tätigkeit), Deutschland",
+      address: "Sulzburger Straße 19, 79114 Freiburg im Breisgau, Deutschland",
       email: "15minyoga.com@gmail.com",
       site: "15minyoga.com",
     },
@@ -62,8 +60,8 @@ window.NIGUMA_LEGAL = {
           heading: "1. Загальні положення",
           lines: [
             "Цей документ є публічною офертою — пропозицією укласти договір на умовах, викладених нижче. Оферта адресована будь-якій дієздатній фізичній особі (далі — Замовник).",
-            "Виконавцем за цим договором є ФОП Фільянов Павло Олексійович, реєстраційні дані наведено в розділі 11.",
-            "Заняття проводить викладач Ольга Фільянова (Німеччина). Виконавець організовує доступ до занять і приймає оплату.",
+            "Виконавцем за цим договором є Ольга Фільянова (Olha Filianova), Німеччина — реквізити наведено в розділі 11.",
+            "Виконавець особисто проводить заняття, організовує доступ до них і приймає оплату.",
             "Оплата будь-яким зі способів на сайті означає повну й беззастережну згоду з умовами цього договору (акцепт).",
           ],
         },
@@ -80,10 +78,9 @@ window.NIGUMA_LEGAL = {
           heading: "3. Вартість і оплата",
           lines: [
             "Вартість пакетів указана на сайті в євро: 1 місяць — 100 €, 6 місяців — 500 €, 12 місяців — 900 €. Актуальна ціна показується в розділі «Вартість» і може змінюватися; для вже оплаченого періоду ціна не переглядається.",
-            "Оплата можлива банківським переказом, через PayPal, карткою онлайн (Visa, Mastercard, Apple Pay, Google Pay) або криптовалютою.",
-            "Оплата карткою обробляється платіжним сервісом LiqPay (АТ КБ «ПриватБанк»). Виконавець не отримує й не зберігає дані картки.",
-            "Криптовалюта приймається виключно як оплата власної послуги Виконавця. Виконавець не надає послуг обміну, купівлі, продажу, зберігання чи переказу віртуальних активів і не є оператором такого обміну.",
-            "Доступ відкривається після надходження коштів. За оплати карткою — автоматично, за інших способів — після підтвердження платежу, зазвичай протягом одного робочого дня.",
+            "Оплатити можна чотирма способами: рахунком на банківський переказ (IBAN, євро), через PayPal, переказом на банківську картку або криптовалютою (USDT у мережі TRC-20).",
+            "Реквізити обраного способу ви отримуєте особисто — у Telegram або електронною поштою. На сайті реквізитів немає; дані картки Виконавець не збирає й не зберігає.",
+            "Доступ відкривається після підтвердження платежу — зазвичай протягом одного робочого дня.",
           ],
         },
         {
@@ -113,7 +110,7 @@ window.NIGUMA_LEGAL = {
         {
           heading: "7. Відповідальність і застереження щодо здоров'я",
           lines: [
-            "Заняття йогою не є медичною послугою. Виконавець і викладач не діагностують, не лікують і не дають медичних рекомендацій.",
+            "Заняття йогою не є медичною послугою. Виконавець не діагностує, не лікує і не дає медичних рекомендацій.",
             "Замовник самостійно оцінює стан свого здоров'я. За наявності захворювань, травм, вагітності або сумнівів слід порадитися з лікарем до початку занять.",
             "Замовник виконує вправи на власний розсуд і несе відповідальність за свій стан під час занять.",
             "Виконавець не відповідає за перебої, спричинені роботою сторонніх сервісів (Zoom, Telegram, платіжні системи, інтернет-провайдери).",
@@ -137,7 +134,7 @@ window.NIGUMA_LEGAL = {
           heading: "10. Вирішення спорів",
           lines: [
             "Сторони вирішують спори шляхом переговорів. Звернення надсилайте на 15minyoga.com@gmail.com — відповідь протягом 10 робочих днів.",
-            "У разі недосягнення згоди спір вирішується згідно із законодавством України.",
+            "У разі недосягнення згоди спір вирішується згідно із законодавством Німеччини. Якщо Замовник є споживачем, це не позбавляє його захисту за обов'язковими нормами права країни його проживання.",
           ],
         },
         {
@@ -156,8 +153,8 @@ window.NIGUMA_LEGAL = {
           heading: "1. Общие положения",
           lines: [
             "Этот документ является публичной офертой — предложением заключить договор на изложенных ниже условиях. Оферта адресована любому дееспособному физическому лицу (далее — Заказчик).",
-            "Исполнителем по договору является ФЛП Фильянов Павел Алексеевич, регистрационные данные приведены в разделе 11.",
-            "Занятия проводит преподаватель Ольга Фильянова (Германия). Исполнитель организует доступ к занятиям и принимает оплату.",
+            "Исполнителем по договору является Ольга Фильянова (Olha Filianova), Германия — реквизиты приведены в разделе 11.",
+            "Исполнитель лично проводит занятия, организует доступ к ним и принимает оплату.",
             "Оплата любым из способов на сайте означает полное и безоговорочное согласие с условиями договора (акцепт).",
           ],
         },
@@ -174,10 +171,9 @@ window.NIGUMA_LEGAL = {
           heading: "3. Стоимость и оплата",
           lines: [
             "Стоимость пакетов указана на сайте в евро: 1 месяц — 100 €, 6 месяцев — 500 €, 12 месяцев — 900 €. Актуальная цена показывается в разделе «Стоимость» и может меняться; для уже оплаченного периода цена не пересматривается.",
-            "Оплата возможна банковским переводом, через PayPal, картой онлайн (Visa, Mastercard, Apple Pay, Google Pay) или криптовалютой.",
-            "Оплата картой обрабатывается платёжным сервисом LiqPay (АО КБ «ПриватБанк»). Исполнитель не получает и не хранит данные карты.",
-            "Криптовалюта принимается исключительно как оплата собственной услуги Исполнителя. Исполнитель не оказывает услуг обмена, покупки, продажи, хранения или перевода виртуальных активов и не является оператором такого обмена.",
-            "Доступ открывается после поступления средств. При оплате картой — автоматически, при других способах — после подтверждения платежа, обычно в течение одного рабочего дня.",
+            "Оплатить можно четырьмя способами: счётом на банковский перевод (IBAN, евро), через PayPal, переводом на банковскую карту или криптовалютой (USDT в сети TRC-20).",
+            "Реквизиты выбранного способа вы получаете лично — в Telegram или по электронной почте. На сайте реквизитов нет; данные карты Исполнитель не собирает и не хранит.",
+            "Доступ открывается после подтверждения платежа — обычно в течение одного рабочего дня.",
           ],
         },
         {
@@ -207,7 +203,7 @@ window.NIGUMA_LEGAL = {
         {
           heading: "7. Ответственность и предупреждение о здоровье",
           lines: [
-            "Занятия йогой не являются медицинской услугой. Исполнитель и преподаватель не диагностируют, не лечат и не дают медицинских рекомендаций.",
+            "Занятия йогой не являются медицинской услугой. Исполнитель не диагностирует, не лечит и не даёт медицинских рекомендаций.",
             "Заказчик самостоятельно оценивает состояние своего здоровья. При наличии заболеваний, травм, беременности или сомнений следует посоветоваться с врачом до начала занятий.",
             "Заказчик выполняет упражнения по своему усмотрению и несёт ответственность за своё состояние во время занятий.",
             "Исполнитель не отвечает за перебои, вызванные работой сторонних сервисов (Zoom, Telegram, платёжные системы, интернет-провайдеры).",
@@ -231,7 +227,7 @@ window.NIGUMA_LEGAL = {
           heading: "10. Разрешение споров",
           lines: [
             "Стороны разрешают споры путём переговоров. Обращения направляйте на 15minyoga.com@gmail.com — ответ в течение 10 рабочих дней.",
-            "При недостижении согласия спор разрешается в соответствии с законодательством Украины.",
+            "При недостижении согласия спор разрешается в соответствии с законодательством Германии. Если Заказчик — потребитель, это не лишает его защиты по обязательным нормам права страны его проживания.",
           ],
         },
         {
@@ -250,8 +246,8 @@ window.NIGUMA_LEGAL = {
           heading: "1. General provisions",
           lines: [
             "This document is a public offer — a proposal to conclude an agreement on the terms set out below, addressed to any person with legal capacity (the Client).",
-            "The Provider under this agreement is Pavlo Filianov, sole proprietor; registration details are given in section 11.",
-            "Classes are taught by Olha Filianova (Germany). The Provider arranges access to the classes and accepts payment.",
+            "The Provider under this agreement is Olha Filianova, sole trader (freelance activity) in Germany; her details are given in section 11.",
+            "The Provider teaches the classes herself, arranges access to them and accepts payment.",
             "Payment by any method offered on the site constitutes full and unconditional acceptance of these terms.",
           ],
         },
@@ -268,10 +264,9 @@ window.NIGUMA_LEGAL = {
           heading: "3. Price and payment",
           lines: [
             "Prices are shown on the site in euro: 1 month — €100, 6 months — €500, 12 months — €900. The current price is shown in the “Pricing” section and may change; the price of an already paid period is not revised.",
-            "Payment is possible by bank transfer, PayPal, card online (Visa, Mastercard, Apple Pay, Google Pay) or cryptocurrency.",
-            "Card payments are processed by LiqPay (JSC CB PrivatBank). The Provider neither receives nor stores card details.",
-            "Cryptocurrency is accepted solely as payment for the Provider\u2019s own service. The Provider does not offer exchange, purchase, sale, custody or transfer of virtual assets and is not a virtual-asset exchange operator.",
-            "Access opens once funds are received: automatically for card payments, and after confirmation for other methods — usually within one business day.",
+            "There are four ways to pay: a bank transfer invoice (IBAN, euro), PayPal, a transfer to a bank card, or cryptocurrency (USDT on TRC-20).",
+            "You receive the payment details personally, via Telegram or e-mail, after choosing a method on the site. The details are not published on the site, and the Provider neither collects nor stores card data.",
+            "Access opens once the payment is confirmed — usually within one business day.",
           ],
         },
         {
@@ -301,7 +296,7 @@ window.NIGUMA_LEGAL = {
         {
           heading: "7. Liability and health notice",
           lines: [
-            "Yoga classes are not a medical service. Neither the Provider nor the teacher diagnoses, treats or gives medical advice.",
+            "Yoga classes are not a medical service. The Provider does not diagnose, treat or give medical advice.",
             "The Client assesses their own state of health. In case of illness, injury, pregnancy or any doubt, consult a doctor before starting.",
             "The Client performs the exercises at their own discretion and is responsible for their condition during the classes.",
             "The Provider is not liable for interruptions caused by third-party services (Zoom, Telegram, payment systems, internet providers).",
@@ -325,7 +320,7 @@ window.NIGUMA_LEGAL = {
           heading: "10. Disputes",
           lines: [
             "The parties settle disputes through negotiation. Write to 15minyoga.com@gmail.com — we reply within 10 business days.",
-            "Failing agreement, disputes are resolved under the law of Ukraine.",
+            "Failing agreement, disputes are resolved under German law. If the Client is a consumer, this does not remove the protection of the mandatory rules of their country of residence.",
           ],
         },
         {
@@ -344,8 +339,8 @@ window.NIGUMA_LEGAL = {
           heading: "1. Allgemeines",
           lines: [
             "Dieses Dokument ist ein öffentliches Angebot — ein Vorschlag zum Vertragsschluss zu den unten genannten Bedingungen, gerichtet an jede geschäftsfähige Person (Kundin oder Kunde).",
-            "Anbieter nach diesem Vertrag ist Pavlo Filianov, Einzelunternehmer; die Registrierungsdaten stehen in Abschnitt 11.",
-            "Die Kurse leitet Olha Filianova (Deutschland). Der Anbieter organisiert den Zugang und nimmt die Zahlung entgegen.",
+            "Anbieter nach diesem Vertrag ist Olha Filianova, Einzelunternehmerin (freiberufliche Tätigkeit) in Deutschland; die Angaben stehen in Abschnitt 11.",
+            "Der Anbieter leitet die Kurse selbst, organisiert den Zugang und nimmt die Zahlung entgegen.",
             "Die Zahlung über einen der angebotenen Wege gilt als vollständige und vorbehaltlose Annahme dieser Bedingungen.",
           ],
         },
@@ -362,10 +357,9 @@ window.NIGUMA_LEGAL = {
           heading: "3. Preis und Zahlung",
           lines: [
             "Die Preise stehen auf der Seite in Euro: 1 Monat — 100 €, 6 Monate — 500 €, 12 Monate — 900 €. Der aktuelle Preis steht im Abschnitt „Preise“ und kann sich ändern; für bereits bezahlte Zeiträume bleibt er unverändert.",
-            "Zahlung ist möglich per Banküberweisung, PayPal, Karte online (Visa, Mastercard, Apple Pay, Google Pay) oder Kryptowährung.",
-            "Kartenzahlungen werden über LiqPay (JSC CB PrivatBank) abgewickelt. Der Anbieter erhält und speichert keine Kartendaten.",
-            "Kryptowährung wird ausschließlich als Zahlung für die eigene Leistung des Anbieters angenommen. Der Anbieter bietet keinen Umtausch, An- und Verkauf, keine Verwahrung und keine Übertragung virtueller Vermögenswerte an und ist kein Betreiber einer solchen Börse.",
-            "Der Zugang öffnet sich nach Zahlungseingang: bei Kartenzahlung automatisch, bei anderen Wegen nach Bestätigung — in der Regel innerhalb eines Werktags.",
+            "Es gibt vier Zahlungswege: Rechnung per Banküberweisung (IBAN, Euro), PayPal, Überweisung auf eine Bankkarte oder Kryptowährung (USDT über TRC-20).",
+            "Die Zahlungsdaten erhalten Sie persönlich über Telegram oder per E-Mail, nachdem Sie auf der Seite einen Zahlungsweg gewählt haben. Auf der Website stehen keine Zahlungsdaten; Kartendaten werden weder erhoben noch gespeichert.",
+            "Der Zugang öffnet sich nach Bestätigung der Zahlung — in der Regel innerhalb eines Werktags.",
           ],
         },
         {
@@ -395,7 +389,7 @@ window.NIGUMA_LEGAL = {
         {
           heading: "7. Haftung und Hinweis zur Gesundheit",
           lines: [
-            "Yogakurse sind keine medizinische Leistung. Weder der Anbieter noch die Lehrkraft diagnostiziert, behandelt oder gibt medizinische Empfehlungen.",
+            "Yogakurse sind keine medizinische Leistung. Der Anbieter diagnostiziert nicht, behandelt nicht und gibt keine medizinischen Empfehlungen.",
             "Sie schätzen Ihren Gesundheitszustand selbst ein. Bei Erkrankungen, Verletzungen, Schwangerschaft oder Zweifeln sprechen Sie vor Beginn mit einer Ärztin oder einem Arzt.",
             "Sie führen die Übungen nach eigenem Ermessen aus und tragen die Verantwortung für Ihren Zustand während der Kurse.",
             "Für Störungen durch Dienste Dritter (Zoom, Telegram, Zahlungsdienste, Internetanbieter) haftet der Anbieter nicht.",
@@ -419,7 +413,7 @@ window.NIGUMA_LEGAL = {
           heading: "10. Streitbeilegung",
           lines: [
             "Die Parteien klären Streitigkeiten im Gespräch. Schreiben Sie an 15minyoga.com@gmail.com — Antwort innerhalb von 10 Werktagen.",
-            "Kommt keine Einigung zustande, gilt ukrainisches Recht.",
+            "Kommt keine Einigung zustande, gilt deutsches Recht. Sind Sie Verbraucherin oder Verbraucher, bleibt der Schutz zwingender Vorschriften Ihres Wohnsitzstaates unberührt.",
           ],
         },
         {
@@ -476,9 +470,9 @@ window.NIGUMA_LEGAL = {
         {
           heading: "Строки та спосіб повернення",
           lines: [
-            "Кошти повертаються тим самим способом, яким були сплачені: на ту саму картку, на банківський рахунок або на PayPal. Повернення в іншій формі, ніж надійшла оплата, не здійснюється.",
-            "Строк повернення — до 14 календарних днів з дня погодження суми. Для карткових платежів зарахування може зайняти додатково до 5 банківських днів залежно від банку-емітента.",
-            "Комісії платіжних систем за переказ не повертаються.",
+            "Кошти повертаються тим самим способом, яким були сплачені: на той самий банківський рахунок, на ту саму картку, на PayPal або на криптогаманець, з якого надійшов платіж. Повернення в іншій формі, ніж надійшла оплата, не здійснюється.",
+            "Строк повернення — до 14 календарних днів з дня погодження суми. Для банківських переказів і платежів карткою зарахування може зайняти додатково до 5 банківських днів залежно від банку.",
+            "Комісії платіжних систем і мережеві комісії за переказ не повертаються. Повернення в USDT перераховується за курсом на день погодження суми.",
           ],
         },
         {
@@ -534,9 +528,9 @@ window.NIGUMA_LEGAL = {
         {
           heading: "Сроки и способ возврата",
           lines: [
-            "Средства возвращаются тем же способом, которым были уплачены: на ту же карту, на банковский счёт или на PayPal. Возврат в иной форме, чем поступила оплата, не производится.",
-            "Срок возврата — до 14 календарных дней со дня согласования суммы. Для карточных платежей зачисление может занять дополнительно до 5 банковских дней в зависимости от банка-эмитента.",
-            "Комиссии платёжных систем за перевод не возвращаются.",
+            "Средства возвращаются тем же способом, которым были уплачены: на тот же банковский счёт, на ту же карту, на PayPal или на криптокошелёк, с которого поступил платёж. Возврат в иной форме, чем поступила оплата, не производится.",
+            "Срок возврата — до 14 календарных дней со дня согласования суммы. Для банковских переводов и платежей картой зачисление может занять дополнительно до 5 банковских дней в зависимости от банка.",
+            "Комиссии платёжных систем и сетевые комиссии за перевод не возвращаются. Возврат в USDT пересчитывается по курсу на день согласования суммы.",
           ],
         },
         {
@@ -592,9 +586,9 @@ window.NIGUMA_LEGAL = {
         {
           heading: "Timing and method",
           lines: [
-            "Refunds are made by the same method as the payment: to the same card, to a bank account or to PayPal. Refunds in any other form than the original payment are not made.",
-            "The refund is issued within 14 calendar days of agreeing the amount. For card payments, crediting may take up to a further 5 banking days depending on the issuing bank.",
-            "Payment system fees are not refundable.",
+            "Refunds are made by the same method as the payment: to the same bank account, to the same card, to PayPal, or to the crypto wallet the payment came from. Refunds in any other form than the original payment are not made.",
+            "The refund is issued within 14 calendar days of agreeing the amount. For bank transfers and card payments, crediting may take up to a further 5 banking days depending on the bank.",
+            "Payment system fees and network fees are not refundable. A refund in USDT is converted at the rate on the day the amount is agreed.",
           ],
         },
         {
@@ -650,9 +644,9 @@ window.NIGUMA_LEGAL = {
         {
           heading: "Fristen und Weg der Erstattung",
           lines: [
-            "Die Erstattung erfolgt auf demselben Weg wie die Zahlung: auf dieselbe Karte, auf ein Bankkonto oder auf PayPal. Eine Erstattung in anderer Form als der Zahlung erfolgt nicht.",
-            "Die Auszahlung erfolgt innerhalb von 14 Kalendertagen nach Abstimmung des Betrags. Bei Kartenzahlungen kann die Gutschrift je nach Bank bis zu 5 weitere Banktage dauern.",
-            "Gebühren der Zahlungsdienste werden nicht erstattet.",
+            "Die Erstattung erfolgt auf demselben Weg wie die Zahlung: auf dasselbe Bankkonto, auf dieselbe Karte, auf PayPal oder auf die Krypto-Wallet, von der die Zahlung kam. Eine Erstattung in anderer Form als der Zahlung erfolgt nicht.",
+            "Die Auszahlung erfolgt innerhalb von 14 Kalendertagen nach Abstimmung des Betrags. Bei Banküberweisungen und Kartenzahlungen kann die Gutschrift je nach Bank bis zu 5 weitere Banktage dauern.",
+            "Gebühren der Zahlungsdienste und Netzwerkgebühren werden nicht erstattet. Eine Erstattung in USDT wird zum Kurs des Tages der Abstimmung umgerechnet.",
           ],
         },
         {
