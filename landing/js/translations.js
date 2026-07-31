@@ -281,16 +281,7 @@ window.NIGUMA_I18N = {
       trainers: {
         heading: "Тренеры",
         intro: "Все тренеры прежде всего сами являются предпринимателями/лидерами команд. Начав практиковать эту систему йоги, они улучшили свои результаты в бизнесе, а сегодня используют этот мощный инструмент как для собственного развития, так и для помощи другим.",
-        name: "Ольга",
-        role: "Создатель проекта, преподаватель",
         people: [
-          {
-            "name": "Ольга Фильянова",
-            "role": "Создала проект, ведёт занятия",
-            "photo": "assets/photos/olga.jpg",
-            "lines": [],
-            "facts": []
-          },
           {
             "name": "Алла Горячева",
             "role": "Предприниматель · основатель Dallas Dance Center · преподаватель йоги, коуч",
@@ -458,16 +449,7 @@ window.NIGUMA_I18N = {
       trainers: {
         heading: "Trainers",
         intro: "Every trainer is, first and foremost, an entrepreneur or team leader. When they began practising this system of yoga, their results in business improved — and today they use this powerful tool both for their own growth and to help others.",
-        name: "Olga",
-        role: "Founder and teacher",
         people: [
-          {
-            "name": "Olha Filianova",
-            "role": "Founder of the project · leads the classes",
-            "photo": "assets/photos/olga.jpg",
-            "lines": [],
-            "facts": []
-          },
           {
             "name": "Alla Goriacheva",
             "role": "Entrepreneur · founder of Dallas Dance Center · yoga teacher, coach",
@@ -635,16 +617,7 @@ window.NIGUMA_I18N = {
       trainers: {
         heading: "Trainer",
         intro: "Alle Trainer sind zuallererst selbst Unternehmer oder Teamleiter. Als sie begannen, dieses Yoga-System zu praktizieren, verbesserten sie ihre Ergebnisse im Business — und heute nutzen sie dieses kraftvolle Werkzeug sowohl für die eigene Entwicklung als auch, um anderen zu helfen.",
-        name: "Olga",
-        role: "Gründerin und Lehrerin",
         people: [
-          {
-            "name": "Olha Filianova",
-            "role": "Gründerin des Projekts, leitet die Einheiten",
-            "photo": "assets/photos/olga.jpg",
-            "lines": [],
-            "facts": []
-          },
           {
             "name": "Alla Goriacheva",
             "role": "Unternehmerin · Gründerin des Dallas Dance Center · Yogalehrerin und Coach",
@@ -812,16 +785,7 @@ window.NIGUMA_I18N = {
       trainers: {
         heading: "Тренери",
         intro: "Усі тренери насамперед самі є підприємцями/лідерами команд. Почавши практикувати цю систему йоги, вони покращили свої результати в бізнесі, а сьогодні використовують цей потужний інструмент як для власного розвитку, так і для допомоги іншим.",
-        name: "Ольга",
-        role: "Засновниця та викладачка",
         people: [
-          {
-            "name": "Ольга Фільянова",
-            "role": "Створила проєкт, веде заняття",
-            "photo": "assets/photos/olga.jpg",
-            "lines": [],
-            "facts": []
-          },
           {
             "name": "Алла Горячева",
             "role": "Підприємиця · засновниця Dallas Dance Center · викладачка йоги, коуч",
