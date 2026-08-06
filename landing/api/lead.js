@@ -26,10 +26,19 @@ function esc(s) {
     .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }
 
+/**
+ * TELEGRAM_ADMIN_ID может содержать несколько адресов через запятую.
+ *
+ * Здесь переменная бралась целиком и уходила в chat_id как есть: при двух
+ * получателях Telegram видел «336159774,-100…», отвечал ошибкой, и заявки
+ * с формы не приходили никуда — молча, без следа на сайте. Остальной код
+ * давно рассылает по списку (_lib.js), эта функция осталась в стороне.
+ */
 async function notifyTelegram({ email, lang, source, when }) {
   const token = process.env.TELEGRAM_BOT_TOKEN;
-  const chatId = process.env.TELEGRAM_ADMIN_ID;
-  if (!token || !chatId) return { ok: false, skipped: "no telegram env" };
+  const chats = String(process.env.TELEGRAM_ADMIN_ID || "")
+    .split(",").map((x) => x.trim()).filter(Boolean);
+  if (!token || !chats.length) return { ok: false, skipped: "no telegram env" };
 
   const text =
     "🌱 <b>Новая заявка с сайта</b>\n\n" +
@@ -38,17 +47,21 @@ async function notifyTelegram({ email, lang, source, when }) {
     "🔗 Источник: " + esc(source || "лендинг") + "\n" +
     "🕒 " + esc(when);
 
-  const r = await fetch("https://api.telegram.org/bot" + token + "/sendMessage", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      chat_id: chatId,
-      text,
-      parse_mode: "HTML",
-      disable_web_page_preview: true,
-    }),
-  });
-  return { ok: r.ok, status: r.status };
+  let sent = 0;
+  for (const chat of chats) {
+    const r = await fetch("https://api.telegram.org/bot" + token + "/sendMessage", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        chat_id: chat,
+        text,
+        parse_mode: "HTML",
+        disable_web_page_preview: true,
+      }),
+    });
+    if (r.ok) sent++;
+  }
+  return { ok: sent > 0, sent, of: chats.length };
 }
 
 async function notifyEmail({ email, lang, source, when }) {
