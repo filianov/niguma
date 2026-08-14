@@ -283,23 +283,6 @@ window.NIGUMA_I18N = {
         intro: "Все тренеры прежде всего сами являются предпринимателями/лидерами команд. Начав практиковать эту систему йоги, они улучшили свои результаты в бизнесе, а сегодня используют этот мощный инструмент как для собственного развития, так и для помощи другим.",
         people: [
           {
-            "name": "Ольга Фильянова",
-            "role": "Основатель 15minYoga · ментор ICF-коучей · методолог образовательных программ · Германия",
-            "photo": "assets/photos/olga-filianova.jpg",
-            "lines": [
-              "Я не была в спорте. Начала заниматься после тридцати — стала марафонкой и дважды выступала на чемпионате Европы по забегам с препятствиями. Знаю, как включить силу сердца и тела; дело не в мышцах.",
-              "Мечтаю, чтобы и у вас получилось достичь своих целей с помощью 15minYoga."
-            ],
-            "facts": [
-              "Ментор ICF-коучей с 2020 года",
-              "Организатор и преподаватель цикла курсов Asian Classics Institute в Вене",
-              "Синхронный переводчик курсов Академии классической мудрости для тренеров",
-              "Учится в Yoga Studies Institute, прошла три уровня йоги Леди Нигумы",
-              "Практикует йогу со школьных лет",
-              "10+ лет дизайнером полиграфии, 10+ лет фитнес-тренером"
-            ]
-          },
-          {
             "name": "Алла Горячева",
             "role": "Предприниматель · основатель Dallas Dance Center · преподаватель йоги, коуч",
             "photo": "assets/photos/alla.jpg",
@@ -437,6 +420,23 @@ window.NIGUMA_I18N = {
               "Завершила девять курсов ACI",
               "Благодаря ежедневной практике увеличила доход в 4,5 раза"
             ]
+          },
+          {
+            "name": "Ольга Фильянова",
+            "role": "Основатель 15minYoga · ментор ICF-коучей · методолог образовательных программ · Германия",
+            "photo": "assets/photos/olga-filianova.jpg",
+            "lines": [
+              "Я не была в спорте. Начала заниматься после тридцати — стала марафонкой и дважды выступала на чемпионате Европы по забегам с препятствиями. Знаю, как включить силу сердца и тела; дело не в мышцах.",
+              "Мечтаю, чтобы и у вас получилось достичь своих целей с помощью 15minYoga."
+            ],
+            "facts": [
+              "Ментор ICF-коучей с 2020 года",
+              "Организатор и преподаватель цикла курсов Asian Classics Institute в Вене",
+              "Синхронный переводчик курсов Академии классической мудрости для тренеров",
+              "Учится в Yoga Studies Institute, прошла три уровня йоги Леди Нигумы",
+              "Практикует йогу со школьных лет",
+              "10+ лет дизайнером полиграфии, 10+ лет фитнес-тренером"
+            ]
           }
         ]
       },
@@ -517,23 +517,6 @@ window.NIGUMA_I18N = {
         heading: "Trainers",
         intro: "Every trainer is, first and foremost, an entrepreneur or team leader. When they began practising this system of yoga, their results in business improved — and today they use this powerful tool both for their own growth and to help others.",
         people: [
-          {
-            "name": "Olha Filianova",
-            "role": "Founder of 15minYoga · mentor to ICF coaches · methodologist of educational programmes · Germany",
-            "photo": "assets/photos/olga-filianova.jpg",
-            "lines": [
-              "I was never an athlete. I started after thirty — became a marathon runner and twice competed at the European obstacle-race championship. I know how to switch on the strength of the heart and the body; it is not about muscle.",
-              "My wish is that you reach your own goals with 15minYoga."
-            ],
-            "facts": [
-              "Mentor to ICF coaches since 2020",
-              "Organiser and teacher of the Asian Classics Institute course cycle in Vienna",
-              "Simultaneous interpreter for Academy of Classical Wisdom teacher courses",
-              "Studies at the Yoga Studies Institute; completed three levels of Lady Niguma's yoga",
-              "Has practised yoga since her school years",
-              "10+ years in print design, 10+ years as a fitness trainer"
-            ]
-          },
           {
             "name": "Alla Goriacheva",
             "role": "Entrepreneur · founder of Dallas Dance Center · yoga teacher, coach",
@@ -672,6 +655,23 @@ window.NIGUMA_I18N = {
               "Completed nine ACI courses",
               "Grew her income 4.5 times through daily practice"
             ]
+          },
+          {
+            "name": "Olha Filianova",
+            "role": "Founder of 15minYoga · mentor to ICF coaches · methodologist of educational programmes · Germany",
+            "photo": "assets/photos/olga-filianova.jpg",
+            "lines": [
+              "I was never an athlete. I started after thirty — became a marathon runner and twice competed at the European obstacle-race championship. I know how to switch on the strength of the heart and the body; it is not about muscle.",
+              "My wish is that you reach your own goals with 15minYoga."
+            ],
+            "facts": [
+              "Mentor to ICF coaches since 2020",
+              "Organiser and teacher of the Asian Classics Institute course cycle in Vienna",
+              "Simultaneous interpreter for Academy of Classical Wisdom teacher courses",
+              "Studies at the Yoga Studies Institute; completed three levels of Lady Niguma's yoga",
+              "Has practised yoga since her school years",
+              "10+ years in print design, 10+ years as a fitness trainer"
+            ]
           }
         ]
       },
@@ -752,23 +752,6 @@ window.NIGUMA_I18N = {
         heading: "Trainer",
         intro: "Alle Trainer sind zuallererst selbst Unternehmer oder Teamleiter. Als sie begannen, dieses Yoga-System zu praktizieren, verbesserten sie ihre Ergebnisse im Business — und heute nutzen sie dieses kraftvolle Werkzeug sowohl für die eigene Entwicklung als auch, um anderen zu helfen.",
         people: [
-          {
-            "name": "Olha Filianova",
-            "role": "Gründerin von 15minYoga · Mentorin für ICF-Coaches · Methodikerin für Bildungsprogramme · Deutschland",
-            "photo": "assets/photos/olga-filianova.jpg",
-            "lines": [
-              "Ich war nie Sportlerin. Angefangen habe ich nach dreißig — wurde Marathonläuferin und startete zweimal bei der Europameisterschaft im Hindernislauf. Ich weiß, wie man die Kraft von Herz und Körper einschaltet; an den Muskeln liegt es nicht.",
-              "Mein Wunsch ist, dass auch Sie Ihre Ziele mit 15minYoga erreichen."
-            ],
-            "facts": [
-              "Mentorin für ICF-Coaches seit 2020",
-              "Organisatorin und Lehrerin des Kurszyklus des Asian Classics Institute in Wien",
-              "Simultandolmetscherin für die Trainerkurse der Academy of Classical Wisdom",
-              "Studiert am Yoga Studies Institute; drei Stufen des Yoga der Lady Niguma abgeschlossen",
-              "Praktiziert Yoga seit der Schulzeit",
-              "10+ Jahre Printdesign, 10+ Jahre Fitnesstrainerin"
-            ]
-          },
           {
             "name": "Alla Goriacheva",
             "role": "Unternehmerin · Gründerin des Dallas Dance Center · Yogalehrerin und Coach",
@@ -907,6 +890,23 @@ window.NIGUMA_I18N = {
               "Neun ACI-Kurse abgeschlossen",
               "Hat ihr Einkommen durch tägliche Praxis um das 4,5-Fache gesteigert"
             ]
+          },
+          {
+            "name": "Olha Filianova",
+            "role": "Gründerin von 15minYoga · Mentorin für ICF-Coaches · Methodikerin für Bildungsprogramme · Deutschland",
+            "photo": "assets/photos/olga-filianova.jpg",
+            "lines": [
+              "Ich war nie Sportlerin. Angefangen habe ich nach dreißig — wurde Marathonläuferin und startete zweimal bei der Europameisterschaft im Hindernislauf. Ich weiß, wie man die Kraft von Herz und Körper einschaltet; an den Muskeln liegt es nicht.",
+              "Mein Wunsch ist, dass auch Sie Ihre Ziele mit 15minYoga erreichen."
+            ],
+            "facts": [
+              "Mentorin für ICF-Coaches seit 2020",
+              "Organisatorin und Lehrerin des Kurszyklus des Asian Classics Institute in Wien",
+              "Simultandolmetscherin für die Trainerkurse der Academy of Classical Wisdom",
+              "Studiert am Yoga Studies Institute; drei Stufen des Yoga der Lady Niguma abgeschlossen",
+              "Praktiziert Yoga seit der Schulzeit",
+              "10+ Jahre Printdesign, 10+ Jahre Fitnesstrainerin"
+            ]
           }
         ]
       },
@@ -987,23 +987,6 @@ window.NIGUMA_I18N = {
         heading: "Тренери",
         intro: "Усі тренери насамперед самі є підприємцями/лідерами команд. Почавши практикувати цю систему йоги, вони покращили свої результати в бізнесі, а сьогодні використовують цей потужний інструмент як для власного розвитку, так і для допомоги іншим.",
         people: [
-          {
-            "name": "Ольга Фільянова",
-            "role": "Засновниця 15minYoga · менторка ICF-коучів · методологиня освітніх програм · Німеччина",
-            "photo": "assets/photos/olga-filianova.jpg",
-            "lines": [
-              "Я не була в спорті. Почала займатися після тридцяти — стала марафонкою і двічі виступала на чемпіонаті Європи із забігів з перешкодами. Знаю, як увімкнути силу серця й тіла; річ не в м'язах.",
-              "Мрію, щоб і у вас вийшло досягти своїх цілей за допомогою 15minYoga."
-            ],
-            "facts": [
-              "Менторка ICF-коучів з 2020 року",
-              "Організаторка та викладачка циклу курсів Asian Classics Institute у Відні",
-              "Синхронна перекладачка курсів Академії класичної мудрості для тренерів",
-              "Навчається в Yoga Studies Institute, пройшла три рівні йоги Леді Нігуми",
-              "Практикує йогу зі шкільних років",
-              "10+ років дизайнеркою поліграфії, 10+ років фітнес-тренеркою"
-            ]
-          },
           {
             "name": "Алла Горячева",
             "role": "Підприємиця · засновниця Dallas Dance Center · викладачка йоги, коуч",
@@ -1141,6 +1124,23 @@ window.NIGUMA_I18N = {
               "Кураторка освітніх програм",
               "Завершила дев'ять курсів ACI",
               "Завдяки щоденній практиці збільшила дохід у 4,5 раза"
+            ]
+          },
+          {
+            "name": "Ольга Фільянова",
+            "role": "Засновниця 15minYoga · менторка ICF-коучів · методологиня освітніх програм · Німеччина",
+            "photo": "assets/photos/olga-filianova.jpg",
+            "lines": [
+              "Я не була в спорті. Почала займатися після тридцяти — стала марафонкою і двічі виступала на чемпіонаті Європи із забігів з перешкодами. Знаю, як увімкнути силу серця й тіла; річ не в м'язах.",
+              "Мрію, щоб і у вас вийшло досягти своїх цілей за допомогою 15minYoga."
+            ],
+            "facts": [
+              "Менторка ICF-коучів з 2020 року",
+              "Організаторка та викладачка циклу курсів Asian Classics Institute у Відні",
+              "Синхронна перекладачка курсів Академії класичної мудрості для тренерів",
+              "Навчається в Yoga Studies Institute, пройшла три рівні йоги Леді Нігуми",
+              "Практикує йогу зі шкільних років",
+              "10+ років дизайнеркою поліграфії, 10+ років фітнес-тренеркою"
             ]
           }
         ]
