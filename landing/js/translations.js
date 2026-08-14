@@ -384,6 +384,24 @@ window.NIGUMA_I18N = {
               "Выпускница семи курсов Diamond Cutter Institute (DCI)",
               "Студентка и преподаватель Yoga Studies Institute (YSI)"
             ]
+          },
+          {
+            "name": "Ольга Шакар",
+            "role": "Хореограф · преподаватель йоги и пилатеса на реформерах · Анталия",
+            "photo": "assets/photos/olga-shakar.jpg",
+            "lines": [
+              "Я работаю с телом всю сознательную жизнь и изучила разные направления. В йоге Леди Нигумы нашла все недостающие пазлы.",
+              "Она помогает мне держать равновесие и ясный ум даже в кризисных ситуациях. Хочу, чтобы как можно больше людей прикоснулись к этой философии и получили результат — и в деле, и в обычной жизни."
+            ],
+            "facts": [
+              "Более 20 лет профессионального танца и хореографии",
+              "Преподаёт йогу с 2009 года",
+              "Тренер пилатеса на реформерах",
+              "Йогу Леди Нигумы практикует три года, учится на преподавателя традиции",
+              "Живёт в Анталии с 2007 года, 17 лет замужем",
+              "За последний год открыла новое направление дела и дохода",
+              "Получила несколько предложений участия в проектах"
+            ]
           }
         ]
       },
@@ -565,6 +583,24 @@ window.NIGUMA_I18N = {
               "Volunteer translator for the head office of ACI (Asian Classics Institute)",
               "Graduate of 7 Diamond Cutter Institute (DCI) courses",
               "Student and teacher at the Yoga Studies Institute (YSI)"
+            ]
+          },
+          {
+            "name": "Olha Shakar",
+            "role": "Choreographer · yoga and reformer Pilates teacher · Antalya",
+            "photo": "assets/photos/olga-shakar.jpg",
+            "lines": [
+              "I have worked with the body all my adult life and studied many directions. In Lady Niguma's yoga I found the pieces that were missing.",
+              "It is what keeps me balanced and clear-headed even in a crisis. I want as many people as possible to touch this philosophy and see the result — in their work and in ordinary life."
+            ],
+            "facts": [
+              "Over 20 years of professional dance and choreography",
+              "Teaching yoga since 2009",
+              "Reformer Pilates instructor",
+              "Three years of Lady Niguma's yoga, training to teach the tradition",
+              "Lives in Antalya since 2007, seventeen years married",
+              "Opened a new line of work and income over the past year",
+              "Received several invitations to join projects"
             ]
           }
         ]
@@ -748,6 +784,24 @@ window.NIGUMA_I18N = {
               "Absolventin von sieben Kursen des Diamond Cutter Institute (DCI)",
               "Studentin und Lehrerin am Yoga Studies Institute (YSI)"
             ]
+          },
+          {
+            "name": "Olha Shakar",
+            "role": "Choreografin · Lehrerin für Yoga und Reformer-Pilates · Antalya",
+            "photo": "assets/photos/olga-shakar.jpg",
+            "lines": [
+              "Ich arbeite mein ganzes bewusstes Leben mit dem Körper und habe viele Richtungen studiert. Im Yoga der Lady Niguma fand ich die fehlenden Teile.",
+              "Es hält mich im Gleichgewicht und den Kopf klar, auch in Krisen. Ich möchte, dass möglichst viele Menschen diese Philosophie berühren und ein Ergebnis sehen — im Beruf und im Alltag."
+            ],
+            "facts": [
+              "Über 20 Jahre professioneller Tanz und Choreografie",
+              "Unterrichtet Yoga seit 2009",
+              "Trainerin für Reformer-Pilates",
+              "Drei Jahre Yoga der Lady Niguma, in Ausbildung zur Lehrerin der Tradition",
+              "Lebt seit 2007 in Antalya, siebzehn Jahre verheiratet",
+              "Hat im vergangenen Jahr einen neuen Tätigkeits- und Einkommensbereich eröffnet",
+              "Mehrere Einladungen zur Mitarbeit an Projekten erhalten"
+            ]
           }
         ]
       },
@@ -929,6 +983,24 @@ window.NIGUMA_I18N = {
               "Волонтерка-перекладачка головного офісу ACI (Asian Classics Institute)",
               "Випускниця семи курсів Diamond Cutter Institute (DCI)",
               "Студентка і викладачка Yoga Studies Institute (YSI)"
+            ]
+          },
+          {
+            "name": "Ольга Шакар",
+            "role": "Хореографка · викладачка йоги та пілатесу на реформерах · Анталія",
+            "photo": "assets/photos/olga-shakar.jpg",
+            "lines": [
+              "Я працюю з тілом усе свідоме життя і вивчила різні напрями. У йозі Леді Нігуми знайшла всі пазли, яких бракувало.",
+              "Вона допомагає мені тримати рівновагу та ясний розум навіть у кризових ситуаціях. Хочу, щоб якомога більше людей доторкнулися до цієї філософії та отримали результат — і у справі, і у звичайному житті."
+            ],
+            "facts": [
+              "Понад 20 років професійного танцю та хореографії",
+              "Викладає йогу з 2009 року",
+              "Тренерка пілатесу на реформерах",
+              "Йогу Леді Нігуми практикує три роки, навчається на викладачку традиції",
+              "Живе в Анталії з 2007 року, 17 років у шлюбі",
+              "За останній рік відкрила новий напрям справи та доходу",
+              "Отримала кілька пропозицій участі в проєктах"
             ]
           }
         ]
