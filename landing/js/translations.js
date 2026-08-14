@@ -402,6 +402,24 @@ window.NIGUMA_I18N = {
               "За последний год открыла новое направление дела и дохода",
               "Получила несколько предложений участия в проектах"
             ]
+          },
+          {
+            "name": "Ирина Шишкина",
+            "role": "Преподаватель йоги · телесный и энерготерапевт · сооснователь приложения ReJoy",
+            "photo": "assets/photos/irina.jpg",
+            "lines": [
+              "Для меня йога — не просто практика на коврике. Это образ жизни: ежедневная практика, медитация и жизнь по этическим принципам.",
+              "Одиннадцать лет она помогает мне держать ясный ум, спокойствие и высокий уровень энергии даже в самые плотные периоды. Пятнадцати минут в день достаточно, чтобы это почувствовать."
+            ],
+            "facts": [
+              "Сертифицированным преподавателем йоги стала в 45 лет",
+              "Практикует йогу одиннадцать лет",
+              "Телесный терапевт и энерготерапевт",
+              "Сооснователь приложения ReJoy",
+              "Куратор образовательных программ",
+              "Завершила девять курсов ACI",
+              "Благодаря ежедневной практике увеличила доход в 4,5 раза"
+            ]
           }
         ]
       },
@@ -601,6 +619,24 @@ window.NIGUMA_I18N = {
               "Lives in Antalya since 2007, seventeen years married",
               "Opened a new line of work and income over the past year",
               "Received several invitations to join projects"
+            ]
+          },
+          {
+            "name": "Iryna Shyshkina",
+            "role": "Certified yoga teacher · body and energy therapist · co-founder of the ReJoy app",
+            "photo": "assets/photos/irina.jpg",
+            "lines": [
+              "For me yoga is not just a practice on the mat. It is a way of living: daily practice, meditation and a life held to ethical principles.",
+              "For eleven years it has kept my mind clear, my calm steady and my energy high even in the densest periods. Fifteen minutes a day is enough to feel it."
+            ],
+            "facts": [
+              "Became a certified yoga teacher at 45",
+              "Eleven years of yoga practice",
+              "Body therapist and energy therapist",
+              "Co-founder of the ReJoy app",
+              "Curator of educational programmes",
+              "Completed nine ACI courses",
+              "Grew her income 4.5 times through daily practice"
             ]
           }
         ]
@@ -802,6 +838,24 @@ window.NIGUMA_I18N = {
               "Hat im vergangenen Jahr einen neuen Tätigkeits- und Einkommensbereich eröffnet",
               "Mehrere Einladungen zur Mitarbeit an Projekten erhalten"
             ]
+          },
+          {
+            "name": "Iryna Shyshkina",
+            "role": "Zertifizierte Yogalehrerin · Körper- und Energietherapeutin · Mitgründerin der App ReJoy",
+            "photo": "assets/photos/irina.jpg",
+            "lines": [
+              "Yoga ist für mich nicht nur die Übung auf der Matte. Es ist eine Lebensweise: tägliche Praxis, Meditation und ein Leben nach ethischen Grundsätzen.",
+              "Seit elf Jahren hält es meinen Kopf klar, meine Ruhe stabil und meine Energie hoch, auch in den dichtesten Zeiten. Fünfzehn Minuten am Tag genügen, um das zu spüren."
+            ],
+            "facts": [
+              "Wurde mit 45 zertifizierte Yogalehrerin",
+              "Elf Jahre Yogapraxis",
+              "Körper- und Energietherapeutin",
+              "Mitgründerin der App ReJoy",
+              "Kuratorin von Bildungsprogrammen",
+              "Neun ACI-Kurse abgeschlossen",
+              "Hat ihr Einkommen durch tägliche Praxis um das 4,5-Fache gesteigert"
+            ]
           }
         ]
       },
@@ -1001,6 +1055,24 @@ window.NIGUMA_I18N = {
               "Живе в Анталії з 2007 року, 17 років у шлюбі",
               "За останній рік відкрила новий напрям справи та доходу",
               "Отримала кілька пропозицій участі в проєктах"
+            ]
+          },
+          {
+            "name": "Ірина Шишкіна",
+            "role": "Викладачка йоги · тілесна та енерготерапевтка · співзасновниця застосунку ReJoy",
+            "photo": "assets/photos/irina.jpg",
+            "lines": [
+              "Для мене йога — не просто практика на килимку. Це спосіб життя: щоденна практика, медитація і життя за етичними принципами.",
+              "Одинадцять років вона допомагає мені тримати ясний розум, спокій і високий рівень енергії навіть у найщільніші періоди. П'ятнадцяти хвилин на день досить, щоб це відчути."
+            ],
+            "facts": [
+              "Сертифікованою викладачкою йоги стала в 45 років",
+              "Практикує йогу одинадцять років",
+              "Тілесна терапевтка та енерготерапевтка",
+              "Співзасновниця застосунку ReJoy",
+              "Кураторка освітніх програм",
+              "Завершила дев'ять курсів ACI",
+              "Завдяки щоденній практиці збільшила дохід у 4,5 раза"
             ]
           }
         ]
