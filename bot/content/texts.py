@@ -10,22 +10,22 @@ TEXTS: dict[str, dict[str, str]] = {
     # ---------------- onboarding / funnel ----------------
     "welcome": {
         "ru": "🌿 Здравствуйте! Это бот проекта *15minYoga* — йога для тех, кто принимает решения.\n\n"
-              "Каждый будний день в 7:00 мы практикуем 15 минут аутентичной йоги Леди Нигумы, "
+              "Каждый будний день в 6:45 мы практикуем 15 минут аутентичной йоги Леди Нигумы, "
               "а раз в неделю — глубокую часовую практику.\n\n"
               "Я помогу: расскажу о проекте, отвечу на вопросы, подскажу как оплатить и буду "
               "напоминать о занятиях.\n\nС чего начнём?",
         "en": "🌿 Hello! This is the *15minYoga* bot — yoga for those who make decisions.\n\n"
-              "Every weekday at 7:00 we practice 15 minutes of the authentic yoga of Lady Niguma, "
+              "Every weekday at 6:45 we practice 15 minutes of the authentic yoga of Lady Niguma, "
               "and once a week — a deeper one-hour session.\n\n"
               "I can tell you about the project, answer questions, help you pay and remind you of classes.\n\n"
               "Where shall we start?",
         "de": "🌿 Hallo! Das ist der *15minYoga*-Bot — Yoga für Menschen, die Entscheidungen treffen.\n\n"
-              "An jedem Werktag um 7:00 üben wir 15 Minuten authentisches Yoga von Lady Niguma, "
+              "An jedem Werktag um 6:45 üben wir 15 Minuten authentisches Yoga von Lady Niguma, "
               "und einmal pro Woche eine vertiefende einstündige Einheit.\n\n"
               "Ich erzähle Ihnen über das Projekt, beantworte Fragen, helfe bei der Zahlung und erinnere an die Einheiten.\n\n"
               "Womit fangen wir an?",
         "uk": "🌿 Вітаю! Це бот проєкту *15minYoga* — йога для тих, хто ухвалює рішення.\n\n"
-              "Щодня в будні о 7:00 ми практикуємо 15 хвилин автентичної йоги Леді Нігуми, "
+              "Щодня в будні о 6:45 ми практикуємо 15 хвилин автентичної йоги Леді Нігуми, "
               "а раз на тиждень — глибоку годинну практику.\n\n"
               "Я розповім про проєкт, відповім на запитання, підкажу як оплатити та нагадуватиму про заняття.\n\n"
               "З чого почнемо?",
@@ -99,13 +99,13 @@ TEXTS: dict[str, dict[str, str]] = {
         "uk": "Дякую! Чек отримано ✅ Автор підтвердить найближчим часом, і я відкрию доступ до занять та записів.",
     },
     "pay_confirmed": {
-        "ru": "🎉 Оплата подтверждена! Добро пожаловать в поток. Завтра в 7:00 — первое занятие, я пришлю ссылку заранее. "
+        "ru": "🎉 Оплата подтверждена! Добро пожаловать в поток. Завтра в 6:45 — первое занятие, я пришлю ссылку заранее. "
               "Ваш сад практики посажен 🌱",
-        "en": "🎉 Payment confirmed! Welcome to the group. Tomorrow at 7:00 is your first class — I'll send the link in advance. "
+        "en": "🎉 Payment confirmed! Welcome to the group. Tomorrow at 6:45 is your first class — I'll send the link in advance. "
               "Your practice garden is planted 🌱",
-        "de": "🎉 Zahlung bestätigt! Willkommen im Kurs. Morgen um 7:00 ist Ihre erste Einheit — ich sende den Link rechtzeitig. "
+        "de": "🎉 Zahlung bestätigt! Willkommen im Kurs. Morgen um 6:45 ist Ihre erste Einheit — ich sende den Link rechtzeitig. "
               "Ihr Praxis-Garten ist gepflanzt 🌱",
-        "uk": "🎉 Оплату підтверджено! Ласкаво просимо до потоку. Завтра о 7:00 — перше заняття, я надішлю посилання заздалегідь. "
+        "uk": "🎉 Оплату підтверджено! Ласкаво просимо до потоку. Завтра о 6:45 — перше заняття, я надішлю посилання заздалегідь. "
               "Ваш сад практики посаджено 🌱",
     },
 
@@ -203,10 +203,10 @@ TEXTS: dict[str, dict[str, str]] = {
 
     # ---------------- reminders ----------------
     "remind_daily": {
-        "ru": "🌅 Через {mins} минут — утренняя практика (7:00–7:15). Ссылка для входа:\n{link}\n\nДо встречи на коврике 🧘",
-        "en": "🌅 In {mins} minutes — the morning practice (7:00–7:15). Join link:\n{link}\n\nSee you on the mat 🧘",
-        "de": "🌅 In {mins} Minuten — die Morgenpraxis (7:00–7:15). Beitrittslink:\n{link}\n\nBis gleich auf der Matte 🧘",
-        "uk": "🌅 За {mins} хвилин — ранкова практика (7:00–7:15). Посилання для входу:\n{link}\n\nДо зустрічі на килимку 🧘",
+        "ru": "🌅 Через {mins} минут — утренняя практика (6:45–7:00). Ссылка для входа:\n{link}\n\nДо встречи на коврике 🧘",
+        "en": "🌅 In {mins} minutes — the morning practice (6:45–7:00). Join link:\n{link}\n\nSee you on the mat 🧘",
+        "de": "🌅 In {mins} Minuten — die Morgenpraxis (6:45–7:00). Beitrittslink:\n{link}\n\nBis gleich auf der Matte 🧘",
+        "uk": "🌅 За {mins} хвилин — ранкова практика (6:45–7:00). Посилання для входу:\n{link}\n\nДо зустрічі на килимку 🧘",
     },
     "remind_weekly": {
         "ru": "🕉 Сегодня — глубокая часовая практика. Ссылка:\n{link}\n\nОтличная возможность посадить большое семя — приходите вживую.",

@@ -4,7 +4,7 @@ window.NIGUMA_CHAT = {
     "answers": {
       "greeting": "Здравствуйте! Это чат 15minYoga. Спросите о расписании, стоимости или самой практике — отвечу здесь, а если понадобится, передам вопрос человеку.",
       "price": "Участие стоит: 1 месяц — 100 €, 6 месяцев — 500 €, 12 месяцев — 900 €. Реквизиты для оплаты бот в Telegram присылает лично.",
-      "schedule": "Живые практики идут с понедельника по пятницу, 07:00–07:15 по венскому времени (GMT+2). По субботам — более длинная встреча с разбором техники и ответами на вопросы. Если пропустили — записи всех практик доступны участникам.",
+      "schedule": "Живые практики идут с понедельника по пятницу, 06:45–07:00 по венскому времени (GMT+2). По субботам — более длинная встреча с разбором техники и ответами на вопросы. Если пропустили — записи всех практик доступны участникам.",
       "included": "В участие входят ежедневные живые практики, субботняя встреча с разбором техники, записи всех занятий и закрытое сообщество в Telegram. Там же — поддержка и общение с другими предпринимателями и руководителями.",
       "payment": "Оплатить можно четырьмя способами: PayPal, счёт на банковский перевод (IBAN, в евро), перевод на карту Monobank в гривне или USDT в сети TRC-20. Выберите пакет в разделе «Стоимость» или напишите боту t.me/yoga15min_chat_bot — он пришлёт реквизиты и подскажет, что делать дальше.",
       "trial": "Да, до оплаты можно прийти на одну утреннюю практику и попробовать. Напишите боту в Telegram t.me/yoga15min_chat_bot — он подскажет, как присоединиться.",
@@ -250,7 +250,7 @@ window.NIGUMA_CHAT = {
     "answers": {
       "greeting": "Hello, and welcome to 15minYoga. Ask me anything about the practice, the schedule or how to join — and if you'd rather speak with a person, just say so.",
       "price": "Membership is 100 € for 1 month, 500 € for 6 months and 900 € for 12 months. The longer plans simply work out cheaper per month.",
-      "schedule": "Live practice runs Monday to Friday, 07:00–07:15 Vienna time (GMT+2). On Saturday there is a longer, deeper session where the technique is explained and you can ask questions. If you miss a morning, every session is recorded for members.",
+      "schedule": "Live practice runs Monday to Friday, 06:45–07:00 Vienna time (GMT+2). On Saturday there is a longer, deeper session where the technique is explained and you can ask questions. If you miss a morning, every session is recorded for members.",
       "included": "You get the daily live 15-minute practice, the longer Saturday session, recordings of everything, and the private Telegram community for members. There is also networking with other entrepreneurs and executives who practise.",
       "payment": "There are four ways to pay: PayPal, a bank transfer invoice (IBAN, in euro), a transfer to a Monobank card in hryvnia, or USDT on the TRC-20 network. Pick a plan in the “Pricing” section or write to the bot t.me/yoga15min_chat_bot — it will send you the details and walk you through it.",
       "trial": "Yes, you are welcome to join one morning session for free before you decide anything. Write to the Telegram bot t.me/yoga15min_chat_bot and we will arrange it.",
@@ -506,7 +506,7 @@ window.NIGUMA_CHAT = {
     "answers": {
       "greeting": "Schön, dass Sie da sind. Ich beantworte gern Ihre Fragen zu 15minYoga – zu Preisen, Zeiten oder zum Einstieg. Fragen Sie einfach.",
       "price": "Die Mitgliedschaft kostet 100 € für einen Monat, 500 € für sechs Monate und 900 € für zwölf Monate. Darin enthalten sind die täglichen Live-Praktiken, alle Aufzeichnungen und die Community.",
-      "schedule": "Die Live-Praxis findet Montag bis Freitag von 07:00 bis 07:15 Uhr Wiener Zeit (GMT+2) statt. Samstags gibt es eine längere, tiefere Einheit mit Erklärung der Technik und Zeit für Fragen. Wenn Sie einmal nicht dabei sein können: Jede Einheit wird aufgezeichnet.",
+      "schedule": "Die Live-Praxis findet Montag bis Freitag von 06:45 bis 07:00 Uhr Wiener Zeit (GMT+2) statt. Samstags gibt es eine längere, tiefere Einheit mit Erklärung der Technik und Zeit für Fragen. Wenn Sie einmal nicht dabei sein können: Jede Einheit wird aufgezeichnet.",
       "included": "Enthalten sind die tägliche Live-Praxis, die längere Samstagseinheit sowie die Aufzeichnungen aller Sessions. Dazu kommen die private Community für Mitglieder und der Austausch mit anderen Unternehmerinnen, Unternehmern und Führungskräften, die ebenfalls praktizieren.",
       "payment": "Es gibt vier Wege zu bezahlen: PayPal, Rechnung per Banküberweisung (IBAN, in Euro), Überweisung auf eine Monobank-Karte in Hrywnja oder USDT im TRC-20-Netz. Wählen Sie ein Paket im Abschnitt „Preise“ oder schreiben Sie dem Bot t.me/yoga15min_chat_bot — er sendet Ihnen die Zahlungsdaten und begleitet Sie dabei.",
       "trial": "Ja, Sie können unverbindlich an einer Morgenpraxis teilnehmen, bevor Sie sich entscheiden. Schreiben Sie dazu einfach unserem Bot t.me/yoga15min_chat_bot.",
@@ -762,7 +762,7 @@ window.NIGUMA_CHAT = {
     "answers": {
       "greeting": "Вітаємо у 15minYoga! Тут можна запитати про практику, розклад, участь чи оплату. Про що вам розповісти?",
       "price": "Участь коштує 100 € за місяць, 500 € за 6 місяців і 900 € за 12 місяців. Оберіть формат, який вам зручніший — решту підкажемо.",
-      "schedule": "Живі практики відбуваються з понеділка по п'ятницю о 07:00–07:15 за віденським часом (GMT+2). У суботу — довша зустріч із поясненням техніки та відповідями на запитання. Якщо пропустили ранок, залишається запис.",
+      "schedule": "Живі практики відбуваються з понеділка по п'ятницю о 06:45–07:00 за віденським часом (GMT+2). У суботу — довша зустріч із поясненням техніки та відповідями на запитання. Якщо пропустили ранок, залишається запис.",
       "included": "Щоденні живі практики Пн–Пт, довша суботня зустріч і записи всіх занять. А ще закрита Telegram-спільнота учасників: підтримка, запитання, спільний досвід і нетворкінг з підприємцями та керівниками.",
       "payment": "Оплатити можна чотирма способами: PayPal, рахунок на банківський переказ (IBAN, у євро), переказ на картку Monobank у гривні або USDT у мережі TRC-20. Оберіть пакет у розділі «Вартість» або напишіть боту t.me/yoga15min_chat_bot — він надішле реквізити й підкаже, що робити далі.",
       "trial": "Так, можна безкоштовно приєднатися до однієї ранкової практики й спробувати. Напишіть боту t.me/yoga15min_chat_bot — він допоможе долучитися.",

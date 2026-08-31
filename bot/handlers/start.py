@@ -91,10 +91,10 @@ async def on_menu(cq: CallbackQuery, state: FSMContext) -> None:
             parse_mode="Markdown")
     elif what == "schedule":
         txt = {
-            "ru": "🗓 *Расписание*\nБудни 7:00–7:15 — ежедневная практика (15 мин).\nРаз в неделю — глубокая часовая практика.\nЗаписи доступны участникам.",
-            "en": "🗓 *Schedule*\nWeekdays 7:00–7:15 — daily practice (15 min).\nOnce a week — a deep one-hour session.\nRecordings available to participants.",
-            "de": "🗓 *Zeitplan*\nWerktags 7:00–7:15 — tägliche Praxis (15 Min).\nEinmal pro Woche — vertiefende Stunde.\nAufzeichnungen verfügbar.",
-            "uk": "🗓 *Розклад*\nБудні 7:00–7:15 — щоденна практика (15 хв).\nРаз на тиждень — глибока годинна практика.\nЗаписи доступні учасникам.",
+            "ru": "🗓 *Расписание*\nБудни 6:45–7:00 — ежедневная практика (15 мин).\nРаз в неделю — глубокая часовая практика.\nЗаписи доступны участникам.",
+            "en": "🗓 *Schedule*\nWeekdays 6:45–7:00 — daily practice (15 min).\nOnce a week — a deep one-hour session.\nRecordings available to participants.",
+            "de": "🗓 *Zeitplan*\nWerktags 6:45–7:00 — tägliche Praxis (15 Min).\nEinmal pro Woche — vertiefende Stunde.\nAufzeichnungen verfügbar.",
+            "uk": "🗓 *Розклад*\nБудні 6:45–7:00 — щоденна практика (15 хв).\nРаз на тиждень — глибока годинна практика.\nЗаписи доступні учасникам.",
         }.get(lang)
         await cq.message.answer(txt, parse_mode="Markdown")
     elif what == "price":
@@ -102,10 +102,10 @@ async def on_menu(cq: CallbackQuery, state: FSMContext) -> None:
                                 reply_markup=kb.plans_kb(lang))
     elif what == "trial":
         txt = {
-            "ru": "🎟 Приходите на бесплатное пробное занятие — ближайший будний день в 7:00. Напишите «да», и я пришлю детали и ссылку.",
-            "en": "🎟 Join a free trial — the next weekday at 7:00. Reply “yes” and I'll send details and the link.",
-            "de": "🎟 Kommen Sie zur kostenlosen Probestunde — nächster Werktag um 7:00. Antworten Sie „ja“.",
-            "uk": "🎟 Приходьте на безкоштовне пробне заняття — найближчий будній день о 7:00. Напишіть «так».",
+            "ru": "🎟 Приходите на бесплатное пробное занятие — ближайший будний день в 6:45. Напишите «да», и я пришлю детали и ссылку.",
+            "en": "🎟 Join a free trial — the next weekday at 6:45. Reply “yes” and I'll send details and the link.",
+            "de": "🎟 Kommen Sie zur kostenlosen Probestunde — nächster Werktag um 6:45. Antworten Sie „ja“.",
+            "uk": "🎟 Приходьте на безкоштовне пробне заняття — найближчий будній день о 6:45. Напишіть «так».",
         }.get(lang)
         await cq.message.answer(txt)
         await db.bump_lead_score(cq.from_user.id, 3)

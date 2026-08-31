@@ -69,7 +69,7 @@ window.NIGUMA_LEGAL = {
           heading: "2. Предмет договору",
           lines: [
             "Виконавець надає Замовнику доступ до онлайн-занять йогою за системою Ніґуми у форматі прямих ефірів і записів на обраний строк.",
-            "Заняття проходять з понеділка по п'ятницю з 07:00 до 07:15 за віденським часом; у суботу — розширене заняття. Розклад може змінюватися з попередженням у закритому каналі.",
+            "Заняття проходять з понеділка по п'ятницю з 06:45 до 07:00 за віденським часом; у суботу — розширене заняття. Розклад може змінюватися з попередженням у закритому каналі.",
             "Доступ надається персонально Замовнику. Передавати доступ третім особам не можна.",
             "Послуга є цифровою: матеріальний товар не постачається.",
           ],
@@ -162,7 +162,7 @@ window.NIGUMA_LEGAL = {
           heading: "2. Предмет договора",
           lines: [
             "Исполнитель предоставляет Заказчику доступ к онлайн-занятиям йогой по системе Нигумы в формате прямых эфиров и записей на выбранный срок.",
-            "Занятия проходят с понедельника по пятницу с 07:00 до 07:15 по венскому времени; в субботу — расширенное занятие. Расписание может меняться с предупреждением в закрытом канале.",
+            "Занятия проходят с понедельника по пятницу с 06:45 до 07:00 по венскому времени; в субботу — расширенное занятие. Расписание может меняться с предупреждением в закрытом канале.",
             "Доступ предоставляется персонально Заказчику. Передавать доступ третьим лицам нельзя.",
             "Услуга является цифровой: материальный товар не поставляется.",
           ],
@@ -255,7 +255,7 @@ window.NIGUMA_LEGAL = {
           heading: "2. Subject of the agreement",
           lines: [
             "The Provider grants the Client access to online yoga classes in the Niguma tradition, as live sessions and recordings, for the selected period.",
-            "Classes run Monday to Friday, 07:00–07:15 Vienna time; on Saturday there is an extended session. The schedule may change, with notice in the members' channel.",
+            "Classes run Monday to Friday, 06:45–07:00 Vienna time; on Saturday there is an extended session. The schedule may change, with notice in the members' channel.",
             "Access is personal to the Client and may not be shared with third parties.",
             "The service is digital; no physical goods are supplied.",
           ],
@@ -348,7 +348,7 @@ window.NIGUMA_LEGAL = {
           heading: "2. Vertragsgegenstand",
           lines: [
             "Der Anbieter gewährt Zugang zu Online-Yogakursen in der Niguma-Tradition — als Live-Sitzungen und Aufzeichnungen — für den gewählten Zeitraum.",
-            "Die Kurse finden montags bis freitags von 07:00 bis 07:15 Uhr Wiener Zeit statt; samstags eine längere Einheit. Der Zeitplan kann sich ändern, mit Ankündigung im Mitgliederkanal.",
+            "Die Kurse finden montags bis freitags von 06:45 bis 07:00 Uhr Wiener Zeit statt; samstags eine längere Einheit. Der Zeitplan kann sich ändern, mit Ankündigung im Mitgliederkanal.",
             "Der Zugang ist persönlich und darf nicht an Dritte weitergegeben werden.",
             "Es handelt sich um eine digitale Leistung; es werden keine Waren geliefert.",
           ],

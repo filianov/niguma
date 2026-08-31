@@ -7,14 +7,14 @@ window.NIGUMA_I18N = {
   "ru": {
     "meta": {
       "title": "15minYoga — Йога для тех, кто принимает решения",
-      "description": "15minYoga: по будням 07:00–07:15 — живой эфир подлинной йоги Нигумы. 15 минут, которые дают предпринимателю ясность и твёрдость решений."
+      "description": "15minYoga: по будням 06:45–07:00 — живой эфир подлинной йоги Нигумы. 15 минут, которые дают предпринимателю ясность и твёрдость решений."
     },
     "nav": { "benefits": "Что вы получите", "forWho": "Для кого", "format": "Формат", "pricing": "Стоимость", "join": "Присоединиться" },
     "hero": {
       "title": "Йога для тех, кто принимает решения",
       "subtitle": "15 минут утром для активации энергии и масштабного влияния",
       "p1": "Если от ваших решений зависят люди, проекты, деньги и развитие бизнеса, вашему уму и энергии нужна ежедневная настройка.",
-      "p3": "С понедельника по пятницу в 7:00 мы практикуем аутентичную йогу Леди Нигумы — систему, которая работает с внутренней энергией, вниманием и состоянием сознания.",
+      "p3": "С понедельника по пятницу в 6:45 мы практикуем аутентичную йогу Леди Нигумы — систему, которая работает с внутренней энергией, вниманием и состоянием сознания.",
       "ctaPrimary": "Начать в Telegram",
       "ctaSecondary": "Написать автору в Instagram"
     },
@@ -39,11 +39,11 @@ window.NIGUMA_I18N = {
       "items": ["связь энергии и мышления", "влияние внутренних состояний на результаты", "законы причины и следствия", "этика как основа устойчивого успеха", "работа с воображением и намерением", "щедрость как причина процветания", "практическое применение древней йоги в современной жизни"]
     },
     "format": {
-      "heading": "Формат участия", "days": "Будние дни", "time": "07:00–07:15", "tz": "(GMT+2:00) Вена", "online": "Онлайн",
+      "heading": "Формат участия", "days": "Будние дни", "time": "06:45–07:00", "tz": "(GMT+2:00) Вена", "online": "Онлайн",
       "records": "Записи доступны участникам", "langLabel": "Языки сообщества", "langValue": "украинский, английский, немецкий и русский"
     },
     "pricing": {
-      "heading": "Стоимость", "includes": "Живые занятия по будням 07:00–07:15 (Вена), расширенное занятие по субботам, записи и закрытое сообщество.",
+      "heading": "Стоимость", "includes": "Живые занятия по будням 06:45–07:00 (Вена), расширенное занятие по субботам, записи и закрытое сообщество.",
       "tiers": [ { "period": "1 месяц", "price": "100 €" }, { "period": "6 месяцев", "price": "500 €" }, { "period": "12 месяцев", "price": "900 €" } ],
       "payLabel": "Оплата",
       "payMethods": ["PayPal", "Счёт на банковский перевод (IBAN)", "Карта Monobank", "USDT (TRC-20)"],
@@ -63,14 +63,14 @@ window.NIGUMA_I18N = {
   "en": {
     "meta": {
       "title": "15minYoga — Yoga for those who make decisions",
-      "description": "15minYoga: live weekday mornings, 07:00–07:15 CET. Niguma's authentic yoga in 15 minutes, building the clarity and decisiveness founders need."
+      "description": "15minYoga: live weekday mornings, 06:45–07:00 CET. Niguma's authentic yoga in 15 minutes, building the clarity and decisiveness founders need."
     },
     "nav": { "benefits": "What you get", "forWho": "Who it's for", "format": "Format", "pricing": "Pricing", "join": "Join" },
     "hero": {
       "title": "Yoga for those who make decisions",
       "subtitle": "15 minutes every morning for energy, clarity, and meaningful impact",
       "p1": "When people, projects, money, and the growth of your business depend on your decisions, your mind and energy need a daily tuning.",
-      "p3": "Every weekday at 7:00 we practice the authentic yoga of Lady Niguma — a system that helps you work with inner energy, attention, and your state of consciousness.",
+      "p3": "Every weekday at 6:45 we practice the authentic yoga of Lady Niguma — a system that helps you work with inner energy, attention, and your state of consciousness.",
       "ctaPrimary": "Start in Telegram",
       "ctaSecondary": "Message the author on Instagram"
     },
@@ -95,11 +95,11 @@ window.NIGUMA_I18N = {
       "items": ["the connection between energy and thinking", "how inner states shape results", "the laws of cause and effect", "ethics as the foundation of lasting success", "working with imagination and intention", "generosity as a cause of prosperity", "applying ancient yoga in modern life"]
     },
     "format": {
-      "heading": "How participation works", "days": "Weekdays", "time": "07:00–07:15", "tz": "(GMT+2:00) Vienna", "online": "Online",
+      "heading": "How participation works", "days": "Weekdays", "time": "06:45–07:00", "tz": "(GMT+2:00) Vienna", "online": "Online",
       "records": "Recordings available to participants", "langLabel": "Community languages", "langValue": "Ukrainian, English, German, and Russian"
     },
     "pricing": {
-      "heading": "Pricing", "includes": "Live classes on weekdays 07:00–07:15 (Vienna), an extended session on Saturdays, recordings and the members' community.",
+      "heading": "Pricing", "includes": "Live classes on weekdays 06:45–07:00 (Vienna), an extended session on Saturdays, recordings and the members' community.",
       "tiers": [ { "period": "1 month", "price": "100 €" }, { "period": "6 months", "price": "500 €" }, { "period": "12 months", "price": "900 €" } ],
       "payLabel": "Payment",
       "payMethods": ["PayPal", "Bank transfer invoice (IBAN)", "Monobank card", "USDT (TRC-20)"],
@@ -119,14 +119,14 @@ window.NIGUMA_I18N = {
   "de": {
     "meta": {
       "title": "15minYoga — Yoga für Menschen, die Entscheidungen treffen",
-      "description": "15minYoga: werktags 07:00–07:15 live das authentische Yoga der Niguma – 15 Minuten, die Klarheit und Entscheidungsqualität von Unternehmern stärken."
+      "description": "15minYoga: werktags 06:45–07:00 live das authentische Yoga der Niguma – 15 Minuten, die Klarheit und Entscheidungsqualität von Unternehmern stärken."
     },
     "nav": { "benefits": "Was Sie erhalten", "forWho": "Für wen", "format": "Format", "pricing": "Preise", "join": "Teilnehmen" },
     "hero": {
       "title": "Yoga für Menschen, die Entscheidungen treffen",
       "subtitle": "15 Minuten jeden Morgen für Energie, Klarheit und weitreichende Wirkung",
       "p1": "Wenn von Ihren Entscheidungen Menschen, Projekte, Finanzen und die Entwicklung Ihres Unternehmens abhängen, brauchen Ihr Geist und Ihre Energie eine tägliche Ausrichtung.",
-      "p3": "An jedem Werktag um 7:00 Uhr praktizieren wir das authentische Yoga von Lady Niguma — ein System, das hilft, mit der inneren Energie, der Aufmerksamkeit und dem Bewusstseinszustand zu arbeiten.",
+      "p3": "An jedem Werktag um 6:45 Uhr praktizieren wir das authentische Yoga von Lady Niguma — ein System, das hilft, mit der inneren Energie, der Aufmerksamkeit und dem Bewusstseinszustand zu arbeiten.",
       "ctaPrimary": "In Telegram beginnen",
       "ctaSecondary": "Der Autorin auf Instagram schreiben"
     },
@@ -151,11 +151,11 @@ window.NIGUMA_I18N = {
       "items": ["der Zusammenhang von Energie und Denken", "der Einfluss innerer Zustände auf die Ergebnisse", "die Gesetze von Ursache und Wirkung", "Ethik als Grundlage nachhaltigen Erfolgs", "die Arbeit mit Vorstellungskraft und Absicht", "Großzügigkeit als Ursache des Wohlstands", "die praktische Anwendung des alten Yoga im modernen Leben"]
     },
     "format": {
-      "heading": "Format der Teilnahme", "days": "Werktage", "time": "07:00–07:15", "tz": "(GMT+2:00) Wien", "online": "Online",
+      "heading": "Format der Teilnahme", "days": "Werktage", "time": "06:45–07:00", "tz": "(GMT+2:00) Wien", "online": "Online",
       "records": "Aufzeichnungen für Teilnehmer verfügbar", "langLabel": "Sprachen der Community", "langValue": "Ukrainisch, Englisch, Deutsch und Russisch"
     },
     "pricing": {
-      "heading": "Preise", "includes": "Live-Einheiten werktags 07:00–07:15 Uhr (Wien), samstags eine längere Einheit, Aufzeichnungen und die Mitglieder-Community.",
+      "heading": "Preise", "includes": "Live-Einheiten werktags 06:45–07:00 Uhr (Wien), samstags eine längere Einheit, Aufzeichnungen und die Mitglieder-Community.",
       "tiers": [ { "period": "1 Monat", "price": "100 €" }, { "period": "6 Monate", "price": "500 €" }, { "period": "12 Monate", "price": "900 €" } ],
       "payLabel": "Zahlung",
       "payMethods": ["PayPal", "Rechnung per Banküberweisung (IBAN)", "Monobank-Karte", "USDT (TRC-20)"],
@@ -175,14 +175,14 @@ window.NIGUMA_I18N = {
   "uk": {
     "meta": {
       "title": "15minYoga — Йога для тих, хто ухвалює рішення",
-      "description": "15minYoga: у будні 07:00–07:15 наживо автентична йога Нігуми — 15 хвилин, що дають підприємцю ясність і впевненість у рішеннях."
+      "description": "15minYoga: у будні 06:45–07:00 наживо автентична йога Нігуми — 15 хвилин, що дають підприємцю ясність і впевненість у рішеннях."
     },
     "nav": { "benefits": "Що ви отримаєте", "forWho": "Для кого", "format": "Формат", "pricing": "Вартість", "join": "Приєднатися" },
     "hero": {
       "title": "Йога для тих, хто ухвалює рішення",
       "subtitle": "15 хвилин щоранку для енергії, ясності та масштабного впливу",
       "p1": "Якщо від ваших рішень залежать люди, проєкти, гроші та розвиток бізнесу, вашому розуму й енергії потрібне щоденне налаштування.",
-      "p3": "Щодня в будні о 7:00 ми практикуємо автентичну йогу Леді Нігуми — систему, яка допомагає працювати з внутрішньою енергією, увагою та станом свідомості.",
+      "p3": "Щодня в будні о 6:45 ми практикуємо автентичну йогу Леді Нігуми — систему, яка допомагає працювати з внутрішньою енергією, увагою та станом свідомості.",
       "ctaPrimary": "Почати в Telegram",
       "ctaSecondary": "Написати авторові в Instagram"
     },
@@ -207,11 +207,11 @@ window.NIGUMA_I18N = {
       "items": ["звʼязок енергії та мислення", "вплив внутрішніх станів на результати", "закони причини й наслідку", "етика як основа стійкого успіху", "робота з уявою та наміром", "щедрість як причина процвітання", "практичне застосування давньої йоги в сучасному житті"]
     },
     "format": {
-      "heading": "Формат участі", "days": "Будні дні", "time": "07:00–07:15", "tz": "(GMT+2:00) Відень", "online": "Онлайн",
+      "heading": "Формат участі", "days": "Будні дні", "time": "06:45–07:00", "tz": "(GMT+2:00) Відень", "online": "Онлайн",
       "records": "Записи доступні учасникам", "langLabel": "Мови спільноти", "langValue": "українська, англійська, німецька та російська"
     },
     "pricing": {
-      "heading": "Вартість", "includes": "Живі заняття в будні 07:00–07:15 (Відень), розширене заняття щосуботи, записи та закрита спільнота.",
+      "heading": "Вартість", "includes": "Живі заняття в будні 06:45–07:00 (Відень), розширене заняття щосуботи, записи та закрита спільнота.",
       "tiers": [ { "period": "1 місяць", "price": "100 €" }, { "period": "6 місяців", "price": "500 €" }, { "period": "12 місяців", "price": "900 €" } ],
       "payLabel": "Оплата",
       "payMethods": ["PayPal", "Рахунок на банківський переказ (IBAN)", "Картка Monobank", "USDT (TRC-20)"],
@@ -405,17 +405,17 @@ window.NIGUMA_I18N = {
           },
           {
             "name": "Ирина Шишкина",
-            "role": "Преподаватель йоги · телесный и энерготерапевт · сооснователь приложения ReJoy",
+            "role": "Преподаватель йоги · телесный и энерготерапевт · сооснователь приложения Rejoy",
             "photo": "assets/photos/irina.jpg",
             "lines": [
               "Для меня йога — не просто практика на коврике. Это образ жизни: ежедневная практика, медитация и жизнь по этическим принципам.",
-              "Одиннадцать лет она помогает мне держать ясный ум, спокойствие и высокий уровень энергии даже в самые плотные периоды. Пятнадцати минут в день достаточно, чтобы это почувствовать."
+              "Одиннадцать лет она помогает мне сохранять ясность ума, спокойствие, высокий уровень энергии и находить баланс даже в самые насыщенные периоды жизни. Пятнадцати минут в день достаточно, чтобы это почувствовать."
             ],
             "facts": [
               "Сертифицированным преподавателем йоги стала в 45 лет",
               "Практикует йогу одиннадцать лет",
               "Телесный терапевт и энерготерапевт",
-              "Сооснователь приложения ReJoy",
+              "Сооснователь приложения Rejoy",
               "Куратор образовательных программ",
               "Завершила девять курсов ACI",
               "Благодаря ежедневной практике увеличила доход в 4,5 раза"
@@ -640,17 +640,17 @@ window.NIGUMA_I18N = {
           },
           {
             "name": "Iryna Shyshkina",
-            "role": "Certified yoga teacher · body and energy therapist · co-founder of the ReJoy app",
+            "role": "Certified yoga teacher · body and energy therapist · co-founder of the Rejoy app",
             "photo": "assets/photos/irina.jpg",
             "lines": [
               "For me yoga is not just a practice on the mat. It is a way of living: daily practice, meditation and a life held to ethical principles.",
-              "For eleven years it has kept my mind clear, my calm steady and my energy high even in the densest periods. Fifteen minutes a day is enough to feel it."
+              "For eleven years it has kept my mind clear, my calm steady, my energy high and my life in balance even in the fullest of periods. Fifteen minutes a day is enough to feel it."
             ],
             "facts": [
               "Became a certified yoga teacher at 45",
               "Eleven years of yoga practice",
               "Body therapist and energy therapist",
-              "Co-founder of the ReJoy app",
+              "Co-founder of the Rejoy app",
               "Curator of educational programmes",
               "Completed nine ACI courses",
               "Grew her income 4.5 times through daily practice"
@@ -875,17 +875,17 @@ window.NIGUMA_I18N = {
           },
           {
             "name": "Iryna Shyshkina",
-            "role": "Zertifizierte Yogalehrerin · Körper- und Energietherapeutin · Mitgründerin der App ReJoy",
+            "role": "Zertifizierte Yogalehrerin · Körper- und Energietherapeutin · Mitgründerin der App Rejoy",
             "photo": "assets/photos/irina.jpg",
             "lines": [
               "Yoga ist für mich nicht nur die Übung auf der Matte. Es ist eine Lebensweise: tägliche Praxis, Meditation und ein Leben nach ethischen Grundsätzen.",
-              "Seit elf Jahren hält es meinen Kopf klar, meine Ruhe stabil und meine Energie hoch, auch in den dichtesten Zeiten. Fünfzehn Minuten am Tag genügen, um das zu spüren."
+              "Seit elf Jahren hält es meinen Kopf klar, meine Ruhe stabil, meine Energie hoch und mein Leben im Gleichgewicht, auch in den vollsten Zeiten. Fünfzehn Minuten am Tag genügen, um das zu spüren."
             ],
             "facts": [
               "Wurde mit 45 zertifizierte Yogalehrerin",
               "Elf Jahre Yogapraxis",
               "Körper- und Energietherapeutin",
-              "Mitgründerin der App ReJoy",
+              "Mitgründerin der App Rejoy",
               "Kuratorin von Bildungsprogrammen",
               "Neun ACI-Kurse abgeschlossen",
               "Hat ihr Einkommen durch tägliche Praxis um das 4,5-Fache gesteigert"
@@ -1110,17 +1110,17 @@ window.NIGUMA_I18N = {
           },
           {
             "name": "Ірина Шишкіна",
-            "role": "Викладачка йоги · тілесна та енерготерапевтка · співзасновниця застосунку ReJoy",
+            "role": "Викладачка йоги · тілесна та енерготерапевтка · співзасновниця застосунку Rejoy",
             "photo": "assets/photos/irina.jpg",
             "lines": [
               "Для мене йога — не просто практика на килимку. Це спосіб життя: щоденна практика, медитація і життя за етичними принципами.",
-              "Одинадцять років вона допомагає мені тримати ясний розум, спокій і високий рівень енергії навіть у найщільніші періоди. П'ятнадцяти хвилин на день досить, щоб це відчути."
+              "Одинадцять років вона допомагає мені зберігати ясність розуму, спокій, високий рівень енергії та знаходити баланс навіть у найнасиченіші періоди життя. П'ятнадцяти хвилин на день досить, щоб це відчути."
             ],
             "facts": [
               "Сертифікованою викладачкою йоги стала в 45 років",
               "Практикує йогу одинадцять років",
               "Тілесна терапевтка та енерготерапевтка",
-              "Співзасновниця застосунку ReJoy",
+              "Співзасновниця застосунку Rejoy",
               "Кураторка освітніх програм",
               "Завершила дев'ять курсів ACI",
               "Завдяки щоденній практиці збільшила дохід у 4,5 раза"

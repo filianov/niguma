@@ -2,7 +2,7 @@
 Scheduled automation (APScheduler, in-process).
 
 Jobs:
-  - daily class reminders   (T-60 and T-10 before the 07:00 weekday practice)
+  - daily class reminders   (T-60 and T-10 before the 06:45 weekday practice)
   - weekly deep-session reminder (Saturday)
   - nurture drip pump       (every 15 min, sends due steps)
   - evening coffee nudge    (gamification step 3)
@@ -53,10 +53,10 @@ def setup(bot: Bot) -> AsyncIOScheduler:
     tz = pytz.timezone(config.TIMEZONE)
     sched = AsyncIOScheduler(timezone=tz)
 
-    # Daily weekday practice 07:00 -> remind at 06:00 (T-60) and 06:50 (T-10)
-    sched.add_job(_remind_members, "cron", day_of_week="mon-fri", hour=6, minute=0,
+    # Daily weekday practice 06:45 -> remind at 05:45 (T-60) and 06:35 (T-10)
+    sched.add_job(_remind_members, "cron", day_of_week="mon-fri", hour=5, minute=45,
                   kwargs={"bot": bot, "weekly": False, "mins": 60}, id="daily_t60", replace_existing=True)
-    sched.add_job(_remind_members, "cron", day_of_week="mon-fri", hour=6, minute=50,
+    sched.add_job(_remind_members, "cron", day_of_week="mon-fri", hour=6, minute=35,
                   kwargs={"bot": bot, "weekly": False, "mins": 10}, id="daily_t10", replace_existing=True)
 
     # Weekly deep session Saturday 08:00 -> remind at 07:00

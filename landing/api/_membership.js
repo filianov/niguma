@@ -25,10 +25,10 @@ import { kv } from "./_lib.js";
  * рядом с ценой, чтобы описание не разошлось с тем, что человек оплачивает.
  */
 const OFFER = {
-  ru: "Ежедневные живые занятия по будням 07:00–07:15 (Вена), расширенное занятие по субботам, записи всех занятий и доступ в закрытое сообщество.",
-  uk: "Щоденні живі заняття в будні 07:00–07:15 (Відень), розширене заняття щосуботи, записи всіх занять і доступ до закритої спільноти.",
-  en: "Live classes every weekday 07:00–07:15 (Vienna), an extended session on Saturdays, recordings of all classes and access to the members' community.",
-  de: "Live-Einheiten werktags 07:00–07:15 Uhr (Wien), samstags eine längere Einheit, Aufzeichnungen aller Einheiten und Zugang zur Mitglieder-Community.",
+  ru: "Ежедневные живые занятия по будням 06:45–07:00 (Вена), расширенное занятие по субботам, записи всех занятий и доступ в закрытое сообщество.",
+  uk: "Щоденні живі заняття в будні 06:45–07:00 (Відень), розширене заняття щосуботи, записи всіх занять і доступ до закритої спільноти.",
+  en: "Live classes every weekday 06:45–07:00 (Vienna), an extended session on Saturdays, recordings of all classes and access to the members' community.",
+  de: "Live-Einheiten werktags 06:45–07:00 Uhr (Wien), samstags eine längere Einheit, Aufzeichnungen aller Einheiten und Zugang zur Mitglieder-Community.",
 };
 
 export const PLANS = {

@@ -31,8 +31,8 @@
         "thu",
         "fri"
       ],
-      "start": "07:00",
-      "end": "07:15",
+      "start": "06:45",
+      "end": "07:00",
       "durationMin": 15
     },
     "weeklyDeep": {

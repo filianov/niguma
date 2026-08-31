@@ -42,13 +42,13 @@ DRIP = [
               "працює саме з цим — знімає внутрішнє напруження й повертає ясність. Питайте про що завгодно 🌱",
     }),
     (3, {
-        "ru": "Формат напоминаю: будни 7:00–7:15 онлайн + глубокая практика раз в неделю. Записи остаются у вас. "
+        "ru": "Формат напоминаю: будни 6:45–7:00 онлайн + глубокая практика раз в неделю. Записи остаются у вас. "
               "1 мес — 100 €, 6 мес — 500 €, 12 мес — 900 €. Готовы попробовать? Напишите «оплата» — подберём способ.",
-        "en": "A reminder of the format: weekdays 7:00–7:15 online + a deep session once a week. Recordings stay "
+        "en": "A reminder of the format: weekdays 6:45–7:00 online + a deep session once a week. Recordings stay "
               "with you. 1 mo — 100 €, 6 mo — 500 €, 12 mo — 900 €. Ready to try? Write “payment” and we'll pick a method.",
-        "de": "Zur Erinnerung: werktags 7:00–7:15 online + eine vertiefende Einheit pro Woche. Aufzeichnungen bleiben "
+        "de": "Zur Erinnerung: werktags 6:45–7:00 online + eine vertiefende Einheit pro Woche. Aufzeichnungen bleiben "
               "bei Ihnen. 1 Mon — 100 €, 6 Mon — 500 €, 12 Mon — 900 €. Bereit? Schreiben Sie „Zahlung“.",
-        "uk": "Нагадую формат: будні 7:00–7:15 онлайн + глибока практика раз на тиждень. Записи лишаються у вас. "
+        "uk": "Нагадую формат: будні 6:45–7:00 онлайн + глибока практика раз на тиждень. Записи лишаються у вас. "
               "1 міс — 100 €, 6 міс — 500 €, 12 міс — 900 €. Готові спробувати? Напишіть «оплата».",
     }),
     (4, {
@@ -108,13 +108,13 @@ async def send_due_drip(bot: Bot) -> int:
 
 
 COHORT_BROADCAST = {
-    "ru": "🌿 В понедельник стартует новый поток 15minYoga!\n\nБудни 7:00–7:15 + глубокая практика раз в неделю. "
+    "ru": "🌿 В понедельник стартует новый поток 15minYoga!\n\nБудни 6:45–7:00 + глубокая практика раз в неделю. "
           "Записи остаются у вас. Хотите присоединиться? Напишите «оплата» — подберём удобный способ.",
-    "en": "🌿 A new 15minYoga group starts Monday!\n\nWeekdays 7:00–7:15 + a deep session weekly. Recordings stay with "
+    "en": "🌿 A new 15minYoga group starts Monday!\n\nWeekdays 6:45–7:00 + a deep session weekly. Recordings stay with "
           "you. Want in? Write “payment” and we'll pick a convenient method.",
-    "de": "🌿 Am Montag startet ein neuer 15minYoga-Kurs!\n\nWerktags 7:00–7:15 + wöchentliche vertiefende Einheit. "
+    "de": "🌿 Am Montag startet ein neuer 15minYoga-Kurs!\n\nWerktags 6:45–7:00 + wöchentliche vertiefende Einheit. "
           "Aufzeichnungen bleiben bei Ihnen. Dabei sein? Schreiben Sie „Zahlung“.",
-    "uk": "🌿 У понеділок стартує новий потік 15minYoga!\n\nБудні 7:00–7:15 + глибока практика раз на тиждень. Записи "
+    "uk": "🌿 У понеділок стартує новий потік 15minYoga!\n\nБудні 6:45–7:00 + глибока практика раз на тиждень. Записи "
           "лишаються у вас. Хочете приєднатися? Напишіть «оплата».",
 }
 
