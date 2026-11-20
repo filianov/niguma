@@ -15,8 +15,7 @@ window.NIGUMA_I18N = {
       "subtitle": "15 минут утром для активации энергии и масштабного влияния",
       "p1": "Если от ваших решений зависят люди, проекты, деньги и развитие бизнеса, вашему уму и энергии нужна ежедневная настройка.",
       "p3": "С понедельника по пятницу в 6:45 мы практикуем аутентичную йогу Леди Нигумы — систему, которая работает с внутренней энергией, вниманием и состоянием сознания.",
-      "ctaPrimary": "Начать в Telegram",
-      "ctaSecondary": "Написать автору в Instagram"
+      "ctaPrimary": "Начать в Telegram"
     },
     "forWho": {
       "heading": "Для кого",
@@ -71,8 +70,7 @@ window.NIGUMA_I18N = {
       "subtitle": "15 minutes every morning for energy, clarity, and meaningful impact",
       "p1": "When people, projects, money, and the growth of your business depend on your decisions, your mind and energy need a daily tuning.",
       "p3": "Every weekday at 6:45 we practice the authentic yoga of Lady Niguma — a system that helps you work with inner energy, attention, and your state of consciousness.",
-      "ctaPrimary": "Start in Telegram",
-      "ctaSecondary": "Message the author on Instagram"
+      "ctaPrimary": "Start in Telegram"
     },
     "forWho": {
       "heading": "Who it's for",
@@ -127,8 +125,7 @@ window.NIGUMA_I18N = {
       "subtitle": "15 Minuten jeden Morgen für Energie, Klarheit und weitreichende Wirkung",
       "p1": "Wenn von Ihren Entscheidungen Menschen, Projekte, Finanzen und die Entwicklung Ihres Unternehmens abhängen, brauchen Ihr Geist und Ihre Energie eine tägliche Ausrichtung.",
       "p3": "An jedem Werktag um 6:45 Uhr praktizieren wir das authentische Yoga von Lady Niguma — ein System, das hilft, mit der inneren Energie, der Aufmerksamkeit und dem Bewusstseinszustand zu arbeiten.",
-      "ctaPrimary": "In Telegram beginnen",
-      "ctaSecondary": "Der Autorin auf Instagram schreiben"
+      "ctaPrimary": "In Telegram beginnen"
     },
     "forWho": {
       "heading": "Für wen",
@@ -183,8 +180,7 @@ window.NIGUMA_I18N = {
       "subtitle": "15 хвилин щоранку для енергії, ясності та масштабного впливу",
       "p1": "Якщо від ваших рішень залежать люди, проєкти, гроші та розвиток бізнесу, вашому розуму й енергії потрібне щоденне налаштування.",
       "p3": "Щодня в будні о 6:45 ми практикуємо автентичну йогу Леді Нігуми — систему, яка допомагає працювати з внутрішньою енергією, увагою та станом свідомості.",
-      "ctaPrimary": "Почати в Telegram",
-      "ctaSecondary": "Написати авторові в Instagram"
+      "ctaPrimary": "Почати в Telegram"
     },
     "forWho": {
       "heading": "Для кого",
@@ -242,7 +238,9 @@ window.NIGUMA_I18N = {
       nav: { included: "Что входит", trainers: "Тренеры", benefits: "Что вы получите", how: "Почему это работает" },
       heroTitle: "15minYoga",
       heroSub: "для предпринимателей, руководителей, собственников бизнеса, лидеров мнений, от чьих решений зависят люди, проекты, деньги и развитие",
-      howLink: "Почему это работает",
+      heroLeadHook: "Лучшие решения рождаются из\u00a0вашего состояния.",
+      heroLeadText: "15\u00a0минут онлайн-практики, чтобы мыслить ясно, действовать уверенно и\u00a0создавать результаты",
+      heroCta: "Попробовать бесплатно",
       pains: {
         heading: "Знакомо?",
         items: [
@@ -477,7 +475,9 @@ window.NIGUMA_I18N = {
       nav: { included: "What's included", trainers: "Trainers", benefits: "What you get", how: "Why it works" },
       heroTitle: "15minYoga",
       heroSub: "for entrepreneurs, executives, business owners and thought leaders — whose decisions carry people, projects, money and growth",
-      howLink: "Why it works",
+      heroLeadHook: "The best decisions come from your state of mind.",
+      heroLeadText: "15\u00a0minutes of online practice to think clearly, act with confidence and deliver results",
+      heroCta: "Try it free",
       pains: {
         heading: "Sound familiar?",
         items: [
@@ -712,7 +712,9 @@ window.NIGUMA_I18N = {
       nav: { included: "Inhalte", trainers: "Trainer", benefits: "Was Sie erhalten", how: "Warum es wirkt" },
       heroTitle: "15minYoga",
       heroSub: "für Unternehmer, Führungskräfte, Inhaber und Meinungsführer — von deren Entscheidungen Menschen, Projekte, Finanzen und Entwicklung abhängen",
-      howLink: "Warum es wirkt",
+      heroLeadHook: "Die besten Entscheidungen entstehen aus Ihrem inneren Zustand.",
+      heroLeadText: "15\u00a0Minuten Online-Praxis, um klar zu denken, souverän zu handeln und Ergebnisse zu erzielen",
+      heroCta: "Kostenlos ausprobieren",
       pains: {
         heading: "Kommt Ihnen das bekannt vor?",
         items: [
@@ -947,7 +949,9 @@ window.NIGUMA_I18N = {
       nav: { included: "Що входить", trainers: "Тренери", benefits: "Що ви отримаєте", how: "Чому це працює" },
       heroTitle: "15minYoga",
       heroSub: "для підприємців, керівників, власників бізнесу, лідерів думок, від чиїх рішень залежать люди, проєкти, гроші та розвиток",
-      howLink: "Чому це працює",
+      heroLeadHook: "Найкращі рішення народжуються з\u00a0вашого стану.",
+      heroLeadText: "15\u00a0хвилин онлайн-практики, щоб мислити ясно, діяти впевнено й\u00a0досягати результатів",
+      heroCta: "Спробувати безкоштовно",
       pains: {
         heading: "Знайомо?",
         items: [
@@ -1187,7 +1191,9 @@ window.NIGUMA_I18N = {
     M[lng].nav.how = a.nav.how;
     M[lng].hero.title = a.heroTitle;
     M[lng].hero.subtitle = a.heroSub;
-    M[lng].hero.howLink = a.howLink;
+    M[lng].hero.leadHook = a.heroLeadHook;
+    M[lng].hero.leadText = a.heroLeadText;
+    M[lng].hero.ctaPrimary = a.heroCta;
     M[lng].pains = a.pains;
     M[lng].promise = a.promise;
     M[lng].included = a.included;
