@@ -288,6 +288,61 @@ window.NIGUMA_I18N = {
           "Программы Yoga Studies Institute доступны онлайн, поэтому любой желающий может обратиться непосредственно к\u00a0источнику обучения 15minYoga и\u00a0продолжить самостоятельное изучение традиции.",
         ],
       },
+      reviews: {
+        heading: "Отзывы участников",
+        more: "Читать полностью",
+        less: "Свернуть",
+        items: [
+          {
+            "name": "Марина",
+            "meta": "Участница 15minYoga\u00a0· 1\u00a0месяц практики",
+            "title": "«Я\u00a0стала быстрее думать, легче принимать решения и\u00a0масштабнее смотреть на то, что делаю»",
+            "excerpt": "За месяц я\u00a0провела мини\u2011продукт, появились новые ученики и\u00a0сотрудничества. И\u00a0при этом внутри стало легче.",
+            "fullTitle": "«То, что раньше требовало времени на раскачку, сейчас я\u00a0просто беру и\u00a0делаю»",
+            "full": [
+              "«За этот месяц я\u00a0заметила, насколько сильно 15\u00a0минут утренней йоги организовывают весь мой день.",
+              "Я\u00a0стала быстрее думать, легче принимать решения и\u00a0масштабнее смотреть на то, что делаю.",
+              "Раньше мне требовалось время на подготовку и\u00a0обдумывание. Теперь идея может родиться сегодня\u00a0— и\u00a0сегодня я\u00a0уже готова её реализовать.",
+              "За месяц я\u00a0провела мини\u2011продукт, появились новые ученики и\u00a0сотрудничества. И\u00a0при этом внутри стало легче.",
+              "Это совершенно другая скорость реализации своих идей».",
+            ],
+            "bio": "Предприниматель, основатель образовательных проектов с\u00a020\u2011летним опытом. Сегодня\u00a0— наставник, обучает проводников гвоздестояния, проводит практики индивидуально и\u00a0в\u00a0корпоративном формате.",
+            "link": { "label": "@ya.maryna.shevchuk", "href": "https://www.instagram.com/ya.maryna.shevchuk/" },
+          },
+          {
+            "name": "Сергей",
+            "meta": "Участник 15minYoga\u00a0· 12\u00a0лет в\u00a0йоге Леди\u00a0Нигумы",
+            "title": "«Казалось, что света в\u00a0конце тоннеля нет. Но сегодня всё кардинально изменилось»",
+            "excerpt": "Несколько дней делал практику по 15\u00a0минут с\u00a0посвящением своей коллеге, с\u00a0которой была конфликтная ситуация.",
+            "fullTitle": "",
+            "full": [
+              "«Несколько дней делал практику по 15\u00a0минут с\u00a0посвящением своей коллеге, с\u00a0которой была конфликтная ситуация.",
+              "Казалось, что света в\u00a0конце тоннеля нет, но сегодня всё кардинально изменилось\u00a0— начался конструктивный диалог в\u00a0правильном русле! Меджик!»",
+            ],
+            "bio": "Предприниматель с\u00a0опытом более 20\u00a0лет, бизнес-стратег и\u00a0продюсер. 12\u00a0лет практикует йогу Леди\u00a0Нигумы.",
+          },
+          {
+            "name": "Антон",
+            "meta": "Участник 15minYoga\u00a0· 3\u00a0недели практики",
+            "title": "«От „ну, попробую“ до обязательной утренней привычки»",
+            "excerpt": "Присоединился к\u00a0пробной практике, и\u00a0мне очень зашло: всего 15\u00a0минут, а\u00a0в\u00a0процессе рассказывают о\u00a0чакрах и\u00a0потоках энергии. Йога открылась с\u00a0другой стороны!",
+            "fullTitle": "",
+            "full": [
+              "«Долгое время искал причину заняться йогой. Мне нужно было найти в\u00a0этом смысл и\u00a0наполнение.",
+              "Присоединился к\u00a0пробной практике, и\u00a0мне очень зашло: всего 15\u00a0минут, а\u00a0в\u00a0процессе рассказывают о\u00a0чакрах и\u00a0потоках энергии. Йога открылась с\u00a0другой стороны!",
+              "Я\u00a0был очень твердотелым в\u00a0плане „заниматься йогой“, но ежедневные 15\u2011минутки всё изменили.",
+              "Мой путь за три недели\u00a0— от „ну, попробую, может, что-то выйдет“ до „о, в\u00a0субботу будет полный комплекс йоги, нужно подключиться!“.",
+              "Думаю, тут очень важна и\u00a0сама энергетика, когда занятие проходит онлайн\u00a0— похоже на то, как смотреть футбольный матч онлайн, а\u00a0не в\u00a0записи, потому что в\u00a0записи это совсем не тот вайб. Плюс 15\u00a0минут с\u00a0утра\u00a0— вполне посильная задача, а\u00a0для того, кто никогда не занимался йогой, так это очень даже большое достижение.",
+              "15\u00a0минут утром, онлайн, вместе с\u00a0людьми, излучающими радость,\u00a0— это очень заряжает! Нам даже напоминают улыбаться во время асан ❤️ Это помогает фокусироваться на хорошем.",
+              "Теперь один из обязательных пунктов моего распорядка дня\u00a0— утренняя 15\u2011минутка йоги.",
+              "15\u00a0минут\u00a0— и\u00a0день начинается качественно! 🥰",
+              "Сегодня подумал, как бы я\u00a0назвал процесс, который происходит за эти 15\u00a0минут йоги в\u00a0день.",
+              "Назвал его „лагідна йогізація“ 😂».",
+            ],
+            "bio": "Программист\u00a0· 15\u00a0лет профессионального опыта",
+          },
+        ],
+      },
       faq: {
         eyebrow: "Вопросы",
         heading: "Частые вопросы",
@@ -432,7 +487,7 @@ window.NIGUMA_I18N = {
           {
             "name": "Катя Туркану",
             "role": "Юрист международных юридических фирм, LL.M. · преподаватель йоги · Швейцария",
-            "photo": "assets/photos/katya.jpg",
+            "photo": "assets/photos/katya-2.jpg",
             "short": "Юрист, LL.M.\u00a0· Швейцария",
             "key": "10 лет в\u00a0международных юридических фирмах. Программа подготовки преподавателей йоги\u00a0— 760 часов; преподаёт йогу Леди\u00a0Нигумы три года.",
             "lines": [
@@ -527,7 +582,7 @@ window.NIGUMA_I18N = {
           {
             "name": "Ольга Фильянова",
             "role": "Основатель 15minYoga · ментор ICF-коучей · методолог образовательных программ · Германия",
-            "photo": "assets/photos/olga-filianova.jpg",
+            "photo": "assets/photos/olga-filianova-2.jpg",
             "short": "Основатель 15minYoga\u00a0· Германия",
             "key": "Ментор ICF-коучей с\u00a02020 года. Прошла три уровня йоги Леди\u00a0Нигумы, учится в\u00a0Yoga Studies Institute.",
             "lines": [
@@ -630,6 +685,61 @@ window.NIGUMA_I18N = {
           "15minYoga draws on the complete system of Lady\u00a0Niguma's yoga, and in particular on the practices for working with the inner winds\u00a0— the central theme of the second level of YSI training. At the same time, the classes use principles and practices from different levels of the system, depending on the focus of each class.",
           "The Yoga Studies Institute works with classical sources in partnership with the Asian Legacy Library (ALL)\u00a0— a library that has preserved and digitised more than 2\u00a0million pages of classical Asian texts. YSI studies, translates and passes on this knowledge in the form of modern practice. ([yogastudiesinstitute.org](https://www.yogastudiesinstitute.org/become-as-gardeners))",
           "The Yoga Studies Institute's programmes are available online, so anyone interested can go directly to the source of 15minYoga's training and continue studying the tradition independently.",
+        ],
+      },
+      reviews: {
+        heading: "What members say",
+        more: "Read in full",
+        less: "Show less",
+        items: [
+          {
+            "name": "Marina",
+            "meta": "15minYoga member\u00a0· 1\u00a0month of practice",
+            "title": "“I’ve started thinking faster, making decisions more easily and thinking bigger about what I do”",
+            "excerpt": "In one month I ran a mini\u2011product, and new students and collaborations came along. And at the same time, I feel lighter inside.",
+            "fullTitle": "“What used to take time to get going, I now just go ahead and do”",
+            "full": [
+              "“Over this month I’ve noticed how much 15\u00a0minutes of morning yoga organizes my whole day.",
+              "I’ve started thinking faster, making decisions more easily and thinking bigger about what I do.",
+              "Before, I needed time to prepare and think things through. Now an idea can be born today\u00a0— and that same day I’m ready to make it happen.",
+              "In one month I ran a mini\u2011product, and new students and collaborations came along. And at the same time, I feel lighter inside.",
+              "It’s a completely different pace of bringing my ideas to life.”",
+            ],
+            "bio": "Entrepreneur and founder of educational projects, with 20\u00a0years of experience. Today she is a mentor: she trains sadhu-board (nail-board) facilitators and runs practice sessions one-on-one and for corporate clients.",
+            "link": { "label": "@ya.maryna.shevchuk", "href": "https://www.instagram.com/ya.maryna.shevchuk/" },
+          },
+          {
+            "name": "Sergey",
+            "meta": "15minYoga member\u00a0· 12\u00a0years in Lady\u00a0Niguma yoga",
+            "title": "“It felt like there was no light at the end of the tunnel. But today everything changed dramatically”",
+            "excerpt": "For a few days I did the 15\u2011minute practice, dedicating it to a colleague I’d had a conflict with.",
+            "fullTitle": "",
+            "full": [
+              "“For a few days I did the 15\u2011minute practice, dedicating it to a colleague I’d had a conflict with.",
+              "It felt like there was no light at the end of the tunnel, but today everything changed dramatically\u00a0— a constructive dialogue began, heading in the right direction! Magic!”",
+            ],
+            "bio": "Entrepreneur with more than 20\u00a0years of experience, business strategist and producer. Has practiced Lady\u00a0Niguma yoga for 12\u00a0years.",
+          },
+          {
+            "name": "Anton",
+            "meta": "15minYoga member\u00a0· 3\u00a0weeks of practice",
+            "title": "“From ‘well, I’ll give it a try’ to a must-do morning habit”",
+            "excerpt": "I joined a trial session and it really clicked for me: just 15\u00a0minutes, and along the way they tell you about chakras and energy flows. I saw a different side of yoga!",
+            "fullTitle": "",
+            "full": [
+              "“For a long time I’d been looking for a reason to take up yoga. I needed to find meaning and substance in it.",
+              "I joined a trial session and it really clicked for me: just 15\u00a0minutes, and along the way they tell you about chakras and energy flows. I saw a different side of yoga!",
+              "I was stiff as a board when it came to ‘doing yoga’, but the daily 15\u2011minute sessions changed everything.",
+              "My three-week journey: from ‘well, I’ll give it a try, maybe something will come of it’ to ‘oh, there’s a full yoga session on Saturday, I’ve got to join!’",
+              "I think the energy itself matters a lot too when the class is live online\u00a0— it’s like watching a football match live rather than a recording, because a recording just doesn’t have the same vibe. Plus, 15\u00a0minutes in the morning is a perfectly doable task, and for someone who has never done yoga, that’s actually a pretty big achievement.",
+              "15\u00a0minutes in the morning, online, together with people who radiate joy\u00a0— it’s really energizing! They even remind us to smile during the asanas ❤️ It helps you focus on the good.",
+              "Now my morning 15\u00a0minutes of yoga is one of the must-dos in my daily routine.",
+              "15\u00a0minutes\u00a0— and the day gets off to a quality start! 🥰",
+              "Today I was thinking about what I would call the process that happens during these 15\u00a0minutes of yoga a day.",
+              "I called it ‘лагідна йогізація’ (gentle yogification) 😂”",
+            ],
+            "bio": "Programmer\u00a0· 15\u00a0years of professional experience",
+          },
         ],
       },
       faq: {
@@ -776,7 +886,7 @@ window.NIGUMA_I18N = {
           {
             "name": "Katya Turkanu",
             "role": "Lawyer at international law firms, LL.M. · yoga teacher · Switzerland",
-            "photo": "assets/photos/katya.jpg",
+            "photo": "assets/photos/katya-2.jpg",
             "short": "Lawyer, LL.M.\u00a0· Switzerland",
             "key": "10 years in international law firms. Yoga teacher training\u00a0— 760 hours; teaching Lady\u00a0Niguma yoga for 3 years.",
             "lines": [
@@ -871,7 +981,7 @@ window.NIGUMA_I18N = {
           {
             "name": "Olha Filianova",
             "role": "Founder of 15minYoga · mentor to ICF coaches · methodologist of educational programmes · Germany",
-            "photo": "assets/photos/olga-filianova.jpg",
+            "photo": "assets/photos/olga-filianova-2.jpg",
             "short": "Founder of 15minYoga\u00a0· Germany",
             "key": "Mentor to ICF coaches since 2020. Completed three levels of Lady\u00a0Niguma's yoga; studies at the Yoga Studies Institute.",
             "lines": [
@@ -974,6 +1084,61 @@ window.NIGUMA_I18N = {
           "15minYoga stützt sich auf das Yoga-System der Lady\u00a0Niguma in seiner Gesamtheit und insbesondere auf die Praktiken zur Arbeit mit den inneren Winden\u00a0— das zentrale Thema der zweiten Ausbildungsstufe am YSI. Dabei kommen in den Einheiten Prinzipien und Praktiken verschiedener Stufen des Systems zum Einsatz, je nach Schwerpunkt der jeweiligen Einheit.",
           "Das Yoga Studies Institute arbeitet mit klassischen Quellen in Partnerschaft mit der Asian Legacy Library (ALL)\u00a0— einer Bibliothek, die mehr als 2\u00a0Millionen Seiten klassischer asiatischer Texte bewahrt und digitalisiert hat. Das YSI widmet sich dem Studium, der Übersetzung und der Weitergabe dieses Wissens in Form einer zeitgemäßen Praxis. ([yogastudiesinstitute.org](https://www.yogastudiesinstitute.org/become-as-gardeners))",
           "Die Programme des Yoga Studies Institute sind online zugänglich. So können sich alle Interessierten direkt an die Quelle wenden, aus der 15minYoga sein Wissen schöpft, und das Studium der Tradition eigenständig fortsetzen.",
+        ],
+      },
+      reviews: {
+        heading: "Das sagen unsere Teilnehmer",
+        more: "Ganz lesen",
+        less: "Weniger anzeigen",
+        items: [
+          {
+            "name": "Marina",
+            "meta": "Teilnehmerin von 15minYoga\u00a0· 1\u00a0Monat Praxis",
+            "title": "„Ich denke inzwischen schneller, treffe Entscheidungen leichter und sehe das, was ich tue, in einem größeren Rahmen“",
+            "excerpt": "Innerhalb eines Monats habe ich ein Mini\u2011Produkt an den Start gebracht, und es sind neue Schüler und Kooperationen dazugekommen. Und innerlich ist es dabei leichter geworden.",
+            "fullTitle": "„Wofür ich früher erst Anlauf brauchte, das mache ich jetzt einfach“",
+            "full": [
+              "„In diesem Monat habe ich gemerkt, wie stark 15\u00a0Minuten Yoga am Morgen meinen ganzen Tag strukturieren.",
+              "Ich denke inzwischen schneller, treffe Entscheidungen leichter und sehe das, was ich tue, in einem größeren Rahmen.",
+              "Früher brauchte ich Zeit, um mich vorzubereiten und alles zu durchdenken. Jetzt kann eine Idee heute entstehen\u00a0– und heute bin ich schon bereit, sie umzusetzen.",
+              "Innerhalb eines Monats habe ich ein Mini\u2011Produkt an den Start gebracht, und es sind neue Schüler und Kooperationen dazugekommen. Und innerlich ist es dabei leichter geworden.",
+              "Das ist ein völlig anderes Tempo bei der Umsetzung meiner Ideen.“",
+            ],
+            "bio": "Unternehmerin, Gründerin von Bildungsprojekten mit 20\u00a0Jahren Erfahrung. Heute ist sie Mentorin, bildet Anleiter für das Stehen auf dem Nagelbrett aus und leitet Praktiken im Einzelsetting und für Unternehmen.",
+            "link": { "label": "@ya.maryna.shevchuk", "href": "https://www.instagram.com/ya.maryna.shevchuk/" },
+          },
+          {
+            "name": "Sergej",
+            "meta": "Teilnehmer von 15minYoga\u00a0· 12\u00a0Jahre Lady\u2011Niguma\u2011Yoga",
+            "title": "„Es schien, als gäbe es kein Licht am Ende des Tunnels. Aber heute hat sich alles grundlegend verändert“",
+            "excerpt": "Ein paar Tage lang habe ich meine 15\u2011minütige Praxis einer Kollegin gewidmet, mit der es einen Konflikt gab.",
+            "fullTitle": "",
+            "full": [
+              "„Ein paar Tage lang habe ich meine 15\u2011minütige Praxis einer Kollegin gewidmet, mit der es einen Konflikt gab.",
+              "Es schien, als gäbe es kein Licht am Ende des Tunnels, aber heute hat sich alles grundlegend verändert\u00a0– ein konstruktiver Dialog ist in Gang gekommen, und er geht in die richtige Richtung! Magic!“",
+            ],
+            "bio": "Unternehmer mit über 20\u00a0Jahren Erfahrung, Business-Stratege und Produzent. Praktiziert seit 12\u00a0Jahren Lady\u2011Niguma\u2011Yoga.",
+          },
+          {
+            "name": "Anton",
+            "meta": "Teilnehmer von 15minYoga\u00a0· 3\u00a0Wochen Praxis",
+            "title": "„Von ‚na gut, ich probier’s mal‘ zur festen Morgengewohnheit“",
+            "excerpt": "Ich habe bei einer Probestunde mitgemacht, und es hat mir richtig gut gefallen: nur 15\u00a0Minuten, und dabei wird etwas über Chakren und Energieflüsse erzählt. Yoga hat sich mir von einer anderen Seite gezeigt!",
+            "fullTitle": "",
+            "full": [
+              "„Lange habe ich nach einem Grund gesucht, mit Yoga anzufangen. Ich musste darin Sinn und Erfüllung finden.",
+              "Ich habe bei einer Probestunde mitgemacht, und es hat mir richtig gut gefallen: nur 15\u00a0Minuten, und dabei wird etwas über Chakren und Energieflüsse erzählt. Yoga hat sich mir von einer anderen Seite gezeigt!",
+              "In Sachen ‚Yoga machen‘ war ich ein echter Festkörper, aber die täglichen Viertelstündchen haben alles verändert.",
+              "Mein Weg in drei Wochen\u00a0– von ‚na gut, ich probier’s mal, vielleicht wird ja was draus‘ bis zu ‚oh, am Samstag gibt’s die komplette Yoga-Session, da muss ich mich zuschalten!‘",
+              "Ich glaube, auch die Energie selbst spielt eine große Rolle, wenn die Stunde live online stattfindet\u00a0– das ist, als würde man ein Fußballspiel live schauen statt in der Aufzeichnung, denn in der Aufzeichnung ist es einfach nicht derselbe Vibe. Dazu kommt: 15\u00a0Minuten am Morgen sind absolut machbar, und für jemanden, der noch nie Yoga gemacht hat, ist das sogar eine echt große Leistung.",
+              "15\u00a0Minuten am Morgen, online, zusammen mit Menschen, die Freude ausstrahlen\u00a0– das lädt richtig auf! Wir werden sogar daran erinnert, während der Asanas zu lächeln ❤️ Das hilft, sich auf das Gute zu konzentrieren.",
+              "Jetzt ist das morgendliche Yoga-Viertelstündchen einer der festen Punkte in meinem Tagesablauf.",
+              "15\u00a0Minuten\u00a0– und der Tag beginnt richtig gut! 🥰",
+              "Heute habe ich überlegt, wie ich den Prozess nennen würde, der in diesen 15\u00a0Minuten Yoga am Tag passiert.",
+              "Ich habe ihn ‚лагідна йогізація‘ (sanfte Yogisierung) genannt 😂“",
+            ],
+            "bio": "Programmierer\u00a0· 15\u00a0Jahre Berufserfahrung",
+          },
         ],
       },
       faq: {
@@ -1120,7 +1285,7 @@ window.NIGUMA_I18N = {
           {
             "name": "Katya Turkanu",
             "role": "Juristin in internationalen Kanzleien, LL.M. · Yogalehrerin · Schweiz",
-            "photo": "assets/photos/katya.jpg",
+            "photo": "assets/photos/katya-2.jpg",
             "short": "Juristin, LL.M.\u00a0· Schweiz",
             "key": "10 Jahre in internationalen Kanzleien. 760 Stunden Yogalehrer-Ausbildung; unterrichtet das Yoga der Lady\u00a0Niguma seit drei Jahren.",
             "lines": [
@@ -1215,7 +1380,7 @@ window.NIGUMA_I18N = {
           {
             "name": "Olha Filianova",
             "role": "Gründerin von 15minYoga · Mentorin für ICF-Coaches · Methodikerin für Bildungsprogramme · Deutschland",
-            "photo": "assets/photos/olga-filianova.jpg",
+            "photo": "assets/photos/olga-filianova-2.jpg",
             "short": "Gründerin von 15minYoga\u00a0· Deutschland",
             "key": "Mentorin für ICF-Coaches seit 2020. Hat drei Stufen des Yoga der Lady\u00a0Niguma abgeschlossen und studiert am Yoga Studies Institute.",
             "lines": [
@@ -1318,6 +1483,61 @@ window.NIGUMA_I18N = {
           "15minYoga спирається на цілісну систему йоги Леді\u00a0Нігуми й\u00a0особливо на практики роботи з\u00a0внутрішніми вітрами\u00a0— центральну тему другого рівня навчання YSI. Водночас на заняттях використовують принципи та практики різних рівнів системи відповідно до фокусу конкретного заняття.",
           "Yoga Studies Institute працює з\u00a0класичними джерелами в\u00a0партнерстві з\u00a0Asian Legacy Library (ALL)\u00a0— бібліотекою, що зберегла та оцифрувала понад 2\u00a0мільйони сторінок класичних азійських текстів. YSI займається вивченням, перекладом і\u00a0передачею цих знань у\u00a0форматі сучасної практики. ([yogastudiesinstitute.org](https://www.yogastudiesinstitute.org/become-as-gardeners))",
           "Програми Yoga Studies Institute доступні онлайн, тож кожен охочий може звернутися безпосередньо до джерела навчання 15minYoga та продовжити самостійне вивчення традиції.",
+        ],
+      },
+      reviews: {
+        heading: "Відгуки учасників",
+        more: "Читати повністю",
+        less: "Згорнути",
+        items: [
+          {
+            "name": "Марина",
+            "meta": "Учасниця 15minYoga\u00a0· 1\u00a0місяць практики",
+            "title": "«Я\u00a0стала швидше думати, легше ухвалювати рішення й\u00a0масштабніше дивитися на те, що роблю»",
+            "excerpt": "За місяць я\u00a0провела мініпродукт, з’явилися нові учні та співпраці. І\u00a0при цьому всередині стало легше.",
+            "fullTitle": "«Те, що раніше потребувало часу на розгін, тепер я\u00a0просто беру й\u00a0роблю»",
+            "full": [
+              "«За цей місяць я\u00a0помітила, наскільки сильно 15\u00a0хвилин ранкової йоги організовують увесь мій день.",
+              "Я\u00a0стала швидше думати, легше ухвалювати рішення й\u00a0масштабніше дивитися на те, що роблю.",
+              "Раніше мені потрібен був час на підготовку й\u00a0обмірковування. Тепер ідея може народитися сьогодні\u00a0— і\u00a0сьогодні я\u00a0вже готова її реалізувати.",
+              "За місяць я\u00a0провела мініпродукт, з’явилися нові учні та співпраці. І\u00a0при цьому всередині стало легше.",
+              "Це зовсім інша швидкість реалізації своїх ідей».",
+            ],
+            "bio": "Підприємиця, засновниця освітніх проєктів із 20\u2011річним досвідом. Сьогодні\u00a0— наставниця, навчає провідників цвяхостояння, проводить практики індивідуально та в\u00a0корпоративному форматі.",
+            "link": { "label": "@ya.maryna.shevchuk", "href": "https://www.instagram.com/ya.maryna.shevchuk/" },
+          },
+          {
+            "name": "Сергій",
+            "meta": "Учасник 15minYoga\u00a0· 12\u00a0років у\u00a0йозі Леді\u00a0Нігуми",
+            "title": "«Здавалося, що світла в\u00a0кінці тунелю немає. Але сьогодні все кардинально змінилося»",
+            "excerpt": "Кілька днів робив практику по 15\u00a0хвилин, присвячуючи її своїй колезі, з\u00a0якою була конфліктна ситуація.",
+            "fullTitle": "",
+            "full": [
+              "«Кілька днів робив практику по 15\u00a0хвилин, присвячуючи її своїй колезі, з\u00a0якою була конфліктна ситуація.",
+              "Здавалося, що світла в\u00a0кінці тунелю немає, але сьогодні все кардинально змінилося\u00a0— почався конструктивний діалог у\u00a0правильному руслі! Меджик!»",
+            ],
+            "bio": "Підприємець із досвідом понад 20\u00a0років, бізнес-стратег і\u00a0продюсер. 12\u00a0років практикує йогу Леді\u00a0Нігуми.",
+          },
+          {
+            "name": "Антон",
+            "meta": "Учасник 15minYoga\u00a0· 3\u00a0тижні практики",
+            "title": "«Від „ну, спробую“ до обов’язкової ранкової звички»",
+            "excerpt": "Приєднався до пробної практики, і\u00a0мені дуже зайшло: усього 15\u00a0хвилин, а\u00a0в\u00a0процесі розповідають про чакри й\u00a0потоки енергії. Йога відкрилася з\u00a0іншого боку!",
+            "fullTitle": "",
+            "full": [
+              "«Довгий час шукав причину зайнятися йогою. Мені потрібно було знайти в\u00a0цьому сенс і\u00a0наповнення.",
+              "Приєднався до пробної практики, і\u00a0мені дуже зайшло: усього 15\u00a0хвилин, а\u00a0в\u00a0процесі розповідають про чакри й\u00a0потоки енергії. Йога відкрилася з\u00a0іншого боку!",
+              "Я\u00a0був дуже твердотілим, коли йшлося про „займатися йогою“, але щоденні 15\u2011хвилинки все змінили.",
+              "Мій шлях за три тижні\u00a0— від „ну, спробую, може, щось вийде“ до „о, у\u00a0суботу буде повний комплекс йоги, треба підключитися!“.",
+              "Думаю, тут дуже важлива й\u00a0сама енергетика, коли заняття відбувається онлайн\u00a0— це схоже на те, як дивитися футбольний матч онлайн, а\u00a0не в\u00a0записі, бо в\u00a0записі це зовсім не той вайб. Плюс 15\u00a0хвилин зранку\u00a0— цілком посильне завдання, а\u00a0для того, хто ніколи не займався йогою, то це дуже навіть велике досягнення.",
+              "15\u00a0хвилин уранці, онлайн, разом із людьми, які випромінюють радість,\u00a0— це дуже заряджає! Нам навіть нагадують усміхатися під час асан ❤️ Це допомагає зосереджуватися на хорошому.",
+              "Тепер один з\u00a0обов’язкових пунктів мого розпорядку дня\u00a0— ранкова 15\u2011хвилинка йоги.",
+              "15\u00a0хвилин\u00a0— і\u00a0день починається якісно! 🥰",
+              "Сьогодні подумав, як би я\u00a0назвав процес, що відбувається за ці 15\u00a0хвилин йоги на день.",
+              "Назвав його „лагідна йогізація“ 😂».",
+            ],
+            "bio": "Програміст\u00a0· 15\u00a0років професійного досвіду",
+          },
         ],
       },
       faq: {
@@ -1464,7 +1684,7 @@ window.NIGUMA_I18N = {
           {
             "name": "Катя Туркану",
             "role": "Юристка міжнародних юридичних фірм, LL.M. · викладачка йоги · Швейцарія",
-            "photo": "assets/photos/katya.jpg",
+            "photo": "assets/photos/katya-2.jpg",
             "short": "Юристка, LL.M.\u00a0· Швейцарія",
             "key": "10 років у\u00a0міжнародних юридичних фірмах. Програма підготовки викладачів йоги\u00a0— 760 годин; викладає йогу Леді\u00a0Нігуми три роки.",
             "lines": [
@@ -1559,7 +1779,7 @@ window.NIGUMA_I18N = {
           {
             "name": "Ольга Фільянова",
             "role": "Засновниця 15minYoga · менторка ICF-коучів · методологиня освітніх програм · Німеччина",
-            "photo": "assets/photos/olga-filianova.jpg",
+            "photo": "assets/photos/olga-filianova-2.jpg",
             "short": "Засновниця 15minYoga\u00a0· Німеччина",
             "key": "Менторка ICF-коучів з\u00a02020 року. Пройшла три рівні йоги Леді\u00a0Нігуми, навчається в\u00a0Yoga Studies Institute.",
             "lines": [
@@ -1624,6 +1844,7 @@ window.NIGUMA_I18N = {
     M[lng].hero.ctaPrimary = a.heroCta;
     M[lng].stats = a.stats;
     M[lng].faq = a.faq;
+    M[lng].reviews = a.reviews;
     M[lng].method = a.method;
     M[lng].methodPractice = a.methodPractice;
     M[lng].methodSources = a.methodSources;

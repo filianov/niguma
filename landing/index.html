@@ -37,7 +37,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&display=swap" />
-  <link rel="stylesheet" href="css/styles.css?v=20261120j" />
+  <link rel="stylesheet" href="css/styles.css?v=20261120l" />
 </head>
 
 <body>
@@ -120,15 +120,18 @@
     </section>
 
     <!-- ===================== PAINS ===================== -->
-    <!-- Две колонки: слева — зачем именно 15 минут, справа — узнаваемые
-         состояния. На телефоне колонки встают одна под другой в том же порядке:
-         сначала мысль, потом «знакомо?». -->
+    <!-- Надзаголовок и заголовок — по центру над обеими колонками, как у всех
+         разделов сайта. Ниже две колонки: слева — зачем именно 15 минут, справа —
+         узнаваемые состояния. На телефоне колонки встают одна под другой в том же
+         порядке: сначала мысль, потом «знакомо?». -->
     <section class="pains" id="pains">
+      <div class="container">
+        <p class="section__eyebrow" data-i18n="pains.eyebrow">Почему именно 15 минут</p>
+        <h2 class="section__title pains__heading" data-i18n="pains.heading">Несколько решений в день определяют месяц.
+          Несколько месяцев — год.</h2>
+      </div>
       <div class="container pains__inner">
         <div class="pains__why">
-          <p class="pains__eyebrow" data-i18n="pains.eyebrow">Почему именно 15 минут</p>
-          <h2 class="pains__heading" data-i18n="pains.heading">Несколько решений в день определяют месяц.
-            Несколько месяцев — год.</h2>
           <div class="pains__text" data-paras="pains.paras">
             <p>В график человека, от которого зависят другие, мало что можно вместить.</p>
           </div>
@@ -170,8 +173,8 @@
          ветров — data-method; оба рендерера в js/i18n.js, стили — css (Method). -->
     <section class="method" id="method">
       <div class="container method__inner">
-        <p class="method__eyebrow" data-i18n="method.eyebrow">Метод</p>
-        <h2 class="method__heading" data-i18n="method.heading">Пять ветров: как работа с телом управляет состоянием ума</h2>
+        <p class="section__eyebrow" data-i18n="method.eyebrow">Метод</p>
+        <h2 class="section__title method__heading" data-i18n="method.heading">Пять ветров: как работа с телом управляет состоянием ума</h2>
         <div class="method__intro" data-rich="method.paras"><!-- rendered from translations --></div>
         <ol class="method__list" role="list" data-method="method.winds"><!-- rendered from translations --></ol>
         <p class="method__note" data-i18n="method.note"></p>
@@ -180,7 +183,7 @@
              вступление, три карточки шагов (data-steps), сравнение «Без практики» /
              «После 15 минут» (data-list), примечание мелким текстом. -->
         <div class="practice">
-          <h3 class="practice__heading" data-i18n="methodPractice.heading">Это не сокращённая йога. Каждый комплекс — завершённая практика.</h3>
+          <h3 class="section__subtitle" data-i18n="methodPractice.heading">Это не сокращённая йога. Каждый комплекс — завершённая практика.</h3>
           <div class="practice__intro" data-rich="methodPractice.paras"><!-- rendered from translations --></div>
           <ol class="practice__steps" role="list" data-steps="methodPractice.steps"><!-- rendered from translations --></ol>
           <div class="practice__compare">
@@ -200,7 +203,7 @@
              линии (абзацы на вертикальной линии с точками), справа — карточка
              о Yoga Studies Institute. Разметка в текстах: *курсив*, [ссылка](https://…). -->
         <div class="sources">
-          <h3 class="practice__heading" data-i18n="methodSources.heading">Источники и линия передачи</h3>
+          <h3 class="section__subtitle" data-i18n="methodSources.heading">Источники и линия передачи</h3>
           <div class="sources__grid">
             <div class="sources__lineage" data-rich="methodSources.lineage"><!-- rendered from translations --></div>
             <div class="sources__ysi" data-rich="methodSources.ysi"><!-- rendered from translations --></div>
@@ -233,6 +236,19 @@
       <div class="tdialog__body"></div>
     </dialog>
 
+    <!-- ===================== REVIEWS ===================== -->
+    <section class="section reviews" id="reviews">
+      <div class="container reviews__inner">
+        <h2 class="section__title" data-i18n="reviews.heading">Отзывы участников</h2>
+        <!-- Карточки по образцу: знак цитаты, заголовок-цитата, отрывок, черта,
+             подпись. «Читать полностью» раскрывает полный текст в самой карточке
+             (js/main.js, reviewToggle). Данные — reviews.items в переводах. -->
+        <div class="reviews__list" data-reviews="reviews.items">
+          <!-- rendered from translations -->
+        </div>
+      </div>
+    </section>
+
     <!-- ===================== BENEFITS ===================== -->
     <section class="section" id="benefits">
       <div class="container">
@@ -248,18 +264,9 @@
       </div>
     </section>
 
-    <!-- ===================== NOT FOR YOU ===================== -->
-    <section class="section section--alt" id="notfor">
-      <div class="container">
-        <h2 class="section__title" data-i18n="notFor.heading">Вам не подойдёт эта практика, если вы…</h2>
-        <ul class="nf" data-notfor="notFor.items">
-          <!-- rendered from translations with custom pictograms -->
-        </ul>
-      </div>
-    </section>
-
     <!-- ===================== FORMAT ===================== -->
-    <section class="section section--tight" id="format">
+    <!-- Кремовый фон: без него «Формат» сливался бы с «Что вы получите» над ним. -->
+    <section class="section section--tight section--alt" id="format">
       <div class="container">
         <h2 class="section__title" data-i18n="format.heading">Формат участия</h2>
         <div class="format">
@@ -334,8 +341,7 @@
          ответ — js/main.js (faqAccordion), анимация — css/styles.css (FAQ). -->
     <section class="faq" id="faq">
       <div class="container faq__inner">
-        <p class="faq__eyebrow" data-i18n="faq.eyebrow">Вопросы</p>
-        <h2 class="faq__heading" data-i18n="faq.heading">Частые вопросы</h2>
+        <h2 class="section__title" data-i18n="faq.heading">Частые вопросы</h2>
         <div class="faq__list" data-faq="faq.items">
           <!-- rendered from translations -->
         </div>
@@ -409,15 +415,15 @@
     </div>
   </footer>
 
-  <script src="js/icons.js?v=20261120j"></script>
-  <script src="js/translations.js?v=20261120j"></script>
-  <script src="js/config.js?v=20261120j"></script>
-  <script src="js/i18n.js?v=20261120j"></script>
-  <script src="js/main.js?v=20261120j"></script>
-  <script src="js/promo-stickers.js?v=20261120j" defer></script>
-  <script src="js/checkout.js?v=20261120j" defer></script>
-  <script src="js/chat-content.js?v=20261120j" defer></script>
-  <script src="js/chat.js?v=20261120j" defer></script>
+  <script src="js/icons.js?v=20261120l"></script>
+  <script src="js/translations.js?v=20261120l"></script>
+  <script src="js/config.js?v=20261120l"></script>
+  <script src="js/i18n.js?v=20261120l"></script>
+  <script src="js/main.js?v=20261120l"></script>
+  <script src="js/promo-stickers.js?v=20261120l" defer></script>
+  <script src="js/checkout.js?v=20261120l" defer></script>
+  <script src="js/chat-content.js?v=20261120l" defer></script>
+  <script src="js/chat.js?v=20261120l" defer></script>
 </body>
 
 </html>

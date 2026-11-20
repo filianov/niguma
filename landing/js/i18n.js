@@ -103,6 +103,50 @@
       }).join("");
     });
 
+    // reviews: data-reviews="path" -> [{name, meta, title, excerpt, fullTitle, full: [..], bio, link: {label, href}}]
+    // Карточка по образцу: знак цитаты, заголовок-цитата, короткий отрывок, черта,
+    // подпись. «Читать полностью» меняет отрывок на полный текст прямо в карточке
+    // (js/main.js, reviewToggle); пока карточка свёрнута, нажатие в любом её месте
+    // разворачивает её. fullTitle пустой — у полной версии тот же заголовок.
+    document.querySelectorAll("[data-reviews]").forEach(function (el) {
+      var arr = t(lang, el.getAttribute("data-reviews"));
+      if (!Array.isArray(arr) || !arr.length) return;
+      var more = t(lang, "reviews.more") || "";
+      var less = t(lang, "reviews.less") || "";
+      el.innerHTML = arr.map(function (r, i) {
+        var n = i + 1;
+        var link = (r.link && /^https:\/\//.test(r.link.href || ""))
+          ? ' <a class="rv__link" href="' + escapeHtml(r.link.href) + '" target="_blank" rel="noopener">' +
+            escapeHtml(r.link.label || r.link.href) + "</a>"
+          : "";
+        var full = Array.isArray(r.full)
+          ? r.full.map(function (p) { return "<p>" + escapeHtml(p) + "</p>"; }).join("")
+          : "";
+        return '<article class="rv reveal" id="review-' + n + '">' +
+                 '<span class="rv__mark" aria-hidden="true">”</span>' +
+                 '<div class="rv__pane rv__short"><div class="rv__pane-inner">' +
+                   '<h3 class="rv__title">' + escapeHtml(r.title) + "</h3>" +
+                   (r.excerpt ? '<p class="rv__excerpt">' + escapeHtml(r.excerpt) + "</p>" : "") +
+                 "</div></div>" +
+                 '<div class="rv__pane rv__full" id="review-full-' + n + '"><div class="rv__pane-inner">' +
+                   '<h3 class="rv__title">' + escapeHtml(r.fullTitle || r.title) + "</h3>" +
+                   '<div class="rv__text">' + full + "</div>" +
+                   (r.bio || link ? '<p class="rv__bio">' + escapeHtml(r.bio || "") + link + "</p>" : "") +
+                 "</div></div>" +
+                 '<div class="rv__foot">' +
+                   '<p class="rv__who"><span class="rv__name">' + escapeHtml(r.name) + "</span>" +
+                     (r.meta ? '<span class="rv__meta">' + escapeHtml(r.meta) + "</span>" : "") + "</p>" +
+                   '<button class="rv__toggle" type="button" aria-expanded="false" aria-controls="review-full-' + n + '">' +
+                     '<span class="rv__more">' + escapeHtml(more) + "</span>" +
+                     '<span class="rv__less">' + escapeHtml(less) + "</span>" +
+                     '<span class="visually-hidden">: ' + escapeHtml(r.name) + "</span>" +
+                     '<span class="rv__plus" aria-hidden="true"></span>' +
+                   "</button>" +
+                 "</div>" +
+               "</article>";
+      }).join("");
+    });
+
     // stats strip: data-stats="path" -> [{num, unit, lines: [..]}]
     document.querySelectorAll("[data-stats]").forEach(function (el) {
       var arr = t(lang, el.getAttribute("data-stats"));

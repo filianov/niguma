@@ -168,8 +168,29 @@
     });
   }
 
+  /* ---- 9. Отзывы: «Читать полностью» раскрывает полный текст в карточке ----
+     Короткая часть (заголовок + отрывок) сворачивается, полная разворачивается
+     (CSS, .rv.is-open). Свернули длинный отзыв, а начало карточки уже ушло
+     вверх за край экрана — возвращаем к нему, чтобы читатель не потерялся. */
+  function reviewToggle() {
+    var calm = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    document.addEventListener("click", function (e) {
+      var btn = e.target && e.target.closest ? e.target.closest(".rv__toggle") : null;
+      if (!btn) return;
+      var card = btn.closest(".rv");
+      if (!card) return;
+      var open = btn.getAttribute("aria-expanded") !== "true";
+      btn.setAttribute("aria-expanded", open ? "true" : "false");
+      card.classList.toggle("is-open", open);
+      if (!open && card.getBoundingClientRect().top < 0) {
+        card.scrollIntoView({ block: "start", behavior: calm ? "auto" : "smooth" });
+      }
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     teacherDialog();
+    reviewToggle();
     wireCtas();
     deeperPdf();
     setYear();

@@ -218,6 +218,22 @@ img { max-width: 100%; display: block; }
 .section__lead {
   margin: -10px auto 30px; max-width: 60ch; text-align: center; color: var(--ink-soft); font-size: 18px;
 }
+/* Надзаголовок над заголовком раздела («Метод», «Почему именно 15 минут») —
+   мелкая подпись, как «Оплата» и «Языки сообщества»: оливковым, капсом,
+   по центру. */
+.section__eyebrow {
+  margin: 0 0 12px; text-align: center;
+  font-size: 13px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--olive);
+}
+/* Заголовок части внутри раздела («Это не сокращённая йога», «Источники
+   и линия передачи») — тем же шрифтом, что заголовки разделов, чуть мельче. */
+.section__subtitle {
+  margin: 0 auto 18px; max-width: 22em; text-align: center;
+  font-family: var(--font-display);
+  font-size: clamp(24px, 4.2vw, 34px); font-weight: 600; line-height: 1.22; letter-spacing: -0.01em;
+  color: var(--ink); text-wrap: balance;
+}
 
 /* For who */
 .forwho { list-style: none; margin: 0 auto; padding: 0; max-width: 42ch; text-align: center; }
@@ -457,7 +473,7 @@ img { max-width: 100%; display: block; }
 }
 
 /* ===================================================================
-   Блоки контента: боли · обещание · тренер · выгоды · почему · не подойдёт
+   Блоки контента: боли · обещание · тренер · выгоды · почему
    =================================================================== */
 
 /* ---------------- Stats: полоса цифр под первым экраном ---------------- */
@@ -468,15 +484,18 @@ img { max-width: 100%; display: block; }
  * ширине экрана от 320 до 1920 px, а 1160 px — ещё и с полосой прокрутки
  * Windows (17 px).
  *
- * Ноутбук (от 1160 px) — одна строка из четырёх колонок по макету: толстая
- * линия сверху, тонкие разделители, цифра цветом глины, подписи мелким капсом.
- * Колонки разной ширины: у «06:45» две подписи, и каждая должна встать
- * в одну строку; у «5 ветров» подпись длинная и встаёт в две; «~1000 years»
- * и «~1000 Jahre» — самые широкие цифры. Уже 1160 px четыре колонки не
- * помещаются по этому правилу, поэтому там сетка 2×2.
+ * В фирменном стиле сайта: подпись над полосой — мелкая оливковая, капсом,
+ * по центру (как «Оплата» и «Языки сообщества»); цифры — шрифтом заголовков
+ * цветом глины (как время «06:45–07:00» и цены); полоса между тонкими
+ * линиями цвета разделителей; текст в ячейках по центру.
  *
- * Планшет и узкий ноутбук (600–1159 px) — сетка 2×2 равных колонок, подписи
- * тем же капсом.
+ * Ноутбук (от 1160 px) — одна строка из четырёх колонок. Колонки разной
+ * ширины: у «06:45» две подписи, и каждая должна встать в одну строку;
+ * у «5 ветров» подпись длинная и встаёт в две; «~1000 years» и «~1000 Jahre» —
+ * самые широкие цифры. Полоса шириной с шапку (1160 px): в 1000 px подписи
+ * «06:45» в одну строку не помещаются. Уже 1160 px — сетка 2×2.
+ *
+ * Планшет и узкий ноутбук (600–1159 px) — сетка 2×2 равных колонок.
  *
  * Телефон (до 600 px) — сетка 2×2, порядок как на ноутбуке, по строкам:
  * «15 минут · 06:45», ниже «~1000 лет · 5 ветров». Правая колонка шире:
@@ -484,42 +503,39 @@ img { max-width: 100%; display: block; }
  * при ширине колонки ~195 px «Модель, связывающая движение, эмоции и мышление»
  * не помещается в две строки ни при каком читаемом кегле.
  *
- * Цвет подписей смешан из цвета текста и фона (как у абзацев блока ниже):
- * --ink-soft на светлом фоне даёт контраст 3,9:1 — для мелкого текста мало,
- * смесь даёт 4,8:1, а в тёмной теме подстраивается сама.
- *
- * Ширина — как у блока ниже (1160 px): края полосы и колонок
- * «Почему именно 15 минут · Знакомо?» стоят на одной линии.
+ * Цвет подписей смешан из цвета текста и фона: --ink-soft на светлом фоне
+ * даёт контраст 3,9:1 — для мелкого текста мало, смесь даёт 4,8:1, а в тёмной
+ * теме подстраивается сама.
  */
-.stats { padding: clamp(32px, 4.5vw, 56px) 0 0; background: var(--bg); }
+.stats { padding: clamp(36px, 5vw, 60px) 0 0; background: var(--bg); }
 .stats__inner { max-width: 1160px; }
 .stats__title {
-  margin: 0 0 14px;
-  font-size: 13px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
-  color: var(--ink);
+  margin: 0 0 16px; text-align: center;
+  font-size: 13px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--olive);
 }
 .stats__list {
   list-style: none; margin: 0; padding: 0;
-  border-top: 2px solid var(--ink);
+  border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
   display: grid;
   /* доли = ширина колонки в px при полосе 1116 px, вместе с отступами */
-  grid-template-columns: minmax(0, 208fr) minmax(0, 368fr) minmax(0, 264fr) minmax(0, 276fr);
+  grid-template-columns: minmax(0, 214fr) minmax(0, 362fr) minmax(0, 264fr) minmax(0, 276fr);
 }
-.stat { margin: 0; padding: 18px 20px 2px; border-left: 1px solid var(--line); }
-.stat:first-child { padding-left: 0; border-left: 0; }
-.stat:last-child { padding-right: 0; }
+.stat { margin: 0; padding: 22px 14px 20px; border-left: 1px solid var(--line); text-align: center; }
+.stat:first-child { border-left: 0; }
 .stat__value {
   margin: 0 0 8px;
-  font-size: clamp(30px, 2.5vw, 36px); font-weight: 700; line-height: 1.1; letter-spacing: -0.01em;
+  font-family: var(--font-display); font-size: clamp(28px, 2.4vw, 34px); font-weight: 600;
+  line-height: 1.1; letter-spacing: -0.01em;
   color: var(--ink);
   white-space: nowrap;
 }
 .stat__num { color: var(--clay-deep); }
-/* «(Вена)» на ноутбуке мельче: полным кеглем не помещается в колонку */
-.stat__unit--note { font-size: .62em; font-weight: 600; letter-spacing: 0; }
+/* «(Вена)» — пояснение, а не единица: мелко, основным шрифтом */
+.stat__unit--note { font-family: var(--font); font-size: .5em; font-weight: 500; letter-spacing: 0; color: var(--ink-soft); }
 .stat__line {
   margin: 0;
-  font-size: 11.5px; font-weight: 600; line-height: 1.55; letter-spacing: .05em; text-transform: uppercase;
+  font-size: 11.5px; font-weight: 500; line-height: 1.55; letter-spacing: .06em; text-transform: uppercase;
   color: var(--ink-soft);
   color: color-mix(in srgb, var(--ink) 72%, var(--bg));
   text-wrap: balance;
@@ -530,16 +546,16 @@ img { max-width: 100%; display: block; }
 .stats + .pains { padding-top: clamp(48px, 6vw, 80px); }
 
 @media (max-width: 1159px) {
-  .stats__list { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: 32px; row-gap: 18px; padding-top: 18px; }
-  .stat, .stat:first-child, .stat:last-child { padding: 0; border-left: 0; }
-  .stat__value { font-size: clamp(24px, 3.4vw, 32px); margin-bottom: 6px; }
-  .stat__unit--note { font-size: 1em; font-weight: 700; letter-spacing: -0.01em; }
+  .stats__list { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: 32px; row-gap: 20px; padding: 20px 0; }
+  .stat, .stat:first-child { padding: 0; border-left: 0; }
+  .stat__value { font-size: clamp(26px, 3.6vw, 34px); margin-bottom: 6px; }
+  .stat__unit--note { font-size: .55em; }
 }
 
 @media (max-width: 599px) {
-  .stats__title { font-size: 14px; letter-spacing: .04em; line-height: 1.35; margin-bottom: 12px; text-wrap: balance; }
-  .stats__list { grid-template-columns: minmax(0, 0.7fr) minmax(0, 1fr); column-gap: 12px; row-gap: 16px; padding-top: 16px; }
-  .stat__value { font-size: clamp(20px, 5.7vw, 24px); margin-bottom: 4px; }
+  .stats__title { font-size: 12.5px; letter-spacing: .08em; line-height: 1.45; margin-bottom: 14px; text-wrap: balance; }
+  .stats__list { grid-template-columns: minmax(0, 0.7fr) minmax(0, 1fr); column-gap: 12px; row-gap: 18px; padding: 18px 0; }
+  .stat__value { font-size: clamp(20px, 5.6vw, 24px); margin-bottom: 4px; }
   .stat__line { font-size: 11.5px; font-weight: 500; line-height: 1.4; letter-spacing: 0; text-transform: none; }
   .stat__line + .stat__line { margin-top: 3px; }
 }
@@ -553,61 +569,41 @@ img { max-width: 100%; display: block; }
 @media (max-width: 359px) {
   .stats__inner { padding-inline: 16px; }
   .stats__list { grid-template-columns: minmax(0, 102fr) minmax(0, 178fr); column-gap: 8px; }
-  .stat__value { font-size: 17px; }
+  .stat__value { font-size: 16px; }
   .stat__line { font-size: 10.5px; letter-spacing: -0.01em; }
 }
 
 /* ---------------- Pains: «почему 15 минут» + «знакомо?» ---------------- */
 /**
- * Две колонки по макету: слева мысль — надзаголовок, крупный афоризм и два
- * абзаца; справа — подпись «Знакомо?» и пять карточек-состояний. Колонки
- * выровнены по верху: надзаголовок и подпись стоят на одной линии.
- *
- * Блок шире остальных (1160 px против 1000): крупному заголовку нужна
- * ширина, иначе он ломается на четыре строки вместо трёх, как в макете.
- * Колонки равные — как в макете; правой так хватает места, чтобы самая
- * длинная карточка стояла в одну строку.
- *
- * Цвета — только через переменные палитры, поэтому тёмная тема переключает
- * блок сама. Цвет абзацев смешивается из цвета текста и фона: в макете он
- * темнее, чем приглушённый --ink-soft, и так остаётся читаемым в обеих темах.
+ * Как у всех разделов сайта: надзаголовок и заголовок — по центру над обеими
+ * колонками, заголовок шрифтом заголовков. Ниже две колонки, как в «Почему
+ * это работает»: слева два абзаца (первый — темнее и крупнее), справа —
+ * подпись «Знакомо?» и пять карточек-состояний. Ширина — обычная, 1000 px.
  */
-.pains { padding: clamp(56px, 8vw, 104px) 0; background: var(--bg); }
-.pains__inner { max-width: 1160px; display: grid; gap: 40px; }
+.pains { padding: clamp(56px, 8vw, 92px) 0; background: var(--bg); }
+.pains__heading { max-width: 20em; margin-inline: auto; line-height: 1.2; text-wrap: balance; }
+.pains__inner { display: grid; gap: 34px; }
 @media (min-width: 900px) {
-  .pains__inner { grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+  .pains__inner { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 48px; align-items: start; }
 }
-
-.pains__eyebrow {
-  margin: 0 0 20px;
-  font-size: 13.5px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
-  color: var(--clay-deep);
-}
-.pains__heading {
-  margin: 0;
-  font-family: var(--font); font-weight: 800;
-  font-size: clamp(28px, 3.3vw, 40px); line-height: 1.12; letter-spacing: -0.02em;
-  color: var(--ink); text-wrap: balance;
-}
-.pains__text { margin-top: 26px; }
-.pains__text p {
-  margin: 0 0 18px; max-width: 34em;
-  font-size: clamp(16.5px, 1.6vw, 18.5px); line-height: 1.62;
-  color: color-mix(in srgb, var(--ink) 80%, var(--bg));
-}
+.pains__text p { margin: 0 0 16px; max-width: 34em; color: var(--ink-soft); font-size: 17px; line-height: 1.66; }
+.pains__text p:first-child { color: var(--ink); font-size: 18.5px; }
 .pains__text p:last-child { margin-bottom: 0; }
 
-.pains__label { margin: 2px 0 18px; font-size: 16px; font-weight: 700; color: var(--olive); }
-.pains__list { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+.pains__label {
+  margin: 4px 0 14px;
+  font-size: 13px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--olive);
+}
+.pains__list { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
 .pains__list li {
   background: var(--surface);
-  border: 1px solid var(--line); border-radius: 18px;
-  padding: 19px 22px;
-  font-size: clamp(15.5px, 1.4vw, 16px); font-weight: 500; line-height: 1.4;
+  border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 17px 22px;
+  font-size: 16px; font-weight: 500; line-height: 1.4;
   color: var(--ink);
-  box-shadow: 0 1px 2px rgba(59, 56, 47, .04);
 }
-@media (max-width: 600px) { .pains__list li { padding: 17px 20px; border-radius: 16px; } }
+@media (max-width: 600px) { .pains__list li { padding: 15px 18px; } }
 
 /* ---------------- Promise: the answer, over the mountain band ---------------- */
 .promise {
@@ -633,150 +629,114 @@ img { max-width: 100%; display: block; }
 
 /* ---------------- Method: «Пять ветров» ---------------- */
 /**
- * По макету: надзаголовок цветом глины, крупный заголовок капсом, вступление,
- * затем таблица из пяти строк под толстой линией — номер цветом глины,
- * название ветра капсом (санскритское название — второй строкой, мельче),
- * описание; строки разделены тонкими линиями. Внизу — примечание с полосой
- * цвета глины слева.
+ * В фирменном стиле: надзаголовок «Метод» и заголовок — по центру, заголовок
+ * шрифтом заголовков; вступление — по центру, как у «Почему это работает».
+ * Ниже таблица из пяти строк между тонкими линиями: номер — шрифтом
+ * заголовков цветом глины (как время и цены), название ветра, санскритское
+ * название второй строкой мельче, описание. Примечание — мелко, по центру.
  *
- * Ширина — 1160 px, как у полосы цифр и блока «Почему именно 15 минут».
- * Фон — лёгкий тёплый оттенок между фоном страницы и кремовым фоном
- * «Тренеров»: без него раздел сливался бы с «Что входит в курс» над ним.
+ * Фон — кремовый (--bg-alt), как у «Стоимости»: раздел отделён от «Что входит
+ * в курс» над ним и от «Тренеров» под ним. Ширина — обычная, 1000 px.
  *
  * Телефон (до 760 px): номер слева, название и описание — в правой колонке
  * друг под другом.
  */
-.method { padding: clamp(56px, 8vw, 104px) 0; background: color-mix(in srgb, var(--bg-alt) 42%, var(--bg)); }
-.method__inner { max-width: 1160px; }
-.method__eyebrow {
-  margin: 0 0 10px;
-  font-size: 13px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
-  color: var(--clay-deep);
-}
-.method__heading {
-  margin: 0 0 22px; max-width: 21em;
-  font-family: var(--font); font-weight: 800; font-size: clamp(28px, 4.2vw, 50px);
-  line-height: 1.06; letter-spacing: -0.01em; text-transform: uppercase;
-  color: var(--ink); text-wrap: balance;
-}
-.method__intro p {
-  margin: 0 0 14px; max-width: 46em;
-  font-size: clamp(16px, 1.5vw, 17.5px); line-height: 1.65;
-  color: color-mix(in srgb, var(--ink) 84%, var(--bg));
-}
+.method { padding: clamp(56px, 8vw, 92px) 0; background: var(--bg-alt); }
+.method__heading { max-width: 18em; margin-inline: auto; line-height: 1.2; text-wrap: balance; }
+.method__intro { max-width: 62ch; margin: 0 auto; text-align: center; }
+.method__intro p { margin: 0 0 12px; color: var(--ink-soft); font-size: 18px; line-height: 1.6; text-wrap: pretty; }
 .method__intro p:last-child { margin-bottom: 0; }
-.method__intro strong { font-weight: 700; color: var(--ink); }
+.method__intro strong { font-weight: 600; color: var(--ink); }
 .method__list {
-  list-style: none; margin: clamp(28px, 4vw, 44px) 0 0; padding: 0;
-  border-top: 2px solid var(--ink);
+  list-style: none; margin: clamp(32px, 4vw, 44px) 0 0; padding: 0;
+  border-top: 1px solid var(--line);
 }
 .mrow {
-  display: grid; grid-template-columns: 96px minmax(0, 0.62fr) minmax(0, 1fr);
-  column-gap: 28px; align-items: start;
-  padding: 24px 0; border-bottom: 1px solid var(--line);
+  display: grid; grid-template-columns: 64px minmax(0, 0.62fr) minmax(0, 1fr);
+  column-gap: 24px; align-items: start;
+  padding: 22px 0; border-bottom: 1px solid var(--line);
 }
 .mrow__num {
-  font-size: 26px; font-weight: 800; line-height: 1.05; letter-spacing: -0.01em;
+  font-family: var(--font-display); font-size: 32px; font-weight: 600; line-height: 1;
   color: var(--clay-deep); font-variant-numeric: tabular-nums;
 }
 .mrow__name {
-  margin: 3px 0 0;
-  font-family: var(--font); font-size: 15.5px; font-weight: 800; line-height: 1.35;
-  letter-spacing: .03em; text-transform: uppercase; color: var(--ink);
+  margin: 2px 0 0;
+  font-family: var(--font); font-size: 18px; font-weight: 600; line-height: 1.35; letter-spacing: -0.005em;
+  color: var(--ink);
 }
-.mrow__sub {
-  display: block; margin-top: 5px;
-  font-size: 12.5px; font-weight: 600; letter-spacing: .1em;
-  color: color-mix(in srgb, var(--ink) 62%, var(--bg));
-}
-.mrow__text {
-  margin: 0;
-  font-size: clamp(15px, 1.4vw, 16px); line-height: 1.6;
-  color: color-mix(in srgb, var(--ink) 84%, var(--bg));
-}
+.mrow__sub { display: block; margin-top: 3px; font-size: 14.5px; font-weight: 400; color: var(--ink-soft); }
+.mrow__text { margin: 2px 0 0; color: var(--ink-soft); font-size: 16px; line-height: 1.6; }
 .method__note {
-  margin: 30px 0 0; max-width: 46em; padding: 6px 0 6px 24px;
-  border-left: 3px solid var(--clay-deep);
-  font-size: 15.5px; line-height: 1.6;
-  color: color-mix(in srgb, var(--ink) 80%, var(--bg));
+  margin: 26px auto 0; max-width: 60ch; text-align: center;
+  font-size: 14.5px; line-height: 1.6; color: var(--ink-soft); text-wrap: pretty;
 }
 .method__note:empty { display: none; }
 
 @media (max-width: 759px) {
-  /* заголовок капсом длинный (особенно немецкий) — на телефоне чуть мельче */
-  .method__heading { font-size: clamp(23px, 6.6vw, 30px); line-height: 1.1; }
-  .mrow { grid-template-columns: 34px minmax(0, 1fr); column-gap: 14px; row-gap: 8px; padding: 20px 0; }
-  .mrow__num { grid-row: 1 / span 2; font-size: 20px; padding-top: 1px; }
+  .mrow { grid-template-columns: 34px minmax(0, 1fr); column-gap: 14px; row-gap: 6px; padding: 20px 0; }
+  .mrow__num { grid-row: 1 / span 2; font-size: 26px; }
   .mrow__name, .mrow__text { grid-column: 2; }
-  .mrow__name { margin-top: 0; font-size: 15px; }
-  .method__note { padding-left: 18px; font-size: 15px; }
+  .mrow__name { margin-top: 0; font-size: 17px; }
 }
 
 /* ---------- Method, продолжение: «Это не сокращённая йога» ---------- */
 /**
- * По макету: заголовок обычным регистром, вступление крупным текстом, три
- * белые карточки шагов (крупная цифра цветом глины, заголовок, текст), две
- * плашки сравнения — «Без практики» бежевая, «После 15 минут» тёмная, —
- * и примечание мелким текстом.
- *
- * Тёмная плашка задана постоянными цветами, а не переменными палитры:
- * в тёмной теме --ink светлый, и плашка «после» перестала бы быть тёмной.
+ * Заголовок части — шрифтом заголовков, по центру (.section__subtitle);
+ * вступление по центру. Три карточки шагов — как карточки «Что входит
+ * в курс» (светлые, тонкая рамка, скругление 24 px, текст влево — длинные
+ * абзацы по центру читаются тяжело): крупная цифра шрифтом заголовков цветом
+ * глины, заголовок, текст. Ниже две плашки сравнения: «Без практики» — светлая карточка,
+ * «После 15 минут» — глубокий оливковый (цвет подвала сайта). Примечание —
+ * мелко, по центру.
  */
-.practice { margin-top: clamp(64px, 8vw, 104px); }
-.practice__heading {
-  margin: 0 0 20px; max-width: 24em;
-  font-family: var(--font); font-weight: 800; font-size: clamp(26px, 3.3vw, 42px);
-  line-height: 1.12; letter-spacing: -0.02em; color: var(--ink); text-wrap: balance;
-}
-.practice__intro p {
-  margin: 0 0 12px; max-width: 46em;
-  font-size: clamp(16.5px, 1.6vw, 19px); line-height: 1.6;
-  color: color-mix(in srgb, var(--ink) 84%, var(--bg));
-}
+.practice { margin-top: clamp(64px, 8vw, 96px); }
+.practice__intro { max-width: 62ch; margin: 0 auto; text-align: center; }
+.practice__intro p { margin: 0 0 12px; color: var(--ink-soft); font-size: 18px; line-height: 1.6; text-wrap: pretty; }
 .practice__intro p:last-child { margin-bottom: 0; }
-.practice__intro strong { font-weight: 700; color: var(--ink); }
+.practice__intro strong { font-weight: 600; color: var(--ink); }
 
 .practice__steps {
-  list-style: none; margin: clamp(32px, 4vw, 48px) 0 0; padding: 0;
-  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(16px, 2vw, 28px);
+  list-style: none; margin: clamp(32px, 4vw, 44px) 0 0; padding: 0;
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px;
 }
 .pstep {
-  margin: 0; padding: clamp(24px, 2.6vw, 34px) clamp(22px, 2.4vw, 32px);
-  background: var(--surface); border: 1px solid var(--line); border-radius: 22px;
-  box-shadow: 0 1px 2px rgba(59, 56, 47, .04);
+  margin: 0; padding: 28px 26px;
+  background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-lg);
+  transition: transform .3s var(--ease), box-shadow .3s var(--ease), border-color .3s var(--ease);
 }
+.pstep:hover { transform: translateY(-3px); box-shadow: 0 18px 40px -26px rgba(59, 56, 47, .38); border-color: var(--sand); }
 .pstep__num {
-  display: block; margin-bottom: 18px;
-  font-size: clamp(32px, 3.2vw, 42px); font-weight: 700; line-height: 1;
+  display: block; margin-bottom: 14px;
+  font-family: var(--font-display); font-size: 44px; font-weight: 600; line-height: 1;
   color: var(--clay-deep); font-variant-numeric: tabular-nums;
 }
 .pstep__title {
-  margin: 0 0 12px;
-  font-family: var(--font); font-size: clamp(18px, 1.7vw, 21px); font-weight: 700; line-height: 1.25;
+  margin: 0 0 10px;
+  font-family: var(--font); font-size: 20px; font-weight: 600; line-height: 1.3; letter-spacing: -0.01em;
   color: var(--ink); text-wrap: balance;
 }
-.pstep__text {
-  margin: 0;
-  font-size: clamp(15.5px, 1.4vw, 16.5px); line-height: 1.6;
-  color: color-mix(in srgb, var(--ink) 82%, var(--bg));
-}
+.pstep__text { margin: 0; color: var(--ink-soft); font-size: 16px; line-height: 1.6; text-wrap: pretty; }
 
 .practice__compare {
-  margin-top: clamp(20px, 2.6vw, 32px);
-  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(14px, 1.6vw, 22px);
+  margin-top: 18px;
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px;
 }
-.pcmp { border-radius: 18px; padding: clamp(20px, 2.2vw, 26px) clamp(22px, 2.4vw, 30px); }
-.pcmp--before { background: color-mix(in srgb, var(--bg-alt) 91%, var(--ink)); }
-.pcmp--after { background: #142120; }  /* тот же тёмный, что у раздела «Тренеры» */
+.pcmp {
+  padding: 22px 26px;
+  border: 1px solid var(--line); border-radius: var(--radius-lg);
+}
+.pcmp--before { background: var(--paper); }
+.pcmp--after { background: var(--olive-deep); border-color: var(--olive-deep); }
 .pcmp__label {
   margin: 0 0 10px;
-  font-size: 12.5px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
-  color: color-mix(in srgb, var(--ink) 62%, var(--bg));
+  font-size: 13px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--olive);
 }
-.pcmp--after .pcmp__label { color: #e2a27f; }
+.pcmp--after .pcmp__label { color: var(--sand); }
 .pcmp__items {
   list-style: none; margin: 0; padding: 0;
-  font-size: clamp(16.5px, 1.6vw, 19px); line-height: 1.45; font-weight: 500;
+  font-size: 18px; line-height: 1.45; font-weight: 500;
   color: var(--ink);
 }
 .pcmp--after .pcmp__items { color: #fbf8f3; }
@@ -785,49 +745,43 @@ img { max-width: 100%; display: block; }
 .pcmp__items li:not(:last-child)::after { content: "\00a0·"; margin-right: .35em; }
 
 .practice__note {
-  margin: clamp(24px, 3vw, 36px) 0 0; max-width: 52em;
-  font-size: 14.5px; line-height: 1.6;
-  color: color-mix(in srgb, var(--ink) 70%, var(--bg));
+  margin: 26px auto 0; max-width: 62ch; text-align: center;
+  font-size: 14.5px; line-height: 1.6; color: var(--ink-soft); text-wrap: pretty;
 }
 .practice__note:empty { display: none; }
 
 /* ---------- Method, продолжение: «Источники и линия передачи» ---------- */
-/* Слева история линии: абзацы на вертикальной линии, у каждого — точка цвета
-   глины, как веха. Справа — белая карточка о YSI в стиле карточек шагов. */
-.sources { margin-top: clamp(64px, 8vw, 104px); }
+/* Заголовок части — по центру над обеими колонками. Слева история линии:
+   абзацы на вертикальной линии, у каждого — точка цвета глины, как веха.
+   Справа — карточка о YSI, как карточки сайта. */
+.sources { margin-top: clamp(64px, 8vw, 96px); }
 .sources__grid {
   display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr);
-  gap: clamp(28px, 4vw, 56px); align-items: start;
-  margin-top: clamp(20px, 2.6vw, 30px);
+  gap: 44px; align-items: start;
+  margin-top: clamp(24px, 3vw, 34px);
 }
 .sources__lineage {
   margin-left: 6px; padding-left: 28px;
-  border-left: 2px solid color-mix(in srgb, var(--clay) 45%, var(--bg));
+  border-left: 2px solid color-mix(in srgb, var(--clay) 45%, var(--bg-alt));
 }
 .sources__lineage p {
-  position: relative; margin: 0 0 20px;
-  font-size: clamp(15.5px, 1.45vw, 16.5px); line-height: 1.65;
-  color: color-mix(in srgb, var(--ink) 84%, var(--bg));
+  position: relative; margin: 0 0 18px;
+  color: var(--ink-soft); font-size: 16.5px; line-height: 1.65;
 }
-.sources__lineage p:first-child { font-size: clamp(16.5px, 1.6vw, 18.5px); color: var(--ink); }
+.sources__lineage p:first-child { color: var(--ink); font-size: 18px; }
 .sources__lineage p:last-child { margin-bottom: 0; }
 .sources__lineage p::before {
   content: ""; position: absolute; left: -36px; top: .5em;
   width: 12px; height: 12px; border-radius: 50%;
-  background: var(--clay-deep);
-  box-shadow: 0 0 0 4px color-mix(in srgb, var(--bg-alt) 42%, var(--bg));  /* = фон раздела */
+  background: var(--clay);
+  box-shadow: 0 0 0 4px var(--bg-alt);  /* = фон раздела */
 }
 .sources__ysi {
-  padding: clamp(24px, 2.6vw, 32px) clamp(22px, 2.4vw, 32px);
-  background: var(--surface); border: 1px solid var(--line); border-radius: 22px;
-  box-shadow: 0 1px 2px rgba(59, 56, 47, .04);
+  padding: 28px 26px;
+  background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-lg);
 }
-.sources__ysi p {
-  margin: 0 0 14px;
-  font-size: clamp(15px, 1.4vw, 16px); line-height: 1.6;
-  color: color-mix(in srgb, var(--ink) 84%, var(--bg));
-}
-.sources__ysi p:first-child { font-size: clamp(17px, 1.6vw, 19px); font-weight: 700; line-height: 1.4; color: var(--ink); }
+.sources__ysi p { margin: 0 0 14px; color: var(--ink-soft); font-size: 16px; line-height: 1.6; }
+.sources__ysi p:first-child { color: var(--ink); font-size: 18px; font-weight: 600; line-height: 1.4; }
 .sources__ysi p:last-child { margin-bottom: 0; }
 .sources a { color: var(--clay-deep); text-decoration: underline; text-underline-offset: 3px; }
 .sources a:hover { text-decoration-thickness: 2px; }
@@ -837,8 +791,7 @@ img { max-width: 100%; display: block; }
   .sources__lineage { padding-left: 22px; }
   .sources__lineage p::before { left: -30px; }
   .practice__steps { grid-template-columns: minmax(0, 1fr); gap: 14px; }
-  .pstep__num { margin-bottom: 12px; }
-  .practice__compare { grid-template-columns: minmax(0, 1fr); }
+  .practice__compare { grid-template-columns: minmax(0, 1fr); gap: 14px; }
 }
 
 /* ---------------- FAQ: «Частые вопросы» ---------------- */
@@ -849,7 +802,8 @@ img { max-width: 100%; display: block; }
  * поворачивается и ложится на горизонтальную).
  *
  * Блок узкий — 760 px, чтобы строки ответов читались легко; на странице
- * он стоит по центру, текст внутри выровнен влево, как в макете.
+ * он стоит по центру. Заголовок — как у всех разделов сайта (.section__title:
+ * шрифт заголовков, по центру); вопросы и ответы выровнены влево.
  *
  * Раскрытие — через grid-template-rows 0fr → 1fr: высоту ответа не нужно
  * мерить скриптом, анимация идёт в любом современном браузере. Закрытый
@@ -858,24 +812,14 @@ img { max-width: 100%; display: block; }
  */
 .faq { padding: clamp(56px, 8vw, 96px) 0; background: var(--bg); }
 .faq__inner { max-width: 760px; }
-.faq__eyebrow {
-  margin: 0 0 10px;
-  font-size: 13px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
-  color: var(--clay-deep);
-}
-.faq__heading {
-  margin: 0 0 clamp(18px, 3vw, 30px);
-  font-family: var(--font); font-weight: 800; font-size: clamp(28px, 4vw, 44px);
-  line-height: 1.08; letter-spacing: -0.01em; text-transform: uppercase;
-  color: var(--ink);
-}
+.faq__list { border-top: 1px solid var(--line); }
 .faq__item { border-bottom: 1px solid var(--line); }
 .faq__q { margin: 0; font: inherit; }
 .faq__btn {
   display: flex; align-items: center; justify-content: space-between; gap: 20px;
   width: 100%; margin: 0; padding: 22px 0;
   background: none; border: 0; cursor: pointer; text-align: left;
-  font-family: var(--font); font-size: clamp(16.5px, 1.6vw, 18px); font-weight: 700; line-height: 1.35;
+  font-family: var(--font); font-size: clamp(16.5px, 1.6vw, 18px); font-weight: 600; line-height: 1.4;
   color: var(--ink);
   -webkit-tap-highlight-color: transparent;
 }
@@ -905,7 +849,7 @@ img { max-width: 100%; display: block; }
 .faq__a-inner p {
   margin: 0 0 12px; max-width: 42em;
   font-size: clamp(15.5px, 1.5vw, 16.5px); line-height: 1.6;
-  color: color-mix(in srgb, var(--ink) 84%, var(--bg));
+  color: var(--ink-soft);
 }
 .faq__a-inner p:last-child { margin-bottom: 24px; }
 .faq__a-inner a { color: var(--clay-deep); text-decoration: underline; text-underline-offset: 3px; }
@@ -1016,72 +960,74 @@ img { max-width: 100%; display: block; }
   .teacher__facts { grid-template-columns: 1fr 1fr; gap: 8px 26px; }
 }
 
-/* ---------------- Trainers: компактные карточки по макету ---------------- */
+/* ---------------- Trainers: компактные карточки ---------------- */
 /**
- * Тёмный раздел, как в макете: карточки в две колонки (на телефоне — в одну),
- * в карточке круглое фото с кольцом цвета глины, имя, короткая роль, ключевая
- * фраза и «Подробнее +». Нажимается вся карточка: невидимый слой кнопки
+ * В фирменном стиле: светлый раздел, заголовок и вступление по центру,
+ * карточки — как карточки сайта (светлые, тонкая рамка, скругление 24 px,
+ * при наведении приподнимаются). Две колонки, на телефоне — одна. В карточке
+ * круглое фото с кольцом цвета глины, имя, короткая роль, ключевая фраза
+ * и «Подробнее +». Нажимается вся карточка: невидимый слой кнопки
  * (.tcard__open::after) растянут на неё целиком. Полный профиль открывается
- * в окне (.tdialog) — js/main.js, teacherDialog.
- *
- * Цвета раздела постоянные, а не из палитры: раздел тёмный в обеих темах.
+ * в окне (.tdialog) — js/main.js, teacherDialog. Цвета — только из палитры,
+ * поэтому тёмная тема сайта переключает раздел сама.
  */
-.trainers { background: #142120; }
-.trainers .section__title { color: #f4f1ea; }
-.trainers .section__lead { color: #a9bab7; }
-.trainers__inner { max-width: 1160px; }
+.trainers { background: var(--bg); }
 .tcards {
   display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(14px, 2vw, 24px); margin-top: clamp(28px, 4vw, 44px);
+  gap: 18px; margin-top: clamp(30px, 4vw, 40px);
 }
 .tcard {
   position: relative;
-  display: grid; grid-template-columns: 72px minmax(0, 1fr); column-gap: 18px; row-gap: 16px;
+  display: grid; grid-template-columns: 72px minmax(0, 1fr); column-gap: 18px; row-gap: 14px;
   align-items: center; align-content: start;
-  padding: clamp(22px, 2.6vw, 30px);
-  background: #1b2b2a; border: 1px solid rgba(255, 255, 255, .08); border-radius: 22px;
-  transition: border-color .2s var(--ease), background .2s var(--ease), transform .2s var(--ease);
+  padding: 26px;
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-lg);
+  transition: transform .3s var(--ease), box-shadow .3s var(--ease), border-color .3s var(--ease);
 }
-.tcard:hover { background: #1f3231; border-color: rgba(226, 162, 127, .5); transform: translateY(-2px); }
-.tcard:focus-within { border-color: #e2a27f; }
+.tcard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 40px -26px rgba(59, 56, 47, .38);
+  border-color: var(--sand);
+}
+.tcard:focus-within { border-color: var(--clay); }
 .tcard__ava {
   width: 72px; height: 72px; border-radius: 50%; object-fit: cover; display: block;
-  box-shadow: 0 0 0 3px #1b2b2a, 0 0 0 5px #e2a27f;
+  box-shadow: 0 0 0 3px var(--surface), 0 0 0 4.5px var(--clay);
 }
 .tcard__ava--empty {
-  display: grid; place-items: center; background: #f0ad7a; color: #142120;
-  font-size: 24px; font-weight: 800;
+  display: grid; place-items: center; background: var(--cream); color: var(--clay-deep);
+  font-family: var(--font-display); font-size: 26px; font-weight: 600;
 }
 .tcard__name {
-  margin: 0; font-family: var(--font); font-size: clamp(18px, 1.7vw, 21px); font-weight: 700;
-  line-height: 1.25; color: #f4f1ea;
+  margin: 0; font-family: var(--font); font-size: 20px; font-weight: 600;
+  line-height: 1.25; letter-spacing: -0.01em; color: var(--ink);
 }
-.tcard__role { margin: 5px 0 0; font-size: 14px; line-height: 1.4; color: #9fb3b0; }
+.tcard__role { margin: 4px 0 0; font-size: 14px; line-height: 1.4; color: var(--ink-soft); }
 .tcard__key {
   grid-column: 1 / -1; margin: 0;
-  font-size: clamp(15.5px, 1.45vw, 17px); line-height: 1.6; color: #dbe3e1;
+  font-size: 16px; line-height: 1.6; color: var(--ink-soft);
 }
 .tcard__open {
   grid-column: 1 / -1; justify-self: start;
   display: inline-flex; align-items: center; gap: 10px;
   margin: 0; padding: 0; background: none; border: 0; cursor: pointer;
-  font-family: var(--font); font-size: 13px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
-  color: #e2a27f;
+  font-family: var(--font); font-size: 15px; font-weight: 600;
+  color: var(--clay-deep);
 }
-.tcard__open::after { content: ""; position: absolute; inset: 0; border-radius: 22px; }
+.tcard__open::after { content: ""; position: absolute; inset: 0; border-radius: var(--radius-lg); }
 .tcard__open:focus-visible { outline: none; }
-.tcard__open:focus-visible::after { outline: 2px solid #e2a27f; outline-offset: 3px; }
-.tcard__plus { position: relative; width: 22px; height: 22px; border: 1.5px solid currentColor; border-radius: 50%; }
+.tcard__open:focus-visible::after { outline: 2px solid var(--clay-deep); outline-offset: 3px; }
+.tcard__plus { position: relative; width: 22px; height: 22px; border: 1.5px solid currentColor; border-radius: 50%; transition: background .2s var(--ease); }
 .tcard__plus::before, .tcard__plus::after {
   content: ""; position: absolute; left: 50%; top: 50%; width: 10px; height: 1.5px;
   margin: -.75px 0 0 -5px; background: currentColor; border-radius: 1px;
 }
 .tcard__plus::after { transform: rotate(90deg); }
-.tcard:hover .tcard__plus { background: rgba(226, 162, 127, .15); }
+.tcard:hover .tcard__plus { background: color-mix(in srgb, var(--clay) 16%, transparent); }
 
 @media (max-width: 759px) {
-  .tcards { grid-template-columns: minmax(0, 1fr); }
-  .tcard { grid-template-columns: 60px minmax(0, 1fr); column-gap: 14px; row-gap: 14px; }
+  .tcards { grid-template-columns: minmax(0, 1fr); gap: 14px; }
+  .tcard { grid-template-columns: 60px minmax(0, 1fr); column-gap: 14px; padding: 22px 20px; }
   .tcard__ava { width: 60px; height: 60px; }
 }
 
@@ -1126,6 +1072,120 @@ html.is-dialog-open { overflow: hidden; }
   overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
 }
 
+/* ---------------- Отзывы участников ----------------
+ * Между «Тренерами» и «Что вы получите». Карточка по образцу: знак цитаты,
+ * заголовок-цитата, отрывок, тонкая черта, подпись (имя и срок практики).
+ * Полный текст раскрывается в самой карточке: короткая часть сворачивается,
+ * полная разворачивается — тот же приём grid-template-rows 0fr → 1fr, что у
+ * «Частых вопросов»; скрытая часть получает visibility: hidden, чтобы её не
+ * читал диктор и не ловил Tab. Пока карточка свёрнута, вся она — кнопка
+ * «Читать полностью» (растянутый ::after у кнопки). Карточки идут столбиком
+ * широкими, как на образце: заголовок-цитата помещается в две-три строки.
+ */
+.reviews { background: var(--bg-alt); }
+.reviews__inner { max-width: 880px; }
+.reviews__list { display: grid; gap: clamp(16px, 2vw, 22px); }
+.rv {
+  position: relative;
+  padding: clamp(24px, 3vw, 34px) clamp(20px, 3.4vw, 40px) clamp(18px, 2.2vw, 24px);
+  background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-lg);
+  scroll-margin-top: calc(var(--nav-h) + 16px);
+  transition: transform .3s var(--ease), box-shadow .3s var(--ease), border-color .3s var(--ease);
+}
+.rv:not(.is-open):hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 40px -26px rgba(59, 56, 47, .38);
+  border-color: var(--sand);
+}
+.rv__mark {
+  display: block; height: 30px; margin: 0 0 10px; overflow: visible;
+  font-family: Georgia, "Times New Roman", serif; font-size: 64px; font-weight: 700; line-height: .95;
+  color: var(--clay);
+}
+
+.rv__pane { display: grid; grid-template-rows: 1fr; transition: grid-template-rows .42s var(--ease); }
+.rv__full { grid-template-rows: 0fr; }
+.rv.is-open .rv__short { grid-template-rows: 0fr; }
+.rv.is-open .rv__full { grid-template-rows: 1fr; }
+.rv__pane-inner {
+  min-height: 0; overflow: hidden;
+  opacity: 1; visibility: visible;
+  transition: opacity .28s var(--ease), visibility 0s linear 0s;
+}
+.rv__full .rv__pane-inner,
+.rv.is-open .rv__short .rv__pane-inner {
+  opacity: 0; visibility: hidden;
+  transition: opacity .2s var(--ease), visibility 0s linear .42s;
+}
+.rv.is-open .rv__full .rv__pane-inner {
+  opacity: 1; visibility: visible;
+  transition: opacity .32s var(--ease) .1s, visibility 0s linear 0s;
+}
+
+.rv__title {
+  margin: 0; font-family: var(--font); font-weight: 600;
+  font-size: clamp(19px, 2vw, 22px); line-height: 1.4; letter-spacing: -0.01em;
+  color: var(--ink); text-wrap: pretty;
+}
+.rv__excerpt,
+.rv__text p {
+  margin: 14px 0 0; max-width: 46em;
+  font-size: clamp(15.5px, 1.5vw, 17px); line-height: 1.65;
+  color: var(--ink-soft);
+  text-wrap: pretty;
+}
+.rv__text { padding-top: 2px; }
+.rv__text p { margin-top: 12px; }
+.rv__bio {
+  margin: 22px 0 2px; padding-left: 14px; border-left: 2px solid var(--clay);
+  font-size: 14.5px; line-height: 1.55; color: var(--ink-soft); text-wrap: pretty;
+}
+.rv__link { color: var(--clay-deep); font-weight: 600; text-decoration: none; white-space: nowrap; }
+.rv__link:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+.rv__foot {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 24px;
+  margin-top: clamp(20px, 2.4vw, 26px); padding-top: clamp(16px, 2vw, 20px);
+  border-top: 1px solid var(--line);
+}
+.rv__who { margin: 0; min-width: 0; }
+.rv__name { display: block; font-size: 16px; font-weight: 600; line-height: 1.35; color: var(--ink); }
+.rv__meta { display: block; margin-top: 2px; font-size: 14px; line-height: 1.45; color: var(--ink-soft); }
+.rv__toggle {
+  display: inline-flex; align-items: center; gap: 10px; flex: none;
+  margin: 0; padding: 0; background: none; border: 0; cursor: pointer;
+  font-family: var(--font); font-size: 15px; font-weight: 600;
+  color: var(--clay-deep); -webkit-tap-highlight-color: transparent;
+}
+.rv__less { display: none; }
+.rv.is-open .rv__more { display: none; }
+.rv.is-open .rv__less { display: inline; }
+.rv:not(.is-open) .rv__toggle::after { content: ""; position: absolute; inset: 0; border-radius: var(--radius-lg); }
+.rv__toggle:focus-visible { outline: 2px solid var(--clay-deep); outline-offset: 4px; border-radius: 4px; }
+.rv:not(.is-open) .rv__toggle:focus-visible { outline: none; }
+.rv:not(.is-open) .rv__toggle:focus-visible::after { outline: 2px solid var(--clay-deep); outline-offset: 3px; }
+.rv__plus {
+  position: relative; flex: none; width: 22px; height: 22px;
+  border: 1.5px solid currentColor; border-radius: 50%;
+  transition: background .2s var(--ease);
+}
+.rv__plus::before, .rv__plus::after {
+  content: ""; position: absolute; left: 50%; top: 50%; width: 10px; height: 1.5px;
+  margin: -.75px 0 0 -5px; background: currentColor; border-radius: 1px;
+  transition: transform .32s var(--ease);
+}
+.rv__plus::after { transform: rotate(90deg); }
+.rv.is-open .rv__plus::after { transform: rotate(0deg); }
+.rv:hover .rv__plus { background: color-mix(in srgb, var(--clay) 16%, transparent); }
+
+@media (max-width: 599px) {
+  .rv__mark { height: 24px; margin-bottom: 8px; font-size: 52px; }
+  .rv__foot { flex-direction: column; align-items: flex-start; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .rv, .rv__pane, .rv__pane-inner, .rv__plus, .rv__plus::after { transition: none; }
+}
+
 /* ---------------- Why it works: prose + accent photo ---------------- */
 .why { display: grid; gap: 30px; align-items: start; }
 .why__text { max-width: 62ch; }
@@ -1151,25 +1211,6 @@ html.is-dialog-open { overflow: hidden; }
   border-bottom: 1px solid transparent; transition: border-color .2s var(--ease);
 }
 .deeper__cta:hover { border-color: currentColor; }
-
-/* ---------------- "Not for you" with custom pictograms ---------------- */
-.nf { list-style: none; margin: 0 auto; padding: 0; max-width: 900px; display: grid; gap: 12px; }
-/* plain rows — no boxes, one column */
-.nf { max-width: 660px; grid-template-columns: 1fr; gap: 0; }
-.nf__item {
-  display: flex; align-items: baseline; gap: 13px;
-  padding: 12px 0;
-  border-bottom: 1px solid var(--line);
-  background: none; border-radius: 0;
-}
-.nf__item:last-child { border-bottom: 0; }
-.nf__icon {
-  flex: 0 0 auto; width: 18px; height: 18px;
-  display: block; color: var(--clay); background: none; border: 0;
-  transform: translateY(2px);
-}
-.nf__icon svg { width: 18px; height: 18px; display: block; }
-.nf__text { font-size: 16px; color: var(--ink); padding-top: 0; line-height: 1.5; }
 
 /* ===================================================================
    Чат поддержки
@@ -1287,8 +1328,6 @@ html.is-dialog-open { overflow: hidden; }
 }
 
 @media (prefers-color-scheme: dark) {
-  .nf__item { background: #24241c; }
-  .nf__icon { background: #322a23; }
   .deeper { background: #24241c; }
 }
 
