@@ -242,14 +242,19 @@ window.NIGUMA_I18N = {
       heroLeadText: "15\u00a0минут онлайн-практики, чтобы мыслить ясно, действовать уверенно и\u00a0создавать результаты",
       heroCta: "Попробовать бесплатно",
       pains: {
-        heading: "Знакомо?",
+        eyebrow: "Почему именно 15\u00a0минут",
+        heading: "Несколько решений в\u00a0день определяют месяц. Несколько месяцев\u00a0— год.",
+        paras: [
+          "В график человека, от которого зависят другие, мало что помещается. Нужно что-то короткое — то, что ещё до начала дня формирует правильное состояние ума.",
+          "Цель практики — не гибкость и не фитнес. Цель — качество ваших решений."
+        ],
+        label: "Знакомо?",
         items: [
-          "Живёте в постоянном напряжении?",
-          "Часто теряете фокус из-за большого количества задач?",
-          "Вам бывает сложно переключиться с работы и восстановиться?",
-          "Вам трудно видеть стратегическую картину за ежедневной рутиной?",
-          "Не удаётся удержать концентрацию в течение дня?",
-          "Вам сложно отпустить контроль?"
+          "Вы живёте в постоянном напряжении",
+          "Фокус рассыпается из-за множества задач",
+          "Сложно переключиться с работы и восстановиться",
+          "Трудно видеть стратегическую картину за ежедневной рутиной",
+          "Сложно отпустить контроль"
         ]
       },
       promise: {
@@ -479,14 +484,19 @@ window.NIGUMA_I18N = {
       heroLeadText: "15\u00a0minutes of online practice to think clearly, act with confidence and deliver results",
       heroCta: "Try it free",
       pains: {
-        heading: "Sound familiar?",
+        eyebrow: "Why 15\u00a0minutes",
+        heading: "A few decisions a day shape the month. A\u00a0few months\u00a0— the year.",
+        paras: [
+          "When others depend on you, your schedule has little room to spare. What you need is something short that puts you in the right state of mind before the day begins.",
+          "The aim of the practice is not flexibility or fitness. The aim is the quality of your decisions."
+        ],
+        label: "Sound familiar?",
         items: [
-          "Living in constant tension?",
-          "Losing focus because there are simply too many tasks?",
-          "Finding it hard to switch off from work and recover?",
-          "Struggling to see the strategic picture behind daily routine?",
-          "Unable to hold your concentration through the day?",
-          "Finding it hard to let go of control?"
+          "You live in constant tension",
+          "Your focus is spread thin across too many tasks",
+          "It is hard to switch off from work and recover",
+          "The strategic picture gets lost in the daily routine",
+          "Letting go of control is hard"
         ]
       },
       promise: {
@@ -716,14 +726,19 @@ window.NIGUMA_I18N = {
       heroLeadText: "15\u00a0Minuten Online-Praxis, um klar zu denken, souverän zu handeln und Ergebnisse zu erzielen",
       heroCta: "Kostenlos ausprobieren",
       pains: {
-        heading: "Kommt Ihnen das bekannt vor?",
+        eyebrow: "Warum gerade 15\u00a0Minuten",
+        heading: "Wenige Entscheidungen am Tag bestimmen den Monat. Wenige Monate\u00a0— das Jahr.",
+        paras: [
+          "In den Kalender eines Menschen, von dem andere abhängen, passt nur wenig. Es braucht etwas Kurzes, das Sie in den richtigen Geisteszustand bringt, noch bevor der Tag beginnt.",
+          "Bei dieser Praxis geht es weder um Beweglichkeit noch um Fitness. Es geht um die Qualität Ihrer Entscheidungen."
+        ],
+        label: "Kennen Sie das?",
         items: [
-          "Leben Sie in ständiger Anspannung?",
-          "Verlieren Sie oft den Fokus, weil es einfach zu viele Aufgaben gibt?",
-          "Fällt es Ihnen schwer, von der Arbeit abzuschalten und sich zu erholen?",
-          "Sehen Sie hinter der täglichen Routine das strategische Bild kaum noch?",
-          "Gelingt es Ihnen nicht, die Konzentration über den Tag zu halten?",
-          "Fällt es Ihnen schwer, Kontrolle loszulassen?"
+          "Sie leben in ständiger Anspannung",
+          "Der Fokus zerfasert in der Fülle der Aufgaben",
+          "Es fällt schwer, abzuschalten und sich zu erholen",
+          "Im Tagesgeschäft geht der strategische Blick verloren",
+          "Kontrolle abzugeben fällt schwer"
         ]
       },
       promise: {
@@ -953,14 +968,19 @@ window.NIGUMA_I18N = {
       heroLeadText: "15\u00a0хвилин онлайн-практики, щоб мислити ясно, діяти впевнено й\u00a0досягати результатів",
       heroCta: "Спробувати безкоштовно",
       pains: {
-        heading: "Знайомо?",
+        eyebrow: "Чому саме 15\u00a0хвилин",
+        heading: "Кілька рішень на\u00a0день визначають місяць. Кілька місяців\u00a0— рік.",
+        paras: [
+          "У графіку людини, від якої залежать інші, мало що можна помістити. Потрібне щось коротке, що формує правильний стан розуму до того, як день почнеться.",
+          "Ціль практики — не гнучкість і не фітнес. Ціль — якість ваших рішень."
+        ],
+        label: "Знайомо?",
         items: [
-          "Живете в постійному напруженні?",
-          "Часто втрачаєте фокус через велику кількість задач?",
-          "Вам буває складно переключитися з роботи й відновитися?",
-          "Вам важко бачити стратегічну картину за щоденною рутиною?",
-          "Не вдається втримати концентрацію протягом дня?",
-          "Вам складно відпустити контроль?"
+          "Ви живете в постійному напруженні",
+          "Фокус розсипається через кількість задач",
+          "Складно переключитися з роботи й відновитися",
+          "Важко бачити стратегічну картину за щоденною рутиною",
+          "Складно відпустити контроль"
         ]
       },
       promise: {

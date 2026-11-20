@@ -37,7 +37,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&display=swap" />
-  <link rel="stylesheet" href="css/styles.css?v=20261120" />
+  <link rel="stylesheet" href="css/styles.css?v=20261120b" />
 </head>
 
 <body>
@@ -102,12 +102,23 @@
     </section>
 
     <!-- ===================== PAINS ===================== -->
-    <section class="section pains" id="pains">
-      <div class="container">
-        <div class="pains__panel">
-          <h2 class="pains__title" data-i18n="pains.heading">Знакомо?</h2>
+    <!-- Две колонки: слева — зачем именно 15 минут, справа — узнаваемые
+         состояния. На телефоне колонки встают одна под другой в том же порядке:
+         сначала мысль, потом «знакомо?». -->
+    <section class="pains" id="pains">
+      <div class="container pains__inner">
+        <div class="pains__why">
+          <p class="pains__eyebrow" data-i18n="pains.eyebrow">Почему именно 15 минут</p>
+          <h2 class="pains__heading" data-i18n="pains.heading">Несколько решений в день определяют месяц.
+            Несколько месяцев — год.</h2>
+          <div class="pains__text" data-paras="pains.paras">
+            <p>В график человека, от которого зависят другие, мало что можно вместить.</p>
+          </div>
+        </div>
+        <div class="pains__known">
+          <p class="pains__label" data-i18n="pains.label">Знакомо?</p>
           <ul class="pains__list" data-list="pains.items">
-            <li>Живёте в постоянном напряжении?</li>
+            <li>Вы живёте в постоянном напряжении</li>
           </ul>
         </div>
       </div>
@@ -312,15 +323,15 @@
     </div>
   </footer>
 
-  <script src="js/icons.js?v=20261120"></script>
-  <script src="js/translations.js?v=20261120"></script>
-  <script src="js/config.js?v=20261120"></script>
-  <script src="js/i18n.js?v=20261120"></script>
-  <script src="js/main.js?v=20261120"></script>
-  <script src="js/promo-stickers.js?v=20261120" defer></script>
-  <script src="js/checkout.js?v=20261120" defer></script>
-  <script src="js/chat-content.js?v=20261120" defer></script>
-  <script src="js/chat.js?v=20261120" defer></script>
+  <script src="js/icons.js?v=20261120b"></script>
+  <script src="js/translations.js?v=20261120b"></script>
+  <script src="js/config.js?v=20261120b"></script>
+  <script src="js/i18n.js?v=20261120b"></script>
+  <script src="js/main.js?v=20261120b"></script>
+  <script src="js/promo-stickers.js?v=20261120b" defer></script>
+  <script src="js/checkout.js?v=20261120b" defer></script>
+  <script src="js/chat-content.js?v=20261120b" defer></script>
+  <script src="js/chat.js?v=20261120b" defer></script>
 </body>
 
 </html>

@@ -168,7 +168,7 @@ img { max-width: 100%; display: block; }
  * мелко для белого текста на фотографии.
  *
  * Тезис «Лучшие решения рождаются из вашего состояния» — капсом, без точки,
- * размером с заголовок раздела под первым экраном («Знакомо?», .pains__title):
+ * размером с прежний заголовок раздела под первым экраном:
  * 31 px на ноутбуке, 23 px на телефоне. Пояснение — 0,76 от кегля блока:
  * около 20 px на ноутбуке и 17 px на телефоне.
  *
@@ -452,43 +452,57 @@ img { max-width: 100%; display: block; }
    Блоки контента: боли · обещание · тренер · выгоды · почему · не подойдёт
    =================================================================== */
 
-/* ---------------- Pains: the loudest block on the page ---------------- */
-.pains {
-  background: linear-gradient(168deg, #f6ece0 0%, #f0ded0 100%);
-  border-top: 1px solid var(--sand); border-bottom: 1px solid var(--sand);
+/* ---------------- Pains: «почему 15 минут» + «знакомо?» ---------------- */
+/**
+ * Две колонки по макету: слева мысль — надзаголовок, крупный афоризм и два
+ * абзаца; справа — подпись «Знакомо?» и пять карточек-состояний. Колонки
+ * выровнены по верху: надзаголовок и подпись стоят на одной линии.
+ *
+ * Блок шире остальных (1160 px против 1000): крупному заголовку нужна
+ * ширина, иначе он ломается на четыре строки вместо трёх, как в макете.
+ * Колонки равные — как в макете; правой так хватает места, чтобы самая
+ * длинная карточка стояла в одну строку.
+ *
+ * Цвета — только через переменные палитры, поэтому тёмная тема переключает
+ * блок сама. Цвет абзацев смешивается из цвета текста и фона: в макете он
+ * темнее, чем приглушённый --ink-soft, и так остаётся читаемым в обеих темах.
+ */
+.pains { padding: clamp(56px, 8vw, 104px) 0; background: var(--bg); }
+.pains__inner { max-width: 1160px; display: grid; gap: 40px; }
+@media (min-width: 900px) {
+  .pains__inner { grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
 }
-/* one calm panel — kept narrow and tight so pain + answer share a single screen */
-.pains { padding: 44px 0; }
-.pains__panel {
-  max-width: 600px; margin: 0 auto;
-  background: rgba(255,255,255,.66);
-  border: 1px solid rgba(197,140,110,.34);
-  border-radius: var(--radius-lg);
-  padding: 26px 24px;
-  box-shadow: 0 26px 60px -44px rgba(169,108,76,.55);
+
+.pains__eyebrow {
+  margin: 0 0 20px;
+  font-size: 13.5px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--clay-deep);
 }
-.pains__title {
-  margin: 0 0 14px; text-align: center;
-  font-family: var(--font-display); font-weight: 600;
-  font-size: clamp(23px, 3.6vw, 31px); color: var(--clay-deep);
+.pains__heading {
+  margin: 0;
+  font-family: var(--font); font-weight: 800;
+  font-size: clamp(28px, 3.3vw, 40px); line-height: 1.12; letter-spacing: -0.02em;
+  color: var(--ink); text-wrap: balance;
 }
-.pains__list { list-style: none; margin: 0; padding: 0; }
+.pains__text { margin-top: 26px; }
+.pains__text p {
+  margin: 0 0 18px; max-width: 34em;
+  font-size: clamp(16.5px, 1.6vw, 18.5px); line-height: 1.62;
+  color: color-mix(in srgb, var(--ink) 80%, var(--bg));
+}
+.pains__text p:last-child { margin-bottom: 0; }
+
+.pains__label { margin: 2px 0 18px; font-size: 16px; font-weight: 700; color: var(--olive); }
+.pains__list { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
 .pains__list li {
-  position: relative;
-  padding: 9px 0 9px 26px;
-  border-bottom: 1px solid rgba(197,140,110,.22);
-  font-size: clamp(15px, 1.8vw, 16.5px); font-weight: 500; color: var(--ink);
-  line-height: 1.4;
+  background: var(--surface);
+  border: 1px solid var(--line); border-radius: 18px;
+  padding: 19px 22px;
+  font-size: clamp(15.5px, 1.4vw, 16px); font-weight: 500; line-height: 1.4;
+  color: var(--ink);
+  box-shadow: 0 1px 2px rgba(59, 56, 47, .04);
 }
-.pains__list li:last-child { border-bottom: 0; padding-bottom: 0; }
-.pains__list li:first-child { padding-top: 0; }
-.pains__list li::before {
-  content: "—";
-  position: absolute; left: 0; top: 9px;
-  color: var(--clay); font-weight: 700;
-}
-.pains__list li:first-child::before { top: 0; }
-@media (min-width: 700px) { .pains__panel { padding: 30px 34px; } }
+@media (max-width: 600px) { .pains__list li { padding: 17px 20px; border-radius: 16px; } }
 
 /* ---------------- Promise: the answer, over the mountain band ---------------- */
 .promise {
@@ -774,8 +788,6 @@ img { max-width: 100%; display: block; }
 }
 
 @media (prefers-color-scheme: dark) {
-  .pains { background: linear-gradient(168deg, #2a2620 0%, #302a22 100%); border-color: #3d352c; }
-  .pains__list li { background: rgba(0,0,0,.22); border-color: rgba(197,140,110,.35); }
   .nf__item { background: #24241c; }
   .nf__icon { background: #322a23; }
   .deeper { background: #24241c; }
