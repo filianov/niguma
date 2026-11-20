@@ -452,6 +452,68 @@ img { max-width: 100%; display: block; }
    Блоки контента: боли · обещание · тренер · выгоды · почему · не подойдёт
    =================================================================== */
 
+/* ---------------- Stats: полоса цифр под первым экраном ---------------- */
+/**
+ * На ноутбуке — одна строка из четырёх колонок по макету: толстая линия
+ * сверху, тонкие вертикальные разделители, цифра цветом глины, слово после
+ * неё — цветом текста, подписи мелким капсом с разрядкой.
+ *
+ * На телефоне — сетка 2×2 без разделителей. Сетка заполняется по столбцам,
+ * поэтому порядок в разметке (как на ноутбуке: 15 · 06:45 · 1000 · 5) даёт на
+ * телефоне порядок мобильного макета: «15 минут» и «~1000 лет» в первой
+ * строке, «06:45» и «5 ветров» во второй.
+ *
+ * Ширина та же, что у блока ниже (1160 px), — края полосы и колонок
+ * «Почему именно 15 минут · Знакомо?» стоят на одной линии.
+ */
+.stats { padding: clamp(40px, 5.5vw, 72px) 0 0; background: var(--bg); }
+.stats__inner { max-width: 1160px; }
+.stats__title {
+  margin: 0 0 18px;
+  font-size: 13.5px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--ink);
+}
+.stats__list {
+  list-style: none; margin: 0; padding: 0;
+  border-top: 2px solid var(--ink);
+  display: grid; grid-template-columns: repeat(4, 1fr);
+}
+.stat { margin: 0; padding: 26px 26px 6px; border-left: 1px solid var(--line); }
+.stat:first-child { padding-left: 0; border-left: 0; }
+.stat__value {
+  margin: 0 0 14px;
+  font-size: clamp(30px, 3vw, 38px); font-weight: 700; line-height: 1.1; letter-spacing: -0.01em;
+  color: var(--ink);
+}
+.stat__num { color: var(--clay-deep); white-space: nowrap; }
+.stat__unit { white-space: nowrap; }
+/* «(Вена)» на ноутбуке мельче: полным кеглем не помещается в колонку,
+   уходит на вторую строку, и ряд цифр перестаёт быть ровным. */
+.stat__unit--note { font-size: .62em; font-weight: 600; letter-spacing: 0; }
+.stat__line {
+  margin: 0;
+  font-size: 12.5px; font-weight: 700; line-height: 1.6; letter-spacing: .11em; text-transform: uppercase;
+  color: var(--ink-soft);
+  text-wrap: pretty;
+}
+.stat__line + .stat__line { margin-top: 8px; }
+/* под полосой блок «Почему именно 15 минут» начинается ближе — это одна тема */
+.stats + .pains { padding-top: clamp(56px, 7vw, 88px); }
+
+@media (max-width: 859px) {
+  .stats__title { font-size: 15px; letter-spacing: .04em; line-height: 1.35; margin-bottom: 14px; text-wrap: balance; }
+  .stats__list {
+    grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; grid-auto-flow: column;
+    column-gap: 20px; row-gap: 24px; padding-top: 22px;
+  }
+  .stat, .stat:first-child { padding: 0; border-left: 0; }
+  .stat__value { margin-bottom: 8px; font-size: clamp(24px, 6.4vw, 30px); }
+  /* на телефоне — как в мобильном макете: «06:45 (Вена)» одним кеглем */
+  .stat__unit--note { font-size: 1em; font-weight: 700; letter-spacing: -0.01em; }
+  .stat__line { font-size: 12px; font-weight: 600; line-height: 1.45; letter-spacing: .05em; }
+  .stat__line + .stat__line { margin-top: 6px; }
+}
+
 /* ---------------- Pains: «почему 15 минут» + «знакомо?» ---------------- */
 /**
  * Две колонки по макету: слева мысль — надзаголовок, крупный афоризм и два

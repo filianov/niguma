@@ -106,6 +106,26 @@
       }).join("");
     });
 
+    // stats strip: data-stats="path" -> [{num, unit, lines: [..]}]
+    document.querySelectorAll("[data-stats]").forEach(function (el) {
+      var arr = t(lang, el.getAttribute("data-stats"));
+      if (!Array.isArray(arr) || !arr.length) return;
+      el.innerHTML = arr.map(function (s) {
+        return '<li class="stat">' +
+                 '<p class="stat__value"><span class="stat__num">' + escapeHtml(s.num) + "</span>" +
+                   // уточнение в скобках, «(Вена)», — не единица, а пояснение к цифре
+                   (s.unit
+                     ? ' <span class="stat__unit' + (/^\(/.test(s.unit) ? " stat__unit--note" : "") + '">' +
+                       escapeHtml(s.unit) + "</span>"
+                     : "") +
+                 "</p>" +
+                 (Array.isArray(s.lines)
+                   ? s.lines.map(function (l) { return '<p class="stat__line">' + escapeHtml(l) + "</p>"; }).join("")
+                   : "") +
+               "</li>";
+      }).join("");
+    });
+
     // paragraph blocks: data-paras="path" -> array of strings -> <p>
     document.querySelectorAll("[data-paras]").forEach(function (el) {
       var arr = t(lang, el.getAttribute("data-paras"));

@@ -241,6 +241,15 @@ window.NIGUMA_I18N = {
       heroLeadHook: "Лучшие решения рождаются из\u00a0вашего состояния",
       heroLeadText: "15\u00a0минут онлайн-практики, чтобы мыслить ясно, действовать уверенно и\u00a0создавать результаты",
       heroCta: "Попробовать бесплатно",
+      stats: {
+        title: "Ясный и\u00a0спокойный\u00a0ум\u00a0— ваш\u00a0главный\u00a0актив",
+        items: [
+          { num: "15", unit: "минут", lines: ["Помещается в\u00a0любой календарь"] },
+          { num: "06:45", unit: "(Вена)", lines: ["Zoom по\u00a0будням, до\u00a0начала рабочего дня", "Записи доступны в\u00a0любое время"] },
+          { num: "~1000", unit: "лет", lines: ["Традиция йоги Леди Нигумы"] },
+          { num: "5", unit: "ветров", lines: ["Модель, связывающая движение, эмоции и\u00a0мышление"] },
+        ],
+      },
       pains: {
         eyebrow: "Почему именно 15\u00a0минут",
         heading: "Несколько решений в\u00a0день определяют месяц. Несколько месяцев\u00a0— год.",
@@ -483,6 +492,15 @@ window.NIGUMA_I18N = {
       heroLeadHook: "The best decisions come from your state of mind",
       heroLeadText: "15\u00a0minutes of online practice to think clearly, act with confidence and deliver results",
       heroCta: "Try it free",
+      stats: {
+        title: "A clear, calm mind is your greatest asset",
+        items: [
+          { num: "15", unit: "minutes", lines: ["Fits into any calendar"] },
+          { num: "06:45", unit: "(Vienna)", lines: ["Weekdays on Zoom, before work begins", "Recordings available anytime"] },
+          { num: "~1000", unit: "years", lines: ["Lady Niguma's yoga tradition"] },
+          { num: "5", unit: "winds", lines: ["A model linking movement, emotion and thinking"] },
+        ],
+      },
       pains: {
         eyebrow: "Why 15\u00a0minutes",
         heading: "A few decisions a day shape the month. A\u00a0few months\u00a0— the year.",
@@ -725,6 +743,15 @@ window.NIGUMA_I18N = {
       heroLeadHook: "Die besten Entscheidungen entstehen aus Ihrem inneren Zustand",
       heroLeadText: "15\u00a0Minuten Online-Praxis, um klar zu denken, souverän zu handeln und Ergebnisse zu erzielen",
       heroCta: "Kostenlos ausprobieren",
+      stats: {
+        title: "Ein klarer und ruhiger Geist\u00a0— Ihr wichtigstes Kapital",
+        items: [
+          { num: "15", unit: "Minuten", lines: ["Passt in jeden Kalender"] },
+          { num: "06:45", unit: "(Wien)", lines: ["Zoom werktags, vor Arbeitsbeginn", "Aufnahmen jederzeit abrufbar"] },
+          { num: "~1000", unit: "Jahre", lines: ["Yoga-Tradition der Lady Niguma"] },
+          { num: "5", unit: "Winde", lines: ["Modell, das Bewegung, Emotion und Denken verbindet"] },
+        ],
+      },
       pains: {
         eyebrow: "Warum gerade 15\u00a0Minuten",
         heading: "Wenige Entscheidungen am Tag bestimmen den Monat. Wenige Monate\u00a0— das Jahr.",
@@ -967,6 +994,15 @@ window.NIGUMA_I18N = {
       heroLeadHook: "Найкращі рішення народжуються з\u00a0вашого стану",
       heroLeadText: "15\u00a0хвилин онлайн-практики, щоб мислити ясно, діяти впевнено й\u00a0досягати результатів",
       heroCta: "Спробувати безкоштовно",
+      stats: {
+        title: "Ясний і\u00a0спокійний\u00a0розум\u00a0— ваш\u00a0головний\u00a0актив",
+        items: [
+          { num: "15", unit: "хвилин", lines: ["Вписується в\u00a0будь\u2011який графік"] },
+          { num: "06:45", unit: "(Відень)", lines: ["Zoom у\u00a0будні, до\u00a0початку робочого дня", "Записи доступні будь\u2011коли"] },
+          { num: "~1000", unit: "років", lines: ["Традиція йоги Леді Нігуми"] },
+          { num: "5", unit: "вітрів", lines: ["Модель, що пов'язує рух, емоції та\u00a0мислення"] },
+        ],
+      },
       pains: {
         eyebrow: "Чому саме 15\u00a0хвилин",
         heading: "Кілька рішень на\u00a0день визначають місяць. Кілька місяців\u00a0— рік.",
@@ -1214,6 +1250,7 @@ window.NIGUMA_I18N = {
     M[lng].hero.leadHook = a.heroLeadHook;
     M[lng].hero.leadText = a.heroLeadText;
     M[lng].hero.ctaPrimary = a.heroCta;
+    M[lng].stats = a.stats;
     M[lng].pains = a.pains;
     M[lng].promise = a.promise;
     M[lng].included = a.included;
