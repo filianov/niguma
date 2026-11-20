@@ -623,6 +623,80 @@ img { max-width: 100%; display: block; }
 #included .cards { grid-template-columns: 1fr; max-width: 720px; margin: 0 auto; gap: 14px; }
 #included .card { display: flex; flex-direction: column; gap: 4px; }
 
+/* ---------------- FAQ: «Частые вопросы» ---------------- */
+/**
+ * По макету: надзаголовок цветом глины, крупный заголовок капсом, ниже
+ * вопросы, разделённые тонкими линиями. Справа от вопроса «+»: по нажатию
+ * ответ плавно раскрывается, а «+» превращается в «−» (вертикальная черта
+ * поворачивается и ложится на горизонтальную).
+ *
+ * Блок узкий — 760 px, чтобы строки ответов читались легко; на странице
+ * он стоит по центру, текст внутри выровнен влево, как в макете.
+ *
+ * Раскрытие — через grid-template-rows 0fr → 1fr: высоту ответа не нужно
+ * мерить скриптом, анимация идёт в любом современном браузере. Закрытый
+ * ответ получает visibility: hidden (с задержкой на время анимации), так что
+ * ссылка внутри него не ловит Tab и диктор не читает скрытый текст.
+ */
+.faq { padding: clamp(56px, 8vw, 96px) 0; background: var(--bg); }
+.faq__inner { max-width: 760px; }
+.faq__eyebrow {
+  margin: 0 0 10px;
+  font-size: 13px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--clay-deep);
+}
+.faq__heading {
+  margin: 0 0 clamp(18px, 3vw, 30px);
+  font-family: var(--font); font-weight: 800; font-size: clamp(28px, 4vw, 44px);
+  line-height: 1.08; letter-spacing: -0.01em; text-transform: uppercase;
+  color: var(--ink);
+}
+.faq__item { border-bottom: 1px solid var(--line); }
+.faq__q { margin: 0; font: inherit; }
+.faq__btn {
+  display: flex; align-items: center; justify-content: space-between; gap: 20px;
+  width: 100%; margin: 0; padding: 22px 0;
+  background: none; border: 0; cursor: pointer; text-align: left;
+  font-family: var(--font); font-size: clamp(16.5px, 1.6vw, 18px); font-weight: 700; line-height: 1.35;
+  color: var(--ink);
+  -webkit-tap-highlight-color: transparent;
+}
+.faq__btn:hover .faq__qtext { color: var(--clay-deep); }
+.faq__btn:focus-visible { outline: 2px solid var(--clay-deep); outline-offset: 4px; border-radius: 4px; }
+.faq__qtext { transition: color .2s var(--ease); text-wrap: pretty; }
+.faq__icon { position: relative; flex: none; width: 18px; height: 18px; }
+.faq__icon::before,
+.faq__icon::after {
+  content: ""; position: absolute; left: 1px; right: 1px; top: 50%; height: 2px; margin-top: -1px;
+  background: var(--clay-deep); border-radius: 1px;
+  transition: transform .32s var(--ease);
+}
+.faq__icon::after { transform: rotate(90deg); }
+.faq__item.is-open .faq__icon::after { transform: rotate(0deg); }
+
+.faq__a {
+  display: grid; grid-template-rows: 0fr;
+  transition: grid-template-rows .36s var(--ease);
+}
+.faq__item.is-open .faq__a { grid-template-rows: 1fr; }
+.faq__a-inner {
+  min-height: 0; overflow: hidden;
+  visibility: hidden; transition: visibility 0s linear .36s;
+}
+.faq__item.is-open .faq__a-inner { visibility: visible; transition-delay: 0s; }
+.faq__a-inner p {
+  margin: 0 0 12px; max-width: 42em;
+  font-size: clamp(15.5px, 1.5vw, 16.5px); line-height: 1.6;
+  color: color-mix(in srgb, var(--ink) 84%, var(--bg));
+}
+.faq__a-inner p:last-child { margin-bottom: 24px; }
+.faq__a-inner a { color: var(--clay-deep); text-decoration: underline; text-underline-offset: 3px; }
+.faq__a-inner a:hover { text-decoration-thickness: 2px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .faq__a, .faq__a-inner, .faq__icon::before, .faq__icon::after { transition: none; }
+}
+
 /* ---------------- Closing block over a photo ---------------- */
 .closing { position: relative; isolation: isolate; overflow: hidden; }
 .closing__media { position: absolute; inset: 0; z-index: -2; }

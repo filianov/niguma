@@ -126,6 +126,37 @@
       }).join("");
     });
 
+    // FAQ: data-faq="path" -> [{q, a: [..], link: {pre, label, post, href}}]
+    // Кнопка вопроса раскрывает ответ (обработчик — js/main.js, faqAccordion).
+    // Закрытый ответ скрыт и от клавиатуры, и от экранного диктора (CSS, visibility).
+    document.querySelectorAll("[data-faq]").forEach(function (el) {
+      var arr = t(lang, el.getAttribute("data-faq"));
+      if (!Array.isArray(arr) || !arr.length) return;
+      el.innerHTML = arr.map(function (it, i) {
+        var n = i + 1;
+        var link = "";
+        if (it.link && /^https:\/\//.test(it.link.href || "")) {
+          link = "<p>" + escapeHtml(it.link.pre || "") +
+                 '<a href="' + escapeHtml(it.link.href) + '" target="_blank" rel="noopener">' +
+                 escapeHtml(it.link.label || it.link.href) + "</a>" + escapeHtml(it.link.post || "") + "</p>";
+        }
+        return '<div class="faq__item">' +
+                 '<h3 class="faq__q">' +
+                   '<button type="button" class="faq__btn" id="faq-q-' + n + '" aria-expanded="false" aria-controls="faq-a-' + n + '">' +
+                     '<span class="faq__qtext">' + escapeHtml(it.q) + "</span>" +
+                     '<span class="faq__icon" aria-hidden="true"></span>' +
+                   "</button>" +
+                 "</h3>" +
+                 '<div class="faq__a" id="faq-a-' + n + '" role="region" aria-labelledby="faq-q-' + n + '">' +
+                   '<div class="faq__a-inner">' +
+                     (Array.isArray(it.a) ? it.a.map(function (p) { return "<p>" + escapeHtml(p) + "</p>"; }).join("") : "") +
+                     link +
+                   "</div>" +
+                 "</div>" +
+               "</div>";
+      }).join("");
+    });
+
     // paragraph blocks: data-paras="path" -> array of strings -> <p>
     document.querySelectorAll("[data-paras]").forEach(function (el) {
       var arr = t(lang, el.getAttribute("data-paras"));

@@ -241,6 +241,53 @@ window.NIGUMA_I18N = {
       heroLeadHook: "Лучшие решения рождаются из\u00a0вашего состояния",
       heroLeadText: "15\u00a0минут онлайн-практики, чтобы мыслить ясно, действовать уверенно и\u00a0создавать результаты",
       heroCta: "Попробовать бесплатно",
+      faq: {
+        eyebrow: "Вопросы",
+        heading: "Частые вопросы",
+        items: [
+          {
+            q: "Почему живой класс, а\u00a0не просто записи?",
+            a: [
+              "Потому что записи не смотрят. Фиксированное время, живой ведущий и\u00a0группа, которая вас ждёт,\u00a0— это то, что превращает намерение в\u00a0привычку. Записи есть\u00a0— но как страховка на командировки, а\u00a0не как основной формат.",
+            ],
+          },
+          {
+            q: "Что если 06:45\u00a0— не моё время?",
+            a: [
+              "Live идёт в\u00a006:45–07:00 по венскому времени (GMT+2). Если ваш пояс не совпадает\u00a0— практикуйте по записи в\u00a0своё утро: метод от этого не меняется. Но если 06:45 вам доступно, начните с\u00a0live\u00a0— удержаться в\u00a0практике так значительно проще.",
+            ],
+          },
+          {
+            q: "Чем подтверждается традиция йоги Леди\u00a0Нигумы?",
+            a: [
+              "Йога Леди\u00a0Нигумы берёт начало в\u00a0учениях индийской йогини XI\u00a0века. Её наследие сохранилось в\u00a0тибетской буддийской традиции и\u00a0передавалось через поколения учителей.",
+              "В\u00a015minYoga мы практикуем и\u00a0преподаём йогу Леди\u00a0Нигумы по системе Yoga Studies Institute (YSI)\u00a0— международной школы, которая изучает и\u00a0передаёт древнюю философию йоги, соединяя её с\u00a0практиками для современной жизни.",
+              "Наш подход основан на обучении в\u00a0YSI и\u00a0объединяет движение, дыхание, концентрацию и\u00a0работу с\u00a0тонким телом.",
+            ],
+            link: { pre: "Подробнее о\u00a0школе и\u00a0её программе можно узнать на ", label: "официальном сайте Yoga Studies Institute", post: ".", href: "https://www.yogastudiesinstitute.org/" },
+          },
+          {
+            q: "Есть ли противопоказания?",
+            a: [
+              "Движения мягкие, но мы не врачи и\u00a0не даём медицинских оценок. Если у\u00a0вас есть заболевания или травмы\u00a0— покажите программу своему врачу до старта. Это честнее, чем строка «проконсультируйтесь со специалистом» мелким шрифтом.",
+            ],
+          },
+          {
+            q: "Я\u00a0никогда не занимался йогой и\u00a0медитацией. Подойдёт ли мне это?",
+            a: [
+              "Да. Движения простые, гибкость и\u00a0опыт не требуются, сложность поз в\u00a0программе не растёт. Растёт другое\u00a0— качество внимания. Начать можно в\u00a0первое же утро.",
+            ],
+          },
+          {
+            q: "Связано ли это с\u00a0верой? Придётся ли мне менять религию?",
+            a: [
+              "Нет. Йога Леди\u00a0Нигумы имеет исторические корни в\u00a0тибетской буддийской традиции, но для участия в\u00a0наших практиках не нужно менять религию или принимать буддийские убеждения.",
+              "Мы практикуем по системе Yoga Studies Institute (YSI), соединяя движение, дыхание, концентрацию и\u00a0медитацию с\u00a0принципами доброты и\u00a0мудрости.",
+              "Ваша вера остаётся вашей. Наша цель\u00a0— развивать ясность ума, внутреннюю устойчивость и\u00a0повышать качество ваших решений через осознанность.",
+            ],
+          },
+        ],
+      },
       stats: {
         title: "Ясный и\u00a0спокойный\u00a0ум\u00a0— ваш\u00a0главный\u00a0актив",
         items: [
@@ -492,6 +539,53 @@ window.NIGUMA_I18N = {
       heroLeadHook: "The best decisions come from your state of mind",
       heroLeadText: "15\u00a0minutes of online practice to think clearly, act with confidence and deliver results",
       heroCta: "Try it free",
+      faq: {
+        eyebrow: "Questions",
+        heading: "Frequently asked questions",
+        items: [
+          {
+            q: "Why live classes rather than just recordings?",
+            a: [
+              "Because recordings go unwatched. A fixed time, a teacher guiding you live and a group waiting for you\u00a0— that is what turns an intention into a habit. Recordings are available too, but as a safety net for business trips, not as the main format.",
+            ],
+          },
+          {
+            q: "What if 06:45 doesn't work for me?",
+            a: [
+              "Live practice runs 06:45–07:00 Vienna time (GMT+2). If you are in a different time zone, practise with the recordings when it is morning where you are: the method stays the same. But if 06:45 works for you, start with the live session\u00a0— it is much easier to stick with the practice that way.",
+            ],
+          },
+          {
+            q: "What is Lady\u00a0Niguma's yoga tradition grounded in?",
+            a: [
+              "The yoga of Lady\u00a0Niguma has its origins in the teachings of an 11th-century Indian yogini. Her legacy has been preserved in the Tibetan Buddhist tradition and passed down through generations of teachers.",
+              "At 15minYoga we practise and teach Lady\u00a0Niguma's yoga according to the system of the Yoga Studies Institute (YSI), an international school that studies and passes on the ancient philosophy of yoga and combines it with practices for modern life.",
+              "Our approach is based on training at YSI and brings together movement, breathing, concentration and work with the subtle body.",
+            ],
+            link: { pre: "You can learn more about the school and its programme on the ", label: "official website of the Yoga Studies Institute", post: ".", href: "https://www.yogastudiesinstitute.org/" },
+          },
+          {
+            q: "Are there any contraindications?",
+            a: [
+              "The movements are gentle, but we are not doctors and do not make medical assessments. If you have any health conditions or injuries, show the programme to your doctor before you start. That is more honest than a line in small print saying “consult a specialist”.",
+            ],
+          },
+          {
+            q: "I have never done yoga or meditation. Is this right for me?",
+            a: [
+              "Yes. The movements are simple, no flexibility or experience is required, and the poses do not get harder as the programme goes on. What grows instead is the quality of your attention. You can start on the very first morning.",
+            ],
+          },
+          {
+            q: "Is this connected to faith? Will I have to change my religion?",
+            a: [
+              "No. The yoga of Lady\u00a0Niguma has historical roots in the Tibetan Buddhist tradition, but you do not need to change your religion or adopt Buddhist beliefs to take part in our practice.",
+              "We practise according to the system of the Yoga Studies Institute (YSI), combining movement, breathing, concentration and meditation with the principles of kindness and wisdom.",
+              "Your faith remains your own. Our aim is to develop clarity of mind and inner steadiness, and to improve the quality of your decisions through awareness.",
+            ],
+          },
+        ],
+      },
       stats: {
         title: "A clear, calm mind is your greatest asset",
         items: [
@@ -743,11 +837,58 @@ window.NIGUMA_I18N = {
       heroLeadHook: "Die besten Entscheidungen entstehen aus Ihrem inneren Zustand",
       heroLeadText: "15\u00a0Minuten Online-Praxis, um klar zu denken, souverän zu handeln und Ergebnisse zu erzielen",
       heroCta: "Kostenlos ausprobieren",
+      faq: {
+        eyebrow: "Fragen",
+        heading: "Häufige Fragen",
+        items: [
+          {
+            q: "Warum Live-Einheiten und nicht einfach Aufzeichnungen?",
+            a: [
+              "Weil sich Aufzeichnungen niemand ansieht. Eine feste Uhrzeit, ein Mensch, der Sie live anleitet, und eine Gruppe, die auf Sie wartet\u00a0— das macht aus einem Vorsatz eine Gewohnheit. Aufzeichnungen gibt es\u00a0— aber als Sicherheitsnetz für Dienstreisen, nicht als Hauptformat.",
+            ],
+          },
+          {
+            q: "Was, wenn 06:45\u00a0Uhr für mich nicht passt?",
+            a: [
+              "Die Live-Praxis findet 06:45–07:00\u00a0Uhr Wiener Zeit (GMT+2) statt. Wenn Sie in einer anderen Zeitzone sind, praktizieren Sie mit der Aufzeichnung, wenn bei Ihnen Morgen ist: An der Methode ändert das nichts. Wenn Ihnen 06:45\u00a0Uhr aber passt, beginnen Sie mit der Live-Praxis\u00a0— so bleiben Sie deutlich leichter dabei.",
+            ],
+          },
+          {
+            q: "Wodurch ist die Yoga-Tradition der Lady\u00a0Niguma belegt?",
+            a: [
+              "Das Yoga der Lady\u00a0Niguma geht auf die Lehren einer indischen Yogini des 11.\u00a0Jahrhunderts zurück. Ihr Erbe hat sich in der tibetisch-buddhistischen Tradition erhalten und wurde über Generationen von Lehrern weitergegeben.",
+              "Bei 15minYoga praktizieren und unterrichten wir das Yoga der Lady\u00a0Niguma nach dem System des Yoga Studies Institute (YSI)\u00a0— einer internationalen Schule, die die alte Philosophie des Yoga studiert, vermittelt und mit Praktiken für das moderne Leben verbindet.",
+              "Unser Ansatz beruht auf der Ausbildung am YSI und verbindet Bewegung, Atem, Konzentration und die Arbeit mit dem feinstofflichen Körper.",
+            ],
+            link: { pre: "Mehr über die Schule und ihr Programm erfahren Sie auf der ", label: "offiziellen Website des Yoga Studies Institute", post: ".", href: "https://www.yogastudiesinstitute.org/" },
+          },
+          {
+            q: "Gibt es Kontraindikationen?",
+            a: [
+              "Die Bewegungen sind sanft, aber wir sind keine Ärzte und geben keine medizinischen Einschätzungen ab. Wenn Sie Erkrankungen oder Verletzungen haben, zeigen Sie das Programm Ihrer Ärztin oder Ihrem Arzt, bevor Sie beginnen. Das ist ehrlicher als die Zeile „Lassen Sie sich fachlich beraten“ im Kleingedruckten.",
+            ],
+          },
+          {
+            q: "Ich habe noch nie Yoga oder Meditation praktiziert. Ist das etwas für mich?",
+            a: [
+              "Ja. Die Bewegungen sind einfach, Beweglichkeit und Vorerfahrung brauchen Sie nicht, und die Haltungen werden im Laufe des Programms nicht schwieriger. Was wächst, ist etwas anderes\u00a0— die Qualität der Aufmerksamkeit. Beginnen können Sie gleich am ersten Morgen.",
+            ],
+          },
+          {
+            q: "Hat das etwas mit Glauben zu tun? Muss ich meine Religion wechseln?",
+            a: [
+              "Nein. Das Yoga der Lady\u00a0Niguma hat historische Wurzeln in der tibetisch-buddhistischen Tradition, doch um an unseren Praktiken teilzunehmen, müssen Sie weder Ihre Religion wechseln noch buddhistische Überzeugungen annehmen.",
+              "Wir praktizieren nach dem System des Yoga Studies Institute (YSI) und verbinden Bewegung, Atem, Konzentration und Meditation mit den Prinzipien von Güte und Weisheit.",
+              "Ihr Glaube bleibt Ihr eigener. Unser Ziel ist es, Klarheit des Geistes und innere Stabilität zu entwickeln und durch Achtsamkeit die Qualität Ihrer Entscheidungen zu verbessern.",
+            ],
+          },
+        ],
+      },
       stats: {
         title: "Ein klarer und ruhiger Geist\u00a0— Ihr wichtigstes Kapital",
         items: [
           { num: "15", unit: "Minuten", lines: ["Passt in jeden Kalender"] },
-          { num: "06:45", unit: "(Wien)", lines: ["Zoom werktags, vor Arbeitsbeginn", "Aufnahmen jederzeit abrufbar"] },
+          { num: "06:45", unit: "(Wien)", lines: ["Zoom werktags, vor Arbeitsbeginn", "Aufzeichnungen jederzeit abrufbar"] },
           { num: "~1000", unit: "Jahre", lines: ["Yoga-Tradition der Lady\u00a0Niguma"] },
           { num: "5", unit: "Winde", lines: ["Modell, das Bewegung, Emotion und\u00a0Denken verbindet"] },
         ],
@@ -994,6 +1135,53 @@ window.NIGUMA_I18N = {
       heroLeadHook: "Найкращі рішення народжуються з\u00a0вашого стану",
       heroLeadText: "15\u00a0хвилин онлайн-практики, щоб мислити ясно, діяти впевнено й\u00a0досягати результатів",
       heroCta: "Спробувати безкоштовно",
+      faq: {
+        eyebrow: "Запитання",
+        heading: "Часті запитання",
+        items: [
+          {
+            q: "Чому живе заняття, а\u00a0не просто записи?",
+            a: [
+              "Бо записи не переглядають. Фіксований час, живий ведучий і\u00a0група, яка на вас чекає,\u00a0— це те, що перетворює намір на звичку. Записи є\u00a0— але як страховка на випадок відряджень, а\u00a0не як основний формат.",
+            ],
+          },
+          {
+            q: "А\u00a0якщо 06:45\u00a0— не мій час?",
+            a: [
+              "Живі заняття відбуваються о\u00a006:45–07:00 за віденським часом (GMT+2). Якщо у\u00a0вас інший часовий пояс\u00a0— практикуйте із запису зранку за своїм часом: метод від цього не змінюється. Але якщо 06:45 вам підходить, почніть із живих занять\u00a0— так практику значно простіше втримати.",
+            ],
+          },
+          {
+            q: "Що підтверджує традицію йоги Леді\u00a0Нігуми?",
+            a: [
+              "Йога Леді\u00a0Нігуми бере початок у\u00a0вченнях індійської йогині XI\u00a0століття. Її спадщина збереглася в\u00a0тибетській буддійській традиції та передавалася через покоління вчителів.",
+              "У\u00a015minYoga ми практикуємо й\u00a0викладаємо йогу Леді\u00a0Нігуми за системою Yoga Studies Institute (YSI)\u00a0— міжнародної школи, яка вивчає й\u00a0передає давню філософію йоги, поєднуючи її з\u00a0практиками для сучасного життя.",
+              "Наш підхід ґрунтується на навчанні в\u00a0YSI та обʼєднує рух, дихання, концентрацію й\u00a0роботу з\u00a0тонким тілом.",
+            ],
+            link: { pre: "Докладніше про школу та її програму можна дізнатися на ", label: "офіційному сайті Yoga Studies Institute", post: ".", href: "https://www.yogastudiesinstitute.org/" },
+          },
+          {
+            q: "Чи є протипоказання?",
+            a: [
+              "Рухи мʼякі, але ми не лікарі й\u00a0не даємо медичних оцінок. Якщо у\u00a0вас є захворювання чи травми\u00a0— покажіть програму своєму лікареві перед стартом. Це чесніше, ніж рядок «проконсультуйтеся з\u00a0фахівцем» дрібним шрифтом.",
+            ],
+          },
+          {
+            q: "Я\u00a0ніколи не займався йогою та медитацією. Чи мені це підійде?",
+            a: [
+              "Так. Рухи прості, гнучкість і\u00a0досвід не потрібні, складність поз у\u00a0програмі не зростає. Зростає інше\u00a0— якість уваги. Почати можна вже першого ранку.",
+            ],
+          },
+          {
+            q: "Чи повʼязане це з\u00a0вірою? Чи доведеться мені змінювати релігію?",
+            a: [
+              "Ні. Йога Леді\u00a0Нігуми має історичне коріння в\u00a0тибетській буддійській традиції, але для участі в\u00a0наших практиках не потрібно змінювати релігію чи приймати буддійські переконання.",
+              "Ми практикуємо за системою Yoga Studies Institute (YSI), поєднуючи рух, дихання, концентрацію та медитацію з\u00a0принципами доброти й\u00a0мудрості.",
+              "Ваша віра залишається вашою. Наша мета\u00a0— розвивати ясність розуму, внутрішню стійкість і\u00a0підвищувати якість ваших рішень через усвідомленість.",
+            ],
+          },
+        ],
+      },
       stats: {
         title: "Ясний і\u00a0спокійний\u00a0розум\u00a0— ваш\u00a0головний\u00a0актив",
         items: [
@@ -1251,6 +1439,7 @@ window.NIGUMA_I18N = {
     M[lng].hero.leadText = a.heroLeadText;
     M[lng].hero.ctaPrimary = a.heroCta;
     M[lng].stats = a.stats;
+    M[lng].faq = a.faq;
     M[lng].pains = a.pains;
     M[lng].promise = a.promise;
     M[lng].included = a.included;

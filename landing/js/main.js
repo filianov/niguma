@@ -118,6 +118,21 @@
       .catch(function () { /* no file yet — stays hidden */ });
   }
 
+  /* ---- 7. «Частые вопросы»: «+» справа раскрывает ответ, «−» сворачивает ----
+     Один обработчик на весь документ: список перерисовывается при смене
+     языка (js/i18n.js), а этот обработчик продолжает работать. Ответы
+     раскрываются независимо друг от друга. */
+  function faqAccordion() {
+    document.addEventListener("click", function (e) {
+      var btn = e.target && e.target.closest ? e.target.closest(".faq__btn") : null;
+      if (!btn) return;
+      var item = btn.closest(".faq__item");
+      var open = btn.getAttribute("aria-expanded") !== "true";
+      btn.setAttribute("aria-expanded", open ? "true" : "false");
+      if (item) item.classList.toggle("is-open", open);
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     wireCtas();
     deeperPdf();
@@ -126,5 +141,6 @@
     armReveal();
     navShadow();
     leadForm();
+    faqAccordion();
   });
 })();
