@@ -238,7 +238,7 @@ window.NIGUMA_I18N = {
       nav: { included: "Что входит", trainers: "Тренеры", benefits: "Что вы получите", how: "Почему это работает" },
       heroTitle: "15minYoga",
       heroSub: "для предпринимателей, руководителей, собственников бизнеса, лидеров мнений, от чьих решений зависят люди, проекты, деньги и развитие",
-      heroLeadHook: "Лучшие решения рождаются из\u00a0вашего состояния.",
+      heroLeadHook: "Лучшие решения рождаются из\u00a0вашего состояния",
       heroLeadText: "15\u00a0минут онлайн-практики, чтобы мыслить ясно, действовать уверенно и\u00a0создавать результаты",
       heroCta: "Попробовать бесплатно",
       pains: {
@@ -475,7 +475,7 @@ window.NIGUMA_I18N = {
       nav: { included: "What's included", trainers: "Trainers", benefits: "What you get", how: "Why it works" },
       heroTitle: "15minYoga",
       heroSub: "for entrepreneurs, executives, business owners and thought leaders — whose decisions carry people, projects, money and growth",
-      heroLeadHook: "The best decisions come from your state of mind.",
+      heroLeadHook: "The best decisions come from your state of mind",
       heroLeadText: "15\u00a0minutes of online practice to think clearly, act with confidence and deliver results",
       heroCta: "Try it free",
       pains: {
@@ -712,7 +712,7 @@ window.NIGUMA_I18N = {
       nav: { included: "Inhalte", trainers: "Trainer", benefits: "Was Sie erhalten", how: "Warum es wirkt" },
       heroTitle: "15minYoga",
       heroSub: "für Unternehmer, Führungskräfte, Inhaber und Meinungsführer — von deren Entscheidungen Menschen, Projekte, Finanzen und Entwicklung abhängen",
-      heroLeadHook: "Die besten Entscheidungen entstehen aus Ihrem inneren Zustand.",
+      heroLeadHook: "Die besten Entscheidungen entstehen aus Ihrem inneren Zustand",
       heroLeadText: "15\u00a0Minuten Online-Praxis, um klar zu denken, souverän zu handeln und Ergebnisse zu erzielen",
       heroCta: "Kostenlos ausprobieren",
       pains: {
@@ -949,7 +949,7 @@ window.NIGUMA_I18N = {
       nav: { included: "Що входить", trainers: "Тренери", benefits: "Що ви отримаєте", how: "Чому це працює" },
       heroTitle: "15minYoga",
       heroSub: "для підприємців, керівників, власників бізнесу, лідерів думок, від чиїх рішень залежать люди, проєкти, гроші та розвиток",
-      heroLeadHook: "Найкращі рішення народжуються з\u00a0вашого стану.",
+      heroLeadHook: "Найкращі рішення народжуються з\u00a0вашого стану",
       heroLeadText: "15\u00a0хвилин онлайн-практики, щоб мислити ясно, діяти впевнено й\u00a0досягати результатів",
       heroCta: "Спробувати безкоштовно",
       pains: {
