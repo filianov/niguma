@@ -12,9 +12,10 @@
   --cream:      #f0e3d3;   /* warm cream        */
   --sand:       #ddbea9;   /* warm sand         */
   --clay:       #c58c6e;   /* terracotta accent */
-  --clay-deep:  #a96c4c;   /* deep clay (text-safe accent) */
+  --clay-deep:  #9c6041;   /* deep clay (text-safe accent); было #a96c4c — 4,0:1, ниже нормы */
+  --clay-ink:   #8d5335;   /* ссылки и ошибки на кремовом и серо-зелёном (форма анонсов, чат оператора, меню над фото) */
   --sage:       #b8b7a3;   /* light sage        */
-  --olive:      #6b705c;   /* dark olive/sage   */
+  --olive:      #626754;   /* dark olive/sage; было #6b705c — подписи на кремовом 4,2:1 */
   --olive-deep: #565b49;   /* deep olive        */
   --paper:      #fbf8f3;   /* warm near-white   */
 
@@ -23,11 +24,11 @@
   --bg-alt:     #f2e8da;   /* warm cream section */
   --surface:    #fffdf9;   /* cards on plain bg  */
   --ink:        #3b382f;   /* warm dark text     */
-  --ink-soft:   #837c6d;   /* muted warm text    */
+  --ink-soft:   #6b6556;   /* muted warm text; было #837c6d — 3,4–4,1:1 */
   --line:       #e7dccb;   /* warm hairline      */
   --accent:     var(--olive);      /* primary action */
   --accent-ink: #fbf8f3;
-  --focus:      #6b705c;
+  --focus:      var(--olive);
   --shadow-rgb: 59, 56, 47;   /* тень карточек: тёплая в светлой, чёрная в тёмной */
 
   /* ---- type ---- */
@@ -128,7 +129,7 @@ picture.logo-pic > source { display: none; }
 }
 .nav__links { display: none; gap: 20px; font-size: 13.5px; color: var(--ink-soft); white-space: nowrap; }
 .nav__links a { transition: color .2s var(--ease); }
-.nav__links a:hover { color: var(--clay-deep); }
+.nav__links a:hover { color: var(--clay-ink); }
 .nav__right { display: flex; align-items: center; gap: 12px; }
 
 .lang { display: inline-flex; border: 1px solid var(--line); border-radius: 980px; overflow: hidden; background: var(--surface); }
@@ -139,6 +140,9 @@ picture.logo-pic > source { display: none; }
 }
 .lang__btn:hover { color: var(--ink); }
 .lang__btn[aria-current="true"] { background: var(--olive); color: #fbf8f3; }
+.lang__btn { position: relative; }
+.lang__btn:focus-visible { outline: none; }
+.lang__btn:focus-visible::after { content: ""; position: absolute; inset: 3px; border: 2px solid currentColor; border-radius: 980px; pointer-events: none; }
 
 /* ---------------- Hero (photo backdrop) ---------------- */
 .hero {
@@ -147,7 +151,7 @@ picture.logo-pic > source { display: none; }
   min-height: 82vh; display: flex; align-items: center;
   overflow: hidden;
 }
-.hero__media { position: absolute; inset: 0; z-index: -2; }
+.hero__media { position: absolute; inset: 0; z-index: -2; background: #3b3a2e; }
 .hero__media img { width: 100%; height: 100%; object-fit: cover; object-position: center 54%; }
 /* warm brand veil — heavier where the type sits, lighter where the view breathes */
 .hero::after {
@@ -302,7 +306,7 @@ picture.logo-pic > source { display: none; }
 .tier--featured { border: 1.5px solid var(--clay); box-shadow: 0 18px 46px -22px rgba(169, 108, 76, .45); }
 .tier__badge {
   position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
-  background: var(--clay); color: #fff; font-size: 12px; font-weight: 700;
+  background: var(--clay); color: #201f18; font-size: 12px; font-weight: 700;
   letter-spacing: .04em; padding: 5px 14px; border-radius: 980px;
 }
 .tier__period { font-size: 17px; color: var(--ink-soft); margin: 0 0 10px; }
@@ -346,13 +350,13 @@ picture.logo-pic > source { display: none; }
   width: 100%; padding: 14px 16px; font: inherit; font-size: 16px;
   border: 1px solid var(--line); border-radius: 14px; background: var(--paper); color: var(--ink);
 }
-.lead__input::placeholder { color: #a49d8d; }
+.lead__input::placeholder { color: #777061; opacity: 1; }
 .lead__input:focus { border-color: var(--olive); outline: none; }
 .lead__consent { display: flex; gap: 10px; align-items: flex-start; margin-top: 14px; font-size: 13px; color: var(--olive-deep); }
 .lead__consent input { margin-top: 3px; accent-color: var(--olive); }
 .lead__done { color: var(--olive); font-weight: 600; margin: 14px 0 0; font-size: 14.5px; line-height: 1.5; }
-.lead__done a { color: var(--clay-deep); text-decoration: underline; white-space: nowrap; }
-.lead__done.is-error { color: var(--clay-deep); }
+.lead__done a { color: var(--clay-ink); text-decoration: underline; white-space: nowrap; }
+.lead__done.is-error { color: var(--clay-ink); }
 
 /* ---------------- Footer ---------------- */
 .footer { background: var(--olive-deep); border-top: 0; padding: 52px 0; font-size: 14px; color: #d9d7c6; }
@@ -391,6 +395,8 @@ picture.logo-pic > source { display: none; }
    страница уезжала вбок. Уже 1100 px — логотип, языки и «Присоединиться». */
 @media (min-width: 1100px) {
   .nav__links { display: flex; }
+  /* пункты меню мелкие: над фото при прокрутке им нужна плотная подложка (4,8:1 вместо 3,7) */
+  .nav { background: rgba(251, 248, 243, .92); }
 }
 
 @media (min-width: 900px) {
@@ -404,7 +410,7 @@ picture.logo-pic > source { display: none; }
     --bg: #201f18; --bg-alt: #26261d; --surface: #2a2a20; --paper: #26261d;
     --ink: #efe7d7; --ink-soft: #b0a996; --line: #39392d;
     --accent: #c58c6e; --accent-ink: #201f18; --focus: #c58c6e;
-    --clay-deep: #d19c7e; --olive: #92977c; --olive-deep: #767b5f;
+    --clay-deep: #d19c7e; --clay-ink: #d19c7e; --olive: #92977c; --olive-deep: #767b5f;
     --shadow-rgb: 0, 0, 0;
   }
   body::before { mix-blend-mode: screen; opacity: .05; }
@@ -517,9 +523,8 @@ picture.logo-pic > source { display: none; }
  * при ширине колонки ~195 px «Модель, связывающая движение, эмоции и мышление»
  * не помещается в две строки ни при каком читаемом кегле.
  *
- * Цвет подписей смешан из цвета текста и фона: --ink-soft на светлом фоне
- * даёт контраст 3,9:1 — для мелкого текста мало, смесь даёт 4,8:1, а в тёмной
- * теме подстраивается сама.
+ * Цвет подписей: в светлой теме --ink-soft (5,5:1), в тёмной — смесь цвета
+ * текста и фона, она подстраивается сама.
  */
 .stats { padding: clamp(36px, 5vw, 60px) 0 0; background: var(--bg); }
 .stats__inner { max-width: 1160px; }
@@ -1273,7 +1278,7 @@ html.is-dialog-open { overflow: hidden; }
   padding: 14px 16px; background: var(--olive); color: var(--paper); flex: 0 0 auto;
 }
 .chat__title { display: block; font-family: var(--font-display); font-size: 17px; font-weight: 600; }
-.chat__sub { display: block; font-size: 12px; opacity: .82; margin-top: 1px; }
+.chat__sub { display: block; font-size: 12px; margin-top: 1px; opacity: .88; }
 .chat__close {
   border: 0; background: rgba(255,255,255,.14); color: inherit; cursor: pointer;
   width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; flex: 0 0 auto;
@@ -1295,6 +1300,7 @@ html.is-dialog-open { overflow: hidden; }
   border-bottom-left-radius: 15px; border-bottom-right-radius: 5px;
 }
 .chat__msg--operator .chat__bua { background: var(--cream); border-color: var(--sand); }
+.chat__msg--operator .chat__bua a { color: var(--clay-ink); }
 .chat__bua a { color: var(--clay-deep); text-decoration: underline; }
 .chat__msg--user .chat__bua a { color: var(--cream); }
 .chat__tg {
@@ -1364,7 +1370,7 @@ html.is-dialog-open { overflow: hidden; }
 .tier--featured .tier__pick { background: var(--olive); color: var(--paper); }
 
 .promo-ribbon { max-width: 780px; margin: 0 auto 18px; text-align: center; padding: 9px 16px;
-  background: var(--clay); color: #fff; border-radius: 980px; font-size: 14.5px; }
+  background: var(--clay); color: #201f18; border-radius: 980px; font-size: 14.5px; }
 .promo-ribbon b { font-size: 16px; }
 
 .checkout { position: fixed; inset: 0; background: rgba(59,56,47,.5); display: grid; place-items: center;
@@ -1382,6 +1388,8 @@ html.is-dialog-open { overflow: hidden; }
 .checkout__form input, .checkout__form textarea { padding: 11px 13px; border: 1px solid var(--line);
   border-radius: 12px; font: inherit; font-size: 15px; color: var(--ink); background: #fff; }
 .checkout__form input:focus, .checkout__form textarea:focus { outline: none; border-color: var(--olive); }
+/* подсказки в полях — явный цвет: у Safari по умолчанию серый 2,4:1 */
+.chat__input::placeholder, .checkout__form input::placeholder, .checkout__form textarea::placeholder { color: #777061; opacity: 1; }
 .checkout__submit { margin-top: 6px; }
 .checkout__error { margin: 0; color: var(--clay-deep); font-size: 14px; }
 .checkout__done { text-align: center; padding: 14px 0 6px; }
@@ -1463,6 +1471,15 @@ html.is-dialog-open { overflow: hidden; }
   transition: transform .2s var(--ease);
 }
 .tier--pickable:hover .promo-sticker { transform: rotate(0deg) scale(1.04); }
+/* в три колонки наклейка закрывала конец «6 месяцев»: опускаем содержимое всех карточек одинаково */
+@media (min-width: 700px) {
+  .pricing:has(.promo-sticker) .tier { padding-top: 62px; }
+  /* отступ рассчитан на подпись в две строки; полное название акции — в ленте над ценами */
+  .promo-sticker__text { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; }
+  /* цена с копейками («359.20 €») не должна раздвигать колонку */
+  .pricing { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .tier__price { font-size: clamp(36px, 5.4vw, 44px); }
+}
 .promo-sticker__art { display: block; }
 .promo-sticker__art svg { width: 30px; height: 30px; display: block; }
 .promo-sticker__text {
@@ -1499,7 +1516,7 @@ html.is-dialog-open { overflow: hidden; }
   .checkout__box { border: 1px solid var(--line); box-shadow: 0 40px 120px -40px rgba(0, 0, 0, .6); }
   .checkout__form input, .checkout__form textarea { background: #1c1b15; border-color: #4a4a3a; }
   .checkout__form input::placeholder, .checkout__form textarea::placeholder,
-  .chat__input::placeholder { color: #a49d8d; opacity: 1; }
+  .chat__input::placeholder, .lead__input::placeholder { color: #a49d8d; opacity: 1; }
   .checkout__method { background: var(--surface); }
   .checkout__method:hover { border-color: #5a5040; }
   .paydetails__copy { background: var(--surface); border-color: #4a4a3a; color: var(--ink-soft); }
@@ -1518,4 +1535,20 @@ html.is-dialog-open { overflow: hidden; }
   .lead__input:-webkit-autofill, .checkout__form input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0 40px #1c1b15 inset; -webkit-text-fill-color: var(--ink); caret-color: var(--ink);
   }
+}
+
+/* ===================================================================
+   Светлая тема: наведение, фокус и редкие состояния. Только для светлой —
+   в тёмной у этих мест свои цвета, и она от этого блока не меняется.
+   =================================================================== */
+@media (prefers-color-scheme: light) {
+  /* наведение на оливковые кнопки: шаг как до затемнения --olive */
+  .btn--primary:hover, .chat__send:hover, .chat__bubble:hover { background: #4d5241; }
+  .btn--ghost:hover { color: var(--olive-deep); }
+  .footer__links a:hover { color: var(--cream); }
+  /* кольцо фокуса на оливковом подвале и на фото было 1,4:1 */
+  .footer, .hero { --focus: var(--cream); }
+  .chat__bubble:focus-visible { box-shadow: 0 0 0 3px #fbf8f3, 0 14px 34px -12px rgba(var(--shadow-rgb), .55); }
+  .stat__line { color: var(--ink-soft); }
+  .chat__typing span { background: var(--olive); }
 }

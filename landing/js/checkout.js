@@ -17,10 +17,10 @@
 
   function $(s, root) { return (root || document).querySelector(s); }
   function esc(s) {
-    return String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+    return String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
   }
   function money(cents) {
-    return (Number(cents || 0) / 100).toFixed(2).replace(/\.00$/, "") + " €";
+    return (Number(cents || 0) / 100).toFixed(2).replace(/\.00$/, "") + "\u00a0€";   // «€» не уходит на отдельную строку
   }
   function lang() { return document.documentElement.lang || "ru"; }
 
@@ -37,7 +37,7 @@
           comment: "Вопрос или пожелание (необязательно)", submit: "Отправить заявку", sending: "Отправляем…",
           okTitle: "Заявка принята", okBody: "Мы напишем вам в ближайшее время и пришлём реквизиты для оплаты.",
           errEmail: "Проверьте адрес почты.", err: "Не отправилось. Попробуйте ещё раз или напишите нам в Telegram.",
-          close: "Закрыть", promoLeft: "до конца акции" },
+          close: "Закрыть", promoLeft: "до конца акции", day: "дн.", days: "дн." },
     en: { choose: "Choose", chosen: "Selected", perMonth: "€/mo", off: "you save",
           payPick: "Payment method",
           payNote: "You get the payment details right after picking a plan — and again from our Telegram bot.",
@@ -49,7 +49,7 @@
           comment: "Question or note (optional)", submit: "Send request", sending: "Sending…",
           okTitle: "Request received", okBody: "We'll get back to you shortly with the payment details.",
           errEmail: "Please check the e-mail address.", err: "Could not send. Please try again or write to us on Telegram.",
-          close: "Close", promoLeft: "until the offer ends" },
+          close: "Close", promoLeft: "until the offer ends", day: "day", days: "days" },
     de: { choose: "Wählen", chosen: "Gewählt", perMonth: "€/Mon.", off: "Ersparnis",
           payPick: "Zahlungsart",
           payNote: "Die Zahlungsdaten kommen direkt nach der Paketwahl — und noch einmal von unserem Telegram-Bot.",
@@ -61,7 +61,7 @@
           comment: "Frage oder Hinweis (optional)", submit: "Anfrage senden", sending: "Wird gesendet…",
           okTitle: "Anfrage angekommen", okBody: "Wir melden uns in Kürze mit den Zahlungsdaten.",
           errEmail: "Bitte prüfen Sie die E-Mail-Adresse.", err: "Senden fehlgeschlagen. Bitte erneut versuchen oder uns auf Telegram schreiben.",
-          close: "Schließen", promoLeft: "bis zum Ende der Aktion" },
+          close: "Schließen", promoLeft: "bis zum Ende der Aktion", day: "Tag", days: "Tage" },
     uk: { choose: "Обрати", chosen: "Обрано", perMonth: "€/міс", off: "вигода",
           payPick: "Спосіб оплати",
           payNote: "Реквізити надійдуть одразу після вибору пакета — і повторно від бота в Telegram.",
@@ -73,7 +73,7 @@
           comment: "Запитання чи побажання (необов'язково)", submit: "Надіслати заявку", sending: "Надсилаємо…",
           okTitle: "Заявку прийнято", okBody: "Ми напишемо вам найближчим часом і надішлемо реквізити для оплати.",
           errEmail: "Перевірте адресу пошти.", err: "Не надіслалося. Спробуйте ще раз або напишіть нам у Telegram.",
-          close: "Закрити", promoLeft: "до кінця акції" },
+          close: "Закрити", promoLeft: "до кінця акції", day: "дн.", days: "дн." },
   };
   function t(key) { return (T[lang()] || T.ru)[key]; }
 
@@ -248,7 +248,7 @@
     var left = "";
     if (state.promo.endsAt) {
       var days = Math.ceil((new Date(state.promo.endsAt) - Date.now()) / 86400000);
-      if (days > 0) left = " · " + days + " дн. " + t("promoLeft");
+      if (days > 0) left = " · " + days + " " + t(days === 1 ? "day" : "days") + " " + t("promoLeft");
     }
     ribbon.innerHTML = "<b>−" + state.promo.percent + "%</b>" +
       (state.promo.name ? " · " + esc(state.promo.name) : "") + esc(left);

@@ -33,12 +33,18 @@
 
   function esc(s) {
     return String(s == null ? "" : s)
-      .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+      .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
   }
+  /**
+   * Ссылки в сообщениях — за один проход. Раньше было два замены подряд, и
+   * вторая (t.me/…) переписывала уже готовую ссылку https://t.me/…: человек
+   * видел кусок разметки вместо ссылки.
+   */
   function linkify(s) {
-    return esc(s)
-      .replace(/(https?:\/\/[^\s<]+)/g, '<a href="$1" target="_blank" rel="noopener">$1</a>')
-      .replace(/\bt\.me\/([\w_]+)/g, '<a href="https://t.me/$1" target="_blank" rel="noopener">t.me/$1</a>');
+    return esc(s).replace(/(https?:\/\/[^\s<]+)|\bt\.me\/([\w_]+)/g, function (m, url, tg) {
+      var href = url || "https://t.me/" + tg;
+      return '<a href="' + href + '" target="_blank" rel="noopener">' + m + "</a>";
+    });
   }
 
   /* ------------------------------ разметка ------------------------------ */
