@@ -38,7 +38,7 @@ window.NIGUMA_I18N = {
       "items": ["связь энергии и мышления", "влияние внутренних состояний на результаты", "законы причины и следствия", "этика как основа устойчивого успеха", "работа с воображением и намерением", "щедрость как причина процветания", "практическое применение древней йоги в современной жизни"]
     },
     "format": {
-      "heading": "Формат участия", "days": "Будние дни", "time": "06:45–07:00", "tz": "(GMT+2:00) Вена", "online": "Онлайн",
+      "heading": "Формат участия", "days": "Будние дни", "time": "06:45–07:00", "tz": "по венскому времени", "online": "Онлайн",
       "records": "Записи доступны участникам", "langLabel": "Языки сообщества", "langValue": "украинский, английский, немецкий и русский"
     },
     "pricing": {
@@ -62,7 +62,7 @@ window.NIGUMA_I18N = {
   "en": {
     "meta": {
       "title": "15minYoga — Yoga for those who make decisions",
-      "description": "15minYoga: live weekday mornings, 06:45–07:00 CET. Niguma's authentic yoga in 15 minutes, building the clarity and decisiveness founders need."
+      "description": "15minYoga: live weekday mornings, 06:45–07:00 Vienna time. Niguma's authentic yoga in 15 minutes, building the clarity and decisiveness founders need."
     },
     "nav": { "benefits": "What you get", "forWho": "Who it's for", "format": "Format", "pricing": "Pricing", "join": "Join" },
     "hero": {
@@ -93,7 +93,7 @@ window.NIGUMA_I18N = {
       "items": ["the connection between energy and thinking", "how inner states shape results", "the laws of cause and effect", "ethics as the foundation of lasting success", "working with imagination and intention", "generosity as a cause of prosperity", "applying ancient yoga in modern life"]
     },
     "format": {
-      "heading": "How participation works", "days": "Weekdays", "time": "06:45–07:00", "tz": "(GMT+2:00) Vienna", "online": "Online",
+      "heading": "How participation works", "days": "Weekdays", "time": "06:45–07:00", "tz": "Vienna time", "online": "Online",
       "records": "Recordings available to participants", "langLabel": "Community languages", "langValue": "Ukrainian, English, German, and Russian"
     },
     "pricing": {
@@ -148,7 +148,7 @@ window.NIGUMA_I18N = {
       "items": ["der Zusammenhang von Energie und Denken", "der Einfluss innerer Zustände auf die Ergebnisse", "die Gesetze von Ursache und Wirkung", "Ethik als Grundlage nachhaltigen Erfolgs", "die Arbeit mit Vorstellungskraft und Absicht", "Großzügigkeit als Ursache des Wohlstands", "die praktische Anwendung des alten Yoga im modernen Leben"]
     },
     "format": {
-      "heading": "Format der Teilnahme", "days": "Werktage", "time": "06:45–07:00", "tz": "(GMT+2:00) Wien", "online": "Online",
+      "heading": "Format der Teilnahme", "days": "Werktage", "time": "06:45–07:00", "tz": "Wiener Zeit", "online": "Online",
       "records": "Aufzeichnungen für Teilnehmer verfügbar", "langLabel": "Sprachen der Community", "langValue": "Ukrainisch, Englisch, Deutsch und Russisch"
     },
     "pricing": {
@@ -203,7 +203,7 @@ window.NIGUMA_I18N = {
       "items": ["звʼязок енергії та мислення", "вплив внутрішніх станів на результати", "закони причини й наслідку", "етика як основа стійкого успіху", "робота з уявою та наміром", "щедрість як причина процвітання", "практичне застосування давньої йоги в сучасному житті"]
     },
     "format": {
-      "heading": "Формат участі", "days": "Будні дні", "time": "06:45–07:00", "tz": "(GMT+2:00) Відень", "online": "Онлайн",
+      "heading": "Формат участі", "days": "Будні дні", "time": "06:45–07:00", "tz": "за віденським часом", "online": "Онлайн",
       "records": "Записи доступні учасникам", "langLabel": "Мови спільноти", "langValue": "українська, англійська, німецька та російська"
     },
     "pricing": {
@@ -254,7 +254,7 @@ window.NIGUMA_I18N = {
           {
             q: "Что если 06:45\u00a0— не моё время?",
             a: [
-              "Live идёт в\u00a006:45–07:00 по венскому времени (GMT+2). Если ваш пояс не совпадает\u00a0— практикуйте по записи в\u00a0своё утро: метод от этого не меняется. Но если 06:45 вам доступно, начните с\u00a0live\u00a0— удержаться в\u00a0практике так значительно проще.",
+              "Live идёт в\u00a006:45–07:00 по венскому времени. Если ваш пояс не совпадает\u00a0— практикуйте по записи в\u00a0своё утро: метод от этого не меняется. Но если 06:45 вам доступно, начните с\u00a0live\u00a0— удержаться в\u00a0практике так значительно проще.",
             ],
           },
           {
@@ -273,7 +273,7 @@ window.NIGUMA_I18N = {
             ],
           },
           {
-            q: "Я\u00a0никогда не занимался йогой и\u00a0медитацией. Подойдёт ли мне это?",
+            q: "Я\u00a0никогда не занимался(\u2011ась) йогой и\u00a0медитацией. Подойдёт ли мне это?",
             a: [
               "Да. Движения простые, гибкость и\u00a0опыт не требуются, сложность поз в\u00a0программе не растёт. Растёт другое\u00a0— качество внимания. Начать можно в\u00a0первое же утро.",
             ],
@@ -552,7 +552,7 @@ window.NIGUMA_I18N = {
           {
             q: "What if 06:45 doesn't work for me?",
             a: [
-              "Live practice runs 06:45–07:00 Vienna time (GMT+2). If you are in a different time zone, practise with the recordings when it is morning where you are: the method stays the same. But if 06:45 works for you, start with the live session\u00a0— it is much easier to stick with the practice that way.",
+              "Live practice runs 06:45–07:00 Vienna time. If you are in a different time zone, practise with the recordings when it is morning where you are: the method stays the same. But if 06:45 works for you, start with the live session\u00a0— it is much easier to stick with the practice that way.",
             ],
           },
           {
@@ -850,7 +850,7 @@ window.NIGUMA_I18N = {
           {
             q: "Was, wenn 06:45\u00a0Uhr für mich nicht passt?",
             a: [
-              "Die Live-Praxis findet 06:45–07:00\u00a0Uhr Wiener Zeit (GMT+2) statt. Wenn Sie in einer anderen Zeitzone sind, praktizieren Sie mit der Aufzeichnung, wenn bei Ihnen Morgen ist: An der Methode ändert das nichts. Wenn Ihnen 06:45\u00a0Uhr aber passt, beginnen Sie mit der Live-Praxis\u00a0— so bleiben Sie deutlich leichter dabei.",
+              "Die Live-Praxis findet 06:45–07:00\u00a0Uhr Wiener Zeit statt. Wenn Sie in einer anderen Zeitzone sind, praktizieren Sie mit der Aufzeichnung, wenn bei Ihnen Morgen ist: An der Methode ändert das nichts. Wenn Ihnen 06:45\u00a0Uhr aber passt, beginnen Sie mit der Live-Praxis\u00a0— so bleiben Sie deutlich leichter dabei.",
             ],
           },
           {
@@ -1148,7 +1148,7 @@ window.NIGUMA_I18N = {
           {
             q: "А\u00a0якщо 06:45\u00a0— не мій час?",
             a: [
-              "Живі заняття відбуваються о\u00a006:45–07:00 за віденським часом (GMT+2). Якщо у\u00a0вас інший часовий пояс\u00a0— практикуйте із запису зранку за своїм часом: метод від цього не змінюється. Але якщо 06:45 вам підходить, почніть із живих занять\u00a0— так практику значно простіше втримати.",
+              "Живі заняття відбуваються о\u00a006:45–07:00 за віденським часом. Якщо у\u00a0вас інший часовий пояс\u00a0— практикуйте із запису зранку за своїм часом: метод від цього не змінюється. Але якщо 06:45 вам підходить, почніть із живих занять\u00a0— так практику значно простіше втримати.",
             ],
           },
           {
@@ -1167,7 +1167,7 @@ window.NIGUMA_I18N = {
             ],
           },
           {
-            q: "Я\u00a0ніколи не займався йогою та медитацією. Чи мені це підійде?",
+            q: "Я\u00a0ніколи не займався(\u2011лася) йогою та медитацією. Чи мені це підійде?",
             a: [
               "Так. Рухи прості, гнучкість і\u00a0досвід не потрібні, складність поз у\u00a0програмі не зростає. Зростає інше\u00a0— якість уваги. Почати можна вже першого ранку.",
             ],
