@@ -241,6 +241,22 @@ window.NIGUMA_I18N = {
       heroLeadHook: "Лучшие решения рождаются из\u00a0вашего состояния",
       heroLeadText: "15\u00a0минут онлайн-практики, чтобы мыслить ясно, действовать уверенно и\u00a0создавать результаты",
       heroCta: "Попробовать бесплатно",
+      method: {
+        eyebrow: "Метод",
+        heading: "Пять ветров: как работа с\u00a0телом управляет состоянием ума",
+        paras: [
+          "В\u00a0основе метода\u00a0— древняя йогическая модель пяти внутренних ветров (вайю), связывающих тело, дыхание, эмоции и\u00a0мышление.",
+          "Главный принцип традиции: **«Ветры и\u00a0ум движутся вместе»**. Работая с\u00a0движением, дыханием и\u00a0вниманием, мы учимся преобразовывать привычные эмоциональные реакции в\u00a0ясность, устойчивость и\u00a0мудрые действия.",
+        ],
+        winds: [
+          { name: "Ветер жизни", sub: "Прана вайю", text: "Сознание и\u00a0эмоции. Трансформация раздражения и\u00a0сопротивления в\u00a0спокойствие, открытость и\u00a0осознанность." },
+          { name: "Восходящий ветер", sub: "Удана вайю", text: "Различение и\u00a0восприятие. Способность видеть происходящее яснее, освобождаясь от предубеждений, зависимостей и\u00a0автоматических оценок." },
+          { name: "Всепроникающий ветер", sub: "Вьяна вайю", text: "Тело и\u00a0движение. Преобразование цепляния и\u00a0страха в\u00a0гибкость, ясность и\u00a0способность адаптироваться." },
+          { name: "Уравновешивающий ветер", sub: "Самана вайю", text: "Ментальные факторы. Преобразование зависти и\u00a0соперничества в\u00a0сосредоточенность, сотрудничество и\u00a0умелые действия." },
+          { name: "Нисходящий ветер", sub: "Апана вайю", text: "Чувства и\u00a0реакции. Освобождение от зависимости от похвалы, критики и\u00a0внешних обстоятельств. Развитие равного отношения к\u00a0людям и\u00a0переживаниям." },
+        ],
+        note: "Пять ветров\u00a0— модель традиционной йоги Леди\u00a0Нигумы, изучаемая в\u00a0Yoga Studies Institute (YSI). Она описывает связь тонкого тела и\u00a0ума, и\u00a0не является современной физиологической классификацией.",
+      },
       faq: {
         eyebrow: "Вопросы",
         heading: "Частые вопросы",
@@ -539,6 +555,22 @@ window.NIGUMA_I18N = {
       heroLeadHook: "The best decisions come from your state of mind",
       heroLeadText: "15\u00a0minutes of online practice to think clearly, act with confidence and deliver results",
       heroCta: "Try it free",
+      method: {
+        eyebrow: "The method",
+        heading: "The five winds: how working with the body governs your state of mind",
+        paras: [
+          "At the heart of the method lies the ancient yogic model of the five inner winds (vayu), which link the body, breath, emotions and thinking.",
+          "The central principle of the tradition: **“The winds and the mind move together.”** By working with movement, breath and attention, we learn to transform habitual emotional reactions into clarity, steadiness and wise action.",
+        ],
+        winds: [
+          { name: "Wind of life", sub: "Prana vayu", text: "Consciousness and emotions. Transforming irritation and resistance into calm, openness and awareness." },
+          { name: "Ascending wind", sub: "Udana vayu", text: "Discernment and perception. The ability to see what is happening more clearly, letting go of preconceptions, dependencies and automatic judgements." },
+          { name: "All-pervading wind", sub: "Vyana vayu", text: "Body and movement. Transforming clinging and fear into flexibility, clarity and the ability to adapt." },
+          { name: "Balancing wind", sub: "Samana vayu", text: "Mental factors. Transforming envy and rivalry into focus, cooperation and skilful action." },
+          { name: "Descending wind", sub: "Apana vayu", text: "Feelings and reactions. Becoming free of dependence on praise, criticism and external circumstances. Developing equanimity towards people and experiences." },
+        ],
+        note: "The five winds are a model from the traditional yoga of Lady\u00a0Niguma, as studied at the Yoga Studies Institute (YSI). The model describes the link between the subtle body and the mind and is not a modern physiological classification.",
+      },
       faq: {
         eyebrow: "Questions",
         heading: "Frequently asked questions",
@@ -837,6 +869,22 @@ window.NIGUMA_I18N = {
       heroLeadHook: "Die besten Entscheidungen entstehen aus Ihrem inneren Zustand",
       heroLeadText: "15\u00a0Minuten Online-Praxis, um klar zu denken, souverän zu handeln und Ergebnisse zu erzielen",
       heroCta: "Kostenlos ausprobieren",
+      method: {
+        eyebrow: "Methode",
+        heading: "Fünf Winde: Wie die Arbeit mit dem Körper den Geisteszustand steuert",
+        paras: [
+          "Der Methode liegt das alte yogische Modell der fünf inneren Winde (Vayus) zugrunde, die Körper, Atem, Emotionen und Denken miteinander verbinden.",
+          "Das Grundprinzip der Tradition: **„Winde und Geist bewegen sich gemeinsam“**. Indem wir mit Bewegung, Atem und Aufmerksamkeit arbeiten, lernen wir, gewohnte emotionale Reaktionen in Klarheit, Stabilität und weises Handeln zu verwandeln.",
+        ],
+        winds: [
+          { name: "Wind des Lebens", sub: "Prana Vayu", text: "Bewusstsein und Emotionen. Transformation von Gereiztheit und Widerstand in Ruhe, Offenheit und Achtsamkeit." },
+          { name: "Aufsteigender Wind", sub: "Udana Vayu", text: "Unterscheidungsvermögen und Wahrnehmung. Die Fähigkeit, klarer zu sehen, was geschieht, und sich dabei von Vorurteilen, Abhängigkeiten und automatischen Bewertungen zu befreien." },
+          { name: "Alldurchdringender Wind", sub: "Vyana Vayu", text: "Körper und Bewegung. Verwandlung von Anhaftung und Angst in Flexibilität, Klarheit und Anpassungsfähigkeit." },
+          { name: "Ausgleichender Wind", sub: "Samana Vayu", text: "Mentale Faktoren. Verwandlung von Neid und Rivalität in Konzentration, Zusammenarbeit und geschicktes Handeln." },
+          { name: "Absteigender Wind", sub: "Apana Vayu", text: "Empfindungen und Reaktionen. Befreiung aus der Abhängigkeit von Lob, Kritik und äußeren Umständen. Entwicklung einer gleichmütigen Haltung gegenüber Menschen und Erfahrungen." },
+        ],
+        note: "Die fünf Winde sind ein Modell des traditionellen Yoga der Lady\u00a0Niguma, das am Yoga Studies Institute (YSI) studiert wird. Es beschreibt den Zusammenhang zwischen feinstofflichem Körper und Geist und ist keine moderne physiologische Klassifikation.",
+      },
       faq: {
         eyebrow: "Fragen",
         heading: "Häufige Fragen",
@@ -1135,6 +1183,22 @@ window.NIGUMA_I18N = {
       heroLeadHook: "Найкращі рішення народжуються з\u00a0вашого стану",
       heroLeadText: "15\u00a0хвилин онлайн-практики, щоб мислити ясно, діяти впевнено й\u00a0досягати результатів",
       heroCta: "Спробувати безкоштовно",
+      method: {
+        eyebrow: "Метод",
+        heading: "Пʼять вітрів: як робота з\u00a0тілом керує станом розуму",
+        paras: [
+          "В\u00a0основі методу\u00a0— давня йогічна модель пʼяти внутрішніх вітрів (ваю), що повʼязують тіло, дихання, емоції та мислення.",
+          "Головний принцип традиції: **«Вітри й\u00a0розум рухаються разом»**. Працюючи з\u00a0рухом, диханням і\u00a0увагою, ми вчимося перетворювати звичні емоційні реакції на ясність, стійкість і\u00a0мудрі дії.",
+        ],
+        winds: [
+          { name: "Вітер життя", sub: "Прана ваю", text: "Свідомість і\u00a0емоції. Трансформація роздратування й\u00a0опору в\u00a0спокій, відкритість та усвідомленість." },
+          { name: "Висхідний вітер", sub: "Удана ваю", text: "Розрізнення та сприйняття. Здатність ясніше бачити те, що відбувається, звільняючись від упереджень, залежностей та автоматичних оцінок." },
+          { name: "Усепроникний вітер", sub: "Вʼяна ваю", text: "Тіло й\u00a0рух. Перетворення чіпляння та страху на гнучкість, ясність і\u00a0здатність адаптуватися." },
+          { name: "Урівноважувальний вітер", sub: "Самана ваю", text: "Ментальні чинники. Перетворення заздрості й\u00a0суперництва на зосередженість, співпрацю та вмілі дії." },
+          { name: "Низхідний вітер", sub: "Апана ваю", text: "Почуття та реакції. Звільнення від залежності від похвали, критики й\u00a0зовнішніх обставин. Розвиток рівного ставлення до людей і\u00a0переживань." },
+        ],
+        note: "Пʼять вітрів\u00a0— модель традиційної йоги Леді\u00a0Нігуми, яку вивчають у\u00a0Yoga Studies Institute (YSI). Вона описує звʼязок тонкого тіла та розуму й\u00a0не є сучасною фізіологічною класифікацією.",
+      },
       faq: {
         eyebrow: "Запитання",
         heading: "Часті запитання",
@@ -1440,6 +1504,7 @@ window.NIGUMA_I18N = {
     M[lng].hero.ctaPrimary = a.heroCta;
     M[lng].stats = a.stats;
     M[lng].faq = a.faq;
+    M[lng].method = a.method;
     M[lng].pains = a.pains;
     M[lng].promise = a.promise;
     M[lng].included = a.included;

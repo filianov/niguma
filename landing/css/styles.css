@@ -631,6 +631,87 @@ img { max-width: 100%; display: block; }
 #included .cards { grid-template-columns: 1fr; max-width: 720px; margin: 0 auto; gap: 14px; }
 #included .card { display: flex; flex-direction: column; gap: 4px; }
 
+/* ---------------- Method: «Пять ветров» ---------------- */
+/**
+ * По макету: надзаголовок цветом глины, крупный заголовок капсом, вступление,
+ * затем таблица из пяти строк под толстой линией — номер цветом глины,
+ * название ветра капсом (санскритское название — второй строкой, мельче),
+ * описание; строки разделены тонкими линиями. Внизу — примечание с полосой
+ * цвета глины слева.
+ *
+ * Ширина — 1160 px, как у полосы цифр и блока «Почему именно 15 минут».
+ * Фон — лёгкий тёплый оттенок между фоном страницы и кремовым фоном
+ * «Тренеров»: без него раздел сливался бы с «Что входит в курс» над ним.
+ *
+ * Телефон (до 760 px): номер слева, название и описание — в правой колонке
+ * друг под другом.
+ */
+.method { padding: clamp(56px, 8vw, 104px) 0; background: color-mix(in srgb, var(--bg-alt) 42%, var(--bg)); }
+.method__inner { max-width: 1160px; }
+.method__eyebrow {
+  margin: 0 0 10px;
+  font-size: 13px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--clay-deep);
+}
+.method__heading {
+  margin: 0 0 22px; max-width: 21em;
+  font-family: var(--font); font-weight: 800; font-size: clamp(28px, 4.2vw, 50px);
+  line-height: 1.06; letter-spacing: -0.01em; text-transform: uppercase;
+  color: var(--ink); text-wrap: balance;
+}
+.method__intro p {
+  margin: 0 0 14px; max-width: 46em;
+  font-size: clamp(16px, 1.5vw, 17.5px); line-height: 1.65;
+  color: color-mix(in srgb, var(--ink) 84%, var(--bg));
+}
+.method__intro p:last-child { margin-bottom: 0; }
+.method__intro strong { font-weight: 700; color: var(--ink); }
+.method__list {
+  list-style: none; margin: clamp(28px, 4vw, 44px) 0 0; padding: 0;
+  border-top: 2px solid var(--ink);
+}
+.mrow {
+  display: grid; grid-template-columns: 96px minmax(0, 0.62fr) minmax(0, 1fr);
+  column-gap: 28px; align-items: start;
+  padding: 24px 0; border-bottom: 1px solid var(--line);
+}
+.mrow__num {
+  font-size: 26px; font-weight: 800; line-height: 1.05; letter-spacing: -0.01em;
+  color: var(--clay-deep); font-variant-numeric: tabular-nums;
+}
+.mrow__name {
+  margin: 3px 0 0;
+  font-family: var(--font); font-size: 15.5px; font-weight: 800; line-height: 1.35;
+  letter-spacing: .03em; text-transform: uppercase; color: var(--ink);
+}
+.mrow__sub {
+  display: block; margin-top: 5px;
+  font-size: 12.5px; font-weight: 600; letter-spacing: .1em;
+  color: color-mix(in srgb, var(--ink) 62%, var(--bg));
+}
+.mrow__text {
+  margin: 0;
+  font-size: clamp(15px, 1.4vw, 16px); line-height: 1.6;
+  color: color-mix(in srgb, var(--ink) 84%, var(--bg));
+}
+.method__note {
+  margin: 30px 0 0; max-width: 46em; padding: 6px 0 6px 24px;
+  border-left: 3px solid var(--clay-deep);
+  font-size: 15.5px; line-height: 1.6;
+  color: color-mix(in srgb, var(--ink) 80%, var(--bg));
+}
+.method__note:empty { display: none; }
+
+@media (max-width: 759px) {
+  /* заголовок капсом длинный (особенно немецкий) — на телефоне чуть мельче */
+  .method__heading { font-size: clamp(23px, 6.6vw, 30px); line-height: 1.1; }
+  .mrow { grid-template-columns: 34px minmax(0, 1fr); column-gap: 14px; row-gap: 8px; padding: 20px 0; }
+  .mrow__num { grid-row: 1 / span 2; font-size: 20px; padding-top: 1px; }
+  .mrow__name, .mrow__text { grid-column: 2; }
+  .mrow__name { margin-top: 0; font-size: 15px; }
+  .method__note { padding-left: 18px; font-size: 15px; }
+}
+
 /* ---------------- FAQ: «Частые вопросы» ---------------- */
 /**
  * По макету: надзаголовок цветом глины, крупный заголовок капсом, ниже

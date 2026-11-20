@@ -126,6 +126,32 @@
       }).join("");
     });
 
+    // paragraphs with bold: data-rich="path" -> ["… **выделено** …", …] -> <p> with <strong>
+    // Текст сначала экранируется, потом **…** превращается в <strong> — HTML из переводов не проходит.
+    document.querySelectorAll("[data-rich]").forEach(function (el) {
+      var arr = t(lang, el.getAttribute("data-rich"));
+      if (!Array.isArray(arr)) return;
+      el.innerHTML = arr.map(function (s) {
+        return "<p>" + escapeHtml(s).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>") + "</p>";
+      }).join("");
+    });
+
+    // five winds: data-method="path" -> [{name, sub, text}] -> numbered rows 01–05
+    document.querySelectorAll("[data-method]").forEach(function (el) {
+      var arr = t(lang, el.getAttribute("data-method"));
+      if (!Array.isArray(arr) || !arr.length) return;
+      el.innerHTML = arr.map(function (w, i) {
+        var n = (i + 1 < 10 ? "0" : "") + (i + 1);
+        return '<li class="mrow">' +
+                 '<span class="mrow__num" aria-hidden="true">' + n + "</span>" +
+                 '<h3 class="mrow__name">' + escapeHtml(w.name) +
+                   (w.sub ? ' <span class="mrow__sub">(' + escapeHtml(w.sub) + ")</span>" : "") +
+                 "</h3>" +
+                 '<p class="mrow__text">' + escapeHtml(w.text) + "</p>" +
+               "</li>";
+      }).join("");
+    });
+
     // FAQ: data-faq="path" -> [{q, a: [..], link: {pre, label, post, href}}]
     // Кнопка вопроса раскрывает ответ (обработчик — js/main.js, faqAccordion).
     // Закрытый ответ скрыт и от клавиатуры, и от экранного диктора (CSS, visibility).
