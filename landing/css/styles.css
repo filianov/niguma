@@ -454,64 +454,99 @@ img { max-width: 100%; display: block; }
 
 /* ---------------- Stats: полоса цифр под первым экраном ---------------- */
 /**
- * На ноутбуке — одна строка из четырёх колонок по макету: толстая линия
- * сверху, тонкие вертикальные разделители, цифра цветом глины, слово после
- * неё — цветом текста, подписи мелким капсом с разрядкой.
+ * Правило полосы: подпись под цифрой — не больше двух строк (в немецком
+ * длинная подпись «5 Winde» — не больше трёх), чтобы полоса была низкой.
+ * Ширины подобраны замером в Chrome: каждая подпись на каждом языке при
+ * ширине экрана от 320 до 1920 px, а 1160 px — ещё и с полосой прокрутки
+ * Windows (17 px).
  *
- * На телефоне — сетка 2×2 без разделителей. Сетка заполняется по столбцам,
- * поэтому порядок в разметке (как на ноутбуке: 15 · 06:45 · 1000 · 5) даёт на
- * телефоне порядок мобильного макета: «15 минут» и «~1000 лет» в первой
- * строке, «06:45» и «5 ветров» во второй.
+ * Ноутбук (от 1160 px) — одна строка из четырёх колонок по макету: толстая
+ * линия сверху, тонкие разделители, цифра цветом глины, подписи мелким капсом.
+ * Колонки разной ширины: у «06:45» две подписи, и каждая должна встать
+ * в одну строку; у «5 ветров» подпись длинная и встаёт в две; «~1000 years»
+ * и «~1000 Jahre» — самые широкие цифры. Уже 1160 px четыре колонки не
+ * помещаются по этому правилу, поэтому там сетка 2×2.
  *
- * Ширина та же, что у блока ниже (1160 px), — края полосы и колонок
+ * Планшет и узкий ноутбук (600–1159 px) — сетка 2×2 равных колонок, подписи
+ * тем же капсом.
+ *
+ * Телефон (до 600 px) — сетка 2×2, порядок как на ноутбуке, по строкам:
+ * «15 минут · 06:45», ниже «~1000 лет · 5 ветров». Правая колонка шире:
+ * в ней оба блока с длинными подписями. Подписи строчными буквами — капсом
+ * при ширине колонки ~195 px «Модель, связывающая движение, эмоции и мышление»
+ * не помещается в две строки ни при каком читаемом кегле.
+ *
+ * Цвет подписей смешан из цвета текста и фона (как у абзацев блока ниже):
+ * --ink-soft на светлом фоне даёт контраст 3,9:1 — для мелкого текста мало,
+ * смесь даёт 4,8:1, а в тёмной теме подстраивается сама.
+ *
+ * Ширина — как у блока ниже (1160 px): края полосы и колонок
  * «Почему именно 15 минут · Знакомо?» стоят на одной линии.
  */
-.stats { padding: clamp(40px, 5.5vw, 72px) 0 0; background: var(--bg); }
+.stats { padding: clamp(32px, 4.5vw, 56px) 0 0; background: var(--bg); }
 .stats__inner { max-width: 1160px; }
 .stats__title {
-  margin: 0 0 18px;
-  font-size: 13.5px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+  margin: 0 0 14px;
+  font-size: 13px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
   color: var(--ink);
 }
 .stats__list {
   list-style: none; margin: 0; padding: 0;
   border-top: 2px solid var(--ink);
-  display: grid; grid-template-columns: repeat(4, 1fr);
+  display: grid;
+  /* доли = ширина колонки в px при полосе 1116 px, вместе с отступами */
+  grid-template-columns: minmax(0, 208fr) minmax(0, 368fr) minmax(0, 264fr) minmax(0, 276fr);
 }
-.stat { margin: 0; padding: 26px 26px 6px; border-left: 1px solid var(--line); }
+.stat { margin: 0; padding: 18px 20px 2px; border-left: 1px solid var(--line); }
 .stat:first-child { padding-left: 0; border-left: 0; }
+.stat:last-child { padding-right: 0; }
 .stat__value {
-  margin: 0 0 14px;
-  font-size: clamp(30px, 3vw, 38px); font-weight: 700; line-height: 1.1; letter-spacing: -0.01em;
+  margin: 0 0 8px;
+  font-size: clamp(30px, 2.5vw, 36px); font-weight: 700; line-height: 1.1; letter-spacing: -0.01em;
   color: var(--ink);
+  white-space: nowrap;
 }
-.stat__num { color: var(--clay-deep); white-space: nowrap; }
-.stat__unit { white-space: nowrap; }
-/* «(Вена)» на ноутбуке мельче: полным кеглем не помещается в колонку,
-   уходит на вторую строку, и ряд цифр перестаёт быть ровным. */
+.stat__num { color: var(--clay-deep); }
+/* «(Вена)» на ноутбуке мельче: полным кеглем не помещается в колонку */
 .stat__unit--note { font-size: .62em; font-weight: 600; letter-spacing: 0; }
 .stat__line {
   margin: 0;
-  font-size: 12.5px; font-weight: 700; line-height: 1.6; letter-spacing: .11em; text-transform: uppercase;
+  font-size: 11.5px; font-weight: 600; line-height: 1.55; letter-spacing: .05em; text-transform: uppercase;
   color: var(--ink-soft);
-  text-wrap: pretty;
+  color: color-mix(in srgb, var(--ink) 72%, var(--bg));
+  text-wrap: balance;
 }
-.stat__line + .stat__line { margin-top: 8px; }
+/* у «06:45» две подписи: в капсе без зазора они читаются как одна фраза */
+.stat__line + .stat__line { margin-top: 5px; }
 /* под полосой блок «Почему именно 15 минут» начинается ближе — это одна тема */
-.stats + .pains { padding-top: clamp(56px, 7vw, 88px); }
+.stats + .pains { padding-top: clamp(48px, 6vw, 80px); }
 
-@media (max-width: 859px) {
-  .stats__title { font-size: 15px; letter-spacing: .04em; line-height: 1.35; margin-bottom: 14px; text-wrap: balance; }
-  .stats__list {
-    grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; grid-auto-flow: column;
-    column-gap: 20px; row-gap: 24px; padding-top: 22px;
-  }
-  .stat, .stat:first-child { padding: 0; border-left: 0; }
-  .stat__value { margin-bottom: 8px; font-size: clamp(24px, 6.4vw, 30px); }
-  /* на телефоне — как в мобильном макете: «06:45 (Вена)» одним кеглем */
+@media (max-width: 1159px) {
+  .stats__list { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: 32px; row-gap: 18px; padding-top: 18px; }
+  .stat, .stat:first-child, .stat:last-child { padding: 0; border-left: 0; }
+  .stat__value { font-size: clamp(24px, 3.4vw, 32px); margin-bottom: 6px; }
   .stat__unit--note { font-size: 1em; font-weight: 700; letter-spacing: -0.01em; }
-  .stat__line { font-size: 12px; font-weight: 600; line-height: 1.45; letter-spacing: .05em; }
-  .stat__line + .stat__line { margin-top: 6px; }
+}
+
+@media (max-width: 599px) {
+  .stats__title { font-size: 14px; letter-spacing: .04em; line-height: 1.35; margin-bottom: 12px; text-wrap: balance; }
+  .stats__list { grid-template-columns: minmax(0, 0.7fr) minmax(0, 1fr); column-gap: 12px; row-gap: 16px; padding-top: 16px; }
+  .stat__value { font-size: clamp(20px, 5.7vw, 24px); margin-bottom: 4px; }
+  .stat__line { font-size: 11.5px; font-weight: 500; line-height: 1.4; letter-spacing: 0; text-transform: none; }
+  .stat__line + .stat__line { margin-top: 3px; }
+}
+/* до 389 px (iPhone mini, SE, многие Android): вторая подпись у «06:45»
+   «Записи доступны в любое время» встаёт в одну строку, «Модель…» — в две */
+@media (max-width: 389px) {
+  .stat__line { font-size: 11px; }
+}
+/* 320–359 px (первый iPhone SE, внешний экран Galaxy Fold): правой колонке
+   нужно ~178 px, иначе «Модель, связывающая…» встаёт в три строки */
+@media (max-width: 359px) {
+  .stats__inner { padding-inline: 16px; }
+  .stats__list { grid-template-columns: minmax(0, 102fr) minmax(0, 178fr); column-gap: 8px; }
+  .stat__value { font-size: 17px; }
+  .stat__line { font-size: 10.5px; letter-spacing: -0.01em; }
 }
 
 /* ---------------- Pains: «почему 15 минут» + «знакомо?» ---------------- */

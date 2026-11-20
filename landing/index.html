@@ -37,7 +37,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&display=swap" />
-  <link rel="stylesheet" href="css/styles.css?v=20261120d" />
+  <link rel="stylesheet" href="css/styles.css?v=20261120e" />
 </head>
 
 <body>
@@ -103,16 +103,17 @@
 
     <!-- ===================== STATS ===================== -->
     <!-- Полоса цифр между первым экраном и блоком «Почему именно 15 минут».
-         Порядок в разметке — как на ноутбуке: 15 · 06:45 · 1000 · 5. На телефоне
-         сетка 2×2 заполняется по столбцам, и выходит порядок мобильного макета:
-         «15 минут» и «~1000 лет» в первой строке, «06:45» и «5 ветров» во второй. -->
+         Порядок — как на ноутбуке: 15 · 06:45 · 1000 · 5. На телефоне и планшете
+         сетка 2×2 идёт по строкам: «15 минут · 06:45», ниже «~1000 лет · 5 ветров».
+         На телефоне (до 600 px) правая колонка шире — в ней оба блока с длинными
+         подписями; на планшете колонки равные (подробно — css/styles.css, Stats). -->
     <section class="stats" id="stats">
       <div class="container stats__inner">
-        <p class="stats__title" data-i18n="stats.title">Ясный и&nbsp;спокойный&nbsp;ум&nbsp;— ваш&nbsp;главный&nbsp;актив</p>
-        <ul class="stats__list" data-stats="stats.items">
+        <p class="stats__title" id="stats-title" data-i18n="stats.title">Ясный и&nbsp;спокойный&nbsp;ум&nbsp;— ваш&nbsp;главный&nbsp;актив</p>
+        <ul class="stats__list" role="list" aria-labelledby="stats-title" data-stats="stats.items">
           <li class="stat"><p class="stat__value"><span class="stat__num">15</span> <span class="stat__unit">минут</span></p><p class="stat__line">Помещается в&nbsp;любой календарь</p></li>
           <li class="stat"><p class="stat__value"><span class="stat__num">06:45</span> <span class="stat__unit stat__unit--note">(Вена)</span></p><p class="stat__line">Zoom по&nbsp;будням, до&nbsp;начала рабочего дня</p><p class="stat__line">Записи доступны в&nbsp;любое время</p></li>
-          <li class="stat"><p class="stat__value"><span class="stat__num">~1000</span> <span class="stat__unit">лет</span></p><p class="stat__line">Традиция йоги Леди Нигумы</p></li>
+          <li class="stat"><p class="stat__value"><span class="stat__num">~1000</span> <span class="stat__unit">лет</span></p><p class="stat__line">Традиция йоги Леди&nbsp;Нигумы</p></li>
           <li class="stat"><p class="stat__value"><span class="stat__num">5</span> <span class="stat__unit">ветров</span></p><p class="stat__line">Модель, связывающая движение, эмоции и&nbsp;мышление</p></li>
         </ul>
       </div>
@@ -340,15 +341,15 @@
     </div>
   </footer>
 
-  <script src="js/icons.js?v=20261120d"></script>
-  <script src="js/translations.js?v=20261120d"></script>
-  <script src="js/config.js?v=20261120d"></script>
-  <script src="js/i18n.js?v=20261120d"></script>
-  <script src="js/main.js?v=20261120d"></script>
-  <script src="js/promo-stickers.js?v=20261120d" defer></script>
-  <script src="js/checkout.js?v=20261120d" defer></script>
-  <script src="js/chat-content.js?v=20261120d" defer></script>
-  <script src="js/chat.js?v=20261120d" defer></script>
+  <script src="js/icons.js?v=20261120e"></script>
+  <script src="js/translations.js?v=20261120e"></script>
+  <script src="js/config.js?v=20261120e"></script>
+  <script src="js/i18n.js?v=20261120e"></script>
+  <script src="js/main.js?v=20261120e"></script>
+  <script src="js/promo-stickers.js?v=20261120e" defer></script>
+  <script src="js/checkout.js?v=20261120e" defer></script>
+  <script src="js/chat-content.js?v=20261120e" defer></script>
+  <script src="js/chat.js?v=20261120e" defer></script>
 </body>
 
 </html>

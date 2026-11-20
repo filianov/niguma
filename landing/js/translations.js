@@ -246,7 +246,7 @@ window.NIGUMA_I18N = {
         items: [
           { num: "15", unit: "минут", lines: ["Помещается в\u00a0любой календарь"] },
           { num: "06:45", unit: "(Вена)", lines: ["Zoom по\u00a0будням, до\u00a0начала рабочего дня", "Записи доступны в\u00a0любое время"] },
-          { num: "~1000", unit: "лет", lines: ["Традиция йоги Леди Нигумы"] },
+          { num: "~1000", unit: "лет", lines: ["Традиция йоги Леди\u00a0Нигумы"] },
           { num: "5", unit: "ветров", lines: ["Модель, связывающая движение, эмоции и\u00a0мышление"] },
         ],
       },
@@ -497,7 +497,7 @@ window.NIGUMA_I18N = {
         items: [
           { num: "15", unit: "minutes", lines: ["Fits into any calendar"] },
           { num: "06:45", unit: "(Vienna)", lines: ["Weekdays on Zoom, before work begins", "Recordings available anytime"] },
-          { num: "~1000", unit: "years", lines: ["Lady Niguma's yoga tradition"] },
+          { num: "~1000", unit: "years", lines: ["Lady\u00a0Niguma's yoga tradition"] },
           { num: "5", unit: "winds", lines: ["A model linking movement, emotion and thinking"] },
         ],
       },
@@ -748,8 +748,8 @@ window.NIGUMA_I18N = {
         items: [
           { num: "15", unit: "Minuten", lines: ["Passt in jeden Kalender"] },
           { num: "06:45", unit: "(Wien)", lines: ["Zoom werktags, vor Arbeitsbeginn", "Aufnahmen jederzeit abrufbar"] },
-          { num: "~1000", unit: "Jahre", lines: ["Yoga-Tradition der Lady Niguma"] },
-          { num: "5", unit: "Winde", lines: ["Modell, das Bewegung, Emotion und Denken verbindet"] },
+          { num: "~1000", unit: "Jahre", lines: ["Yoga-Tradition der Lady\u00a0Niguma"] },
+          { num: "5", unit: "Winde", lines: ["Modell, das Bewegung, Emotion und\u00a0Denken verbindet"] },
         ],
       },
       pains: {
@@ -999,8 +999,8 @@ window.NIGUMA_I18N = {
         items: [
           { num: "15", unit: "хвилин", lines: ["Вписується в\u00a0будь\u2011який графік"] },
           { num: "06:45", unit: "(Відень)", lines: ["Zoom у\u00a0будні, до\u00a0початку робочого дня", "Записи доступні будь\u2011коли"] },
-          { num: "~1000", unit: "років", lines: ["Традиція йоги Леді Нігуми"] },
-          { num: "5", unit: "вітрів", lines: ["Модель, що пов'язує рух, емоції та\u00a0мислення"] },
+          { num: "~1000", unit: "років", lines: ["Традиція йоги Леді\u00a0Нігуми"] },
+          { num: "5", unit: "вітрів", lines: ["Модель, що повʼязує рух, емоції та\u00a0мислення"] },
         ],
       },
       pains: {
