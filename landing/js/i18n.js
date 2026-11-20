@@ -136,12 +136,12 @@
       }).join("");
     });
 
-    // five winds: data-method="path" -> [{name, sub, text}] -> numbered rows 01–05
+    // five winds: data-method="path" -> [{name, sub, text}] -> numbered rows 1–5
     document.querySelectorAll("[data-method]").forEach(function (el) {
       var arr = t(lang, el.getAttribute("data-method"));
       if (!Array.isArray(arr) || !arr.length) return;
       el.innerHTML = arr.map(function (w, i) {
-        var n = (i + 1 < 10 ? "0" : "") + (i + 1);
+        var n = String(i + 1);
         return '<li class="mrow">' +
                  '<span class="mrow__num" aria-hidden="true">' + n + "</span>" +
                  '<h3 class="mrow__name">' + escapeHtml(w.name) +
