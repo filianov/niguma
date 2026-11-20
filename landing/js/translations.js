@@ -257,6 +257,37 @@ window.NIGUMA_I18N = {
         ],
         note: "Пять ветров\u00a0— модель традиционной йоги Леди\u00a0Нигумы, изучаемая в\u00a0Yoga Studies Institute (YSI). Она описывает связь тонкого тела и\u00a0ума, и\u00a0не является современной физиологической классификацией.",
       },
+      methodPractice: {
+        heading: "Это не сокращённая йога. Каждый комплекс\u00a0— завершённая практика.",
+        paras: [
+          "15minYoga\u00a0— согласованная система коротких практик, где каждая последовательность направлена на работу с\u00a0одним из пяти внутренних ветров (вайю) в\u00a0определённой области тела.",
+          "15\u00a0минут\u00a0— это не сокращённый час, а\u00a0полный цикл движений, дыхания и\u00a0внимания со своей целью и\u00a0результатом.",
+        ],
+        steps: [
+          { title: "Снимаем напряжение", text: "Работаем с\u00a0областями тела, где, согласно традиции, переплетаются энергетические каналы и\u00a0возникает блокировка внутренних ветров. С\u00a0этим связаны состояния, мешающие ясно видеть ситуацию и\u00a0принимать качественные решения." },
+          { title: "Чувствуем изменение состояния", text: "В\u00a0процессе практики напряжение ослабевает, а\u00a0привычные негативные реакции трансформируются в\u00a0осознанность, принятие и\u00a0способность выходить за прежние ментальные ограничения." },
+          { title: "Обретаем свободу решений", text: "Выходим из автоматических реакций к\u00a0осознанности и\u00a0ясному восприятию. Видим больше возможностей и\u00a0создаём основу для лучших решений и\u00a0действий." },
+        ],
+        before: { label: "Без практики", items: ["Напряжение", "Сопротивление", "Автоматические реакции"] },
+        after: { label: "После 15\u00a0минут\u00a0— наша цель", items: ["Ясность ума", "Внутренняя устойчивость", "Готовность действовать"] },
+        note: "Метод основан на традиционной системе тонкого тела йоги Леди\u00a0Нигумы, передаваемой в\u00a0Yoga Studies Institute (YSI). Описанные изменения\u00a0— цели практики, а\u00a0не гарантированные физиологические или медицинские результаты.",
+      },
+      methodSources: {
+        heading: "Источники и\u00a0линия передачи",
+        lineage: [
+          "В\u00a0основе 15minYoga\u00a0— система йоги Леди\u00a0Нигумы, индийской йогини X–\u2060XI\u00a0веков, чьи учения стали одним из истоков тибетской традиции Шангпа и\u00a0передаются уже около тысячи лет.",
+          "Особенность этой традиции\u00a0— способ её передачи. Согласно линии Шангпа, сама Нигума дала указание в\u00a0течение первых семи поколений передавать ключевые учения только от одного учителя одному ученику. После седьмого поколения это ограничение было снято, и\u00a0знания начали распространяться шире. Именно поэтому долгое время традиция оставалась закрытой.",
+          "Возникнув в\u00a0Индии, учения Нигумы были переданы в\u00a0Тибет, где сохранялись и\u00a0практиковались на протяжении столетий. Позже они получили распространение среди мастеров разных тибетских школ.",
+          "Второй Далай-лама Гендюн Гьяцо написал подробные наставления по Шести йогам Нигумы, которые сегодня доступны в\u00a0английском переводе как *The Tantric Yogas of Sister Niguma*. Наследию Нигумы посвящены работы переводчика и\u00a0исследователя Sarah Harding, а\u00a0в\u00a02025 году современный мастер линии Шангпа Kalu Rinpoche совместно с\u00a0Michele Loew издал *The Yoga of Niguma*\u00a0— книгу с\u00a025\u00a0последовательностями практики и\u00a0предисловием XIV\u00a0Далай-ламы.",
+        ],
+        ysi: [
+          "Методологическая основа 15minYoga\u00a0— система йоги Леди\u00a0Нигумы в\u00a0передаче Yoga Studies Institute (YSI).",
+          "Основатель и\u00a0все преподаватели проекта прошли обучение в\u00a0YSI по программам Lady\u00a0Niguma Yoga.",
+          "15minYoga опирается на целостную систему йоги Леди\u00a0Нигумы и\u00a0особенно на практики работы с\u00a0внутренними ветрами\u00a0— центральную тему второго уровня обучения YSI. При этом в\u00a0занятиях используются принципы и\u00a0практики разных уровней системы в\u00a0соответствии с\u00a0фокусом конкретного занятия.",
+          "Yoga Studies Institute работает с\u00a0классическими источниками в\u00a0партнёрстве с\u00a0Asian Legacy Library (ALL)\u00a0— библиотекой, сохранившей и\u00a0оцифровавшей более 2\u00a0миллионов страниц классических азиатских текстов. YSI занимается изучением, переводом и\u00a0передачей этих знаний в\u00a0формате современной практики. ([yogastudiesinstitute.org](https://www.yogastudiesinstitute.org/become-as-gardeners))",
+          "Программы Yoga Studies Institute доступны онлайн, поэтому любой желающий может обратиться непосредственно к\u00a0источнику обучения 15minYoga и\u00a0продолжить самостоятельное изучение традиции.",
+        ],
+      },
       faq: {
         eyebrow: "Вопросы",
         heading: "Частые вопросы",
@@ -356,11 +387,15 @@ window.NIGUMA_I18N = {
       trainers: {
         heading: "Тренеры",
         intro: "Все тренеры прежде всего сами являются предпринимателями/лидерами команд. Начав практиковать эту систему йоги, они улучшили свои результаты в бизнесе, а сегодня используют этот мощный инструмент как для собственного развития, так и для помощи другим.",
+        more: "Подробнее",
+        close: "Закрыть",
         people: [
           {
             "name": "Алла Горячева",
             "role": "Предприниматель · основатель Dallas Dance Center · преподаватель йоги, коуч",
             "photo": "assets/photos/alla.jpg",
+            "short": "Предприниматель\u00a0· основатель Dallas Dance Center",
+            "key": "14 лет в\u00a0предпринимательстве, команда\u00a0— 10 человек. Выпускница Yoga Studies Institute, преподаватель йоги и\u00a0коуч.",
             "lines": [
               "Йога для меня — не практика для тела. Это то, что помогает держать ясный ум под нагрузкой, находить решение там, где его не видно, и совмещать бизнес, семью и собственное развитие.",
               "На занятиях я делюсь не упражнениями, а тем, что действительно помогает жить и работать в сегодняшнем ритме."
@@ -380,6 +415,8 @@ window.NIGUMA_I18N = {
             "name": "Оксана Горина",
             "role": "Предприниматель · преподаватель йоги Леди Нигумы",
             "photo": "assets/photos/oksana.jpg",
+            "short": "Предприниматель\u00a0· преподаватель йоги Леди\u00a0Нигумы",
+            "key": "Ведёт своё дело с\u00a02022 года. Практикует йогу Леди\u00a0Нигумы четыре года, преподаёт два.",
             "lines": [
               "Йога и медитация для меня — ежедневный инструмент управления энергией, вниманием и качеством решений.",
               "Помогаю предпринимателям с помощью йоги, медитации и системы ментальных семян решать задачи в бизнесе, достигать поставленных результатов и развивать ясность ума, от которой зависит качество каждого решения."
@@ -396,6 +433,8 @@ window.NIGUMA_I18N = {
             "name": "Катя Туркану",
             "role": "Юрист международных юридических фирм, LL.M. · преподаватель йоги · Швейцария",
             "photo": "assets/photos/katya.jpg",
+            "short": "Юрист, LL.M.\u00a0· Швейцария",
+            "key": "10 лет в\u00a0международных юридических фирмах. Программа подготовки преподавателей йоги\u00a0— 760 часов; преподаёт йогу Леди\u00a0Нигумы три года.",
             "lines": [
               "Йога Леди Нигумы для меня — ежедневная практика управления энергией и вниманием. Она помогает не действовать под влиянием стресса и принимать более взвешенные решения — и в бизнесе, и в личной жизни.",
               "Эта практика помогла мне создать жизнь, в которой есть любимое дело, финансовый рост и свобода. Сегодня я делюсь ею с теми, кто хочет достигать большего, не теряя себя."
@@ -413,6 +452,8 @@ window.NIGUMA_I18N = {
             "name": "Иван Спаский",
             "role": "Предприниматель · преподаватель йоги",
             "photo": "assets/photos/ivan.jpg",
+            "short": "Предприниматель\u00a0· преподаватель йоги",
+            "key": "Шесть лет в\u00a0предпринимательстве. Практикует йогу три года, преподаёт год.",
             "lines": [
               "Йога для меня — инструмент лёгкого управления самыми дорогими активами: телом и умом."
             ],
@@ -428,6 +469,8 @@ window.NIGUMA_I18N = {
             "name": "Ольга Клюс",
             "role": "Юрист · наставник ACI и АКМ · преподаватель йоги · Вена",
             "photo": "assets/photos/olga-klyus.jpg",
+            "short": "Юрист\u00a0· наставник ACI\u00a0· Вена",
+            "key": "13 лет в\u00a0работе, где цена решения измеряется деньгами и\u00a0ответственностью. Шесть лет практики; преподаёт по-русски, по-украински и\u00a0по-немецки.",
             "lines": [
               "Медитация и йога для меня — лучший инструмент подготовки тела и ума к точным, взвешенным решениям.",
               "13 лет я работала там, где цена решения измеряется деньгами и ответственностью, — и знаю, чего стоит ясная голова в такой работе."
@@ -442,28 +485,11 @@ window.NIGUMA_I18N = {
             ]
           },
           {
-            "name": "Елена Ганусевич",
-            "role": "Предприниматель · преподаватель йоги · исследователь древних систем управления · Италия",
-            "photo": "assets/photos/elena.jpg",
-            "lines": [
-              "Я соединяю бьюти-эстетику, законы кармического менеджмента и практику йоги: помогаю находить баланс и строить успешное дело через осознанность.",
-              "Йога для меня — не просто движение на коврике. Это восхождение к вершинам сознания, где ум, тело и профессия сливаются в один пик."
-            ],
-            "facts": [
-              "Более 25 лет в бизнесе и предпринимательстве",
-              "16 лет живёт и работает в Италии",
-              "12 лет — владелица собственной бьюти-студии",
-              "Развивала семейный бизнес в Украине — одного из лидеров рынка",
-              "Семь лет изучает древние системы работы с мышлением и решениями",
-              "Волонтёр-переводчик главного офиса ACI (Asian Classics Institute)",
-              "Выпускница семи курсов Diamond Cutter Institute (DCI)",
-              "Студентка и преподаватель Yoga Studies Institute (YSI)"
-            ]
-          },
-          {
             "name": "Ольга Шакар",
             "role": "Хореограф · преподаватель йоги и пилатеса на реформерах · Анталия",
             "photo": "assets/photos/olga-shakar.jpg",
+            "short": "Хореограф\u00a0· преподаватель йоги\u00a0· Анталия",
+            "key": "Более 20 лет профессионального танца и\u00a0хореографии, преподаёт йогу с\u00a02009 года. Тренер пилатеса на реформерах.",
             "lines": [
               "Я работаю с телом всю сознательную жизнь и изучила разные направления. В йоге Леди Нигумы нашла все недостающие пазлы.",
               "Она помогает мне держать равновесие и ясный ум даже в кризисных ситуациях. Хочу, чтобы как можно больше людей прикоснулись к этой философии и получили результат — и в деле, и в обычной жизни."
@@ -482,6 +508,8 @@ window.NIGUMA_I18N = {
             "name": "Ирина Шишкина",
             "role": "Преподаватель йоги · телесный и энерготерапевт · сооснователь приложения Rejoy",
             "photo": "assets/photos/irina.jpg",
+            "short": "Преподаватель йоги\u00a0· сооснователь Rejoy",
+            "key": "Практикует йогу одиннадцать лет. Телесный терапевт и\u00a0энерготерапевт, куратор образовательных программ.",
             "lines": [
               "Для меня йога — не просто практика на коврике. Это образ жизни: ежедневная практика, медитация и жизнь по этическим принципам.",
               "Одиннадцать лет она помогает мне сохранять ясность ума, спокойствие, высокий уровень энергии и находить баланс даже в самые насыщенные периоды жизни. Пятнадцати минут в день достаточно, чтобы это почувствовать."
@@ -500,6 +528,8 @@ window.NIGUMA_I18N = {
             "name": "Ольга Фильянова",
             "role": "Основатель 15minYoga · ментор ICF-коучей · методолог образовательных программ · Германия",
             "photo": "assets/photos/olga-filianova.jpg",
+            "short": "Основатель 15minYoga\u00a0· Германия",
+            "key": "Ментор ICF-коучей с\u00a02020 года. Прошла три уровня йоги Леди\u00a0Нигумы, учится в\u00a0Yoga Studies Institute.",
             "lines": [
               "Я не была в спорте. Начала заниматься после тридцати — стала марафонкой и дважды выступала на чемпионате Европы по забегам с препятствиями. Знаю, как включить силу сердца и тела; дело не в мышцах.",
               "Мечтаю, чтобы и у вас получилось достичь своих целей с помощью 15minYoga."
@@ -570,6 +600,37 @@ window.NIGUMA_I18N = {
           { name: "Descending wind", sub: "Apana vayu", text: "Feelings and reactions. Becoming free of dependence on praise, criticism and external circumstances. Developing equanimity towards people and experiences." },
         ],
         note: "The five winds are a model from the traditional yoga of Lady\u00a0Niguma, as studied at the Yoga Studies Institute (YSI). The model describes the link between the subtle body and the mind and is not a modern physiological classification.",
+      },
+      methodPractice: {
+        heading: "This is not a shortened version of yoga. Each sequence is a complete practice.",
+        paras: [
+          "15minYoga is a coherent system of short practices in which each sequence is designed to work with one of the five inner winds (vayu) in a specific area of the body.",
+          "15\u00a0minutes is not a shortened hour but a complete cycle of movement, breath and attention, with its own aim and result.",
+        ],
+        steps: [
+          { title: "Releasing tension", text: "We work with the areas of the body where, according to the tradition, the energy channels intertwine and the inner winds become blocked. This is linked to states that keep us from seeing the situation clearly and making sound decisions." },
+          { title: "Feeling a shift in state", text: "Over the course of the practice, tension eases, and habitual negative reactions transform into awareness, acceptance and the ability to move beyond old mental limitations." },
+          { title: "Gaining freedom to decide", text: "We move from automatic reactions to awareness and clear perception. We see more opportunities and lay the foundation for better decisions and actions." },
+        ],
+        before: { label: "Without practice", items: ["Tension", "Resistance", "Automatic reactions"] },
+        after: { label: "After 15\u00a0minutes\u00a0— our aim", items: ["Clarity of mind", "Inner steadiness", "Readiness to act"] },
+        note: "The method is based on the traditional subtle-body system of Lady\u00a0Niguma's yoga, as passed on at the Yoga Studies Institute (YSI). The changes described are the aims of the practice, not guaranteed physiological or medical outcomes.",
+      },
+      methodSources: {
+        heading: "Sources and lineage",
+        lineage: [
+          "At the heart of 15minYoga lies the yoga system of Lady\u00a0Niguma, an Indian yogini of the 10th–\u206011th centuries, whose teachings became one of the sources of the Tibetan Shangpa tradition and have now been passed down for around a thousand years.",
+          "What sets this tradition apart is the way it has been transmitted. According to the Shangpa lineage, Niguma herself instructed that for the first seven generations the key teachings should be passed on only from one teacher to one student. After the seventh generation this restriction was lifted, and the knowledge began to spread more widely. That is precisely why the tradition remained closed for so long.",
+          "Having originated in India, Niguma's teachings were transmitted to Tibet, where they were preserved and practised for centuries. Later they spread among masters of various Tibetan schools.",
+          "The Second Dalai Lama, Gendun Gyatso, wrote detailed instructions on the Six Yogas of Niguma; his text is available today in English translation as *The Tantric Yogas of Sister Niguma*. Niguma's legacy is the subject of works by the translator and scholar Sarah Harding, and in 2025 the contemporary Shangpa lineage master Kalu Rinpoche, together with Michele Loew, published *The Yoga of Niguma*\u00a0— a book of 25\u00a0practice sequences with a foreword by the 14th Dalai Lama.",
+        ],
+        ysi: [
+          "The methodological foundation of 15minYoga is the yoga system of Lady\u00a0Niguma as passed on by the Yoga Studies Institute (YSI).",
+          "The founder and all the project's teachers have trained at YSI on its Lady\u00a0Niguma Yoga programmes.",
+          "15minYoga draws on the complete system of Lady\u00a0Niguma's yoga, and in particular on the practices for working with the inner winds\u00a0— the central theme of the second level of YSI training. At the same time, the classes use principles and practices from different levels of the system, depending on the focus of each class.",
+          "The Yoga Studies Institute works with classical sources in partnership with the Asian Legacy Library (ALL)\u00a0— a library that has preserved and digitised more than 2\u00a0million pages of classical Asian texts. YSI studies, translates and passes on this knowledge in the form of modern practice. ([yogastudiesinstitute.org](https://www.yogastudiesinstitute.org/become-as-gardeners))",
+          "The Yoga Studies Institute's programmes are available online, so anyone interested can go directly to the source of 15minYoga's training and continue studying the tradition independently.",
+        ],
       },
       faq: {
         eyebrow: "Questions",
@@ -670,11 +731,15 @@ window.NIGUMA_I18N = {
       trainers: {
         heading: "Trainers",
         intro: "Every trainer is, first and foremost, an entrepreneur or team leader. When they began practising this system of yoga, their results in business improved — and today they use this powerful tool both for their own growth and to help others.",
+        more: "Read more",
+        close: "Close",
         people: [
           {
             "name": "Alla Goriacheva",
             "role": "Entrepreneur · founder of Dallas Dance Center · yoga teacher, coach",
             "photo": "assets/photos/alla.jpg",
+            "short": "Entrepreneur\u00a0· founder of Dallas Dance Center",
+            "key": "14 years in business, a team of 10. Graduate of the Yoga Studies Institute, yoga teacher and coach.",
             "lines": [
               "For me, yoga is not a practice for the body. It is what helps me keep a clear mind under pressure, find a solution where none is visible, and hold business, family, and my own development together.",
               "In class I share not exercises, but the things that genuinely help you live and work at the pace of today."
@@ -694,6 +759,8 @@ window.NIGUMA_I18N = {
             "name": "Oksana Gorina",
             "role": "Entrepreneur · teacher of Lady Niguma yoga",
             "photo": "assets/photos/oksana.jpg",
+            "short": "Entrepreneur\u00a0· teacher of Lady\u00a0Niguma yoga",
+            "key": "Running her own business since 2022. 4 years practising Lady\u00a0Niguma yoga, 2 years teaching it.",
             "lines": [
               "For me, yoga and meditation are a daily instrument for managing energy, attention, and the quality of my decisions.",
               "Through yoga, meditation, and the system of mental seeds, I help entrepreneurs solve problems in their business, reach the results they set out for, and develop the clarity of mind that every decision depends on."
@@ -710,6 +777,8 @@ window.NIGUMA_I18N = {
             "name": "Katya Turkanu",
             "role": "Lawyer at international law firms, LL.M. · yoga teacher · Switzerland",
             "photo": "assets/photos/katya.jpg",
+            "short": "Lawyer, LL.M.\u00a0· Switzerland",
+            "key": "10 years in international law firms. Yoga teacher training\u00a0— 760 hours; teaching Lady\u00a0Niguma yoga for 3 years.",
             "lines": [
               "For me, Lady Niguma yoga is a daily practice of managing energy and attention. It helps me avoid acting under stress and make more considered decisions — in business and in personal life alike.",
               "This is the practice that helped me build a life with work I love, financial growth, and freedom. Today I share it with those who want to achieve more without losing themselves."
@@ -727,6 +796,8 @@ window.NIGUMA_I18N = {
             "name": "Ivan Spaskiy",
             "role": "Entrepreneur · yoga teacher",
             "photo": "assets/photos/ivan.jpg",
+            "short": "Entrepreneur\u00a0· yoga teacher",
+            "key": "Six years in business. Three years of yoga practice, one year teaching.",
             "lines": [
               "For me yoga is a tool for running the most valuable assets there are — the body and the mind — without strain."
             ],
@@ -742,6 +813,8 @@ window.NIGUMA_I18N = {
             "name": "Olha Klius",
             "role": "Lawyer · mentor at ACI and the Academy of Classical Wisdom · yoga teacher · Vienna",
             "photo": "assets/photos/olga-klyus.jpg",
+            "short": "Lawyer\u00a0· mentor at ACI\u00a0· Vienna",
+            "key": "13 years working where the price of a decision is measured in money and responsibility. 6 years of personal practice; teaches in Russian, Ukrainian, and German.",
             "lines": [
               "For me, meditation and yoga are the best way to prepare body and mind for precise, considered decisions.",
               "For 13 years I worked where the price of a decision is measured in money and responsibility — and I know what a clear head is worth in that kind of work."
@@ -756,28 +829,11 @@ window.NIGUMA_I18N = {
             ]
           },
           {
-            "name": "Olena Hanusevych",
-            "role": "Entrepreneur · yoga teacher · researcher of ancient management systems · Italy",
-            "photo": "assets/photos/elena.jpg",
-            "lines": [
-              "I bring together beauty aesthetics, the laws of karmic management, and yoga practice: I help people find balance and build a successful business through awareness.",
-              "For me, yoga is not simply movement on a mat. It is a climb towards the summits of consciousness, where mind, body, and profession merge into a single peak."
-            ],
-            "facts": [
-              "Over 25 years in business and entrepreneurship",
-              "16 years living and working in Italy",
-              "12 years owning and running her own beauty studio",
-              "Helped grow a family business in Ukraine into one of the market leaders",
-              "7 years studying ancient systems of thinking and decisions",
-              "Volunteer translator for the head office of ACI (Asian Classics Institute)",
-              "Graduate of 7 Diamond Cutter Institute (DCI) courses",
-              "Student and teacher at the Yoga Studies Institute (YSI)"
-            ]
-          },
-          {
             "name": "Olha Shakar",
             "role": "Choreographer · yoga and reformer Pilates teacher · Antalya",
             "photo": "assets/photos/olga-shakar.jpg",
+            "short": "Choreographer\u00a0· yoga teacher\u00a0· Antalya",
+            "key": "Over 20 years of professional dance and choreography, teaching yoga since 2009. Reformer Pilates instructor.",
             "lines": [
               "I have worked with the body all my adult life and studied many directions. In Lady Niguma's yoga I found the pieces that were missing.",
               "It is what keeps me balanced and clear-headed even in a crisis. I want as many people as possible to touch this philosophy and see the result — in their work and in ordinary life."
@@ -796,6 +852,8 @@ window.NIGUMA_I18N = {
             "name": "Iryna Shyshkina",
             "role": "Certified yoga teacher · body and energy therapist · co-founder of the Rejoy app",
             "photo": "assets/photos/irina.jpg",
+            "short": "Yoga teacher\u00a0· co-founder of Rejoy",
+            "key": "Eleven years of yoga practice. Body therapist and energy therapist, curator of educational programmes.",
             "lines": [
               "For me yoga is not just a practice on the mat. It is a way of living: daily practice, meditation and a life held to ethical principles.",
               "For eleven years it has kept my mind clear, my calm steady, my energy high and my life in balance even in the fullest of periods. Fifteen minutes a day is enough to feel it."
@@ -814,6 +872,8 @@ window.NIGUMA_I18N = {
             "name": "Olha Filianova",
             "role": "Founder of 15minYoga · mentor to ICF coaches · methodologist of educational programmes · Germany",
             "photo": "assets/photos/olga-filianova.jpg",
+            "short": "Founder of 15minYoga\u00a0· Germany",
+            "key": "Mentor to ICF coaches since 2020. Completed three levels of Lady\u00a0Niguma's yoga; studies at the Yoga Studies Institute.",
             "lines": [
               "I was never an athlete. I started after thirty — became a marathon runner and twice competed at the European obstacle-race championship. I know how to switch on the strength of the heart and the body; it is not about muscle.",
               "My wish is that you reach your own goals with 15minYoga."
@@ -884,6 +944,37 @@ window.NIGUMA_I18N = {
           { name: "Absteigender Wind", sub: "Apana Vayu", text: "Empfindungen und Reaktionen. Befreiung aus der Abhängigkeit von Lob, Kritik und äußeren Umständen. Entwicklung einer gleichmütigen Haltung gegenüber Menschen und Erfahrungen." },
         ],
         note: "Die fünf Winde sind ein Modell des traditionellen Yoga der Lady\u00a0Niguma, das am Yoga Studies Institute (YSI) studiert wird. Es beschreibt den Zusammenhang zwischen feinstofflichem Körper und Geist und ist keine moderne physiologische Klassifikation.",
+      },
+      methodPractice: {
+        heading: "Das ist kein verkürztes Yoga. Jede Sequenz ist eine in sich abgeschlossene Praxis.",
+        paras: [
+          "15minYoga ist ein aufeinander abgestimmtes System kurzer Praktiken, in dem jede Sequenz auf die Arbeit mit einem der fünf inneren Winde (Vayus) in einer bestimmten Körperregion ausgerichtet ist.",
+          "15\u00a0Minuten sind keine verkürzte Stunde, sondern ein vollständiger Zyklus aus Bewegung, Atem und Aufmerksamkeit mit eigenem Ziel und eigenem Ergebnis.",
+        ],
+        steps: [
+          { title: "Anspannung lösen", text: "Wir arbeiten mit den Körperregionen, in denen sich der Tradition zufolge die Energiekanäle verflechten und es zu einer Blockade der inneren Winde kommt. Damit verbunden sind Zustände, die uns daran hindern, die Situation klar zu sehen und fundierte Entscheidungen zu treffen." },
+          { title: "Veränderung des Zustands spüren", text: "Im Laufe der Praxis lässt die Anspannung nach, und gewohnte negative Reaktionen verwandeln sich in Achtsamkeit, Akzeptanz und die Fähigkeit, über bisherige mentale Grenzen hinauszugehen." },
+          { title: "Entscheidungsfreiheit gewinnen", text: "Wir lassen automatische Reaktionen hinter uns und gelangen zu Achtsamkeit und klarer Wahrnehmung. Wir sehen mehr Möglichkeiten und schaffen die Grundlage für bessere Entscheidungen und Handlungen." },
+        ],
+        before: { label: "Ohne Praxis", items: ["Anspannung", "Widerstand", "Automatische Reaktionen"] },
+        after: { label: "Nach 15\u00a0Minuten\u00a0— unser Ziel", items: ["Klarheit des Geistes", "Innere Stabilität", "Handlungsbereitschaft"] },
+        note: "Die Methode beruht auf dem traditionellen System des feinstofflichen Körpers im Yoga der Lady\u00a0Niguma, wie es am Yoga Studies Institute (YSI) vermittelt wird. Die beschriebenen Veränderungen sind Ziele der Praxis, keine garantierten physiologischen oder medizinischen Ergebnisse.",
+      },
+      methodSources: {
+        heading: "Quellen und Übertragungslinie",
+        lineage: [
+          "Die Grundlage von 15minYoga bildet das Yoga-System der Lady\u00a0Niguma, einer indischen Yogini des 10.–\u206011. Jahrhunderts, deren Lehren zu einer der Quellen der tibetischen Shangpa-Tradition wurden und seit etwa tausend Jahren weitergegeben werden.",
+          "Das Besondere an dieser Tradition ist die Art ihrer Weitergabe. Der Shangpa-Linie zufolge wies Niguma selbst an, die zentralen Lehren während der ersten sieben Generationen ausschließlich von einem Lehrer an einen einzigen Schüler weiterzugeben. Nach der siebten Generation wurde diese Beschränkung aufgehoben, und das Wissen begann sich weiter zu verbreiten. Gerade deshalb blieb die Tradition lange Zeit verschlossen.",
+          "Die in Indien entstandenen Lehren Nigumas wurden nach Tibet übertragen, wo sie jahrhundertelang bewahrt und praktiziert wurden. Später fanden sie Verbreitung unter Meistern verschiedener tibetischer Schulen.",
+          "Der zweite Dalai Lama, Gendün Gyatsho, verfasste ausführliche Unterweisungen zu den Sechs Yogas der Niguma, die heute in englischer Übersetzung unter dem Titel *The Tantric Yogas of Sister Niguma* vorliegen. Dem Erbe Nigumas widmen sich die Arbeiten der Übersetzerin und Forscherin Sarah Harding, und 2025 veröffentlichte Kalu Rinpoche, ein zeitgenössischer Meister der Shangpa-Linie, gemeinsam mit Michele Loew *The Yoga of Niguma*\u00a0— ein Buch mit 25\u00a0Praxissequenzen und einem Vorwort des XIV. Dalai Lama.",
+        ],
+        ysi: [
+          "Die methodische Grundlage von 15minYoga ist das Yoga-System der Lady\u00a0Niguma, wie es am Yoga Studies Institute (YSI) vermittelt wird.",
+          "Die Gründerin sowie alle Lehrerinnen und Lehrer des Projekts wurden am YSI in den Programmen Lady\u00a0Niguma Yoga ausgebildet.",
+          "15minYoga stützt sich auf das Yoga-System der Lady\u00a0Niguma in seiner Gesamtheit und insbesondere auf die Praktiken zur Arbeit mit den inneren Winden\u00a0— das zentrale Thema der zweiten Ausbildungsstufe am YSI. Dabei kommen in den Einheiten Prinzipien und Praktiken verschiedener Stufen des Systems zum Einsatz, je nach Schwerpunkt der jeweiligen Einheit.",
+          "Das Yoga Studies Institute arbeitet mit klassischen Quellen in Partnerschaft mit der Asian Legacy Library (ALL)\u00a0— einer Bibliothek, die mehr als 2\u00a0Millionen Seiten klassischer asiatischer Texte bewahrt und digitalisiert hat. Das YSI widmet sich dem Studium, der Übersetzung und der Weitergabe dieses Wissens in Form einer zeitgemäßen Praxis. ([yogastudiesinstitute.org](https://www.yogastudiesinstitute.org/become-as-gardeners))",
+          "Die Programme des Yoga Studies Institute sind online zugänglich. So können sich alle Interessierten direkt an die Quelle wenden, aus der 15minYoga sein Wissen schöpft, und das Studium der Tradition eigenständig fortsetzen.",
+        ],
       },
       faq: {
         eyebrow: "Fragen",
@@ -984,11 +1075,15 @@ window.NIGUMA_I18N = {
       trainers: {
         heading: "Trainer",
         intro: "Alle Trainer sind zuallererst selbst Unternehmer oder Teamleiter. Als sie begannen, dieses Yoga-System zu praktizieren, verbesserten sie ihre Ergebnisse im Business — und heute nutzen sie dieses kraftvolle Werkzeug sowohl für die eigene Entwicklung als auch, um anderen zu helfen.",
+        more: "Mehr erfahren",
+        close: "Schließen",
         people: [
           {
             "name": "Alla Goriacheva",
             "role": "Unternehmerin · Gründerin des Dallas Dance Center · Yogalehrerin und Coach",
             "photo": "assets/photos/alla.jpg",
+            "short": "Unternehmerin\u00a0· Gründerin des Dallas Dance Center",
+            "key": "14 Jahre Unternehmerin, Team aus 10 Personen. Absolventin des Yoga Studies Institute, Yogalehrerin und Coach.",
             "lines": [
               "Yoga ist für mich keine Übung für den Körper. Es hält den Kopf unter Last klar, zeigt eine Lösung, wo keine zu sehen ist, und lässt Beruf, Familie und die eigene Entwicklung zusammengehen.",
               "Im Unterricht gebe ich nicht Übungen weiter, sondern das, was im heutigen Tempo wirklich hilft zu leben und zu arbeiten."
@@ -1008,6 +1103,8 @@ window.NIGUMA_I18N = {
             "name": "Oksana Gorina",
             "role": "Unternehmerin · Lehrerin für das Yoga der Lady Niguma",
             "photo": "assets/photos/oksana.jpg",
+            "short": "Unternehmerin\u00a0· Lehrerin für das Yoga der Lady\u00a0Niguma",
+            "key": "Führt seit 2022 ihr eigenes Unternehmen. Vier Jahre Yoga der Lady\u00a0Niguma, zwei Jahre Unterricht.",
             "lines": [
               "Yoga und Meditation sind für mich das tägliche Werkzeug, um Energie, Aufmerksamkeit und die Qualität meiner Entscheidungen zu steuern.",
               "Ich helfe Unternehmern, mit Yoga, Meditation und dem System der mentalen Samen Aufgaben im Geschäft zu lösen, gesetzte Ziele zu erreichen und die Klarheit des Geistes zu entwickeln, von der jede Entscheidung abhängt."
@@ -1024,6 +1121,8 @@ window.NIGUMA_I18N = {
             "name": "Katya Turkanu",
             "role": "Juristin in internationalen Kanzleien, LL.M. · Yogalehrerin · Schweiz",
             "photo": "assets/photos/katya.jpg",
+            "short": "Juristin, LL.M.\u00a0· Schweiz",
+            "key": "10 Jahre in internationalen Kanzleien. 760 Stunden Yogalehrer-Ausbildung; unterrichtet das Yoga der Lady\u00a0Niguma seit drei Jahren.",
             "lines": [
               "Das Yoga der Lady Niguma ist für mich eine tägliche Praxis, um Energie und Aufmerksamkeit zu steuern. Es hilft, nicht unter dem Einfluss von Stress zu handeln und abgewogenere Entscheidungen zu treffen — im Geschäft wie im Privatleben.",
               "Diese Praxis hat mir geholfen, ein Leben aufzubauen, in dem es eine Arbeit gibt, die ich liebe, dazu finanzielles Wachstum und Freiheit. Heute gebe ich sie an Menschen weiter, die mehr erreichen wollen, ohne sich selbst zu verlieren."
@@ -1041,6 +1140,8 @@ window.NIGUMA_I18N = {
             "name": "Ivan Spaskiy",
             "role": "Unternehmer · Yogalehrer",
             "photo": "assets/photos/ivan.jpg",
+            "short": "Unternehmer\u00a0· Yogalehrer",
+            "key": "Sechs Jahre Unternehmer. Drei Jahre Yogapraxis, ein Jahr Unterricht.",
             "lines": [
               "Yoga ist für mich ein Werkzeug, um die wertvollsten Güter überhaupt mühelos zu führen: Körper und Geist."
             ],
@@ -1056,6 +1157,8 @@ window.NIGUMA_I18N = {
             "name": "Olha Klius",
             "role": "Juristin · Mentorin bei ACI und der Akademie für klassische Weisheit · Yogalehrerin · Wien",
             "photo": "assets/photos/olga-klyus.jpg",
+            "short": "Juristin\u00a0· Mentorin bei ACI\u00a0· Wien",
+            "key": "13 Jahre Arbeit dort, wo der Preis einer Entscheidung in Geld und Verantwortung gemessen wird. Sechs Jahre eigene Praxis; unterrichtet auf Russisch, Ukrainisch und Deutsch.",
             "lines": [
               "Meditation und Yoga sind für mich das beste Werkzeug, um Körper und Geist auf präzise, abgewogene Entscheidungen vorzubereiten.",
               "13 Jahre lang habe ich dort gearbeitet, wo der Preis einer Entscheidung in Geld und Verantwortung gemessen wird — und ich weiß, was ein klarer Kopf in dieser Arbeit wert ist."
@@ -1070,28 +1173,11 @@ window.NIGUMA_I18N = {
             ]
           },
           {
-            "name": "Olena Hanusevych",
-            "role": "Unternehmerin · Yogalehrerin · Forscherin alter Führungssysteme · Italien",
-            "photo": "assets/photos/elena.jpg",
-            "lines": [
-              "Ich verbinde Beauty-Ästhetik, die Gesetze des karmischen Managements und die Yogapraxis: Ich helfe, Balance zu finden und aus Achtsamkeit heraus ein erfolgreiches Unternehmen aufzubauen.",
-              "Yoga ist für mich nicht einfach Bewegung auf der Matte. Es ist ein Aufstieg zu den Gipfeln des Bewusstseins, wo Geist, Körper und Beruf zu einem einzigen Gipfel verschmelzen."
-            ],
-            "facts": [
-              "Über 25 Jahre in Wirtschaft und Unternehmertum",
-              "Lebt und arbeitet seit 16 Jahren in Italien",
-              "12 Jahre Inhaberin eines eigenen Beauty-Studios",
-              "Entwickelte das Familienunternehmen in der Ukraine — einer der Marktführer",
-              "Sieben Jahre Studium alter Systeme für Denken und Entscheidungen",
-              "Ehrenamtliche Übersetzerin im Hauptbüro des ACI (Asian Classics Institute)",
-              "Absolventin von sieben Kursen des Diamond Cutter Institute (DCI)",
-              "Studentin und Lehrerin am Yoga Studies Institute (YSI)"
-            ]
-          },
-          {
             "name": "Olha Shakar",
             "role": "Choreografin · Lehrerin für Yoga und Reformer-Pilates · Antalya",
             "photo": "assets/photos/olga-shakar.jpg",
+            "short": "Choreografin\u00a0· Yogalehrerin\u00a0· Antalya",
+            "key": "Über 20 Jahre professioneller Tanz und Choreografie, unterrichtet Yoga seit 2009. Trainerin für Reformer-Pilates.",
             "lines": [
               "Ich arbeite mein ganzes bewusstes Leben mit dem Körper und habe viele Richtungen studiert. Im Yoga der Lady Niguma fand ich die fehlenden Teile.",
               "Es hält mich im Gleichgewicht und den Kopf klar, auch in Krisen. Ich möchte, dass möglichst viele Menschen diese Philosophie berühren und ein Ergebnis sehen — im Beruf und im Alltag."
@@ -1110,6 +1196,8 @@ window.NIGUMA_I18N = {
             "name": "Iryna Shyshkina",
             "role": "Zertifizierte Yogalehrerin · Körper- und Energietherapeutin · Mitgründerin der App Rejoy",
             "photo": "assets/photos/irina.jpg",
+            "short": "Yogalehrerin\u00a0· Mitgründerin der App Rejoy",
+            "key": "Elf Jahre Yogapraxis. Körper- und Energietherapeutin, Kuratorin von Bildungsprogrammen.",
             "lines": [
               "Yoga ist für mich nicht nur die Übung auf der Matte. Es ist eine Lebensweise: tägliche Praxis, Meditation und ein Leben nach ethischen Grundsätzen.",
               "Seit elf Jahren hält es meinen Kopf klar, meine Ruhe stabil, meine Energie hoch und mein Leben im Gleichgewicht, auch in den vollsten Zeiten. Fünfzehn Minuten am Tag genügen, um das zu spüren."
@@ -1128,6 +1216,8 @@ window.NIGUMA_I18N = {
             "name": "Olha Filianova",
             "role": "Gründerin von 15minYoga · Mentorin für ICF-Coaches · Methodikerin für Bildungsprogramme · Deutschland",
             "photo": "assets/photos/olga-filianova.jpg",
+            "short": "Gründerin von 15minYoga\u00a0· Deutschland",
+            "key": "Mentorin für ICF-Coaches seit 2020. Hat drei Stufen des Yoga der Lady\u00a0Niguma abgeschlossen und studiert am Yoga Studies Institute.",
             "lines": [
               "Ich war nie Sportlerin. Angefangen habe ich nach dreißig — wurde Marathonläuferin und startete zweimal bei der Europameisterschaft im Hindernislauf. Ich weiß, wie man die Kraft von Herz und Körper einschaltet; an den Muskeln liegt es nicht.",
               "Mein Wunsch ist, dass auch Sie Ihre Ziele mit 15minYoga erreichen."
@@ -1198,6 +1288,37 @@ window.NIGUMA_I18N = {
           { name: "Низхідний вітер", sub: "Апана ваю", text: "Почуття та реакції. Звільнення від залежності від похвали, критики й\u00a0зовнішніх обставин. Розвиток рівного ставлення до людей і\u00a0переживань." },
         ],
         note: "Пʼять вітрів\u00a0— модель традиційної йоги Леді\u00a0Нігуми, яку вивчають у\u00a0Yoga Studies Institute (YSI). Вона описує звʼязок тонкого тіла та розуму й\u00a0не є сучасною фізіологічною класифікацією.",
+      },
+      methodPractice: {
+        heading: "Це не скорочена йога. Кожен комплекс\u00a0— завершена практика.",
+        paras: [
+          "15minYoga\u00a0— узгоджена система коротких практик, де кожна послідовність спрямована на роботу з\u00a0одним із пʼяти внутрішніх вітрів (ваю) у\u00a0певній ділянці тіла.",
+          "15\u00a0хвилин\u00a0— це не скорочена година, а\u00a0повний цикл рухів, дихання й\u00a0уваги зі своєю метою та результатом.",
+        ],
+        steps: [
+          { title: "Знімаємо напруження", text: "Працюємо з\u00a0ділянками тіла, де, згідно з\u00a0традицією, переплітаються енергетичні канали та блокуються внутрішні вітри. З\u00a0цим повʼязані стани, що заважають ясно бачити ситуацію й\u00a0ухвалювати якісні рішення." },
+          { title: "Відчуваємо зміну стану", text: "Під час практики напруження слабшає, а\u00a0звичні негативні реакції трансформуються в\u00a0усвідомленість, прийняття та здатність виходити за попередні ментальні межі." },
+          { title: "Здобуваємо свободу рішень", text: "Переходимо від автоматичних реакцій до усвідомленості та ясного сприйняття. Бачимо більше можливостей та створюємо основу для кращих рішень і\u00a0дій." },
+        ],
+        before: { label: "Без практики", items: ["Напруження", "Опір", "Автоматичні реакції"] },
+        after: { label: "Після 15\u00a0хвилин\u00a0— наша мета", items: ["Ясність розуму", "Внутрішня стійкість", "Готовність діяти"] },
+        note: "Метод ґрунтується на традиційній системі тонкого тіла йоги Леді\u00a0Нігуми, яку передають у\u00a0Yoga Studies Institute (YSI). Описані зміни\u00a0— цілі практики, а\u00a0не гарантовані фізіологічні чи медичні результати.",
+      },
+      methodSources: {
+        heading: "Джерела та лінія передачі",
+        lineage: [
+          "В\u00a0основі 15minYoga\u00a0— система йоги Леді\u00a0Нігуми, індійської йогині X–\u2060XI\u00a0століть, чиї вчення стали одним із витоків тибетської традиції Шангпа й\u00a0передаються вже близько тисячі років.",
+          "Особливість цієї традиції\u00a0— спосіб її передачі. Згідно з\u00a0лінією Шангпа, сама Нігума дала вказівку протягом перших семи поколінь передавати ключові вчення лише від одного вчителя одному учневі. Після сьомого покоління це обмеження зняли, і\u00a0знання почали розповсюджуватися ширше. Саме тому тривалий час традиція залишалася закритою.",
+          "Зародившись в\u00a0Індії, вчення Нігуми були передані до Тибету, де зберігалися й\u00a0практикувалися впродовж століть. Пізніше вони набули поширення серед майстрів різних тибетських шкіл.",
+          "Другий Далай-лама Гендун Гʼяцо написав докладні настанови щодо Шести йог Нігуми, які сьогодні доступні в\u00a0англійському перекладі під назвою *The Tantric Yogas of Sister Niguma*. Спадщині Нігуми присвячено праці перекладачки й\u00a0дослідниці Sarah Harding, а\u00a02025 року сучасний майстер лінії Шангпа Kalu Rinpoche спільно з\u00a0Michele Loew видав *The Yoga of Niguma*\u00a0— книжку з\u00a025\u00a0послідовностями практики та передмовою XIV\u00a0Далай-лами.",
+        ],
+        ysi: [
+          "Методологічна основа 15minYoga\u00a0— система йоги Леді\u00a0Нігуми в\u00a0передачі Yoga Studies Institute (YSI).",
+          "Засновниця та всі викладачі проєкту пройшли навчання в\u00a0YSI за програмами Lady\u00a0Niguma Yoga.",
+          "15minYoga спирається на цілісну систему йоги Леді\u00a0Нігуми й\u00a0особливо на практики роботи з\u00a0внутрішніми вітрами\u00a0— центральну тему другого рівня навчання YSI. Водночас на заняттях використовують принципи та практики різних рівнів системи відповідно до фокусу конкретного заняття.",
+          "Yoga Studies Institute працює з\u00a0класичними джерелами в\u00a0партнерстві з\u00a0Asian Legacy Library (ALL)\u00a0— бібліотекою, що зберегла та оцифрувала понад 2\u00a0мільйони сторінок класичних азійських текстів. YSI займається вивченням, перекладом і\u00a0передачею цих знань у\u00a0форматі сучасної практики. ([yogastudiesinstitute.org](https://www.yogastudiesinstitute.org/become-as-gardeners))",
+          "Програми Yoga Studies Institute доступні онлайн, тож кожен охочий може звернутися безпосередньо до джерела навчання 15minYoga та продовжити самостійне вивчення традиції.",
+        ],
       },
       faq: {
         eyebrow: "Запитання",
@@ -1298,11 +1419,15 @@ window.NIGUMA_I18N = {
       trainers: {
         heading: "Тренери",
         intro: "Усі тренери насамперед самі є підприємцями/лідерами команд. Почавши практикувати цю систему йоги, вони покращили свої результати в бізнесі, а сьогодні використовують цей потужний інструмент як для власного розвитку, так і для допомоги іншим.",
+        more: "Детальніше",
+        close: "Закрити",
         people: [
           {
             "name": "Алла Горячева",
             "role": "Підприємиця · засновниця Dallas Dance Center · викладачка йоги, коуч",
             "photo": "assets/photos/alla.jpg",
+            "short": "Підприємиця\u00a0· засновниця Dallas Dance Center",
+            "key": "14 років у\u00a0підприємництві, команда\u00a0— 10 осіб. Випускниця Yoga Studies Institute, викладачка йоги та коуч.",
             "lines": [
               "Йога для мене — не практика для тіла. Це те, що допомагає тримати ясний розум під навантаженням, знаходити рішення там, де його не видно, і поєднувати бізнес, родину та власний розвиток.",
               "На заняттях я ділюся не вправами, а тим, що справді допомагає жити й працювати в сьогоднішньому ритмі."
@@ -1322,6 +1447,8 @@ window.NIGUMA_I18N = {
             "name": "Оксана Горина",
             "role": "Підприємиця · викладачка йоги Леді Нігуми",
             "photo": "assets/photos/oksana.jpg",
+            "short": "Підприємиця\u00a0· викладачка йоги Леді\u00a0Нігуми",
+            "key": "Веде власну справу з\u00a02022 року. Практикує йогу Леді\u00a0Нігуми чотири роки, викладає два.",
             "lines": [
               "Йога і медитація для мене — щоденний інструмент керування енергією, увагою та якістю рішень.",
               "Допомагаю підприємцям за допомогою йоги, медитації та системи ментальних зерен розв'язувати задачі в бізнесі, досягати поставлених результатів і розвивати ясність розуму, від якої залежить якість кожного рішення."
@@ -1338,6 +1465,8 @@ window.NIGUMA_I18N = {
             "name": "Катя Туркану",
             "role": "Юристка міжнародних юридичних фірм, LL.M. · викладачка йоги · Швейцарія",
             "photo": "assets/photos/katya.jpg",
+            "short": "Юристка, LL.M.\u00a0· Швейцарія",
+            "key": "10 років у\u00a0міжнародних юридичних фірмах. Програма підготовки викладачів йоги\u00a0— 760 годин; викладає йогу Леді\u00a0Нігуми три роки.",
             "lines": [
               "Йога Леді Нігуми для мене — щоденна практика керування енергією та увагою. Вона допомагає не діяти під впливом стресу та ухвалювати зваженіші рішення — і в бізнесі, і в особистому житті.",
               "Ця практика допомогла мені створити життя, у якому є улюблена справа, фінансове зростання і свобода. Сьогодні я ділюся нею з тими, хто хоче досягати більшого, не втрачаючи себе."
@@ -1355,6 +1484,8 @@ window.NIGUMA_I18N = {
             "name": "Іван Спаський",
             "role": "Підприємець · викладач йоги",
             "photo": "assets/photos/ivan.jpg",
+            "short": "Підприємець\u00a0· викладач йоги",
+            "key": "Шість років у\u00a0підприємництві. Практикує йогу три роки, викладає рік.",
             "lines": [
               "Йога для мене — інструмент легкого керування найдорожчими активами: тілом і розумом."
             ],
@@ -1370,6 +1501,8 @@ window.NIGUMA_I18N = {
             "name": "Ольга Клюс",
             "role": "Юристка · наставниця ACI та АКМ · викладачка йоги · Відень",
             "photo": "assets/photos/olga-klyus.jpg",
+            "short": "Юристка\u00a0· наставниця ACI\u00a0· Відень",
+            "key": "13 років роботи там, де ціна рішення вимірюється грошима та відповідальністю. Шість років практики; викладає українською, російською та німецькою.",
             "lines": [
               "Медитація і йога для мене — найкращий інструмент підготовки тіла й розуму до точних, зважених рішень.",
               "13 років я працювала там, де ціна рішення вимірюється грошима та відповідальністю, — і знаю, чого варта ясна голова в такій роботі."
@@ -1384,28 +1517,11 @@ window.NIGUMA_I18N = {
             ]
           },
           {
-            "name": "Олена Ганусевич",
-            "role": "Підприємиця · викладачка йоги · дослідниця давніх систем управління · Італія",
-            "photo": "assets/photos/elena.jpg",
-            "lines": [
-              "Я поєдную б'юті-естетику, закони кармічного менеджменту та практику йоги: допомагаю знаходити баланс і будувати успішну справу через усвідомленість.",
-              "Йога для мене — не просто рух на килимку. Це сходження до вершин свідомості, де розум, тіло та професія зливаються в один пік."
-            ],
-            "facts": [
-              "Понад 25 років у бізнесі та підприємництві",
-              "16 років живе і працює в Італії",
-              "12 років — власниця своєї б'юті-студії",
-              "Розвивала сімейний бізнес в Україні — одного з лідерів ринку",
-              "Сім років вивчає давні системи роботи з мисленням і рішеннями",
-              "Волонтерка-перекладачка головного офісу ACI (Asian Classics Institute)",
-              "Випускниця семи курсів Diamond Cutter Institute (DCI)",
-              "Студентка і викладачка Yoga Studies Institute (YSI)"
-            ]
-          },
-          {
             "name": "Ольга Шакар",
             "role": "Хореографка · викладачка йоги та пілатесу на реформерах · Анталія",
             "photo": "assets/photos/olga-shakar.jpg",
+            "short": "Хореографка\u00a0· викладачка йоги\u00a0· Анталія",
+            "key": "Понад 20 років професійного танцю та хореографії, викладає йогу з\u00a02009 року. Тренерка пілатесу на реформерах.",
             "lines": [
               "Я працюю з тілом усе свідоме життя і вивчила різні напрями. У йозі Леді Нігуми знайшла всі пазли, яких бракувало.",
               "Вона допомагає мені тримати рівновагу та ясний розум навіть у кризових ситуаціях. Хочу, щоб якомога більше людей доторкнулися до цієї філософії та отримали результат — і у справі, і у звичайному житті."
@@ -1424,6 +1540,8 @@ window.NIGUMA_I18N = {
             "name": "Ірина Шишкіна",
             "role": "Викладачка йоги · тілесна та енерготерапевтка · співзасновниця застосунку Rejoy",
             "photo": "assets/photos/irina.jpg",
+            "short": "Викладачка йоги\u00a0· співзасновниця Rejoy",
+            "key": "Практикує йогу одинадцять років. Тілесна терапевтка та енерготерапевтка, кураторка освітніх програм.",
             "lines": [
               "Для мене йога — не просто практика на килимку. Це спосіб життя: щоденна практика, медитація і життя за етичними принципами.",
               "Одинадцять років вона допомагає мені зберігати ясність розуму, спокій, високий рівень енергії та знаходити баланс навіть у найнасиченіші періоди життя. П'ятнадцяти хвилин на день досить, щоб це відчути."
@@ -1442,6 +1560,8 @@ window.NIGUMA_I18N = {
             "name": "Ольга Фільянова",
             "role": "Засновниця 15minYoga · менторка ICF-коучів · методологиня освітніх програм · Німеччина",
             "photo": "assets/photos/olga-filianova.jpg",
+            "short": "Засновниця 15minYoga\u00a0· Німеччина",
+            "key": "Менторка ICF-коучів з\u00a02020 року. Пройшла три рівні йоги Леді\u00a0Нігуми, навчається в\u00a0Yoga Studies Institute.",
             "lines": [
               "Я не була в спорті. Почала займатися після тридцяти — стала марафонкою і двічі виступала на чемпіонаті Європи із забігів з перешкодами. Знаю, як увімкнути силу серця й тіла; річ не в м'язах.",
               "Мрію, щоб і у вас вийшло досягти своїх цілей за допомогою 15minYoga."
@@ -1505,6 +1625,8 @@ window.NIGUMA_I18N = {
     M[lng].stats = a.stats;
     M[lng].faq = a.faq;
     M[lng].method = a.method;
+    M[lng].methodPractice = a.methodPractice;
+    M[lng].methodSources = a.methodSources;
     M[lng].pains = a.pains;
     M[lng].promise = a.promise;
     M[lng].included = a.included;

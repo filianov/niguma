@@ -133,7 +133,43 @@
     });
   }
 
+  /* ---- 8. Тренеры: нажатие на карточку открывает полный профиль ----
+     Окно — нативный <dialog> (Esc закрывает сам, фокус заперт внутри).
+     Профиль строится на языке, который показан сейчас (js/i18n.js,
+     teacherProfile). Закрывается крестиком, Esc и нажатием на фон;
+     после закрытия фокус возвращается на карточку. */
+  function teacherDialog() {
+    var dlg = document.getElementById("teacherDialog");
+    if (!dlg || typeof dlg.showModal !== "function") return;
+    var body = dlg.querySelector(".tdialog__body");
+    var opener = null;
+
+    document.addEventListener("click", function (e) {
+      var btn = e.target && e.target.closest ? e.target.closest(".tcard__open") : null;
+      if (!btn || !window.NigumaI18n) return;
+      var html = window.NigumaI18n.teacherProfile(parseInt(btn.getAttribute("data-teacher"), 10));
+      if (!html) return;
+      opener = btn;
+      body.innerHTML = html;
+      dlg.showModal();
+      dlg.scrollTop = 0;
+      document.documentElement.classList.add("is-dialog-open");
+    });
+    dlg.querySelector(".tdialog__close").addEventListener("click", function () { dlg.close(); });
+    // нажатие на затемнённый фон (вне окна) закрывает его
+    dlg.addEventListener("click", function (e) {
+      if (e.target !== dlg) return;
+      var r = dlg.getBoundingClientRect();
+      if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) dlg.close();
+    });
+    dlg.addEventListener("close", function () {
+      document.documentElement.classList.remove("is-dialog-open");
+      if (opener) { try { opener.focus({ preventScroll: true }); } catch (err) { opener.focus(); } }
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
+    teacherDialog();
     wireCtas();
     deeperPdf();
     setYear();

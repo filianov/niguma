@@ -712,6 +712,135 @@ img { max-width: 100%; display: block; }
   .method__note { padding-left: 18px; font-size: 15px; }
 }
 
+/* ---------- Method, продолжение: «Это не сокращённая йога» ---------- */
+/**
+ * По макету: заголовок обычным регистром, вступление крупным текстом, три
+ * белые карточки шагов (крупная цифра цветом глины, заголовок, текст), две
+ * плашки сравнения — «Без практики» бежевая, «После 15 минут» тёмная, —
+ * и примечание мелким текстом.
+ *
+ * Тёмная плашка задана постоянными цветами, а не переменными палитры:
+ * в тёмной теме --ink светлый, и плашка «после» перестала бы быть тёмной.
+ */
+.practice { margin-top: clamp(64px, 8vw, 104px); }
+.practice__heading {
+  margin: 0 0 20px; max-width: 24em;
+  font-family: var(--font); font-weight: 800; font-size: clamp(26px, 3.3vw, 42px);
+  line-height: 1.12; letter-spacing: -0.02em; color: var(--ink); text-wrap: balance;
+}
+.practice__intro p {
+  margin: 0 0 12px; max-width: 46em;
+  font-size: clamp(16.5px, 1.6vw, 19px); line-height: 1.6;
+  color: color-mix(in srgb, var(--ink) 84%, var(--bg));
+}
+.practice__intro p:last-child { margin-bottom: 0; }
+.practice__intro strong { font-weight: 700; color: var(--ink); }
+
+.practice__steps {
+  list-style: none; margin: clamp(32px, 4vw, 48px) 0 0; padding: 0;
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(16px, 2vw, 28px);
+}
+.pstep {
+  margin: 0; padding: clamp(24px, 2.6vw, 34px) clamp(22px, 2.4vw, 32px);
+  background: var(--surface); border: 1px solid var(--line); border-radius: 22px;
+  box-shadow: 0 1px 2px rgba(59, 56, 47, .04);
+}
+.pstep__num {
+  display: block; margin-bottom: 18px;
+  font-size: clamp(32px, 3.2vw, 42px); font-weight: 700; line-height: 1;
+  color: var(--clay-deep); font-variant-numeric: tabular-nums;
+}
+.pstep__title {
+  margin: 0 0 12px;
+  font-family: var(--font); font-size: clamp(18px, 1.7vw, 21px); font-weight: 700; line-height: 1.25;
+  color: var(--ink); text-wrap: balance;
+}
+.pstep__text {
+  margin: 0;
+  font-size: clamp(15.5px, 1.4vw, 16.5px); line-height: 1.6;
+  color: color-mix(in srgb, var(--ink) 82%, var(--bg));
+}
+
+.practice__compare {
+  margin-top: clamp(20px, 2.6vw, 32px);
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(14px, 1.6vw, 22px);
+}
+.pcmp { border-radius: 18px; padding: clamp(20px, 2.2vw, 26px) clamp(22px, 2.4vw, 30px); }
+.pcmp--before { background: color-mix(in srgb, var(--bg-alt) 91%, var(--ink)); }
+.pcmp--after { background: #142120; }  /* тот же тёмный, что у раздела «Тренеры» */
+.pcmp__label {
+  margin: 0 0 10px;
+  font-size: 12.5px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+  color: color-mix(in srgb, var(--ink) 62%, var(--bg));
+}
+.pcmp--after .pcmp__label { color: #e2a27f; }
+.pcmp__items {
+  list-style: none; margin: 0; padding: 0;
+  font-size: clamp(16.5px, 1.6vw, 19px); line-height: 1.45; font-weight: 500;
+  color: var(--ink);
+}
+.pcmp--after .pcmp__items { color: #fbf8f3; }
+/* пункт не рвётся внутри («Автоматические реакции»), перенос — только между пунктами */
+.pcmp__items li { display: inline-block; white-space: nowrap; }
+.pcmp__items li:not(:last-child)::after { content: "\00a0·"; margin-right: .35em; }
+
+.practice__note {
+  margin: clamp(24px, 3vw, 36px) 0 0; max-width: 52em;
+  font-size: 14.5px; line-height: 1.6;
+  color: color-mix(in srgb, var(--ink) 70%, var(--bg));
+}
+.practice__note:empty { display: none; }
+
+/* ---------- Method, продолжение: «Источники и линия передачи» ---------- */
+/* Слева история линии: абзацы на вертикальной линии, у каждого — точка цвета
+   глины, как веха. Справа — белая карточка о YSI в стиле карточек шагов. */
+.sources { margin-top: clamp(64px, 8vw, 104px); }
+.sources__grid {
+  display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr);
+  gap: clamp(28px, 4vw, 56px); align-items: start;
+  margin-top: clamp(20px, 2.6vw, 30px);
+}
+.sources__lineage {
+  margin-left: 6px; padding-left: 28px;
+  border-left: 2px solid color-mix(in srgb, var(--clay) 45%, var(--bg));
+}
+.sources__lineage p {
+  position: relative; margin: 0 0 20px;
+  font-size: clamp(15.5px, 1.45vw, 16.5px); line-height: 1.65;
+  color: color-mix(in srgb, var(--ink) 84%, var(--bg));
+}
+.sources__lineage p:first-child { font-size: clamp(16.5px, 1.6vw, 18.5px); color: var(--ink); }
+.sources__lineage p:last-child { margin-bottom: 0; }
+.sources__lineage p::before {
+  content: ""; position: absolute; left: -36px; top: .5em;
+  width: 12px; height: 12px; border-radius: 50%;
+  background: var(--clay-deep);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--bg-alt) 42%, var(--bg));  /* = фон раздела */
+}
+.sources__ysi {
+  padding: clamp(24px, 2.6vw, 32px) clamp(22px, 2.4vw, 32px);
+  background: var(--surface); border: 1px solid var(--line); border-radius: 22px;
+  box-shadow: 0 1px 2px rgba(59, 56, 47, .04);
+}
+.sources__ysi p {
+  margin: 0 0 14px;
+  font-size: clamp(15px, 1.4vw, 16px); line-height: 1.6;
+  color: color-mix(in srgb, var(--ink) 84%, var(--bg));
+}
+.sources__ysi p:first-child { font-size: clamp(17px, 1.6vw, 19px); font-weight: 700; line-height: 1.4; color: var(--ink); }
+.sources__ysi p:last-child { margin-bottom: 0; }
+.sources a { color: var(--clay-deep); text-decoration: underline; text-underline-offset: 3px; }
+.sources a:hover { text-decoration-thickness: 2px; }
+
+@media (max-width: 899px) {
+  .sources__grid { grid-template-columns: minmax(0, 1fr); }
+  .sources__lineage { padding-left: 22px; }
+  .sources__lineage p::before { left: -30px; }
+  .practice__steps { grid-template-columns: minmax(0, 1fr); gap: 14px; }
+  .pstep__num { margin-bottom: 12px; }
+  .practice__compare { grid-template-columns: minmax(0, 1fr); }
+}
+
 /* ---------------- FAQ: «Частые вопросы» ---------------- */
 /**
  * По макету: надзаголовок цветом глины, крупный заголовок капсом, ниже
@@ -885,6 +1014,116 @@ img { max-width: 100%; display: block; }
   /* Восемь фактов в одну колонку растянули бы карточку вдвое выше портрета —
      на широком экране они идут в два столбца. */
   .teacher__facts { grid-template-columns: 1fr 1fr; gap: 8px 26px; }
+}
+
+/* ---------------- Trainers: компактные карточки по макету ---------------- */
+/**
+ * Тёмный раздел, как в макете: карточки в две колонки (на телефоне — в одну),
+ * в карточке круглое фото с кольцом цвета глины, имя, короткая роль, ключевая
+ * фраза и «Подробнее +». Нажимается вся карточка: невидимый слой кнопки
+ * (.tcard__open::after) растянут на неё целиком. Полный профиль открывается
+ * в окне (.tdialog) — js/main.js, teacherDialog.
+ *
+ * Цвета раздела постоянные, а не из палитры: раздел тёмный в обеих темах.
+ */
+.trainers { background: #142120; }
+.trainers .section__title { color: #f4f1ea; }
+.trainers .section__lead { color: #a9bab7; }
+.trainers__inner { max-width: 1160px; }
+.tcards {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(14px, 2vw, 24px); margin-top: clamp(28px, 4vw, 44px);
+}
+.tcard {
+  position: relative;
+  display: grid; grid-template-columns: 72px minmax(0, 1fr); column-gap: 18px; row-gap: 16px;
+  align-items: center; align-content: start;
+  padding: clamp(22px, 2.6vw, 30px);
+  background: #1b2b2a; border: 1px solid rgba(255, 255, 255, .08); border-radius: 22px;
+  transition: border-color .2s var(--ease), background .2s var(--ease), transform .2s var(--ease);
+}
+.tcard:hover { background: #1f3231; border-color: rgba(226, 162, 127, .5); transform: translateY(-2px); }
+.tcard:focus-within { border-color: #e2a27f; }
+.tcard__ava {
+  width: 72px; height: 72px; border-radius: 50%; object-fit: cover; display: block;
+  box-shadow: 0 0 0 3px #1b2b2a, 0 0 0 5px #e2a27f;
+}
+.tcard__ava--empty {
+  display: grid; place-items: center; background: #f0ad7a; color: #142120;
+  font-size: 24px; font-weight: 800;
+}
+.tcard__name {
+  margin: 0; font-family: var(--font); font-size: clamp(18px, 1.7vw, 21px); font-weight: 700;
+  line-height: 1.25; color: #f4f1ea;
+}
+.tcard__role { margin: 5px 0 0; font-size: 14px; line-height: 1.4; color: #9fb3b0; }
+.tcard__key {
+  grid-column: 1 / -1; margin: 0;
+  font-size: clamp(15.5px, 1.45vw, 17px); line-height: 1.6; color: #dbe3e1;
+}
+.tcard__open {
+  grid-column: 1 / -1; justify-self: start;
+  display: inline-flex; align-items: center; gap: 10px;
+  margin: 0; padding: 0; background: none; border: 0; cursor: pointer;
+  font-family: var(--font); font-size: 13px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+  color: #e2a27f;
+}
+.tcard__open::after { content: ""; position: absolute; inset: 0; border-radius: 22px; }
+.tcard__open:focus-visible { outline: none; }
+.tcard__open:focus-visible::after { outline: 2px solid #e2a27f; outline-offset: 3px; }
+.tcard__plus { position: relative; width: 22px; height: 22px; border: 1.5px solid currentColor; border-radius: 50%; }
+.tcard__plus::before, .tcard__plus::after {
+  content: ""; position: absolute; left: 50%; top: 50%; width: 10px; height: 1.5px;
+  margin: -.75px 0 0 -5px; background: currentColor; border-radius: 1px;
+}
+.tcard__plus::after { transform: rotate(90deg); }
+.tcard:hover .tcard__plus { background: rgba(226, 162, 127, .15); }
+
+@media (max-width: 759px) {
+  .tcards { grid-template-columns: minmax(0, 1fr); }
+  .tcard { grid-template-columns: 60px minmax(0, 1fr); column-gap: 14px; row-gap: 14px; }
+  .tcard__ava { width: 60px; height: 60px; }
+}
+
+/* ---- Окно полного профиля тренера ---- */
+.tdialog {
+  width: min(980px, calc(100vw - 40px)); max-width: none; max-height: calc(100dvh - 48px);
+  padding: 0; border: 0; border-radius: 24px; overflow: auto; overscroll-behavior: contain;
+  background: var(--surface); color: var(--ink);
+  box-shadow: 0 40px 120px -40px rgba(0, 0, 0, .6);
+}
+.tdialog::backdrop { background: rgba(14, 22, 21, .62); -webkit-backdrop-filter: blur(3px); backdrop-filter: blur(3px); }
+.tdialog[open] { animation: tdialog-in .26s var(--ease); }
+@keyframes tdialog-in { from { opacity: 0; transform: translateY(14px) scale(.985); } to { opacity: 1; transform: none; } }
+.tdialog__body { padding: clamp(18px, 3vw, 32px); }
+/* крестик держится в углу при прокрутке длинного профиля */
+.tdialog__close {
+  position: sticky; top: 12px; z-index: 2; float: right; margin: 12px 12px -56px 0;
+  width: 44px; height: 44px; display: grid; place-items: center;
+  border: 1px solid var(--line); border-radius: 50%; background: var(--surface); color: var(--ink);
+  font-size: 26px; line-height: 1; cursor: pointer;
+}
+.tdialog__close:hover { border-color: var(--clay); color: var(--clay-deep); }
+.tdialog__close:focus-visible { outline: 2px solid var(--clay-deep); outline-offset: 2px; }
+.teacher--dialog { padding: 0; border: 0; background: transparent; }
+.teacher--dialog:hover { transform: none; box-shadow: none; }
+.teacher--dialog .teacher__name { padding-right: 52px; }
+html.is-dialog-open { overflow: hidden; }
+
+@media (max-width: 600px) {
+  /* на телефоне — лист снизу во всю ширину */
+  .tdialog { width: 100vw; max-height: 92dvh; margin: auto 0 0; border-radius: 22px 22px 0 0; }
+  .teacher--dialog .teacher__photo { max-width: 240px; }
+  .teacher--dialog .teacher__photo img { aspect-ratio: 1 / 1; object-position: 50% 22%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tdialog[open] { animation: none; }
+  .tcard { transition: none; }
+}
+
+.visually-hidden {
+  position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
 }
 
 /* ---------------- Why it works: prose + accent photo ---------------- */

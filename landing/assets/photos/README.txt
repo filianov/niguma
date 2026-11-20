@@ -10,7 +10,6 @@ olga.jpg к разделу отношения не имеет: он стоит �
   katya.jpg       — Катя Туркану
   ivan.jpg        — Иван Спаский
   olga-klyus.jpg  — Ольга Клюс
-  elena.jpg       — Елена Ганусевич
   olga-shakar.jpg — Ольга Шакар
   irina.jpg       — Ирина Шишкина
   olga-filianova.jpg — Ольга Фильянова

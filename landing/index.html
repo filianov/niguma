@@ -37,7 +37,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&display=swap" />
-  <link rel="stylesheet" href="css/styles.css?v=20261120i" />
+  <link rel="stylesheet" href="css/styles.css?v=20261120j" />
 </head>
 
 <body>
@@ -175,23 +175,63 @@
         <div class="method__intro" data-rich="method.paras"><!-- rendered from translations --></div>
         <ol class="method__list" role="list" data-method="method.winds"><!-- rendered from translations --></ol>
         <p class="method__note" data-i18n="method.note"></p>
+
+        <!-- Продолжение раздела: «Это не сокращённая йога». По макету: заголовок,
+             вступление, три карточки шагов (data-steps), сравнение «Без практики» /
+             «После 15 минут» (data-list), примечание мелким текстом. -->
+        <div class="practice">
+          <h3 class="practice__heading" data-i18n="methodPractice.heading">Это не сокращённая йога. Каждый комплекс — завершённая практика.</h3>
+          <div class="practice__intro" data-rich="methodPractice.paras"><!-- rendered from translations --></div>
+          <ol class="practice__steps" role="list" data-steps="methodPractice.steps"><!-- rendered from translations --></ol>
+          <div class="practice__compare">
+            <div class="pcmp pcmp--before">
+              <p class="pcmp__label" data-i18n="methodPractice.before.label">Без практики</p>
+              <ul class="pcmp__items" role="list" data-list="methodPractice.before.items"></ul>
+            </div>
+            <div class="pcmp pcmp--after">
+              <p class="pcmp__label" data-i18n="methodPractice.after.label">После 15 минут — наша цель</p>
+              <ul class="pcmp__items" role="list" data-list="methodPractice.after.items"></ul>
+            </div>
+          </div>
+          <p class="practice__note" data-i18n="methodPractice.note"></p>
+        </div>
+
+        <!-- Продолжение раздела: «Источники и линия передачи». Слева — история
+             линии (абзацы на вертикальной линии с точками), справа — карточка
+             о Yoga Studies Institute. Разметка в текстах: *курсив*, [ссылка](https://…). -->
+        <div class="sources">
+          <h3 class="practice__heading" data-i18n="methodSources.heading">Источники и линия передачи</h3>
+          <div class="sources__grid">
+            <div class="sources__lineage" data-rich="methodSources.lineage"><!-- rendered from translations --></div>
+            <div class="sources__ysi" data-rich="methodSources.ysi"><!-- rendered from translations --></div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="section section--alt" id="trainers">
-      <div class="container">
+    <section class="section trainers" id="trainers">
+      <div class="container trainers__inner">
         <h2 class="section__title" data-i18n="trainers.heading">Тренеры</h2>
         <p class="section__lead" data-i18n="trainers.intro">Все тренеры прежде всего сами являются
           предпринимателями. Начав практиковать эту систему йоги, они улучшили свои результаты в бизнесе, а сегодня
           используют этот мощный инструмент как для собственного развития, так и для помощи другим.</p>
-        <!-- Карточки преподавателей рисуются из переводов (trainers.people):
-             имя, роль, фотография и несколько строк о человеке. Пока в списке
-             один человек — блок выстроится в одну колонку. -->
-        <div class="teachers" data-teachers="trainers.people">
+        <!-- Компактные карточки по макету: круглое фото (assets/photos/avatars),
+             имя, короткая роль (short), ключевая фраза (key). Нажатие на карточку
+             открывает окно с полным профилем (role, lines, facts, большое фото) —
+             js/main.js, teacherDialog. Данные — trainers.people в переводах. -->
+        <div class="tcards" data-teachers="trainers.people">
           <!-- rendered from translations -->
         </div>
       </div>
     </section>
+
+    <!-- Полный профиль тренера: заполняется по нажатию на карточку. -->
+    <dialog class="tdialog" id="teacherDialog" aria-labelledby="teacherDialogName">
+      <button class="tdialog__close" type="button" data-i18n="trainers.close" data-i18n-attr="aria-label" aria-label="Закрыть">
+        <span aria-hidden="true">×</span>
+      </button>
+      <div class="tdialog__body"></div>
+    </dialog>
 
     <!-- ===================== BENEFITS ===================== -->
     <section class="section" id="benefits">
@@ -369,15 +409,15 @@
     </div>
   </footer>
 
-  <script src="js/icons.js?v=20261120i"></script>
-  <script src="js/translations.js?v=20261120i"></script>
-  <script src="js/config.js?v=20261120i"></script>
-  <script src="js/i18n.js?v=20261120i"></script>
-  <script src="js/main.js?v=20261120i"></script>
-  <script src="js/promo-stickers.js?v=20261120i" defer></script>
-  <script src="js/checkout.js?v=20261120i" defer></script>
-  <script src="js/chat-content.js?v=20261120i" defer></script>
-  <script src="js/chat.js?v=20261120i" defer></script>
+  <script src="js/icons.js?v=20261120j"></script>
+  <script src="js/translations.js?v=20261120j"></script>
+  <script src="js/config.js?v=20261120j"></script>
+  <script src="js/i18n.js?v=20261120j"></script>
+  <script src="js/main.js?v=20261120j"></script>
+  <script src="js/promo-stickers.js?v=20261120j" defer></script>
+  <script src="js/checkout.js?v=20261120j" defer></script>
+  <script src="js/chat-content.js?v=20261120j" defer></script>
+  <script src="js/chat.js?v=20261120j" defer></script>
 </body>
 
 </html>

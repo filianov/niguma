@@ -72,36 +72,33 @@
       }).join("");
     });
 
-    // teachers: data-teachers="path" -> [{name, role, photo, lines: [..], facts: [..]}]
+    // teachers: data-teachers="path" -> [{name, role, short, key, photo, lines, facts}]
+    // Компактные карточки: круглое фото (assets/photos/avatars/<то же имя>), имя,
+    // короткая роль, ключевая фраза. Вся карточка — кнопка «Подробнее»: по нажатию
+    // js/main.js открывает окно с полным профилем (teacherProfile ниже).
     document.querySelectorAll("[data-teachers]").forEach(function (el) {
       var arr = t(lang, el.getAttribute("data-teachers"));
       if (!Array.isArray(arr) || !arr.length) return;
-      el.innerHTML = arr.map(function (p) {
-        /**
-         * Портрет. Если файла ещё нет, на его место встаёт плашка с инициалом:
-         * карточка — строка, и убрать колонку целиком значило бы сломать ритм
-         * раздела. Подмена происходит по ошибке загрузки, поэтому достаточно
-         * положить файл в assets/photos — код трогать не нужно.
-         */
+      var more = t(lang, "trainers.more") || "";
+      el.innerHTML = arr.map(function (p, i) {
         var initial = escapeHtml(String(p.name || "?").trim().charAt(0));
-        var photo = p.photo
-          ? '<div class="teacher__photo"><img src="' + escapeHtml(p.photo) + '" alt="" loading="lazy" ' +
-            'onerror="this.parentNode.className=\'teacher__photo teacher__photo--empty\';' +
-            'this.parentNode.innerHTML=\'<span aria-hidden=&quot;true&quot;>' + initial + '</span>\'" /></div>'
-          : '<div class="teacher__photo teacher__photo--empty"><span aria-hidden="true">' + initial + "</span></div>";
-        return '<article class="teacher reveal">' + photo +
-                 '<div class="teacher__text">' +
-                   '<h3 class="teacher__name">' + escapeHtml(p.name) + "</h3>" +
-                   (p.role ? '<p class="teacher__role">' + escapeHtml(p.role) + "</p>" : "") +
-                   (Array.isArray(p.lines)
-                     ? p.lines.map(function (l) { return "<p>" + escapeHtml(l) + "</p>"; }).join("")
-                     : "") +
-                   (Array.isArray(p.facts) && p.facts.length
-                     ? '<ul class="teacher__facts">' +
-                       p.facts.map(function (f) { return "<li>" + escapeHtml(f) + "</li>"; }).join("") +
-                       "</ul>"
-                     : "") +
+        var ava = avatarOf(p.photo);
+        var pic = ava
+          ? '<img class="tcard__ava" src="' + escapeHtml(ava) + '" alt="" width="72" height="72" loading="lazy" ' +
+            'onerror="this.outerHTML=\'<span class=&quot;tcard__ava tcard__ava--empty&quot; aria-hidden=&quot;true&quot;>' + initial + '</span>\'" />'
+          : '<span class="tcard__ava tcard__ava--empty" aria-hidden="true">' + initial + "</span>";
+        return '<article class="tcard reveal">' +
+                 pic +
+                 '<div class="tcard__head">' +
+                   '<h3 class="tcard__name">' + escapeHtml(p.name) + "</h3>" +
+                   (p.short || p.role ? '<p class="tcard__role">' + escapeHtml(p.short || p.role) + "</p>" : "") +
                  "</div>" +
+                 (p.key ? '<p class="tcard__key">' + escapeHtml(p.key) + "</p>" : "") +
+                 '<button class="tcard__open" type="button" data-teacher="' + i + '" aria-haspopup="dialog">' +
+                   '<span class="tcard__more">' + escapeHtml(more) + '</span>' +
+                   '<span class="visually-hidden">: ' + escapeHtml(p.name) + "</span>" +
+                   '<span class="tcard__plus" aria-hidden="true"></span>' +
+                 "</button>" +
                "</article>";
       }).join("");
     });
@@ -126,13 +123,18 @@
       }).join("");
     });
 
-    // paragraphs with bold: data-rich="path" -> ["… **выделено** …", …] -> <p> with <strong>
-    // Текст сначала экранируется, потом **…** превращается в <strong> — HTML из переводов не проходит.
+    // paragraphs with light markup: data-rich="path" -> ["… **жирный** *курсив* [ссылка](https://…) …"]
+    // Текст сначала экранируется, потом размечается — HTML из переводов не проходит;
+    // ссылки — только https.
     document.querySelectorAll("[data-rich]").forEach(function (el) {
       var arr = t(lang, el.getAttribute("data-rich"));
       if (!Array.isArray(arr)) return;
       el.innerHTML = arr.map(function (s) {
-        return "<p>" + escapeHtml(s).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>") + "</p>";
+        return "<p>" + escapeHtml(s)
+          .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
+          .replace(/\*([^*]+?)\*/g, "<em>$1</em>")
+          .replace(/\[([^\]]+)\]\((https:\/\/[^)\s"<>]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>') +
+          "</p>";
       }).join("");
     });
 
@@ -148,6 +150,19 @@
                    (w.sub ? ' <span class="mrow__sub">(' + escapeHtml(w.sub) + ")</span>" : "") +
                  "</h3>" +
                  '<p class="mrow__text">' + escapeHtml(w.text) + "</p>" +
+               "</li>";
+      }).join("");
+    });
+
+    // practice steps: data-steps="path" -> [{title, text}] -> cards numbered 1, 2, 3
+    document.querySelectorAll("[data-steps]").forEach(function (el) {
+      var arr = t(lang, el.getAttribute("data-steps"));
+      if (!Array.isArray(arr) || !arr.length) return;
+      el.innerHTML = arr.map(function (s, i) {
+        return '<li class="pstep">' +
+                 '<span class="pstep__num" aria-hidden="true">' + (i + 1) + "</span>" +
+                 '<h4 class="pstep__title">' + escapeHtml(s.title) + "</h4>" +
+                 '<p class="pstep__text">' + escapeHtml(s.text) + "</p>" +
                "</li>";
       }).join("");
     });
@@ -241,6 +256,42 @@
     return ({ ru: "мес", en: "mo", de: "Mon", uk: "міс" })[lang] || "mo";
   }
 
+  /* круглое фото: тот же файл в подпапке avatars (квадратный кадр лица) */
+  function avatarOf(photo) {
+    return photo ? String(photo).replace("assets/photos/", "assets/photos/avatars/") : "";
+  }
+
+  /**
+   * Полный профиль тренера i на языке lang — прежняя большая карточка:
+   * портрет 3:4, имя, полная роль, абзацы и факты. Если портрета нет,
+   * на его месте плашка с инициалом.
+   */
+  function teacherProfile(lang, i) {
+    var arr = t(lang, "trainers.people");
+    var p = Array.isArray(arr) ? arr[i] : null;
+    if (!p) return "";
+    var initial = escapeHtml(String(p.name || "?").trim().charAt(0));
+    var photo = p.photo
+      ? '<div class="teacher__photo"><img src="' + escapeHtml(p.photo) + '" alt="" ' +
+        'onerror="this.parentNode.className=\'teacher__photo teacher__photo--empty\';' +
+        'this.parentNode.innerHTML=\'<span aria-hidden=&quot;true&quot;>' + initial + '</span>\'" /></div>'
+      : '<div class="teacher__photo teacher__photo--empty"><span aria-hidden="true">' + initial + "</span></div>";
+    return '<article class="teacher teacher--dialog">' + photo +
+             '<div class="teacher__text">' +
+               '<h3 class="teacher__name" id="teacherDialogName">' + escapeHtml(p.name) + "</h3>" +
+               (p.role ? '<p class="teacher__role">' + escapeHtml(p.role) + "</p>" : "") +
+               (Array.isArray(p.lines)
+                 ? p.lines.map(function (l) { return "<p>" + escapeHtml(l) + "</p>"; }).join("")
+                 : "") +
+               (Array.isArray(p.facts) && p.facts.length
+                 ? '<ul class="teacher__facts">' +
+                   p.facts.map(function (f) { return "<li>" + escapeHtml(f) + "</li>"; }).join("") +
+                   "</ul>"
+                 : "") +
+             "</div>" +
+           "</article>";
+  }
+
   function escapeHtml(s) {
     return String(s)
       .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
@@ -280,7 +331,8 @@
   window.NigumaI18n = {
     setLang: setLang,
     current: detect,
-    t: function (path) { return t(document.documentElement.lang || detect(), path); }
+    t: function (path) { return t(document.documentElement.lang || detect(), path); },
+    teacherProfile: function (i) { return teacherProfile(document.documentElement.lang || detect(), i); }
   };
 
   // boot
